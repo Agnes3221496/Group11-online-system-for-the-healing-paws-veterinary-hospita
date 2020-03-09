@@ -1,0 +1,30 @@
+.link{
+
+	position: absolute;
+	left: 1100px;
+	color: black;
+	size: 20px;
+}
+
+a{
+	text-decoration: none;
+	color: #4c5761;
+}
+
+a:hover{
+	color:palevioletred;
+}
+
+a:active {
+	color: turquoise;
+}
+/*https://blog.csdn.net/byydmnz/article/details/79540958*/
+
+
+.success {
+	color: green;
+}
+
+.failure {
+	color: red;
+}

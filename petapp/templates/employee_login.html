@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+     
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/login.css') }}" />
+
+    <h1>Sign In</h1>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+
+    <div class="panel panel-info">
+    <div class="panel-heading">
+    <div class="panel-body">
+
+    <form action="" method="post" novalidate class="form-horizontal" role="form" action="1.html" id="loginForm">
+    
+
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+
+        <div class="form-inline">
+            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('login') }}" style="left: 10%">User</a>
+            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('employee_login') }}" style="left: 10%">Employee</a>
+        </div>
+
+        <p>
+            <label for="employee_number" class="col-sm-2">
+            {{ form.employee_number.label }}<br>
+            </label><br>
+            <div class="col-sm-10">
+            {{ form.employee_number(size=32) }}
+            </div>
+			
+			{% for error in form.employee_number.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+			
+        </p>
+     </div>
+
+     <div class="form-group">
+        <p>
+            <label for="password" class="col-sm-2">
+            {{ form.password.label }}
+            </label><br>
+            <div class="col-sm-10">
+            {{ form.password(size=32) }}
+            </div>
+			
+			{% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+			
+        </p>
+     </div>
+        <div class="form-group">
+            <p>
+                <label for="password" class="col-sm-2">
+                    {{ form.remember_me() }} 
+                </label>
+                {{ form.remember_me.label }}
+             
+            </p>
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="loginButton">Login</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

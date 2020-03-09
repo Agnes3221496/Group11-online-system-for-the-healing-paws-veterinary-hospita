@@ -1,0 +1,1 @@
+from petapp import app
