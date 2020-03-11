@@ -1,9 +1,10 @@
 from petapp import app, db
-from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm
-from petapp.models import Customer, Employee
+from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm
+from petapp.models import Customer, Employee, CatAppointment
 
 from flask import render_template, flash, redirect, url_for, session, send_file, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
+import time
 from petapp.config import Config
 import os
 import re
@@ -69,6 +70,9 @@ def employee_signup():
         if form.password.data != form.password2.data:
             flash('Passwords do not match!')
             return redirect(url_for('employee_signup'))
+        if form.register_password.data != 123456:
+            flash('Register password is not right!')
+            return redirect(url_for('employee_signup'))
 
         passw_hash = generate_password_hash(form.password.data)
         employee = Employee(employee_number=form.employee_number.data, email=form.email.data, password_hash=passw_hash)
@@ -78,3 +82,23 @@ def employee_signup():
         session["NUMBER"] = employee.employee_number
         return redirect(url_for("employee_login"))
     return render_template('employee_signup.html', title='Register a new employee', form=form)
+
+@app.route('/standard_appointment', methods=['GET', 'POST'])
+def standard_appointment():
+    form = CatAppointmentForm()
+
+    if form.validate_on_submit():
+        if not session.get("USERNAME") is None:
+            catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data)
+            db.session.add(catAppointment)
+            db.session.commit()
+            return redirect(url_for("appointment_success"))
+        else:
+            flash("User needs to either login or signup first")
+            return redirect(url_for('login'))
+
+    return render_template('standard_appointment.html', form=form)
+
+@app.route('/appointment_success', methods=['GET', 'POST'])
+def appointment_success():
+    return render_template('appointment_success.html')

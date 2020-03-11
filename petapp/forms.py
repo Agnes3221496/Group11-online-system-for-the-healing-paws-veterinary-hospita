@@ -32,24 +32,12 @@ class EmployeeSignupForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField('Repeat Password', validators=[DataRequired()])
+    register_password = PasswordField('Register Password', validators=[DataRequired()])
     accept_rules = BooleanField('I accept the site rules', validators=[DataRequired()])
     submit = SubmitField('Register')
 
-
-class ProfileForm(FlaskForm):
-    dob = DateField('Date of Birth (format: YYYY-MM-DD)', format='%Y-%m-%d', validators=[DataRequired()])
-    gender = RadioField('Gender', choices=[('0', 'Male'), ('1', 'Female')], validators=[DataRequired()])
-    cv = FileField('Your CV', validators=[FileAllowed(['pdf'], 'Only PDF files please')])
-    submit = SubmitField('Update Profile')
-
-
-class PostForm(FlaskForm):
-    postbody = StringField('Text Draft', validators=[DataRequired()])
-    receiver = RadioField('Receiver', choices=[('father', 'father'), ('mother', 'mother'), ('friends', 'friends')], validators=[DataRequired()])
-    submit = SubmitField('Add Post')
-
-
-
-class AddPhotoForm(FlaskForm):
-    photo = FileField('', validators=[FileAllowed(['png'], 'Only PNG files please')])
-    submit = SubmitField("Confirm")
+class CatAppointmentForm(FlaskForm):
+    name = StringField('Real Name: ', validators=[DataRequired()])
+    phone = StringField('Phone Number: ', validators=[DataRequired()])
+    city = RadioField('City', choices=[('0', 'Beijing'), ('1', 'Shanghai'), ('2', 'Chengdu')], validators=[DataRequired()])
+    submit = SubmitField('book')

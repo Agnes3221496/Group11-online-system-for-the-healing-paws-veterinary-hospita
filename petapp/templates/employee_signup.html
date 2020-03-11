@@ -65,11 +65,23 @@
             {% endfor %}
 			
         </p>
-        <p>{{ form.accept_rules() }} {{ form.accept_rules.label }}</p>
+        <p>
+            {{ form.register_password.label }}<br>
+            {{ form.register_password(size=35) }}
+
+            {% for error in form.register_password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.accept_rules() }} {{ form.accept_rules.label }}
 			{% for error in form.accept_rules.errors %}
 			<span style="color: red;">[{{ error }}]</span>
 			{% endfor %}
+        </p>
 {#        <p>{{ form.submit() }}</p>#}
+
+
          <button>Sign up</button>
     </form>
 
