@@ -18,7 +18,7 @@ class UserAgentParser(object):
     """A simple user agent parser.  Used by the `UserAgent`."""
 
     platforms = (
-        ("cros", "chromeos"),
+        (" cros ", "chromeos"),
         ("iphone|ios", "iphone"),
         ("ipad", "ipad"),
         (r"darwin|mac|os\s*x", "macos"),
@@ -46,7 +46,7 @@ class UserAgentParser(object):
         ("yahoo", "yahoo"),
         ("ask jeeves", "ask"),
         (r"aol|america\s+online\s+browser", "aol"),
-        ("opera", "opera"),
+        (r"opera|opr", "opera"),
         ("edge", "edge"),
         ("chrome|crios", "chrome"),
         ("seamonkey", "seamonkey"),
@@ -200,11 +200,3 @@ class UserAgent(object):
 
     def __repr__(self):
         return "<%s %r/%s>" % (self.__class__.__name__, self.browser, self.version)
-
-
-from werkzeug import _DeprecatedImportModule
-
-_DeprecatedImportModule(
-    __name__, {".wrappers.user_agent": ["UserAgentMixin"]}, "Werkzeug 1.0"
-)
-del _DeprecatedImportModule

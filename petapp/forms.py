@@ -41,3 +41,16 @@ class CatAppointmentForm(FlaskForm):
     phone = StringField('Phone Number: ', validators=[DataRequired()])
     city = RadioField('City', choices=[('0', 'Beijing'), ('1', 'Shanghai'), ('2', 'Chengdu')], validators=[DataRequired()])
     submit = SubmitField('book')
+
+
+# Customer post question
+class PostQuestionForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    detail = StringField('Detail Description of The Question', validators=[DataRequired()])
+    image = FileField('Image')
+    submit = SubmitField('Post')
+
+# Customer search question
+class SearchQuestionForm(FlaskForm):
+    search = StringField('Question', validators=[DataRequired()])
+    submit = SubmitField('Search')

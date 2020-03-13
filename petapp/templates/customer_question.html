@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block content %}
+    <html>
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />
+        <h1>Question&Answer</h1>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+
+        <div class="panel panel-info"/>
+        <div class="panel-heading"/>
+        <div class="panel-body"/>
+
+        <a href="{{ url_for('post_question')}}">Post Question</a>
+
+        <form action="" method="post" novalidate id="SearchQuestionForm" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+            <div class="form-group">
+                <p>
+                    <div id="question" align="center">
+                    {{ form.search.label }}<br>
+                    {{ form.search(size=32) }}<br>
+                    <span id="question" style="color: red"></span>
+                    {% for error in form.search.errors %}
+                    <span style="color: red">[{{ error }}]</span>
+                    {% endfor %}
+                    </div>
+                </p>
+                <p align="center">{{ form.submit }}</p>
+            </div>
+        </form>
+        {% if question %}
+            {% for q in question %}
+                <h3>{{ q.title }}</h3>
+                <p>{{ q.detail }}</p>
+                <img src='/static/uploaded_image/{{ q.image }}'>
+            {% endfor %}
+        {% endif %}
+    </html>
+{% endblock %}

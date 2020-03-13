@@ -28,3 +28,14 @@ class CatAppointment(db.Model):
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
+
+class Question(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    publisher = db.Column(db.Integer, db.ForeignKey(Customer.id))
+    title = db.Column(db.String(120), index=True)
+    detail = db.Column(db.String(300), index=True)
+    image = db.Column(db.String(256))
+    publish_date = db.Column(db.DATETIME)
+
+    def __repr__(self):
+        return '<Question {}>'.format(self.title)
