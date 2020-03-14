@@ -106,8 +106,7 @@ def standard_appointment_cat():
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
-            catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id)
+            catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data, customer_id=user_in_db.id)
             db.session.add(catAppointment)
             db.session.commit()
             return redirect(url_for("appointment_success"))
