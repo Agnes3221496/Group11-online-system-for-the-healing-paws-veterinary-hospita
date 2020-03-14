@@ -7,6 +7,8 @@ class Customer(db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
+    cat_appointment = db.relationship('CatAppointment', backref='customer', lazy='dynamic')
+    dog_appointment = db.relationship('DogAppointment', backref='customer', lazy='dynamic')
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -25,6 +27,17 @@ class CatAppointment(db.Model):
     name = db.Column(db.String(32))
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
+    customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
+
+    def __repr__(self):
+        return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
+
+class DogAppointment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32))
+    phone = db.Column(db.Integer())
+    city = db.Column(db.String(10))
+    customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)

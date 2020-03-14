@@ -39,7 +39,7 @@ class EmployeeSignupForm(FlaskForm):
 class CatAppointmentForm(FlaskForm):
     name = StringField('Real Name: ', validators=[DataRequired()])
     phone = StringField('Phone Number: ', validators=[DataRequired()])
-    city = RadioField('City', choices=[('0', 'Beijing'), ('1', 'Shanghai'), ('2', 'Chengdu')], validators=[DataRequired()])
+    city = RadioField('City', choices=[('Beijing', 'Beijing'), ('Shanghai', 'Shanghai'), ('chengdu', 'Chengdu')], validators=[DataRequired()])
     submit = SubmitField('book')
 
 
