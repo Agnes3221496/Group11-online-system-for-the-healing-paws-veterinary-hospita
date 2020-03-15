@@ -51,7 +51,7 @@ def employee_login():
         if check_password_hash(employee_in_db.password_hash, form.password.data):
             # flash('Login success!')
             session["NUMBER"] = employee_in_db.employee_number
-            return redirect(url_for('index'))
+            return redirect(url_for('orders'))
         flash('Incorrect Password')
         return redirect(url_for('employee_login'))
     return render_template('employee_login.html', title='Sign In', form=form)
@@ -82,7 +82,7 @@ def employee_signup():
         if form.password.data != form.password2.data:
             flash('Passwords do not match!')
             return redirect(url_for('employee_signup'))
-        if form.register_password.data != 123456:
+        if form.register_password.data != '123456':
             flash('Register password is not right!')
             return redirect(url_for('employee_signup'))
 
@@ -190,3 +190,13 @@ def customer_question():
                                               Question.detail.like("%" + form.search.data + "%"))).all()
         return render_template('customer_question.html', title='Search', form=form, question=question)
     return render_template('customer_question.html', title='Search', form=form, question=question)
+
+
+@app.route('/orders', methods=['GET', 'POST'])
+def orders():
+    return render_template('orders.html', title='Order List')
+
+
+@app.route('/qa_e', methods=['GET', 'POST'])
+def qa_e():
+    return render_template('qa_e.html', title='Q&A')

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "employee_base.html" %}
 
 {% block content %}
      <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/signup.css') }}" />
@@ -19,10 +19,10 @@
         {{ form.hidden_tag() }}
      <div class="form-group">
 
-        <div class="form-inline">
-            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('signup') }}" style="left: 10%">User</a>
-            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('employee_signup') }}" style="left: 10%">Employee</a>
-        </div>
+{#        <div class="form-inline">#}
+{#            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('signup') }}" style="left: 10%">User</a>#}
+{#            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('employee_signup') }}" style="left: 10%">Employee</a>#}
+{#        </div>#}
         <p>
             <div id="username">
             {{ form.employee_number.label }}<br>
