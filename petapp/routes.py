@@ -4,8 +4,9 @@ from werkzeug.utils import secure_filename
 
 from petapp import app, db
 from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm, \
-    PostQuestionForm, SearchQuestionForm
-from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question
+    PostQuestionForm, SearchQuestionForm, PostAnswerForm
+from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question, \
+    Answer
 
 from flask import render_template, flash, redirect, url_for, session, send_file, request, jsonify, current_app
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -106,7 +107,8 @@ def standard_appointment_cat():
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
-            catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data, customer_id=user_in_db.id)
+            catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                            customer_id=user_in_db.id)
             db.session.add(catAppointment)
             db.session.commit()
             return redirect(url_for("appointment_success"))
@@ -140,6 +142,7 @@ def standard_appointment_dog():
     return render_template('standard_appointment_dog.html', form=form, b_count=b_count, s_count=s_count,
                            c_count=c_count)
 
+
 @app.route('/emergency_cat', methods=['GET', 'POST'])
 def emergency_cat():
     form = CatAppointmentForm()
@@ -148,7 +151,7 @@ def emergency_cat():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
             catEmergency = CatEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id)
+                                        customer_id=user_in_db.id)
             db.session.add(catEmergency)
             db.session.commit()
             return redirect(url_for("appointment_success"))
@@ -158,6 +161,7 @@ def emergency_cat():
 
     return render_template('emergency_cat.html', form=form)
 
+
 @app.route('/emergency_dog', methods=['GET', 'POST'])
 def emergency_dog():
     form = CatAppointmentForm()
@@ -166,7 +170,7 @@ def emergency_dog():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
             dogEmergency = DogEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id)
+                                        customer_id=user_in_db.id)
             db.session.add(dogEmergency)
             db.session.commit()
             return redirect(url_for("appointment_success"))
@@ -175,7 +179,6 @@ def emergency_dog():
             return redirect(url_for('login'))
 
     return render_template('emergency_dog.html', form=form)
-
 
 
 @app.route('/appointment_success', methods=['GET', 'POST'])
@@ -236,4 +239,29 @@ def orders():
 
 @app.route('/qa_e', methods=['GET', 'POST'])
 def qa_e():
-    return render_template('qa_e.html', title='Q&A')
+    prev_questions = Question.query.filter().all()
+    return render_template('qa_e.html', title='Q&A', prev_questions=prev_questions)
+
+
+@app.route('/answer', methods=['GET', 'POST'])
+def answer():
+    form = PostAnswerForm()
+    q = request.args.get("q")
+    print(q)
+    prev_questions = Question.query.filter(Question.id == q).all()
+    prev_answers = Answer.query.filter(Answer.question_id == q).all()
+    if form.validate_on_submit():
+        postbody = form.postbody.data
+        employee_in_db = Employee.query.filter(Employee.employee_number == session.get("USERNAME")).first()
+        dt = datetime.datetime.utcnow()
+        year = dt.year
+        month = dt.month
+        day = dt.day
+        hour = dt.hour
+        minutes = dt.minute
+        time = str(year) + "-" + str(month) + "-" + str(day) + " " + str(hour) + ":" + str(minutes)
+        answer = Answer(answer=postbody, time=time, employee_id=employee_in_db.employee_number, question_id=q)
+        db.session.add(answer)
+        db.session.commit()
+        return redirect(url_for('qa_e'))
+    return render_template('answer.html', title='Q&A', prev_questions=prev_questions, form=form, prev_answers=prev_answers)

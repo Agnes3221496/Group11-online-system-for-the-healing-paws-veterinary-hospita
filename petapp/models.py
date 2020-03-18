@@ -13,6 +13,7 @@ class Customer(db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
+
 class Employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     employee_number = db.Column(db.Integer(), index=True, unique=True)
@@ -21,6 +22,7 @@ class Employee(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
 
 class CatAppointment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,6 +34,7 @@ class CatAppointment(db.Model):
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
 
+
 class DogAppointment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(32))
@@ -41,6 +44,7 @@ class DogAppointment(db.Model):
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
+
 
 class CatEmergency(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -52,6 +56,7 @@ class CatEmergency(db.Model):
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
 
+
 class DogEmergency(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(32))
@@ -61,6 +66,7 @@ class DogEmergency(db.Model):
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
+
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -72,3 +78,11 @@ class Question(db.Model):
 
     def __repr__(self):
         return '<Question {}>'.format(self.title)
+
+
+class Answer(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    answer = db.Column(db.String(140))
+    time = db.Column(db.String(140))
+    employee_id = db.Column(db.String(20), db.ForeignKey('employee.employee_number'))
+    question_id = db.Column(db.Integer, db.ForeignKey('question.id'))
