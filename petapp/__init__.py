@@ -7,3 +7,4 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 from petapp import routes, models
+

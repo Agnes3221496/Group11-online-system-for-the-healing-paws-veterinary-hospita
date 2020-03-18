@@ -5,9 +5,9 @@ from werkzeug.utils import secure_filename
 from petapp import app, db
 from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm, \
     PostQuestionForm, SearchQuestionForm
-from petapp.models import Customer, Employee, CatAppointment, DogAppointment, Question
+from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question
 
-from flask import render_template, flash, redirect, url_for, session, send_file, request, jsonify
+from flask import render_template, flash, redirect, url_for, session, send_file, request, jsonify, current_app
 from werkzeug.security import generate_password_hash, check_password_hash
 import time
 from petapp.config import Config
@@ -139,6 +139,43 @@ def standard_appointment_dog():
 
     return render_template('standard_appointment_dog.html', form=form, b_count=b_count, s_count=s_count,
                            c_count=c_count)
+
+@app.route('/emergency_cat', methods=['GET', 'POST'])
+def emergency_cat():
+    form = CatAppointmentForm()
+    # count = CatAppointment.query.count()
+    if form.validate_on_submit():
+        if not session.get("USERNAME") is None:
+            user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+            catEmergency = CatEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                            customer_id=user_in_db.id)
+            db.session.add(catEmergency)
+            db.session.commit()
+            return redirect(url_for("appointment_success"))
+        else:
+            flash("User needs to either login or signup first")
+            return redirect(url_for('login'))
+
+    return render_template('emergency_cat.html', form=form)
+
+@app.route('/emergency_dog', methods=['GET', 'POST'])
+def emergency_dog():
+    form = CatAppointmentForm()
+    # count = CatAppointment.query.count()
+    if form.validate_on_submit():
+        if not session.get("USERNAME") is None:
+            user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+            dogEmergency = DogEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                            customer_id=user_in_db.id)
+            db.session.add(dogEmergency)
+            db.session.commit()
+            return redirect(url_for("appointment_success"))
+        else:
+            flash("User needs to either login or signup first")
+            return redirect(url_for('login'))
+
+    return render_template('emergency_dog.html', form=form)
+
 
 
 @app.route('/appointment_success', methods=['GET', 'POST'])

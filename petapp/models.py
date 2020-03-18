@@ -42,6 +42,26 @@ class DogAppointment(db.Model):
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
 
+class CatEmergency(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32))
+    phone = db.Column(db.Integer())
+    city = db.Column(db.String(10))
+    customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
+
+    def __repr__(self):
+        return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
+
+class DogEmergency(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32))
+    phone = db.Column(db.Integer())
+    city = db.Column(db.String(10))
+    customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
+
+    def __repr__(self):
+        return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
+
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     publisher = db.Column(db.Integer, db.ForeignKey(Customer.id))
