@@ -1,0 +1,5 @@
+{% extends "base.html" %}<!--继承基础模板-->
+{% block content %}<!--自定义模板区域-->
+<a href="{{ url_for('standard_appointment_cat')}}">Standard Appointment</a>
+<a href="{{ url_for('customer_question')}}">Question</a>
+{% endblock %}

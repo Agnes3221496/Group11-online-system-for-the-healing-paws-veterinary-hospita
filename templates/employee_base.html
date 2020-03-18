@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Main Page</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='../static/style/employee_base.css') }}" />
+
+	<script src="{{ url_for('static', filename='../static/script/jquery-3.4.1.js') }}"></script>
+
+</head>
+<body>
+
+	<div class="link">
+		<a href="{{ url_for('orders')}}">Orders</a>
+		&nbsp &nbsp|&nbsp &nbsp
+        <a href="{{ url_for('qa_e')}}">Q&A</a>
+        &nbsp &nbsp|&nbsp &nbsp
+		<a href="{{ url_for('employee_signup')}}">Add New Employee</a>
+        &nbsp &nbsp|&nbsp &nbsp
+        <a href="{{ url_for('employee_login')}}">Sign Out</a>
+
+	</div>
+	<hr>
+	 {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+</body>
+
+
+</html>
