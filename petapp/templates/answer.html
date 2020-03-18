@@ -1,0 +1,52 @@
+{% extends "employee_base.html" %}
+
+{% block content %}
+    <div class="q_title">
+        {% if prev_questions %}
+            {% for question in prev_questions %}
+                <h2> {{ question.title }}</h2>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="q_details">
+        {% if prev_questions %}
+            {% for question in prev_questions %}
+                <h2>{{ question.detail }}</h2>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="q_graphic">
+        {% if prev_questions %}
+            {% for question in prev_questions %}
+                <img src='/static/uploaded_image/{{ question.image }}'>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div class="answer-body">
+        {% if prev_answers %}
+             {% for answers in prev_answers %}
+                <h2>{{ answers.answer }}</h2>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="answer-e">
+        {% if prev_answers %}
+            {% for answers in prev_answers %}
+                <h3>{{ answers.employee_id }}</h3>
+                <h3>{{ answers.time }}</h3>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p id="replyTitle">
+            {{ form.postbody.label }}<br>
+        <p id="answerBody">{{ form.postbody(size=100) }}</p>
+        {% for error in form.postbody.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
