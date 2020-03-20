@@ -231,6 +231,10 @@ def customer_question():
         return render_template('customer_question.html', title='Search', form=form, question=question)
     return render_template('customer_question.html', title='Search', form=form, question=question)
 
+@app.route('/question_detail/<q_id>/')
+def question_detail(q_id):
+    question = Question.query.filter(Question.id == q_id)
+    return render_template('question_detail.html', title='Detail', question=question)
 
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():

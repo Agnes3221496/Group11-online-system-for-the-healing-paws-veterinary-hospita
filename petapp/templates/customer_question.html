@@ -31,7 +31,7 @@
         </form>
         {% if question %}
             {% for q in question %}
-                <h3>{{ q.title }}</h3>
+                <a href="{{ url_for('question_detail', q_id=q.id) }}"> <h3>{{ q.title }}</h3> </a>
                 <p>{{ q.detail }}</p>
                 <img src='/static/uploaded_image/{{ q.image }}'>
             {% endfor %}
