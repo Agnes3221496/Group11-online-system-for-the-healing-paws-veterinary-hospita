@@ -234,7 +234,8 @@ def customer_question():
 @app.route('/question_detail/<q_id>/')
 def question_detail(q_id):
     question = Question.query.filter(Question.id == q_id)
-    return render_template('question_detail.html', title='Detail', question=question)
+    answer = Answer.query.filter(Answer.question_id == q_id)
+    return render_template('question_detail.html', title='Detail', question=question, answer=answer)
 
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():

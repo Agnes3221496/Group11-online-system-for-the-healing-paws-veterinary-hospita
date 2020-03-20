@@ -18,7 +18,13 @@
             <h3>Detail:</h3>
             <p>{{ q.detail }}</p>
             <img src='/static/uploaded_image/{{ q.image }}'>
-            <h3>Reply:</h3>
+        {% endfor %}
+    {% endif %}
+    <h3>Reply:</h3>
+    {% if answer %}
+        {% for a in answer %}
+            <p>{{ a.answer }}</p>
+            <p>{{ a.time }}</p>
         {% endfor %}
     {% endif %}
 </html>
