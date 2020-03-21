@@ -33,7 +33,7 @@
             {% for q in question %}
                 <a href="{{ url_for('question_detail', q_id=q.id) }}"> <h3>{{ q.title }}</h3> </a>
                 <p>{{ q.detail }}</p>
-                <img src='/static/uploaded_image/{{ q.image }}'>
+                <img src='/static/uploaded_image/question_image/{{ q.image }}'>
             {% endfor %}
         {% endif %}
     </html>

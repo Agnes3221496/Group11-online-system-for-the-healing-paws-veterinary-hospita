@@ -7,5 +7,6 @@ class Config(object):
                               'sqlite:///' + os.path.join(basedir, 'petvet.db')
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    IMAGE_UPLOAD_DIR = os.path.join(basedir, 'static/uploaded_image')
+    QUESTION_IMAGE_UPLOAD_DIR = os.path.join(basedir, 'static/uploaded_image/question_image')
+    PET_IMAGE_UPLOAD_DIR = os.path.join(basedir, 'static/uploaded_image/pet_image')
 

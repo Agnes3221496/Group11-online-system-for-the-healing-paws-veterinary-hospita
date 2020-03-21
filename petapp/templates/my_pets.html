@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <h1>My Pets</h1>
+    <a href="{{ url_for('add_pet')}}">Add Pet</a>
+</head>
+<body>
+    {% if pet %}
+        {% for p in pet %}
+            <p>Name: <a href="{{ url_for('pet_detail', pet_id=p.id) }}"> {{ p.name }}</a> </p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

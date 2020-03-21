@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a834308a-570b-4bec-8fcd-950af1126b30" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/petvet.db" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/petvet.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/uploaded_image/house.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/uploaded_image/question_image/house.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/customer_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/customer_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/templates/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/question_detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,6 +80,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\static\uploaded_image\question_image" />
       <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\static" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -143,7 +152,7 @@
       <workItem from="1584441043034" duration="24000" />
       <workItem from="1584441068055" duration="5190000" />
       <workItem from="1584498946307" duration="1382000" />
-      <workItem from="1584674763609" duration="806000" />
+      <workItem from="1584674763609" duration="6872000" />
     </task>
     <servers />
   </component>
@@ -178,6 +187,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Group11_online_system_for_the_healing_paws_veterinary_hospita$petVet.coverage" NAME="petVet Coverage Results" MODIFIED="1584675566567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/petapp" />
+    <SUITE FILE_PATH="coverage/Group11_online_system_for_the_healing_paws_veterinary_hospita$petVet.coverage" NAME="petVet Coverage Results" MODIFIED="1584758345087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/petapp" />
   </component>
 </project>

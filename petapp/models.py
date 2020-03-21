@@ -86,3 +86,13 @@ class Answer(db.Model):
     time = db.Column(db.String(140))
     employee_id = db.Column(db.String(20), db.ForeignKey('employee.employee_number'))
     question_id = db.Column(db.Integer, db.ForeignKey('question.id'))
+
+class Pet(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    owner_id = db.Column(db.Integer, db.ForeignKey(Customer.id))
+    name = db.Column(db.String(64), index=True)
+    age = db.Column(db.Integer,index=True)
+    species = db.Column(db.String(64), index=True)
+    image = db.Column(db.String(256))
+    def __repr__(self):
+        return '<Pet {}>'.format(self.name)
