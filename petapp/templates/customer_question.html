@@ -1,9 +1,11 @@
-{% extends "employee_base.html" %}
+{% extends "customer_base.html" %}
 {% block content %}
-    <html>
+
         <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />
         <h1>Question&Answer</h1>
+
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
 
@@ -33,8 +35,7 @@
             {% for q in question %}
                 <a href="{{ url_for('question_detail', q_id=q.id) }}"> <h3>{{ q.title }}</h3> </a>
                 <p>{{ q.detail }}</p>
-                <img src='/static/uploaded_image/question_image/{{ q.image }}'>
+                <img style="width: 180px" src='/static/uploaded_image/question_image/{{ q.image }}'>
             {% endfor %}
         {% endif %}
-    </html>
 {% endblock %}

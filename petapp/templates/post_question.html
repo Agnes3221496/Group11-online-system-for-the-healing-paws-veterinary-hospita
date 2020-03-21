@@ -1,3 +1,5 @@
+{% extends "customer_base.html" %}
+{% block content %}
 <html>
     <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />
     <h1>Post Your Question</h1>
@@ -62,5 +64,5 @@
         </div>
     </form>
 </html>
-
+{% endblock %}
 

@@ -35,7 +35,7 @@ def login():
         if check_password_hash(user_in_db.password_hash, form.password.data):
             # flash('Login success!')
             session["USERNAME"] = user_in_db.username
-            return redirect(url_for('index'))
+            return redirect(url_for('standard_appointment_cat'))
         flash('Incorrect Password')
         return redirect(url_for('login'))
     return render_template('login.html', title='Sign In', form=form)
@@ -206,7 +206,7 @@ def post_question():
                 form.image.data.save(os.path.join(image_dir, filename))
                 user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
                 question = Question(publisher=user_in_db.id, title=form.title.data, detail=form.detail.data,
-                                    image=filename, publish_date=datetime.datetime.now())
+                                    image=filename, publish_date=datetime.datetime.now().replace(microsecond=0))
                 db.session.add(question)
                 db.session.commit()
                 flash("Post successfully")
