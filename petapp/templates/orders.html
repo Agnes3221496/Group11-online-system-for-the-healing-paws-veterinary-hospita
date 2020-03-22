@@ -3,12 +3,18 @@
 {% block content %}
 
     <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/orders.css') }}" />
-    <h1>Welcome! Here are all the orders.</h1>
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
 
+    <div class="panel panel-info"/>
+    <div class="panel-heading"/>
+    <div class="panel-body"/>
+
+    <h1>Welcome! Here are all the orders.</h1>
+    <div id="appointment">
     <div class="e_appointment">
         {% if cat_orders_e %}
             {% for cats in cat_orders_e %}
@@ -16,6 +22,8 @@
                 <p>Owner: {{ cats.name }}</p>
                 <p>Phone number: {{ cats.phone }}</p>
                 <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', ce=cats.id) }}"> Handle this appointment </a>
+                <br/>
+                <hr style="border-top: 2px dotted #31708f">
             {% endfor %}
         {% endif %}
 
@@ -25,6 +33,8 @@
                 <p>Owner: {{ dogs.name }}</p>
                 <p>Phone number: {{ dogs.phone }}</p>
                 <p>City: {{ dogs.city }}</p>   <a href="{{ url_for('orders', de=dogs.id) }}"> Handle this appointment </a>
+                <br/>
+                <hr style="border-top: 2px dotted #31708f">
             {% endfor %}
         {% endif %}
     </div>
@@ -36,6 +46,8 @@
                 <p>Owner: {{ cats.name }}</p>
                 <p>Phone number: {{ cats.phone }}</p>
                 <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', c=cats.id) }}"> Handle this appointment </a>
+                <br/>
+                <hr style="border-top: 2px dotted #31708f">
             {% endfor %}
         {% endif %}
 
@@ -45,12 +57,10 @@
                 <p>Owner: {{ dogs.name }}</p>
                 <p>Phone number: {{ dogs.phone }}</p>
                 <p>City: {{ dogs.city }}</p>  <a href="{{ url_for('orders', d=dogs.id) }}"> Handle this appointment </a>
+                <br/>
+                <hr style="border-top: 2px dotted #31708f">
             {% endfor %}
         {% endif %}
     </div>
-
-
-    <div class="panel panel-info"/>
-    <div class="panel-heading"/>
-    <div class="panel-body"/>
+    </div>
 {% endblock %}

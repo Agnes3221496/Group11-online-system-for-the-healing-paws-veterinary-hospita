@@ -3,6 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a834308a-570b-4bec-8fcd-950af1126b30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/petvet.db" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/petvet.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/style/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/style/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/style/orders.css" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/style/orders.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/customer_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/customer_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/employee_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/employee_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/employee_signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/employee_signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/post_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/post_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/qa_e.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/qa_e.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/signup.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Group11_online_system_for_the_healing_paws_veterinary_hospita$petVet.coverage" NAME="petVet Coverage Results" MODIFIED="1584844920924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/petapp" />
+    <SUITE FILE_PATH="coverage/Group11_online_system_for_the_healing_paws_veterinary_hospita$petVet.coverage" NAME="petVet Coverage Results" MODIFIED="1584895409090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -32,12 +43,105 @@
     </expand>
     <select />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/templates/employee_login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/static/style/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/petapp/templates/customer_question.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/templates/post_question.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1273">
+              <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/static/style/post_question.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/templates/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/static/style/orders.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" selection-start-line="1" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/templates/employee_signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/petapp/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <element signature="e#868#885#0#HTML" expanded="true" />
+                <element signature="e#994#1011#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,10 +149,30 @@
     <findStrings>
       <find>publish</find>
       <find>my</find>
+      <find>panel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/petapp/templates/orders.html" />
+        <option value="$PROJECT_DIR$/petapp/static/style/qa_e.css" />
+        <option value="$PROJECT_DIR$/petapp/templates/qa_e.html" />
+        <option value="$PROJECT_DIR$/petapp/templates/employee_signup.html" />
+        <option value="$PROJECT_DIR$/petapp/templates/signup.html" />
+        <option value="$PROJECT_DIR$/petapp/static/style/signup.css" />
+        <option value="$PROJECT_DIR$/petapp/templates/employee_login.html" />
+        <option value="$PROJECT_DIR$/petapp/templates/login.html" />
+        <option value="$PROJECT_DIR$/petapp/static/style/login.css" />
+        <option value="$PROJECT_DIR$/petapp/static/style/orders.css" />
+        <option value="$PROJECT_DIR$/petapp/templates/post_question.html" />
+        <option value="$PROJECT_DIR$/petapp/static/style/post_question.css" />
+        <option value="$PROJECT_DIR$/petapp/templates/customer_question.html" />
+      </list>
+    </option>
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -57,9 +181,64 @@
       </set>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="605" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
   <component name="ProjectId" id="1YjYg1UnEymlWiPaGtE4cjV2SSq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="462c0819:PsiDirectoryNode" />
+              <item name="petapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="462c0819:PsiDirectoryNode" />
+              <item name="petapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="462c0819:PsiDirectoryNode" />
+              <item name="petapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="462c0819:PsiDirectoryNode" />
+              <item name="petapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Group11-online-system-for-the-healing-paws-veterinary-hospita" type="462c0819:PsiDirectoryNode" />
+              <item name="petapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -99,17 +278,17 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="petVet" type="Python.FlaskServer">
+    <configuration name="petVet" type="Python.FlaskServer" factoryName="Flask server">
       <option name="flaskDebug" value="true" />
       <module name="petVet" />
-      <option name="target" value="D:\3030j\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\__init__.py" />
+      <option name="target" value="C:\Users\lenovo\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\__init__.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\python\flask2\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\lenovo\Desktop\petVet\flaskenv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -158,8 +337,43 @@
       <workItem from="1584802567495" duration="43000" />
       <workItem from="1584843627934" duration="1317000" />
       <workItem from="1584854434852" duration="746000" />
+      <workItem from="1584886325574" duration="1785000" />
+      <workItem from="1584888314839" duration="1779000" />
+      <workItem from="1584890163327" duration="1777000" />
+      <workItem from="1584891978044" duration="1779000" />
+      <workItem from="1584893816524" duration="1594000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8714000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2627346" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -170,6 +384,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -193,5 +413,145 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Group11_online_system_for_the_healing_paws_veterinary_hospita$petVet.coverage" NAME="petVet Coverage Results" MODIFIED="1584855144174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/petapp/templates/add_pet.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/employee_base.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/customer_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="5751" column="20" selection-start-line="5751" selection-start-column="20" selection-end-line="5751" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/qa_e.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/orders.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+          <folding>
+            <element signature="e#1039#1064#0#HTML" expanded="true" />
+            <element signature="e#1503#1528#0#HTML" expanded="true" />
+            <element signature="e#2001#2026#0#HTML" expanded="true" />
+            <element signature="e#2456#2494#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/style/base.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/style/employee_base.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/style/qa_e.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/employee_signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/style/signup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#868#885#0#HTML" expanded="true" />
+            <element signature="e#994#1011#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/employee_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/style/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/style/orders.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/static/style/post_question.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/post_question.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1273">
+          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/petapp/templates/customer_question.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

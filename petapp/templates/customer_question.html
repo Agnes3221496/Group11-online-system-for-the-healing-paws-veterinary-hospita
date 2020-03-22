@@ -2,7 +2,6 @@
 {% block content %}
 
         <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />
-        <h1>Question&Answer</h1>
 
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 
@@ -13,6 +12,9 @@
         <div class="panel-heading"/>
         <div class="panel-body"/>
 
+        <h1>Question&Answer</h1>
+
+        <div class="body">
         <a href="{{ url_for('post_question')}}">Post Question</a>
 
         <form action="" method="post" novalidate id="SearchQuestionForm" enctype="multipart/form-data">
@@ -38,4 +40,5 @@
                 <img style="width: 180px" src='/static/uploaded_image/question_image/{{ q.image }}'>
             {% endfor %}
         {% endif %}
+    </div>
 {% endblock %}

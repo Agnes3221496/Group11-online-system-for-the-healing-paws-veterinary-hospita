@@ -3,7 +3,6 @@
 {% block content %}
      <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/signup.css') }}" />
 
-    <h1>Welcome New User</h1>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
@@ -12,8 +11,9 @@
     <div class="panel-heading">
     <div class="panel-body">
 
-
-	<p>Enter your details and register here</p>
+    <h1>Help your new colleague to register:</h1>
+    <div class="body">
+	<p>Enter the details and register here</p>
     <form action="" method="post" novalidate id="signupForm">
 
         {{ form.hidden_tag() }}
@@ -86,6 +86,7 @@
     </form>
 
     <script src="{{ url_for('static', filename='../static/script/myjs.js') }} "></script>
+    </div>
 
 {% endblock %}
 

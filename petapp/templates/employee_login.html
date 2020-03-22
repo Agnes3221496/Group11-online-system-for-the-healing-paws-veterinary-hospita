@@ -4,25 +4,25 @@
      
     <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/login.css') }}" />
 
-    <h1>Sign In</h1>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
 
-    <div class="panel panel-info">
-    <div class="panel-heading">
-    <div class="panel-body">
+    <div class="panel panel-info"/>
+    <div class="panel-heading"/>
+    <div class="panel-body"/>
+    <h1>Sign In</h1>
 
     <form action="" method="post" novalidate class="form-horizontal" role="form" action="1.html" id="loginForm">
-    
 
-    {{ form.hidden_tag() }}
+
+        {{ form.hidden_tag() }}
     <div class="form-group">
 
-        <div class="form-inline">
-            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('login') }}" style="left: 10%">User</a>
-            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('employee_login') }}" style="left: 10%">Employee</a>
-        </div>
+            <div class="form-inline">
+                <a class="btn btn-default btn-lg btn-block" href="{{ url_for('login') }}" style="left: 10%">User</a>
+                <a class="btn btn-default btn-lg btn-block" href="{{ url_for('employee_login') }}" style="left: 10%">Employee</a>
+            </div>
 
         <p>
             <label for="employee_number" class="col-sm-2">
@@ -68,3 +68,4 @@
         </div>
     </form>
 {% endblock %}
+

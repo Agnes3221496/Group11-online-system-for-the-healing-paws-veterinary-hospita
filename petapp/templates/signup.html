@@ -3,7 +3,6 @@
 {% block content %}
      <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/signup.css') }}" />
 
-    <h1>Welcome New User</h1>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 
@@ -14,6 +13,9 @@
     <div class="panel-heading">
     <div class="panel-body">
 
+    <h1>Welcome New User</h1>
+
+    <div class="body">
 	<p>Enter your details and register here</p>
     <form action="" method="post" novalidate id="signupForm">
 
@@ -74,6 +76,7 @@
     </form>
 
     <script src="{{ url_for('static', filename='../static/script/myjs.js') }} "></script>
+    </div>
 
 {% endblock %}
 
