@@ -251,7 +251,7 @@ def qa_e():
 def answer():
     form = PostAnswerForm()
     q = request.args.get("q")
-    print(q)
+    # print(q)
     prev_questions = Question.query.filter(Question.id == q).all()
     prev_answers = Answer.query.filter(Answer.question_id == q).all()
     if form.validate_on_submit():
