@@ -9,6 +9,47 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
 
+    <div class="e_appointment">
+        {% if cat_orders_e %}
+            {% for cats in cat_orders_e %}
+                <h2>Cat emergency appointments:</h2>
+                <p>Owner: {{ cats.name }}</p>
+                <p>Phone number: {{ cats.phone }}</p>
+                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', ce=cats.id) }}"> Handle this appointment </a>
+            {% endfor %}
+        {% endif %}
+
+        {% if dog_orders_e %}
+            {% for dogs in dog_orders_e %}
+                <h2>Dog emergency appointments:</h2>
+                <p>Owner: {{ dogs.name }}</p>
+                <p>Phone number: {{ dogs.phone }}</p>
+                <p>City: {{ dogs.city }}</p>   <a href="{{ url_for('orders', de=dogs.id) }}"> Handle this appointment </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="n_appointment">
+        {% if cat_orders %}
+            {% for cats in cat_orders %}
+                <h2>Cat normal appointments:</h2>
+                <p>Owner: {{ cats.name }}</p>
+                <p>Phone number: {{ cats.phone }}</p>
+                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', c=cats.id) }}"> Handle this appointment </a>
+            {% endfor %}
+        {% endif %}
+
+        {% if dog_orders %}
+            {% for dogs in dog_orders %}
+                <h2>Dog normal appointments:</h2>
+                <p>Owner: {{ dogs.name }}</p>
+                <p>Phone number: {{ dogs.phone }}</p>
+                <p>City: {{ dogs.city }}</p>  <a href="{{ url_for('orders', d=dogs.id) }}"> Handle this appointment </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
     <div class="panel panel-info"/>
     <div class="panel-heading"/>
     <div class="panel-body"/>

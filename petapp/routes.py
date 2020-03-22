@@ -236,9 +236,41 @@ def question_detail(q_id):
     answer = Answer.query.filter(Answer.question_id == q_id)
     return render_template('question_detail.html', title='Detail', question=question, answer=answer)
 
+
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():
-    return render_template('orders.html', title='Order List')
+    c = request.args.get("c")
+    ce = request.args.get("ce")
+    d = request.args.get("d")
+    de = request.args.get("de")
+    if c is not None:
+        print("1")
+        cat = CatAppointment.query.filter(CatAppointment.id == c)
+        cat.status = 1
+        db.session.commit()
+    if ce is not None:
+        print("2")
+        cat = CatEmergency.query.filter(CatEmergency.id == ce)
+        cat.status = 1
+        db.session.commit()
+    if d is not None:
+        print("3")
+        dog = DogAppointment.query.filter(DogAppointment.id == d)
+        dog.status = 1
+        db.session.commit()
+    if de is not None:
+        print("4")
+        dog = DogEmergency.query.filter(DogEmergency.id == de)
+        dog.status = 1
+        db.session.commit()
+        flash("Appointment handled successfully")
+
+    cat_orders_e = CatEmergency.query.filter(CatEmergency.status == 0).all()
+    dog_orders_e = DogEmergency.query.filter(DogEmergency.status == 0).all()
+    cat_orders = CatAppointment.query.filter(CatAppointment.status == 0).all()
+    dog_orders = DogAppointment.query.filter(DogEmergency.status == 0).all()
+
+    return render_template('orders.html', title='Order List', cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
 
 
 @app.route('/qa_e', methods=['GET', 'POST'])

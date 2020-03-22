@@ -68,10 +68,13 @@ class PostAnswerForm(FlaskForm):
     postbody = TextAreaField('Post body:', validators=[DataRequired("Enter your post body")])
     submit = SubmitField('Post answer')
 
+
 class PetForm(FlaskForm):
     name = StringField('Pet Name: ', validators=[DataRequired()])
     age = IntegerField('Age: ', validators=[DataRequired()])
     species = RadioField('Species', choices=[('Cat', 'Cat'), ('Dog', 'Dog')],
-                      validators=[DataRequired()])
+                         validators=[DataRequired()])
     image = FileField('Image')
     submit = SubmitField('Submit')
+
+

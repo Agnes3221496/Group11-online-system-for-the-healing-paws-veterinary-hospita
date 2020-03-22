@@ -30,6 +30,7 @@ class CatAppointment(db.Model):
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
+    status = db.Column(db.Integer(),default=0)
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -41,6 +42,7 @@ class DogAppointment(db.Model):
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
+    status = db.Column(db.Integer(),default=0)
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -52,6 +54,7 @@ class CatEmergency(db.Model):
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
+    status = db.Column(db.Integer(),default=0)
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -63,6 +66,7 @@ class DogEmergency(db.Model):
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
+    status = db.Column(db.Integer(), default=0)
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
