@@ -1,3 +1,46 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+function global:deactivate ([switch]$NonDestructive) {
+    # Revert to original values
+    if (Test-Path function:_OLD_VIRTUAL_PROMPT) {
+        copy-item function:_OLD_VIRTUAL_PROMPT function:prompt
+        remove-item function:_OLD_VIRTUAL_PROMPT
+    }
+
+    if (Test-Path env:_OLD_VIRTUAL_PYTHONHOME) {
+        copy-item env:_OLD_VIRTUAL_PYTHONHOME env:PYTHONHOME
+        remove-item env:_OLD_VIRTUAL_PYTHONHOME
+    }
+
+    if (Test-Path env:_OLD_VIRTUAL_PATH) {
+        copy-item env:_OLD_VIRTUAL_PATH env:PATH
+        remove-item env:_OLD_VIRTUAL_PATH
+    }
+
+    if (Test-Path env:VIRTUAL_ENV) {
+        remove-item env:VIRTUAL_ENV
+    }
+
+    if (!$NonDestructive) {
+        # Self destruct!
+        remove-item function:deactivate
+    }
+}
+
+deactivate -nondestructive
+
+$env:VIRTUAL_ENV="D:\app\flaskenv"
+
+if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
+    # Set the prompt to include the env name
+    # Make sure _OLD_VIRTUAL_PROMPT is global
+    function global:_OLD_VIRTUAL_PROMPT {""}
+    copy-item function:prompt function:_OLD_VIRTUAL_PROMPT
+    function global:prompt {
+        Write-Host -NoNewline -ForegroundColor Green '(flaskenv) '
+=======
+=======
+>>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
 <#
 .Synopsis
 Activate a Python virtual environment for the current Powershell session.
@@ -216,11 +259,28 @@ if (-not $Env:VIRTUAL_ENV_DISABLE_PROMPT) {
 
     function global:prompt {
         Write-Host -NoNewline -ForegroundColor Green "($_PYTHON_VENV_PROMPT_PREFIX) "
+<<<<<<< HEAD
+>>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
+=======
+>>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
         _OLD_VIRTUAL_PROMPT
     }
 }
 
 # Clear PYTHONHOME
+<<<<<<< HEAD
+<<<<<<< HEAD
+if (Test-Path env:PYTHONHOME) {
+    copy-item env:PYTHONHOME env:_OLD_VIRTUAL_PYTHONHOME
+    remove-item env:PYTHONHOME
+}
+
+# Add the venv to the PATH
+copy-item env:PATH env:_OLD_VIRTUAL_PATH
+$env:PATH = "$env:VIRTUAL_ENV\Scripts;$env:PATH"
+=======
+=======
+>>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
 if (Test-Path -Path Env:PYTHONHOME) {
     Copy-Item -Path Env:PYTHONHOME -Destination Env:_OLD_VIRTUAL_PYTHONHOME
     Remove-Item -Path Env:PYTHONHOME
@@ -373,3 +433,7 @@ $Env:PATH = "$VenvExecDir$([System.IO.Path]::PathSeparator)$Env:PATH"
 # V9TQOc9vYgbsuwDI7VILxI3WruqQhbhIj5KGb3N8qWayeNpAj2A16Pt4TIR9lTj/
 # T2hLH+2yqwga3KDkVcxVwxIibAYHjZkdCfE=
 # SIG # End signature block
+<<<<<<< HEAD
+>>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
+=======
+>>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
