@@ -28,15 +28,7 @@ deactivate () {
     fi
 
     unset VIRTUAL_ENV
-<<<<<<< HEAD
-<<<<<<< HEAD
     if [ ! "$1" = "nondestructive" ] ; then
-=======
-    if [ ! "${1:-}" = "nondestructive" ] ; then
->>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
-=======
-    if [ ! "${1:-}" = "nondestructive" ] ; then
->>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
     # Self destruct!
         unset -f deactivate
     fi
@@ -45,15 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 VIRTUAL_ENV="D:\app\flaskenv"
-=======
-VIRTUAL_ENV="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\flaskenv"
->>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
-=======
-VIRTUAL_ENV="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\flaskenv"
->>>>>>> 91a64aee0455ce9262321357b25f9663ca67a86e
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
