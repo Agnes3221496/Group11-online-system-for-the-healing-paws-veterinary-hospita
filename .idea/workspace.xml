@@ -3,6 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="a834308a-570b-4bec-8fcd-950af1126b30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/js/jquery-3.4.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,13 +60,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>publish</find>
-      <find>my</find>
-      <find>panel</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -66,7 +78,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Group11-online-system-for-the-healing-paws-veterinary-hospita" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -77,14 +89,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\static\uploaded_image\question_image" />
-      <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\templates" />
       <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\templates\common" />
       <recent name="C:\Users\Thinkpad\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\static\uploaded_image\question_image" />
+      <recent name="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -168,6 +180,9 @@
       <workItem from="1584946145689" duration="278000" />
       <workItem from="1584946437340" duration="455000" />
       <workItem from="1584948506916" duration="836000" />
+      <workItem from="1584950374441" duration="327000" />
+      <workItem from="1585052177383" duration="319000" />
+      <workItem from="1585105354195" duration="4576000" />
     </task>
     <servers />
   </component>

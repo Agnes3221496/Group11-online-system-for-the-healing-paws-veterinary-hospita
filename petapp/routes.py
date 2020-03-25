@@ -97,6 +97,10 @@ def employee_signup():
     return render_template('employee_signup.html', title='Register a new employee', form=form)
 
 
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
 @app.route('/standard_appointment_cat', methods=['GET', 'POST'])
 def standard_appointment_cat():
     form = CatAppointmentForm()
