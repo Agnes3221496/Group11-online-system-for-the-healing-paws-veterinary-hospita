@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a834308a-570b-4bec-8fcd-950af1126b30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/templates/employee_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/employee_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/templates/standard_appointment_cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/standard_appointment_cat.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +165,7 @@
       <workItem from="1584950374441" duration="327000" />
       <workItem from="1585052177383" duration="319000" />
       <workItem from="1585105354195" duration="6106000" />
-      <workItem from="1585184436187" duration="983000" />
+      <workItem from="1585184436187" duration="3002000" />
     </task>
     <servers />
   </component>

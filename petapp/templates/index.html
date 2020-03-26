@@ -24,9 +24,9 @@
                                                 <li class="active"><a href="index.html">Home<span class="over1"></span></a></li>
                                                 <li><a href="{{ url_for('standard_appointment_cat') }}">Appointment<span class="over1"></span></a></li>
                                                 <li><a href="{{ url_for('services') }}">Our Services<span class="over1"></span></a></li>
-                                                <li><a href="blog.html">Blog<span class="over1"></span></a></li>
-                                                <li><a href="gallery.html">Gallery<span class="over1"></span></a></li>
-                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>
+                                                <li><a href="../static/static/blog.html">Blog<span class="over1"></span></a></li>
+                                                <li><a href="../static/static/gallery.html">Gallery<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('customer_question') }}">Contact Us<span class="over1"></span></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -75,6 +75,124 @@
         </div>
     </div>
 </div>
+
+<!-- Services -->
+    <div class="vfp-caroufredsel-slider2-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="vfp-caroufredsel-slider2-txt1">OUR SERVICES</div>
+                    <div class="vfp-caroufredsel-slider2">
+                        <a class="vfp-prev3" href="index.html#"></a>
+                        <a class="vfp-next3" href="index.html#"></a>
+                        <div class="vfp-carousel-box row">
+                            <div class="inner span12">
+                                <div class="carousel main">
+                                    <ul>
+                                        <li>
+                                            <div class="vfp-carousel-services">
+                                                <div class="vfp-caroufredsel-slide2">
+                                                    <a href="index.html#"> <img src="../static/images/services/services04.jpg" alt="" class="img-responsive">
+                                                        <div class="txt">
+                                                            <div class="txt1">Senior Pet Care</div>
+                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="vfp-carousel-services">
+                                                <div class="vfp-caroufredsel-slide2">
+                                                    <a href="index.html#"> <img src="../static/images/services/services02.jpg" alt="" class="img-responsive">
+                                                        <div class="txt">
+                                                            <div class="txt1">Animal Dental Care</div>
+                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="vfp-carousel-services">
+                                                <div class="vfp-caroufredsel-slide2">
+                                                    <a href="index.html#"> <img src="../static/images/services/services01.jpg" alt="" class="img-responsive">
+                                                        <div class="txt">
+                                                            <div class="txt1">Microchipping</div>
+                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="vfp-carousel-services">
+                                                <div class="vfp-caroufredsel-slide2">
+                                                    <a href="index.html#"> <img src="../static/images/services/services03.jpg" alt="" class="img-responsive">
+                                                        <div class="txt">
+                                                            <div class="txt1">Surgeries</div>
+                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Now | Emergency Call | Opening Hours -->
+    <div class="vfp-bottom-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="bottom">
+                        <div class="row">
+                            <!-- Request Now -->
+                            <div class="span4">
+                                <h3>Request Now</h3>
+                                <p>Request appointment only Mon - Sat 5:00pm - 10:00pm! Easy and convenient for busy pet owners!</p>
+                                <a href="{{ url_for('standard_appointment_cat') }}"><button class="vfp-button1">Request an Appointment</button></a>
+                            </div>
+                            <!-- Emergency Call -->
+                            <div class="span4">
+                                <h3>Emergency Call</h3>
+                                <p>If you'll notice that something is wrong with your pet, you can call to our 24/7/365 emergency number.</p>
+                                <div class="emergency-call">+1 212 123 9999</div>
+                            </div>
+                            <!-- Opening Hours -->
+                            <div class="span4">
+                                <h3>Opening Hours</h3>
+                                <p>1000 Franklin Pkwy, San Mateo, California 94403, United States.</p>
+                                <div class="opening-hours">8:00am - 10:00pm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
+        <h1>VET FOR PET</h1>
+        <p class="subtitle">Veterinary Hospital</p>
+        <div class="vfp-social-wrapper">
+            <ul class="social clearfix">
+                <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>
+                <li><a href="index.html#"><i class="ti-instagram"></i></a></li>
+                <li><a href="index.html#"><i class="ti-youtube"></i></a></li>
+            </ul>
+        </div>
+        <div class="copyright">Copyright © 2019, by DuruThemes</div>
+    </footer>
 
 
     <script src="../static/js/jquery.js"></script>
