@@ -243,30 +243,31 @@ def question_detail(q_id):
 
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():
+    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     c = request.args.get("c")
     ce = request.args.get("ce")
     d = request.args.get("d")
     de = request.args.get("de")
     if c is not None:
         print("1")
-        cat = CatAppointment.query.filter(CatAppointment.id == c)
-        cat.status = 1
+        cat = CatAppointment.query.filter(CatAppointment.id == c).first()
+        cat.status = user_in_db.employee_number
         db.session.commit()
     if ce is not None:
         print("2")
-        cat = CatEmergency.query.filter(CatEmergency.id == ce)
-        cat.status = 1
+        cat = CatEmergency.query.filter(CatEmergency.id == ce).first()
+        cat.status = user_in_db.employee_number
         db.session.commit()
     if d is not None:
         print("3")
-        dog = DogAppointment.query.filter(DogAppointment.id == d)
-        dog.status = 1
+        dog = DogAppointment.query.filter(DogAppointment.id == d).first()
+        dog.status = user_in_db.employee_number
         db.session.commit()
     if de is not None:
-        print("4")
-        dog = DogEmergency.query.filter(DogEmergency.id == de)
-        dog.status = 1
+        dog = DogEmergency.query.filter(DogEmergency.id == de).first()
+        dog.status = user_in_db.employee_number
         db.session.commit()
+        print(dog.status)
         flash("Appointment handled successfully")
 
     cat_orders_e = CatEmergency.query.filter(CatEmergency.status == 0).all()
@@ -275,6 +276,17 @@ def orders():
     dog_orders = DogAppointment.query.filter(DogEmergency.status == 0).all()
 
     return render_template('orders.html', title='Order List', cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
+
+
+@app.route('/handled_appointment',methods=['GET','POST'])
+def handled_appointment():
+    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+    cat_orders_e = CatEmergency.query.filter(CatEmergency.status == user_in_db.employee_number).all()
+    dog_orders_e = DogEmergency.query.filter(DogEmergency.status == user_in_db.employee_number).all()
+    cat_orders = CatAppointment.query.filter(CatAppointment.status == user_in_db.employee_number).all()
+    dog_orders = DogAppointment.query.filter(DogEmergency.status == user_in_db.employee_number).all()
+
+    return render_template('handled_appointment.html', title='handled_appointment', cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
 
 
 @app.route('/qa_e', methods=['GET', 'POST'])
