@@ -32,7 +32,7 @@ class CatAppointment(db.Model):
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(),default=0)
     pet_name = db.Column(db.String(32))
-    # pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
+    pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -46,7 +46,7 @@ class DogAppointment(db.Model):
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(),default=0)
     pet_name = db.Column(db.String(32))
-    # pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
+    pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -60,7 +60,7 @@ class CatEmergency(db.Model):
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(),default=0)
     pet_name = db.Column(db.String(32))
-    # pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
+    pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -74,7 +74,7 @@ class DogEmergency(db.Model):
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(), default=0)
     pet_name = db.Column(db.String(32))
-    # pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
+    pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -106,10 +106,10 @@ class Pet(db.Model):
     age = db.Column(db.Integer,index=True)
     species = db.Column(db.String(64), index=True)
     image = db.Column(db.String(256))
-    # cat_standard = db.relationship('CatAppointment', backref='pet', lazy='dynamic')
-    # dog_standard = db.relationship('DogAppointment', backref='pet', lazy='dynamic')
-    # cat_emergency = db.relationship('CatEmergency', backref='pet', lazy='dynamic')
-    # cat_emergency = db.relationship('DogEmergency', backref='pet', lazy='dynamic')
+    cat_standard = db.relationship('CatAppointment', backref='pet', lazy='dynamic')
+    dog_standard = db.relationship('DogAppointment', backref='pet', lazy='dynamic')
+    cat_emergency = db.relationship('CatEmergency', backref='pet', lazy='dynamic')
+    dog_emergency = db.relationship('DogEmergency', backref='pet', lazy='dynamic')
 
 
     def __repr__(self):

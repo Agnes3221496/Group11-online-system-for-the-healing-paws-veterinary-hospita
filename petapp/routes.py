@@ -86,7 +86,6 @@ def check_username():
         return jsonify({'text': 'Sorry! Username is already taken',
                         'returvalue': 1})
 
-
 @app.route('/checkemail', methods=['POST'])
 def check_email():
     chosen_email = request.form['email']
@@ -99,7 +98,6 @@ def check_email():
             return jsonify({'text': 'Incorrect format!', 'returnvalue': 1})
     else:
         return jsonify({'text': 'Email is already existed', 'returnvalue': 0})
-
 
 @app.route('/employee_signup', methods=['GET', 'POST'])
 def employee_signup():
@@ -143,8 +141,9 @@ def standard_appointment_cat():
 
         if form.validate_on_submit():
             if form.pet.data in cat_name:
+                pet = Pet.query.filter(and_(Pet.name == form.pet.data, and_(Pet.owner_id == user_in_db.id, Pet.species == "Cat"))).first()
                 catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                                customer_id=user_in_db.id, pet_name=form.pet.data)
+                                                customer_id=user_in_db.id, pet_name=form.pet.data, pet_id=pet.id)
                 db.session.add(catAppointment)
                 db.session.commit()
                 return redirect(url_for("appointment_success"))
@@ -177,8 +176,9 @@ def standard_appointment_dog():
 
         if form.validate_on_submit():
             if form.pet.data in dog_name:
+                pet = Pet.query.filter(and_(Pet.name == form.pet.data, and_(Pet.owner_id == user_in_db.id, Pet.species == "Dog"))).first()
                 dogAppointment = DogAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                                customer_id=user_in_db.id, pet_name=form.pet.data)
+                                                customer_id=user_in_db.id, pet_name=form.pet.data, pet_id=pet.id)
                 db.session.add(dogAppointment)
                 db.session.commit()
                 return redirect(url_for("appointment_success"))
@@ -206,9 +206,10 @@ def emergency_cat():
 
         if form.validate_on_submit():
             if form.pet.data in cat_name:
+                pet = Pet.query.filter(and_(Pet.name == form.pet.data, and_(Pet.owner_id == user_in_db.id, Pet.species == "Cat"))).first()
                 user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
                 catEmergency = CatEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id, pet_name=form.pet.data)
+                                            customer_id=user_in_db.id, pet_name=form.pet.data, pet_id=pet.id)
                 db.session.add(catEmergency)
                 db.session.commit()
                 return redirect(url_for("appointment_success"))
@@ -237,9 +238,10 @@ def emergency_dog():
 
         if form.validate_on_submit():
             if form.pet.data in dog_name:
+                pet = Pet.query.filter(and_(Pet.name == form.pet.data, and_(Pet.owner_id == user_in_db.id, Pet.species == "Dog"))).first()
                 user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
                 dogEmergency = DogEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id, pet_name=form.pet.data)
+                                            customer_id=user_in_db.id, pet_name=form.pet.data, pet_id=pet.id)
                 db.session.add(dogEmergency)
                 db.session.commit()
                 return redirect(url_for("appointment_success"))
