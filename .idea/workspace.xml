@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a834308a-570b-4bec-8fcd-950af1126b30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/petvet.db" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/petvet.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,6 +171,7 @@
       <workItem from="1585531218670" duration="8487000" />
       <workItem from="1585540259647" duration="21000" />
       <workItem from="1585540282273" duration="3448000" />
+      <workItem from="1585551589032" duration="1377000" />
     </task>
     <servers />
   </component>

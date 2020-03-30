@@ -75,6 +75,31 @@ def signup():
         return redirect(url_for("login"))
     return render_template('signup.html', title='Register a new user', form=form)
 
+@app.route('/checkuser', methods=['POST'])
+def check_username():
+    chosen_name = request.form['username']
+    user_in_db = Customer.query.filter(Customer.username == chosen_name).first()
+    if not user_in_db:
+        return jsonify({'text': 'Username is available',
+                        'returnvalue': 0})
+    else:
+        return jsonify({'text': 'Sorry! Username is already taken',
+                        'returvalue': 1})
+
+
+@app.route('/checkemail', methods=['POST'])
+def check_email():
+    chosen_email = request.form['email']
+    user_in_db = Customer.query.filter(Customer.email == chosen_email).first()
+    regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+    if not user_in_db:
+        if re.search(regex, chosen_email):
+            return jsonify({'text': 'Email is available', 'returnvalue': 2})
+        else:
+            return jsonify({'text': 'Incorrect format!', 'returnvalue': 1})
+    else:
+        return jsonify({'text': 'Email is already existed', 'returnvalue': 0})
+
 
 @app.route('/employee_signup', methods=['GET', 'POST'])
 def employee_signup():
