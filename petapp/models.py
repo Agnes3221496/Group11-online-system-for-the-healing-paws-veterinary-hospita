@@ -31,6 +31,7 @@ class CatAppointment(db.Model):
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(),default=0)
+    pet_name = db.Column(db.String(32))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -43,6 +44,8 @@ class DogAppointment(db.Model):
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(),default=0)
+    pet_name = db.Column(db.String(32))
+    # pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -55,6 +58,7 @@ class CatEmergency(db.Model):
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(),default=0)
+    pet_name = db.Column(db.String(32))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -67,6 +71,7 @@ class DogEmergency(db.Model):
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
     status = db.Column(db.Integer(), default=0)
+    pet_name = db.Column(db.String(32))
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -98,5 +103,6 @@ class Pet(db.Model):
     age = db.Column(db.Integer,index=True)
     species = db.Column(db.String(64), index=True)
     image = db.Column(db.String(256))
+
     def __repr__(self):
-        return '<Pet {}>'.format(self.name)
+        return '<{}: {}>'.format(self.species, self.name)

@@ -74,6 +74,33 @@
             {% endfor %}
 
         </p>
+
+        <p>
+        <b>Cats</b>
+        {% if cats %}
+		<ul>
+		{% for c in cats %}
+			<li> {{ c }}</li>
+		{% endfor %}
+		</ul>
+		<hr>
+        {% else %}
+            <p>No exsited cat! Please add one ^_^</p>
+            <hr id="below_line">
+        {% endif %}
+
+        <label for="pet">
+            {{ form.pet.label }}<br>
+            </label><br>
+            <div class="form-control">
+            {{ form.pet(size=32) }}
+            </div>
+
+			{% for error in form.pet.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
         <div class="form-group">
             {{ form.hidden_tag() }}
             {{ form.submit }}

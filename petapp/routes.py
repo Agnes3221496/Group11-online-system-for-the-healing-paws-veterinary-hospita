@@ -108,11 +108,18 @@ def standard_appointment_cat():
     b_count = CatAppointment.query.filter(CatAppointment.city == "Beijing").count()
     s_count = CatAppointment.query.filter(CatAppointment.city == "Shanghai").count()
     c_count = CatAppointment.query.filter(CatAppointment.city == "Chengdu").count()
+
+    if not session.get("USERNAME") is None:
+        user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+        cats = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Cat")).all()
+    else:
+        cats = ""
+
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
             catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id)
+                                            customer_id=user_in_db.id, pet_name=form.pet.data)
             db.session.add(catAppointment)
             db.session.commit()
             return redirect(url_for("appointment_success"))
@@ -121,7 +128,7 @@ def standard_appointment_cat():
             return redirect(url_for('login'))
 
     return render_template('standard_appointment_cat.html', form=form, b_count=b_count, s_count=s_count,
-                           c_count=c_count)
+                           c_count=c_count, cats=cats)
 
 
 @app.route('/standard_appointment_dog', methods=['GET', 'POST'])
@@ -131,11 +138,18 @@ def standard_appointment_dog():
     b_count = DogAppointment.query.filter(DogAppointment.city == "Beijing").count()
     s_count = DogAppointment.query.filter(DogAppointment.city == "Shanghai").count()
     c_count = DogAppointment.query.filter(DogAppointment.city == "Chengdu").count()
+
+    if not session.get("USERNAME") is None:
+        user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+        dogs = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Dog")).all()
+    else:
+        dogs = ""
+
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
-            dogAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id)
+            dogAppointment = DogAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                            customer_id=user_in_db.id, pet_name=form.pet.data)
             db.session.add(dogAppointment)
             db.session.commit()
             return redirect(url_for("appointment_success"))
@@ -144,18 +158,24 @@ def standard_appointment_dog():
             return redirect(url_for('login'))
 
     return render_template('standard_appointment_dog.html', form=form, b_count=b_count, s_count=s_count,
-                           c_count=c_count)
+                           c_count=c_count, dogs=dogs)
 
 
 @app.route('/emergency_cat', methods=['GET', 'POST'])
 def emergency_cat():
     form = CatAppointmentForm()
-    # count = CatAppointment.query.count()
+
+    if not session.get("USERNAME") is None:
+        user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+        cats = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Cat")).all()
+    else:
+        cats = ""
+
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
             catEmergency = CatEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                        customer_id=user_in_db.id)
+                                        customer_id=user_in_db.id, pet_name=form.pet.data)
             db.session.add(catEmergency)
             db.session.commit()
             return redirect(url_for("appointment_success"))
@@ -163,18 +183,24 @@ def emergency_cat():
             flash("User needs to either login or signup first")
             return redirect(url_for('login'))
 
-    return render_template('emergency_cat.html', form=form)
+    return render_template('emergency_cat.html', form=form, cats=cats)
 
 
 @app.route('/emergency_dog', methods=['GET', 'POST'])
 def emergency_dog():
     form = CatAppointmentForm()
-    # count = CatAppointment.query.count()
+
+    if not session.get("USERNAME") is None:
+        user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+        dogs = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Dog")).all()
+    else:
+        dogs = ""
+
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
             user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
             dogEmergency = DogEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                        customer_id=user_in_db.id)
+                                        customer_id=user_in_db.id, pet_name=form.pet.data)
             db.session.add(dogEmergency)
             db.session.commit()
             return redirect(url_for("appointment_success"))
@@ -182,7 +208,7 @@ def emergency_dog():
             flash("User needs to either login or signup first")
             return redirect(url_for('login'))
 
-    return render_template('emergency_dog.html', form=form)
+    return render_template('emergency_dog.html', form=form, dogs=dogs)
 
 
 @app.route('/appointment_success', methods=['GET', 'POST'])

@@ -47,6 +47,7 @@ class CatAppointmentForm(FlaskForm):
     phone = StringField('Phone Number: ', validators=[DataRequired()])
     city = RadioField('City', choices=[('Beijing', 'Beijing'), ('Shanghai', 'Shanghai'), ('chengdu', 'Chengdu')],
                       validators=[DataRequired()])
+    pet = StringField('Please choose an existed pet ', validators=[DataRequired()])
     submit = SubmitField('book')
 
 

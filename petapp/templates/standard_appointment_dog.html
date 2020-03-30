@@ -43,6 +43,7 @@
         </p>
         </div>
 
+
         <div class="form-group">
         <p>
             <label for="phone">
@@ -67,19 +68,46 @@
             {% for choice in form.city %}
 				<tr>
 					<td name="city">{{ choice }}</td>
-					<td>{{ choice.label }}</td>
+					<td>{{ choice.label }}</td><br>
 				</tr>
 			{% endfor %}
 
 			{% for error in form.city.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
-
         </p>
+
+    <p>
+        <b>Dogs</b>
+        {% if dogs %}
+		<ul>
+		{% for d in dogs %}
+			<li> {{ d }}</li>
+		{% endfor %}
+		</ul>
+		<hr>
+        {% else %}
+            <p>No exsited dog! Please add one ^_^</p>
+            <hr id="below_line">
+        {% endif %}
+
+        <label for="pet">
+            {{ form.pet.label }}<br>
+            </label><br>
+            <div class="form-control">
+            {{ form.pet(size=32) }}
+            </div>
+
+			{% for error in form.pet.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+    </p>
+
         <div class="form-group">
             {{ form.hidden_tag() }}
             {{ form.submit }}
         </div>
+
 
     </form>
 </body>
