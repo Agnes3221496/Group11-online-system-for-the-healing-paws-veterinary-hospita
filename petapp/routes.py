@@ -112,23 +112,27 @@ def standard_appointment_cat():
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
         cats = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Cat")).all()
-    else:
-        cats = ""
+        cat_name = []
+        for c in cats:
+            cat_name.append(c.name)
 
-    if form.validate_on_submit():
-        if not session.get("USERNAME") is None:
-            user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
-            catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id, pet_name=form.pet.data)
-            db.session.add(catAppointment)
-            db.session.commit()
-            return redirect(url_for("appointment_success"))
+        if form.validate_on_submit():
+            if form.pet.data in cat_name:
+                catAppointment = CatAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                                customer_id=user_in_db.id, pet_name=form.pet.data)
+                db.session.add(catAppointment)
+                db.session.commit()
+                return redirect(url_for("appointment_success"))
+            else:
+                flash("Please add the pet first *^_^*")
+                return redirect(url_for('standard_appointment_cat'))
+
         else:
-            flash("User needs to either login or signup first")
-            return redirect(url_for('login'))
-
-    return render_template('standard_appointment_cat.html', form=form, b_count=b_count, s_count=s_count,
-                           c_count=c_count, cats=cats)
+            return render_template('standard_appointment_cat.html', form=form, b_count=b_count, s_count=s_count,
+                                   c_count=c_count, cats=cats)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('login'))
 
 
 @app.route('/standard_appointment_dog', methods=['GET', 'POST'])
@@ -142,23 +146,26 @@ def standard_appointment_dog():
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
         dogs = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Dog")).all()
-    else:
-        dogs = ""
+        dog_name = []
+        for d in dogs:
+            dog_name.append(d.name)
 
-    if form.validate_on_submit():
-        if not session.get("USERNAME") is None:
-            user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
-            dogAppointment = DogAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                            customer_id=user_in_db.id, pet_name=form.pet.data)
-            db.session.add(dogAppointment)
-            db.session.commit()
-            return redirect(url_for("appointment_success"))
+        if form.validate_on_submit():
+            if form.pet.data in dog_name:
+                dogAppointment = DogAppointment(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                                customer_id=user_in_db.id, pet_name=form.pet.data)
+                db.session.add(dogAppointment)
+                db.session.commit()
+                return redirect(url_for("appointment_success"))
+            else:
+                flash("Please add the pet first *^_^*")
+                return redirect(url_for('standard_appointment_dog'))
         else:
-            flash("User needs to either login or signup first")
-            return redirect(url_for('login'))
-
-    return render_template('standard_appointment_dog.html', form=form, b_count=b_count, s_count=s_count,
-                           c_count=c_count, dogs=dogs)
+            return render_template('standard_appointment_dog.html', form=form, b_count=b_count, s_count=s_count,
+                                   c_count=c_count, dogs=dogs)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('login'))
 
 
 @app.route('/emergency_cat', methods=['GET', 'POST'])
@@ -168,22 +175,28 @@ def emergency_cat():
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
         cats = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Cat")).all()
-    else:
-        cats = ""
+        cat_name = []
+        for c in cats:
+            cat_name.append(c.name)
 
-    if form.validate_on_submit():
-        if not session.get("USERNAME") is None:
-            user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
-            catEmergency = CatEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                        customer_id=user_in_db.id, pet_name=form.pet.data)
-            db.session.add(catEmergency)
-            db.session.commit()
-            return redirect(url_for("appointment_success"))
+        if form.validate_on_submit():
+            if form.pet.data in cat_name:
+                user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+                catEmergency = CatEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                            customer_id=user_in_db.id, pet_name=form.pet.data)
+                db.session.add(catEmergency)
+                db.session.commit()
+                return redirect(url_for("appointment_success"))
+            else:
+                flash("Please add the pet first *^_^*")
+                return redirect(url_for('emergency_cat'))
         else:
-            flash("User needs to either login or signup first")
-            return redirect(url_for('login'))
+            return render_template('emergency_cat.html', form=form, cats=cats)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('login'))
 
-    return render_template('emergency_cat.html', form=form, cats=cats)
+
 
 
 @app.route('/emergency_dog', methods=['GET', 'POST'])
@@ -193,22 +206,26 @@ def emergency_dog():
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
         dogs = Pet.query.filter(and_(Pet.owner_id == user_in_db.id, Pet.species == "Dog")).all()
-    else:
-        dogs = ""
+        dog_name = []
+        for d in dogs:
+            dog_name.append(d.name)
 
-    if form.validate_on_submit():
-        if not session.get("USERNAME") is None:
-            user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
-            dogEmergency = DogEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
-                                        customer_id=user_in_db.id, pet_name=form.pet.data)
-            db.session.add(dogEmergency)
-            db.session.commit()
-            return redirect(url_for("appointment_success"))
+        if form.validate_on_submit():
+            if form.pet.data in dog_name:
+                user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+                dogEmergency = DogEmergency(name=form.name.data, phone=form.phone.data, city=form.city.data,
+                                            customer_id=user_in_db.id, pet_name=form.pet.data)
+                db.session.add(dogEmergency)
+                db.session.commit()
+                return redirect(url_for("appointment_success"))
+            else:
+                flash("Please add the pet first *^_^*")
+                return redirect(url_for('emergency_dog'))
         else:
-            flash("User needs to either login or signup first")
-            return redirect(url_for('login'))
-
-    return render_template('emergency_dog.html', form=form, dogs=dogs)
+            return render_template('emergency_dog.html', form=form, dogs=dogs)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('login'))
 
 
 @app.route('/appointment_success', methods=['GET', 'POST'])

@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a834308a-570b-4bec-8fcd-950af1126b30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/petvet.db" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/petvet.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/templates/emergency_cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/emergency_cat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/templates/emergency_dog.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/emergency_dog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/templates/standard_appointment_cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/standard_appointment_cat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petapp/templates/standard_appointment_dog.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/standard_appointment_dog.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -175,6 +170,8 @@
       <workItem from="1585184436187" duration="3002000" />
       <workItem from="1585205621850" duration="70000" />
       <workItem from="1585531218670" duration="8487000" />
+      <workItem from="1585540259647" duration="21000" />
+      <workItem from="1585540282273" duration="3448000" />
     </task>
     <servers />
   </component>
