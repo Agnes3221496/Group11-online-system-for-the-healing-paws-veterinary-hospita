@@ -30,7 +30,7 @@ class CatAppointment(db.Model):
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
-    status = db.Column(db.Integer(),default=0)
+    status = db.Column(db.Integer(), default=0)
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
@@ -44,7 +44,7 @@ class DogAppointment(db.Model):
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
-    status = db.Column(db.Integer(),default=0)
+    status = db.Column(db.Integer(), default=0)
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
@@ -58,7 +58,7 @@ class CatEmergency(db.Model):
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'))
-    status = db.Column(db.Integer(),default=0)
+    status = db.Column(db.Integer(), default=0)
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
@@ -99,11 +99,12 @@ class Answer(db.Model):
     employee_id = db.Column(db.String(20), db.ForeignKey('employee.employee_number'))
     question_id = db.Column(db.Integer, db.ForeignKey('question.id'))
 
+
 class Pet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     owner_id = db.Column(db.Integer, db.ForeignKey(Customer.id))
     name = db.Column(db.String(64), index=True)
-    age = db.Column(db.Integer,index=True)
+    age = db.Column(db.Integer, index=True)
     species = db.Column(db.String(64), index=True)
     image = db.Column(db.String(256))
     cat_standard = db.relationship('CatAppointment', backref='pet', lazy='dynamic')
@@ -111,6 +112,15 @@ class Pet(db.Model):
     cat_emergency = db.relationship('CatEmergency', backref='pet', lazy='dynamic')
     dog_emergency = db.relationship('DogEmergency', backref='pet', lazy='dynamic')
 
-
     def __repr__(self):
         return '{}'.format(self.name)
+
+
+class HandleDetails(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    appointment_id = db.Column(db.Integer, index=True)
+    pet_type = db.Column(db.Integer, index=True)
+    appointment_type = db.Column(db.Integer, index=True)
+    employee_name = db.Column(db.String(64), index=True)
+    date = db.Column(db.String(64), index=True)
+    employee_id = db.Column(db.Integer, db.ForeignKey(Employee.id))

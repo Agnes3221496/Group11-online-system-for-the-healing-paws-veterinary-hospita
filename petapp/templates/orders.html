@@ -25,7 +25,7 @@
                 <h2>Cat emergency appointments:</h2>
                 <p>Owner: {{ cats.name }}</p>
                 <p>Phone number: {{ cats.phone }}</p>
-                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', ce=cats.id) }}"> Handle this appointment </a>
+                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('handle_details', ce=cats.id) }}"> Handle this appointment </a>
                 <br/>
                 <hr style="border-top: 2px dotted #31708f">
             {% endfor %}
@@ -36,7 +36,7 @@
                 <h2>Dog emergency appointments:</h2>
                 <p>Owner: {{ dogs.name }}</p>
                 <p>Phone number: {{ dogs.phone }}</p>
-                <p>City: {{ dogs.city }}</p>   <a href="{{ url_for('orders', de=dogs.id) }}"> Handle this appointment </a>
+                <p>City: {{ dogs.city }}</p>   <a href="{{ url_for('handle_details', de=dogs.id) }}"> Handle this appointment </a>
                 <br/>
                 <hr style="border-top: 2px dotted #31708f">
             {% endfor %}
@@ -49,7 +49,7 @@
                 <h2>Cat normal appointments:</h2>
                 <p>Owner: {{ cats.name }}</p>
                 <p>Phone number: {{ cats.phone }}</p>
-                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', c=cats.id) }}"> Handle this appointment </a>
+                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('handle_details', c=cats.id) }}"> Handle this appointment </a>
                 <br/>
                 <hr style="border-top: 2px dotted #31708f">
             {% endfor %}
@@ -60,7 +60,7 @@
                 <h2>Dog normal appointments:</h2>
                 <p>Owner: {{ dogs.name }}</p>
                 <p>Phone number: {{ dogs.phone }}</p>
-                <p>City: {{ dogs.city }}</p>  <a href="{{ url_for('orders', d=dogs.id) }}"> Handle this appointment </a>
+                <p>City: {{ dogs.city }}</p>  <a href="{{ url_for('handle_details', d=dogs.id) }}"> Handle this appointment </a>
                 <br/>
                 <hr style="border-top: 2px dotted #31708f">
             {% endfor %}

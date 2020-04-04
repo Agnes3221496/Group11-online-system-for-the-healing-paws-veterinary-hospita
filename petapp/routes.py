@@ -4,9 +4,9 @@ from werkzeug.utils import secure_filename
 
 from petapp import app, db
 from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm, \
-    PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm
+    PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, HandleForm
 from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question, \
-    Answer, Pet
+    Answer, Pet, HandleDetails
 
 from flask import render_template, flash, redirect, url_for, session, send_file, request, jsonify, current_app
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -347,16 +347,90 @@ def orders():
 
     return render_template('orders.html', title='Order List', cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
 
+@app.route('/handle_details', methods=['GET', 'POST'])
+def handle_details():
+    form = HandleForm()
+    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+    c = request.args.get("c")
+    ce = request.args.get("ce")
+    d = request.args.get("d")
+    de = request.args.get("de")
+    pt = 1 #1 is cat, 2 is dog
+    at = 1 #1 is emergency, 2 is normal
+    aid = 0
+    if form.validate_on_submit():
+        if c is not None:
+            print("1")
+            cat = CatAppointment.query.filter(CatAppointment.id == c).first()
+            cat.status = user_in_db.id
+            db.session.commit()
+            pt = 1
+            at = 2
+            aid = cat.id
+        if ce is not None:
+            print("2")
+            cat = CatEmergency.query.filter(CatEmergency.id == ce).first()
+            cat.status = user_in_db.id
+            db.session.commit()
+            pt = 1
+            at = 1
+            aid = cat.id
+        if d is not None:
+            print("3")
+            dog = DogAppointment.query.filter(DogAppointment.id == d).first()
+            dog.status = user_in_db.id
+            db.session.commit()
+            pt = 2
+            at = 2
+            aid = dog.id
+        if de is not None:
+            dog = DogEmergency.query.filter(DogEmergency.id == de).first()
+            dog.status = user_in_db.id
+            db.session.commit()
+            print(dog.status)
+            pt = 1
+            at = 1
+            aid = dog.id
+        new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at, employee_name=form.name.data, date=form.date.data, employee_id=user_in_db.id)
+        db.session.add(new_handle)
+        db.session.commit()
+        flash("Appointment handled successfully")
+        return render_template('orders.html', title='orders')
+    return render_template('handle_details.html', title='handle detials', form=form)
+
 
 @app.route('/handled_appointment',methods=['GET','POST'])
 def handled_appointment():
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
-    cat_orders_e = CatEmergency.query.filter(CatEmergency.status == user_in_db.employee_number).all()
-    dog_orders_e = DogEmergency.query.filter(DogEmergency.status == user_in_db.employee_number).all()
-    cat_orders = CatAppointment.query.filter(CatAppointment.status == user_in_db.employee_number).all()
-    dog_orders = DogAppointment.query.filter(DogEmergency.status == user_in_db.employee_number).all()
+    order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
+    return render_template('handled_appointment.html', title='handled_appointment', order_details=order_details)
 
-    return render_template('handled_appointment.html', title='handled_appointment', cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
+
+@app.route('/delete_order',methods=['GET','POST'])
+def delete_order():
+    id = request.args.get("id")
+    appointment = HandleDetails.query.filter(HandleDetails.id == id).first()
+    if appointment.appointment_type == 1 and appointment.pet_type == 1:
+        ce = CatEmergency.query.filter(CatEmergency.id == appointment.id).first()
+        ce.status = 0
+        db.session.delete(appointment)
+        db.session.commit()
+    if appointment.appointment_type == 1 and appointment.pet_type == 2:
+        de = DogEmergency.query.filter(DogEmergency.id == appointment.id).first()
+        de.status = 0
+        db.session.delete(appointment)
+        db.session.commit()
+    if appointment.appointment_type == 2 and appointment.pet_type == 1:
+        cn = CatAppointment.query.filter(CatAppointment.id == appointment.id).first()
+        cn.status = 0
+        db.session.delete(appointment)
+        db.session.commit()
+    if appointment.appointment_type == 2 and appointment.pet_type == 2:
+        dn = DogAppointment.query.filter(DogAppointment.id == appointment.id).first()
+        dn.status = 0
+        db.session.delete(appointment)
+        db.session.commit()
+    return redirect(url_for('orders'))
 
 
 @app.route('/qa_e', methods=['GET', 'POST'])

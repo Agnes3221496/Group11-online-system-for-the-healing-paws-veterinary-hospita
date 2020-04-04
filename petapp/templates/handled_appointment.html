@@ -4,51 +4,23 @@
 
 
     <div class="e_appointment">
-            {% if cat_orders_e %}
-                {% for cats in cat_orders_e %}
-                    <h2>Cat emergency appointments:</h2>
-                    <p>Owner: {{ cats.name }}</p>
-                    <p>Phone number: {{ cats.phone }}</p>
-                    <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', ce=cats.id) }}"> Delete this appointment </a>
-                    <br/>
-                    <hr style="border-top: 2px dotted #31708f">
-                {% endfor %}
+        {% for order in order_details %}
+            {% if order.appointment_type == 1 %}
+                <h2>Appointment type: Emergency</h2>
             {% endif %}
-
-            {% if dog_orders_e %}
-                {% for dogs in dog_orders_e %}
-                    <h2>Dog emergency appointments:</h2>
-                    <p>Owner: {{ dogs.name }}</p>
-                    <p>Phone number: {{ dogs.phone }}</p>
-                    <p>City: {{ dogs.city }}</p>   <a href="{{ url_for('orders', de=dogs.id) }}"> Delete this appointment </a>
-                    <br/>
-                    <hr style="border-top: 2px dotted #31708f">
-                {% endfor %}
+            {% if order.appointment_type == 2 %}
+                <h2>Appointment type: Normal</h2>
             {% endif %}
-        </div>
-
-        <div class="n_appointment">
-            {% if cat_orders %}
-                {% for cats in cat_orders %}
-                    <h2>Cat normal appointments:</h2>
-                    <p>Owner: {{ cats.name }}</p>
-                    <p>Phone number: {{ cats.phone }}</p>
-                    <p>City: {{ cats.city }}</p>  <a href="{{ url_for('orders', c=cats.id) }}"> Delete this appointment </a>
-                    <br/>
-                    <hr style="border-top: 2px dotted #31708f">
-                {% endfor %}
+            {% if order.pet_type == 1 %}
+                <h2>Pet type: Cat</h2>
             {% endif %}
-
-            {% if dog_orders %}
-                {% for dogs in dog_orders %}
-                    <h2>Dog normal appointments:</h2>
-                    <p>Owner: {{ dogs.name }}</p>
-                    <p>Phone number: {{ dogs.phone }}</p>
-                    <p>City: {{ dogs.city }}</p>  <a href="{{ url_for('orders', d=dogs.id) }}"> Delete this appointment </a>
-                    <br/>
-                    <hr style="border-top: 2px dotted #31708f">
-                {% endfor %}
+            {% if order.pet_type == 2 %}
+                <h2>Pet type: Dog</h2>
             {% endif %}
-        </div>
+            <h2>Date: {{ order.date }}</h2>
+            <br/>
+            <hr style="border-top: 2px dotted #31708f">
+            <a href={{ url_for('delete_order', id = order.id) }}>Delete this appointment</a>
+        {% endfor %}
     </div>
 {% endblock %}
