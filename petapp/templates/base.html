@@ -17,14 +17,17 @@
 
 </head>
 <body>
-
-	<div class="link">
-
-		<a href="{{ url_for('login')}}">Login</a>
-		&nbsp &nbsp|&nbsp &nbsp
-		<a href="{{ url_for('signup')}}">Sign up</a>
-	</div>
-	<hr>
+    <ul id="myTab" class="nav nav-tabs" style="padding-left: 2%;background: gainsboro;font-family: 'Comic Sans MS'">
+        <li>
+            <a href="{{ url_for('index')}}">Home</a>
+        </li>
+        <li>
+            <a href="{{ url_for('login')}}">Log In</a>
+        </li>
+        <li>
+            <a href="{{ url_for('signup')}}">Sign Up</a>
+        </li>
+    </ul>
 
 	 {% with messages = get_flashed_messages() %}
         {% if messages %}

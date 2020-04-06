@@ -9,17 +9,21 @@
 </head>
 <body>
 
-	<div class="link">
-		<a href="{{ url_for('standard_appointment_cat')}}">Standard Appointment</a>
-		&nbsp &nbsp|&nbsp &nbsp
-        <a href="{{ url_for('customer_question')}}">Q&A</a>
-        &nbsp &nbsp|&nbsp &nbsp
-		<a href="{{ url_for('my_pets')}}">My Pets</a>
-        &nbsp &nbsp|&nbsp &nbsp
-        <a href="{{ url_for('login')}}">Sign Out</a>
+    <ul id="myTab" class="nav nav-tabs" style="padding-left: 2%;background: gainsboro;font-family: 'Comic Sans MS'">
+        <li>
+            <a href="{{ url_for('standard_appointment_cat')}}">Standard Appointment</a>
+        </li>
+        <li>
+            <a href="{{ url_for('customer_question')}}">Q&A</a>
+        </li>
+        <li>
+            <a href="{{ url_for('my_pets')}}">My Pets</a>
+        </li>
+        <li>
+            <a href="{{ url_for('login')}}">Sign Out</a>
+        </li>
+    </ul>
 
-	</div>
-	<hr>
 	 {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
