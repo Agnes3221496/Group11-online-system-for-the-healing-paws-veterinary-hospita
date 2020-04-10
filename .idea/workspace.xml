@@ -977,6 +977,7 @@
       <change beforePath="$PROJECT_DIR$/flaskenv/Scripts/python.exe" beforeDir="false" afterPath="$PROJECT_DIR$/flaskenv/Scripts/python.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskenv/Scripts/pythonw.exe" beforeDir="false" afterPath="$PROJECT_DIR$/flaskenv/Scripts/pythonw.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskenv/pyvenv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/static/bootstrap/js/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/bootstrap/js/jquery-3.4.1.js" afterDir="false" />
@@ -988,6 +989,9 @@
       <change beforePath="$PROJECT_DIR$/petapp/static/js/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/js/jquery-ui.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/static/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/js/jquery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/static/script/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/script/jquery-3.4.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/static/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/static/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/static/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petapp/static/static/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/static/static/gallery.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/templates/add_pet.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/add_pet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/templates/answer.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/answer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petapp/templates/appointment_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/petapp/templates/appointment_success.html" afterDir="false" />
@@ -1505,7 +1509,7 @@
       <workItem from="1585551589032" duration="3625000" />
       <workItem from="1585962110169" duration="12000" />
       <workItem from="1585962123727" duration="34571000" />
-      <workItem from="1586072027160" duration="30493000" />
+      <workItem from="1586072027160" duration="52634000" />
     </task>
     <servers />
   </component>
@@ -1544,13 +1548,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/petapp/routes.py</url>
-          <line>28</line>
+          <line>51</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="jinja2-line">
+          <url>file://$PROJECT_DIR$/petapp/templates/base.html</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Group11_online_system_for_the_healing_paws_veterinary_hospita$petVet.coverage" NAME="petVet Coverage Results" MODIFIED="1586109532986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Group11_online_system_for_the_healing_paws_veterinary_hospita$petVet.coverage" NAME="petVet Coverage Results" MODIFIED="1586482852490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
