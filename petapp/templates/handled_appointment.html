@@ -4,6 +4,7 @@
 
 
     <div class="e_appointment">
+<<<<<<< HEAD
             {% if cat_orders_e %}
                 {% for cats in cat_orders_e %}
                     <h2>{{ _('Cat emergency appointments:') }}</h2>
@@ -48,7 +49,25 @@
                     <br/>
                     <hr style="border-top: 2px dotted #31708f">
                 {% endfor %}
+=======
+        {% for order in order_details %}
+            {% if order.appointment_type == 1 %}
+                <h2>Appointment type: Emergency</h2>
             {% endif %}
-        </div>
+            {% if order.appointment_type == 2 %}
+                <h2>Appointment type: Normal</h2>
+            {% endif %}
+            {% if order.pet_type == 1 %}
+                <h2>Pet type: Cat</h2>
+            {% endif %}
+            {% if order.pet_type == 2 %}
+                <h2>Pet type: Dog</h2>
+>>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
+            {% endif %}
+            <h2>Date: {{ order.date }}</h2>
+            <br/>
+            <hr style="border-top: 2px dotted #31708f">
+            <a href={{ url_for('delete_order', id = order.id) }}>Delete this appointment</a>
+        {% endfor %}
     </div>
 {% endblock %}

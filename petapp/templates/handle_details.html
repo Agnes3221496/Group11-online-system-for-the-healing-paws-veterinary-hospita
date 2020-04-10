@@ -1,0 +1,59 @@
+{% extends "employee_base.html" %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/orders.css') }}" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/locales/bootstrap-datetimepicker.uk.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datepicker.js') }}"></script>
+
+    <div class="panel panel-info"/>
+    <div class="panel-heading"/>
+    <div class="panel-body"/>
+
+    <h1>Please enter the details.</h1>
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            <div id="name">
+                {{ form.name.label }}<br>
+                {{ form.name(size=32) }}
+            </div>
+            {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            <div id="date">
+                {{ form.date.label }}<br>
+                {{ form.date(size=32) }}
+            </div>
+
+            {% for error in form.date.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+        </p>
+        <p>
+            {{ form.confirm.label }}<br>
+            {{ form.confirm}}
+            {% for error in form.confirm.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{#    <div class="row">#}
+{#        <div class="col-md-4" id="data">#}
+{#            <input type="text" class="form-control">#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}

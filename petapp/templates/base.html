@@ -18,6 +18,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 
 	<div class="link">
 
@@ -95,6 +96,19 @@
 {#        <p align="center">{{ form.submit }}</p>#}
 {#        </div>#}
 {#   </form>#}
+=======
+    <ul id="myTab" class="nav nav-tabs" style="padding-left: 2%;background: gainsboro;font-family: 'Comic Sans MS'">
+        <li>
+            <a href="{{ url_for('index')}}">Home</a>
+        </li>
+        <li>
+            <a href="{{ url_for('login')}}">Log In</a>
+        </li>
+        <li>
+            <a href="{{ url_for('signup')}}">Sign Up</a>
+        </li>
+    </ul>
+>>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
 
 	 {% with messages = get_flashed_messages() %}
         {% if messages %}
