@@ -14,11 +14,9 @@
     <link href="../static/css/style.css" type="text/css" rel="stylesheet">
 
 	<script src="{{ url_for('static', filename='../static/script/jquery-3.4.1.js') }}"></script>
-{#    <script src="{{ url_for('static', filename='../static/js/language.js') }}"></script>#}
 
 </head>
 <body>
-<<<<<<< HEAD
 
 	<div class="link">
 
@@ -53,50 +51,8 @@
             <a href="{{ url_for('choose_language', language=language[0]) }}" >{{ language[1] }}</a>
         {%  endif %}
     {% endfor %}
-{#    <div class="lan">#}
-{#        <select id="i18n">#}
-{#            <option value="zh">中文简体</option>#}
-{#            <option value="en">English</option>#}
-{#        </select>#}
-{#    </div>#}
+{#    reference: https://www.thinbug.com/q/42393831#}
 
-{#    <script type="text/javascript">#}
-{#        $('#i18n').change(function () {#}
-{#            defaultLanguage = $('#i18n').val();#}
-            {#console.log('change i18n')#}
-            {#console.log(defaultLanguage)#}
-{#            $.ajax({#}
-{#                type: 'POST',#}
-{#                url: '/chooseLan',#}
-{#                data: defaultLanguage,#}
-{#                dataType: 'json',#}
-{#                success: function (data) {#}
-{#                    location.reload();#}
-{#                },#}
-{#                error: function (data) {#}
-{#                    alert('fail')#}
-{#                }#}
-{#	        });#}
-{#        })#}
-{#    </script>#}
-
-{#    <form action="" method="post" novalidate id="LanguageForm" enctype="multipart/form-data">#}
-{#        {{ form.hidden_tag() }}#}
-{#       <div class="Lan">#}
-{#            <p>#}
-{#            <div id="Language">#}
-{#                {{ form.language.label }}<br>#}
-{#                {{ form.language(size=32) }}<br>#}
-{##}
-{#                {% for error in form.language.errors %}#}
-{#                <span style="color: red">[{{ error }}]</span>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </p>#}
-{#        <p align="center">{{ form.submit }}</p>#}
-{#        </div>#}
-{#   </form>#}
-=======
     <ul id="myTab" class="nav nav-tabs" style="padding-left: 2%;background: gainsboro;font-family: 'Comic Sans MS'">
         <li>
             <a href="{{ url_for('index')}}">Home</a>
@@ -108,7 +64,6 @@
             <a href="{{ url_for('signup')}}">Sign Up</a>
         </li>
     </ul>
->>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
 
 	 {% with messages = get_flashed_messages() %}
         {% if messages %}

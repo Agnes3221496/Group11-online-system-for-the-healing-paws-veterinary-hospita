@@ -4,11 +4,7 @@ from werkzeug.utils import secure_filename
 
 from petapp import app, db
 from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm, \
-<<<<<<< HEAD
-    PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, LanguageForm
-=======
-    PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, HandleForm
->>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
+    PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, HandleForm
 from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question, \
     Answer, Pet, HandleDetails
 
@@ -35,13 +31,6 @@ def get_locale():
     if language is not None:
         return language
     return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
-    # defaultLanguage = request.get_data()
-    # if defaultLanguage == 'en':
-    #     return 'en'
-    # if defaultLanguage == 'zh':
-    #     return 'zh'
-    # else:
-    #     return request.accept_languages.best_match(['en', 'zh'])
 
 @app.route('/language/<language>')
 def choose_language(language=None):
@@ -52,14 +41,9 @@ def choose_language(language=None):
 def inject_conf_var():
     return dict(AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
                     CURRENT_LANGUAGE=session.get('language',request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
+# reference: https://www.thinbug.com/q/42393831
 
 @app.route('/')
-
-# @app.route('/chooseLan', methods=['POST'])
-# def chooseLan():
-#      defaultLanguage = request.get_data()
-#      print(defaultLanguage)
-#      return 'defaultLanguage'
 
 @app.route('/index')
 def index():
@@ -444,14 +428,12 @@ def handle_details():
 @app.route('/handled_appointment',methods=['GET','POST'])
 def handled_appointment():
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
-<<<<<<< HEAD
     cat_orders_e = CatEmergency.query.filter(CatEmergency.status == user_in_db.employee_number).all()
     dog_orders_e = DogEmergency.query.filter(DogEmergency.status == user_in_db.employee_number).all()
     cat_orders = CatAppointment.query.filter(CatAppointment.status == user_in_db.employee_number).all()
     dog_orders = DogAppointment.query.filter(DogEmergency.status == user_in_db.employee_number).all()
 
     return render_template('handled_appointment.html', title=gettext('handled_appointment'), cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
-=======
     order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
     return render_template('handled_appointment.html', title='handled_appointment', order_details=order_details)
 
@@ -481,7 +463,7 @@ def delete_order():
         db.session.delete(appointment)
         db.session.commit()
     return redirect(url_for('orders'))
->>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
+
 
 
 @app.route('/qa_e', methods=['GET', 'POST'])

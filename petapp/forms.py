@@ -78,14 +78,9 @@ class PetForm(FlaskForm):
     image = FileField(lazy_gettext('Image'))
     submit = SubmitField(lazy_gettext('Submit'))
 
-<<<<<<< HEAD
-class LanguageForm(FlaskForm):
-    language = SelectField(lazy_gettext('Language'), choices=[('en', 'English'), ('zh','简体中文')], validators=[DataRequired()])
-    submit = SubmitField(lazy_gettext('Translate'))
-=======
 class HandleForm(FlaskForm):
     name = StringField('Employee Name: ', validators=[DataRequired()])
     date = StringField('Appointment date: ', validators=[DataRequired()])
     confirm = BooleanField('Confirm handle this appointment', validators=[DataRequired('You need to confirm')])
     submit = SubmitField('Submit')
->>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
+

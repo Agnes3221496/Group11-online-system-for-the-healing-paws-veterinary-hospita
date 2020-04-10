@@ -14,3 +14,4 @@ class Config(object):
         'en': 'English',
         'zh': '简体中文'
     }
+    # reference: https: // www.thinbug.com / q / 42393831
