@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
-    <h1>Pet Detail</h1>
+    <h1>{{ _('Pet Detail') }}</h1>
 </head>
 <body>
     {% if pet %}
         {% for p in pet %}
-            <h2>Name: {{ p.name }}</h2>
-            <p>Age: {{ p.age }}</p>
-            <p>Species: {{ p.species }}</p>
+            <h2>{{ _('Name:') }} {{ p.name }}</h2>
+            <p>{{ _('Age:') }} {{ p.age }}</p>
+            <p>{{ _('Species:') }} {{ p.species }}</p>
             <img src='/static/uploaded_image/pet_image/{{ p.image }}'>
         {% endfor %}
     {% endif %}

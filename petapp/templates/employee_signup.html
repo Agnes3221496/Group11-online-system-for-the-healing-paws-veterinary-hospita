@@ -11,9 +11,9 @@
     <div class="panel-heading">
     <div class="panel-body">
 
-    <h1>Help your new colleague to register:</h1>
+    <h1>{{ _('Help your new colleague to register:') }}</h1>
     <div class="body">
-	<p>Enter the details and register here</p>
+	<p>{{ _('Enter the details and register here') }}</p>
     <form action="" method="post" novalidate id="signupForm">
 
         {{ form.hidden_tag() }}
@@ -82,7 +82,7 @@
 {#        <p>{{ form.submit() }}</p>#}
 
 
-         <button>Sign up</button>
+         <button>{{ _('Sign up') }}</button>
     </form>
 
     <script src="{{ url_for('static', filename='../static/script/myjs.js') }} "></script>

@@ -10,3 +10,7 @@ class Config(object):
     QUESTION_IMAGE_UPLOAD_DIR = os.path.join(basedir, 'static/uploaded_image/question_image')
     PET_IMAGE_UPLOAD_DIR = os.path.join(basedir, 'static/uploaded_image/pet_image')
 
+    LANGUAGES = {
+        'en': 'English',
+        'zh': '简体中文'
+    }

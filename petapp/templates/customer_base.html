@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Employee Main Page</title>
+	<title>{{ _('Employee Main Page') }}</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='../static/style/employee_base.css') }}" />
 
 	<script src="{{ url_for('static', filename='../static/script/jquery-3.4.1.js') }}"></script>
@@ -10,13 +10,13 @@
 <body>
 
 	<div class="link">
-		<a href="{{ url_for('standard_appointment_cat')}}">Standard Appointment</a>
+		<a href="{{ url_for('standard_appointment_cat')}}">{{ _('Standard Appointment') }}</a>
 		&nbsp &nbsp|&nbsp &nbsp
-        <a href="{{ url_for('customer_question')}}">Q&A</a>
+        <a href="{{ url_for('customer_question')}}">{{ _('Q&A') }}</a>
         &nbsp &nbsp|&nbsp &nbsp
-		<a href="{{ url_for('my_pets')}}">My Pets</a>
+		<a href="{{ url_for('my_pets')}}">{{ _('My Pets') }}</a>
         &nbsp &nbsp|&nbsp &nbsp
-        <a href="{{ url_for('login')}}">Sign Out</a>
+        <a href="{{ url_for('login')}}">{{ _('Sign Out') }}</a>
 
 	</div>
 	<hr>

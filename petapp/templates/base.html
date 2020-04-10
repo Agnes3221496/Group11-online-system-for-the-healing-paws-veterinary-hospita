@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Vet for Pet</title>
+	<title>{{ _('Vet for Pet') }}</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='../static/style/base.css') }}" />
 
     <meta charset="utf-8">
@@ -14,17 +14,87 @@
     <link href="../static/css/style.css" type="text/css" rel="stylesheet">
 
 	<script src="{{ url_for('static', filename='../static/script/jquery-3.4.1.js') }}"></script>
+{#    <script src="{{ url_for('static', filename='../static/js/language.js') }}"></script>#}
 
 </head>
 <body>
 
 	<div class="link">
 
-		<a href="{{ url_for('login')}}">Login</a>
+		<a href="{{ url_for('login')}}"> {{_('Login')}}</a>
 		&nbsp &nbsp|&nbsp &nbsp
-		<a href="{{ url_for('signup')}}">Sign up</a>
-	</div>
+		<a href="{{ url_for('signup')}}">{{ _('Sign up') }}</a>
+    </div>
+
+
+{#    <div id="google_translate_element" style="position:absolute;bottom:10px;right:10px;z-index:2000;opacity:0.7"></div>#}
+{#    <script>#}
+{#    function googleTranslateElementInit() {#}
+{##}
+{#	    new google.translate.TranslateElement(#}
+{#		    {#}
+{#			    includedLanguages: 'en,zh-CN-CN',#}
+{#			    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,#}
+{#			    autoDisplay: true,#}
+{#		    },#}
+{#		    'google_translate_element'//触发按钮的id#}
+{#	    );#}
+{##}
+{#    }#}
+{#    </script>#}
+{#    <script src="https://translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit"></script>#}
+
 	<hr>
+    {% for language in AVAILABLE_LANGUAGES.items() %}
+        {% if CURRENT_LANGUAGE == language[0] %}
+            {{ language[1] }}
+        {% else %}
+            <a href="{{ url_for('choose_language', language=language[0]) }}" >{{ language[1] }}</a>
+        {%  endif %}
+    {% endfor %}
+{#    <div class="lan">#}
+{#        <select id="i18n">#}
+{#            <option value="zh">中文简体</option>#}
+{#            <option value="en">English</option>#}
+{#        </select>#}
+{#    </div>#}
+
+{#    <script type="text/javascript">#}
+{#        $('#i18n').change(function () {#}
+{#            defaultLanguage = $('#i18n').val();#}
+            {#console.log('change i18n')#}
+            {#console.log(defaultLanguage)#}
+{#            $.ajax({#}
+{#                type: 'POST',#}
+{#                url: '/chooseLan',#}
+{#                data: defaultLanguage,#}
+{#                dataType: 'json',#}
+{#                success: function (data) {#}
+{#                    location.reload();#}
+{#                },#}
+{#                error: function (data) {#}
+{#                    alert('fail')#}
+{#                }#}
+{#	        });#}
+{#        })#}
+{#    </script>#}
+
+{#    <form action="" method="post" novalidate id="LanguageForm" enctype="multipart/form-data">#}
+{#        {{ form.hidden_tag() }}#}
+{#       <div class="Lan">#}
+{#            <p>#}
+{#            <div id="Language">#}
+{#                {{ form.language.label }}<br>#}
+{#                {{ form.language(size=32) }}<br>#}
+{##}
+{#                {% for error in form.language.errors %}#}
+{#                <span style="color: red">[{{ error }}]</span>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </p>#}
+{#        <p align="center">{{ form.submit }}</p>#}
+{#        </div>#}
+{#   </form>#}
 
 	 {% with messages = get_flashed_messages() %}
         {% if messages %}

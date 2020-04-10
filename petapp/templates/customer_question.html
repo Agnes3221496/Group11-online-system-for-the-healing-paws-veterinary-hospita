@@ -12,10 +12,10 @@
         <div class="panel-heading"/>
         <div class="panel-body"/>
 
-        <h1>Question&Answer</h1>
+        <h1>{{ _('Question&Answer') }}</h1>
 
         <div class="body">
-        <a href="{{ url_for('post_question')}}">Post Question</a>
+        <a href="{{ url_for('post_question')}}">{{ _('Post Question') }}</a>
 
         <form action="" method="post" novalidate id="SearchQuestionForm" enctype="multipart/form-data">
         {{ form.hidden_tag() }}

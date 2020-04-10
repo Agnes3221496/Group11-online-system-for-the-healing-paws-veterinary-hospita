@@ -11,7 +11,7 @@
     <div class="panel panel-info"/>
     <div class="panel-heading"/>
     <div class="panel-body"/>
-    <h1>Sign In</h1>
+    <h1>{{ _('Sign In') }}</h1>
 
     <form action="" method="post" novalidate class="form-horizontal" role="form" action="1.html" id="loginForm">
 
@@ -20,8 +20,8 @@
     <div class="form-group">
 
             <div class="form-inline">
-                <a class="btn btn-default btn-lg btn-block" href="{{ url_for('login') }}" style="left: 10%">User</a>
-                <a class="btn btn-default btn-lg btn-block active" href="{{ url_for('employee_login') }}" style="left: 10%">Employee</a>
+                <a class="btn btn-default btn-lg btn-block" href="{{ url_for('login') }}" style="left: 10%">{{ _('User') }}</a>
+                <a class="btn btn-default btn-lg btn-block active" href="{{ url_for('employee_login') }}" style="left: 10%">{{ _('Employee') }}</a>
             </div>
 
         <p>
@@ -63,7 +63,7 @@
              
             </p>
             <div class="col-sm-offset-2 col-sm-10">
-                <button id="loginButton">Login</button>
+                <button id="loginButton">{{ _('Login') }}</button>
             </div>
         </div>
     </form>
