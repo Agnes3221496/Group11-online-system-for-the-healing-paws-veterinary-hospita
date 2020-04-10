@@ -9,34 +9,34 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-	<div class="link">
-		<a href="{{ url_for('orders')}}">{{ _('Orders') }}</a>
-		&nbsp &nbsp|&nbsp &nbsp
-        <a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}</a>
-        &nbsp &nbsp|&nbsp &nbsp
-		<a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}</a>
-        &nbsp &nbsp|&nbsp &nbsp
-        <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}</a>
-
-	</div>
-	<hr>
-=======
+{#<<<<<<< HEAD#}
+{#	<div class="link">#}
+{#		<a href="{{ url_for('orders')}}">{{ _('Orders') }}</a>#}
+{#		&nbsp &nbsp|&nbsp &nbsp#}
+{#        <a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}</a>#}
+{#        &nbsp &nbsp|&nbsp &nbsp#}
+{#		<a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}</a>#}
+{#        &nbsp &nbsp|&nbsp &nbsp#}
+{#        <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}</a>#}
+{##}
+{#	</div>#}
+{#	<hr>#}
+{#=======#}
     <ul id="myTab" class="nav nav-tabs" style="padding-left: 2%;background: gainsboro;font-family: 'Comic Sans MS'">
         <li>
-            <a href="{{ url_for('orders')}}">Orders</a>
+            <a href="{{ url_for('orders')}}">{{ _('Orders') }}</a>
         </li>
         <li>
-            <a href="{{ url_for('qa_e')}}">Q&A</a>
+            <a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}</a>
         </li>
         <li>
-            <a href="{{ url_for('employee_signup')}}">Add New Employee</a>
+            <a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}</a>
         </li>
         <li>
-            <a href="{{ url_for('employee_login')}}">Sign Out</a>
+            <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}</a>
         </li>
     </ul>
->>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
+{#>>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f#}
 	 {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>

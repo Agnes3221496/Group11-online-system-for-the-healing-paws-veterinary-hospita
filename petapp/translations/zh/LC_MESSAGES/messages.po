@@ -126,8 +126,8 @@ msgid "handled_appointment"
 msgstr "预约处理"
 
 #: petapp/routes.py:403 petapp/routes.py:427
-#: petapp/templates/customer_base.html:15
-#: petapp/templates/employee_base.html:15
+#: petapp/templates/customer_base.html:27
+#: petapp/templates/employee_base.html:30
 msgid "Q&A"
 msgstr "问&答"
 
@@ -136,7 +136,7 @@ msgid "Add Pet"
 msgstr "添加宠物"
 
 #: petapp/routes.py:460 petapp/routes.py:464
-#: petapp/templates/customer_base.html:17 petapp/templates/my_pets.html:7
+#: petapp/templates/customer_base.html:30 petapp/templates/my_pets.html:7
 msgid "My Pets"
 msgstr "我的宠物"
 
@@ -147,6 +147,7 @@ msgstr "我的宠物"
 #: petapp/templates/services.html:25
 #: petapp/templates/standard_appointment_cat.html:15
 #: petapp/templates/standard_appointment_dog.html:15
+#: petapp/static/static/about.html:20 petapp/templates/base.html:58
 msgid "Home"
 msgstr "主页"
 
@@ -158,12 +159,12 @@ msgstr "简况"
 msgid "Messages"
 msgstr "信息"
 
-#: petapp/static/static/about.html:20 petapp/templates/base.html:24
+#: petapp/static/static/about.html:20 petapp/templates/base.html:61
 #: petapp/templates/employee_login.html:66 petapp/templates/login.html:67
 msgid "Login"
 msgstr "登录"
 
-#: petapp/static/static/about.html:22 petapp/templates/base.html:26
+#: petapp/static/static/about.html:22 petapp/templates/base.html:64
 #: petapp/templates/employee_signup.html:85 petapp/templates/signup.html:75
 msgid "Sign up"
 msgstr "注册"
@@ -462,7 +463,7 @@ msgstr "Vet for Pet"
 msgid "Employee Main Page"
 msgstr "员工主页"
 
-#: petapp/templates/customer_base.html:13
+#: petapp/templates/customer_base.html:24
 #: petapp/templates/emergency_cat.html:16
 #: petapp/templates/emergency_dog.html:16
 #: petapp/templates/standard_appointment_cat.html:6
@@ -474,8 +475,8 @@ msgstr "员工主页"
 msgid "Standard Appointment"
 msgstr "标准预约"
 
-#: petapp/templates/customer_base.html:19
-#: petapp/templates/employee_base.html:19
+#: petapp/templates/customer_base.html:33
+#: petapp/templates/employee_base.html:36
 msgid "Sign Out"
 msgstr "退出登录"
 
@@ -519,11 +520,11 @@ msgstr "猫"
 msgid "No exsited dog! Please add one ^_^"
 msgstr "狗狗不存在！请先添加哟^_^"
 
-#: petapp/templates/employee_base.html:13
+#: petapp/templates/employee_base.html:27
 msgid "Orders"
 msgstr "订单"
 
-#: petapp/templates/employee_base.html:17
+#: petapp/templates/employee_base.html:33
 msgid "Add New Employee"
 msgstr "添加新员工"
 
