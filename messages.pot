@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-10 09:24+0800\n"
+"POT-Creation-Date: 2020-04-11 12:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +16,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: petapp/routes.py:71
-msgid "No user found with username: {}"
+#: petapp/routes.py:61
+#, python-format
+msgid "No user found with username: %(name)s"
 msgstr ""
 
-#: petapp/routes.py:77 petapp/routes.py:94
+#: petapp/routes.py:67 petapp/routes.py:85
 msgid "Incorrect Password"
 msgstr ""
 
-#: petapp/routes.py:79 petapp/routes.py:96
+#: petapp/routes.py:69 petapp/routes.py:87
 #: petapp/templates/employee_login.html:14 petapp/templates/login.html:16
 msgid "Sign In"
 msgstr ""
 
-#: petapp/routes.py:88
+#: petapp/routes.py:79
 msgid "No user found with employee number: {}"
 msgstr ""
 
-#: petapp/routes.py:104 petapp/routes.py:145
+#: petapp/routes.py:96 petapp/routes.py:138
 msgid "Passwords do not match!"
 msgstr ""
 
-#: petapp/routes.py:114
+#: petapp/routes.py:106
 msgid "Register a new user"
 msgstr ""
 
-#: petapp/routes.py:121
+#: petapp/routes.py:113
 msgid "Username is available"
 msgstr ""
 
-#: petapp/routes.py:124
+#: petapp/routes.py:116
 msgid "Sorry! Username is already taken"
 msgstr ""
 
-#: petapp/routes.py:134
+#: petapp/routes.py:126
 msgid "Email is available"
 msgstr ""
 
-#: petapp/routes.py:136
+#: petapp/routes.py:128
 msgid "Incorrect format!"
 msgstr ""
 
-#: petapp/routes.py:138
+#: petapp/routes.py:130
 msgid "Email is already existed"
 msgstr ""
 
-#: petapp/routes.py:148
+#: petapp/routes.py:141
 msgid "Register password is not right!"
 msgstr ""
 
-#: petapp/routes.py:158
+#: petapp/routes.py:151
 msgid "Register a new employee"
 msgstr ""
 
-#: petapp/routes.py:169 petapp/routes.py:204
+#: petapp/routes.py:164 petapp/routes.py:200
 msgid "Beijing"
 msgstr ""
 
-#: petapp/routes.py:170 petapp/routes.py:205
+#: petapp/routes.py:165 petapp/routes.py:201
 msgid "Shanghai"
 msgstr ""
 
-#: petapp/routes.py:171 petapp/routes.py:206
+#: petapp/routes.py:166 petapp/routes.py:202
 msgid "Chengdu"
 msgstr ""
 
-#: petapp/routes.py:189 petapp/routes.py:224 petapp/routes.py:255
-#: petapp/routes.py:287
+#: petapp/routes.py:184 petapp/routes.py:220 petapp/routes.py:252
+#: petapp/routes.py:285
 msgid "Please add the pet first *^_^*"
 msgstr ""
 
-#: petapp/routes.py:196 petapp/routes.py:230 petapp/routes.py:260
-#: petapp/routes.py:292 petapp/routes.py:330 petapp/routes.py:451
+#: petapp/routes.py:191 petapp/routes.py:226 petapp/routes.py:257
+#: petapp/routes.py:290 petapp/routes.py:330 petapp/routes.py:540
+#: petapp/routes.py:552
 msgid "User needs to either login or signup first"
 msgstr ""
 
-#: petapp/routes.py:324 petapp/routes.py:445
+#: petapp/routes.py:324 petapp/routes.py:534
 msgid "Post successfully"
 msgstr ""
 
-#: petapp/routes.py:327 petapp/routes.py:448
+#: petapp/routes.py:327 petapp/routes.py:537
 msgid "The image format is wrong, please upload it again."
 msgstr ""
 
@@ -104,44 +105,44 @@ msgstr ""
 msgid "Post Question"
 msgstr ""
 
-#: petapp/routes.py:342 petapp/routes.py:343
+#: petapp/routes.py:343 petapp/routes.py:344
 msgid "Search"
 msgstr ""
 
-#: petapp/routes.py:349 petapp/routes.py:469
+#: petapp/routes.py:351 petapp/routes.py:560
 msgid "Detail"
 msgstr ""
 
-#: petapp/routes.py:379
+#: petapp/routes.py:382
 msgid "Appointment handled successfully"
 msgstr ""
 
-#: petapp/routes.py:386
+#: petapp/routes.py:389
 msgid "Order List"
 msgstr ""
 
-#: petapp/routes.py:397
+#: petapp/routes.py:453
 msgid "handled_appointment"
 msgstr ""
 
-#: petapp/routes.py:403 petapp/routes.py:427
-#: petapp/templates/customer_base.html:15
-#: petapp/templates/employee_base.html:15
+#: petapp/routes.py:490 petapp/routes.py:515
+#: petapp/templates/customer_base.html:27
+#: petapp/templates/employee_base.html:30
 msgid "Q&A"
 msgstr ""
 
-#: petapp/routes.py:453 petapp/templates/my_pets.html:8
+#: petapp/routes.py:542 petapp/templates/my_pets.html:8
 msgid "Add Pet"
 msgstr ""
 
-#: petapp/routes.py:460 petapp/routes.py:464
-#: petapp/templates/customer_base.html:17 petapp/templates/my_pets.html:7
+#: petapp/routes.py:550 petapp/routes.py:554
+#: petapp/templates/customer_base.html:30 petapp/templates/my_pets.html:7
 msgid "My Pets"
 msgstr ""
 
 #: petapp/static/static/about.html:15 petapp/static/static/about.html:59
 #: petapp/static/static/blog.html:35 petapp/static/static/gallery.html:38
-#: petapp/templates/emergency_cat.html:15
+#: petapp/templates/base.html:58 petapp/templates/emergency_cat.html:15
 #: petapp/templates/emergency_dog.html:15 petapp/templates/index.html:24
 #: petapp/templates/services.html:25
 #: petapp/templates/standard_appointment_cat.html:15
@@ -157,12 +158,12 @@ msgstr ""
 msgid "Messages"
 msgstr ""
 
-#: petapp/static/static/about.html:20 petapp/templates/base.html:24
+#: petapp/static/static/about.html:20 petapp/templates/base.html:61
 #: petapp/templates/employee_login.html:66 petapp/templates/login.html:67
 msgid "Login"
 msgstr ""
 
-#: petapp/static/static/about.html:22 petapp/templates/base.html:26
+#: petapp/static/static/about.html:22 petapp/templates/base.html:64
 #: petapp/templates/employee_signup.html:85 petapp/templates/signup.html:75
 msgid "Sign up"
 msgstr ""
@@ -446,11 +447,11 @@ msgstr ""
 msgid "Vet for Pet"
 msgstr ""
 
-#: petapp/templates/customer_base.html:4 petapp/templates/employee_base.html:4
-msgid "Employee Main Page"
+#: petapp/templates/customer_base.html:4
+msgid "Customer Main Page"
 msgstr ""
 
-#: petapp/templates/customer_base.html:13
+#: petapp/templates/customer_base.html:24
 #: petapp/templates/emergency_cat.html:16
 #: petapp/templates/emergency_dog.html:16
 #: petapp/templates/standard_appointment_cat.html:6
@@ -462,8 +463,8 @@ msgstr ""
 msgid "Standard Appointment"
 msgstr ""
 
-#: petapp/templates/customer_base.html:19
-#: petapp/templates/employee_base.html:19
+#: petapp/templates/customer_base.html:33
+#: petapp/templates/employee_base.html:36
 msgid "Sign Out"
 msgstr ""
 
@@ -507,11 +508,15 @@ msgstr ""
 msgid "No exsited dog! Please add one ^_^"
 msgstr ""
 
-#: petapp/templates/employee_base.html:13
+#: petapp/templates/employee_base.html:4
+msgid "Employee Main Page"
+msgstr ""
+
+#: petapp/templates/employee_base.html:27
 msgid "Orders"
 msgstr ""
 
-#: petapp/templates/employee_base.html:17
+#: petapp/templates/employee_base.html:33
 msgid "Add New Employee"
 msgstr ""
 
@@ -529,56 +534,6 @@ msgstr ""
 
 #: petapp/templates/employee_signup.html:16
 msgid "Enter the details and register here"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:9 petapp/templates/orders.html:25
-msgid "Cat emergency appointments:"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:10
-#: petapp/templates/handled_appointment.html:21
-#: petapp/templates/handled_appointment.html:34
-#: petapp/templates/handled_appointment.html:45 petapp/templates/orders.html:26
-#: petapp/templates/orders.html:37 petapp/templates/orders.html:50
-#: petapp/templates/orders.html:61
-msgid "Owner:"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:11
-#: petapp/templates/handled_appointment.html:22
-#: petapp/templates/handled_appointment.html:35
-#: petapp/templates/handled_appointment.html:46 petapp/templates/orders.html:27
-#: petapp/templates/orders.html:38 petapp/templates/orders.html:51
-#: petapp/templates/orders.html:62
-msgid "Phone number:"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:12
-#: petapp/templates/handled_appointment.html:23
-#: petapp/templates/handled_appointment.html:36
-#: petapp/templates/handled_appointment.html:47 petapp/templates/orders.html:28
-#: petapp/templates/orders.html:39 petapp/templates/orders.html:52
-#: petapp/templates/orders.html:63
-msgid "City:"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:12
-#: petapp/templates/handled_appointment.html:23
-#: petapp/templates/handled_appointment.html:36
-#: petapp/templates/handled_appointment.html:47
-msgid "Delete this appointment"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:20 petapp/templates/orders.html:36
-msgid "Dog emergency appointments:"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:33 petapp/templates/orders.html:49
-msgid "Cat normal appointments:"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:44 petapp/templates/orders.html:60
-msgid "Dog normal appointments:"
 msgstr ""
 
 #: petapp/templates/index.html:25
@@ -618,9 +573,40 @@ msgstr ""
 msgid "Handled appointments"
 msgstr ""
 
-#: petapp/templates/orders.html:28 petapp/templates/orders.html:39
-#: petapp/templates/orders.html:52 petapp/templates/orders.html:63
+#: petapp/templates/orders.html:26
+msgid "Cat emergency appointments:"
+msgstr ""
+
+#: petapp/templates/orders.html:27 petapp/templates/orders.html:45
+#: petapp/templates/orders.html:65 petapp/templates/orders.html:83
+msgid "Owner:"
+msgstr ""
+
+#: petapp/templates/orders.html:28 petapp/templates/orders.html:46
+#: petapp/templates/orders.html:66 petapp/templates/orders.html:84
+msgid "Phone number:"
+msgstr ""
+
+#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
+#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
+msgid "City:"
+msgstr ""
+
+#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
+#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
 msgid "Handle this appointment"
+msgstr ""
+
+#: petapp/templates/orders.html:44
+msgid "Dog emergency appointments:"
+msgstr ""
+
+#: petapp/templates/orders.html:64
+msgid "Cat normal appointments:"
+msgstr ""
+
+#: petapp/templates/orders.html:82
+msgid "Dog normal appointments:"
 msgstr ""
 
 #: petapp/templates/pet_detail.html:7

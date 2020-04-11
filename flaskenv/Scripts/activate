@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\flaskenv"
+VIRTUAL_ENV="C:\Users\JIANG WANYING\Desktop\新建文件夹 (2)\Group11-online-system-for-the-healing-paws-veterinary-hospita\flaskenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

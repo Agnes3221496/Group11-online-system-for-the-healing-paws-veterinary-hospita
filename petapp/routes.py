@@ -16,11 +16,11 @@ import os
 import re
 import base64
 import datetime
-from flask_babel import Babel, format_date, gettext
+from petapp import babel
+from flask_babel import Babel, format_date, gettext, lazy_gettext
 
-app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-babel = Babel(app)
 
+# app.config['BABEL_DEFAULT_LOCALE'] = 'zh'
 
 @babel.localeselector
 def get_locale():
@@ -35,7 +35,7 @@ def get_locale():
 @app.route('/language/<language>')
 def choose_language(language=None):
     session['language'] = language
-    return redirect(url_for('index'))
+    return redirect(url_for(session.get("currentPage")))
 
 @app.context_processor
 def inject_conf_var():
@@ -47,16 +47,18 @@ def inject_conf_var():
 
 @app.route('/index')
 def index():
+    session['currentPage']='index'
     return render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    session['currentPage'] = 'login'
     form = LoginForm()
     if form.validate_on_submit():
         user_in_db = Customer.query.filter(Customer.username == form.username.data).first()
         if not user_in_db:
-            flash(gettext('No user found with username: {}'.format(form.username.data)))
+            flash(lazy_gettext('No user found with username: %(name)s',name = form.username.data))
             return redirect(url_for('login'))
         if check_password_hash(user_in_db.password_hash, form.password.data):
             # flash('Login success!')
@@ -69,6 +71,7 @@ def login():
 
 @app.route('/employee_login', methods=['GET', 'POST'])
 def employee_login():
+    session['currentPage'] = 'employee_login'
     form = EmployeeLoginForm()
     if form.validate_on_submit():
         employee_in_db = Employee.query.filter(Employee.employee_number == form.employee_number.data).first()
@@ -86,6 +89,7 @@ def employee_login():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    session['currentPage'] = 'signup'
     form = SignupForm()
     if form.validate_on_submit():
         if form.password.data != form.password2.data:
@@ -127,6 +131,7 @@ def check_email():
 
 @app.route('/employee_signup', methods=['GET', 'POST'])
 def employee_signup():
+    session['currentPage'] = 'employee_signup'
     form = EmployeeSignupForm()
     if form.validate_on_submit():
         if form.password.data != form.password2.data:
@@ -148,10 +153,12 @@ def employee_signup():
 
 @app.route('/services')
 def services():
+    session['currentPage'] = 'services'
     return render_template('services.html')
 
 @app.route('/standard_appointment_cat', methods=['GET', 'POST'])
 def standard_appointment_cat():
+    session['currentPage'] = 'standard_appointment_cat'
     form = CatAppointmentForm()
     # count = CatAppointment.query.count()
     b_count = CatAppointment.query.filter(CatAppointment.city == gettext("Beijing")).count()
@@ -187,6 +194,7 @@ def standard_appointment_cat():
 
 @app.route('/standard_appointment_dog', methods=['GET', 'POST'])
 def standard_appointment_dog():
+    session['currentPage'] = 'standard_appointment_dog'
     form = CatAppointmentForm()
     # count = CatAppointment.query.count()
     b_count = DogAppointment.query.filter(DogAppointment.city == gettext("Beijing")).count()
@@ -221,6 +229,7 @@ def standard_appointment_dog():
 
 @app.route('/emergency_cat', methods=['GET', 'POST'])
 def emergency_cat():
+    session['currentPage'] = 'emergency_cat'
     form = CatAppointmentForm()
 
     if not session.get("USERNAME") is None:
@@ -253,6 +262,7 @@ def emergency_cat():
 
 @app.route('/emergency_dog', methods=['GET', 'POST'])
 def emergency_dog():
+    session['currentPage'] = 'emergency_dog'
     form = CatAppointmentForm()
 
     if not session.get("USERNAME") is None:
@@ -283,6 +293,7 @@ def emergency_dog():
 
 @app.route('/appointment_success', methods=['GET', 'POST'])
 def appointment_success():
+    session['currentPage'] = 'appointment_success'
     return render_template('appointment_success.html')
 
 
@@ -295,6 +306,7 @@ def logout():
 ALLOWED_FORMATS = ['png', 'jpg', 'gif', 'bmp', 'jfif']
 @app.route('/post_question', methods=['GET', 'POST'])
 def post_question():
+    session['currentPage'] = 'post_question'
     form = PostQuestionForm()
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
@@ -322,6 +334,7 @@ def post_question():
 
 @app.route('/customer_question', methods=['GET', 'POST'])
 def customer_question():
+    session['currentPage'] = 'customer_question'
     question = Question.query.all()
     form = SearchQuestionForm()
     if form.validate_on_submit():
@@ -332,6 +345,7 @@ def customer_question():
 
 @app.route('/question_detail/<q_id>/')
 def question_detail(q_id):
+    session['currentPage'] = 'question_detail'
     question = Question.query.filter(Question.id == q_id)
     answer = Answer.query.filter(Answer.question_id == q_id)
     return render_template('question_detail.html', title=gettext('Detail'), question=question, answer=answer)
@@ -339,6 +353,7 @@ def question_detail(q_id):
 
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():
+    session['currentPage'] = 'orders'
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     c = request.args.get("c")
     ce = request.args.get("ce")
@@ -375,6 +390,7 @@ def orders():
 
 @app.route('/handle_details', methods=['GET', 'POST'])
 def handle_details():
+    session['currentPage'] = 'handle_details'
     form = HandleForm()
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     c = request.args.get("c")
@@ -427,6 +443,7 @@ def handle_details():
 
 @app.route('/handled_appointment',methods=['GET','POST'])
 def handled_appointment():
+    session['currentPage'] = 'handled_appointment'
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     cat_orders_e = CatEmergency.query.filter(CatEmergency.status == user_in_db.employee_number).all()
     dog_orders_e = DogEmergency.query.filter(DogEmergency.status == user_in_db.employee_number).all()
@@ -468,12 +485,14 @@ def delete_order():
 
 @app.route('/qa_e', methods=['GET', 'POST'])
 def qa_e():
+    session['currentPage'] = 'qa_e'
     prev_questions = Question.query.filter().all()
     return render_template('qa_e.html', title=gettext('Q&A'), prev_questions=prev_questions)
 
 
 @app.route('/answer', methods=['GET', 'POST'])
 def answer():
+    session['currentPage'] = 'answer'
     form = PostAnswerForm()
     q = request.args.get("q")
     # print(q)
@@ -497,6 +516,7 @@ def answer():
 
 @app.route('/add_pet', methods=['GET', 'POST'])
 def add_pet():
+    session['currentPage'] = 'add_pet'
     form = PetForm()
     if form.validate_on_submit():
         if not session.get("USERNAME") is None:
@@ -523,17 +543,19 @@ def add_pet():
 
 @app.route('/my_pets')
 def my_pets():
+    session['currentPage'] = 'my_pets'
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
         pet = Pet.query.filter(Pet.owner_id == user_in_db.id)
         return render_template('my_pets.html', title=gettext('My Pets'),pet=pet)
     else:
-        flash("User needs to either login or signup first")
+        flash(gettext("User needs to either login or signup first"))
         return redirect(url_for('login'))
     return render_template('my_pets.html', title=gettext('My Pets'),pet=pet)
 
 @app.route('/pet_detail/<pet_id>/')
 def pet_detail(pet_id):
+    session['currentPage'] = 'pet_detail'
     pet = Pet.query.filter(Pet.id == pet_id)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
 
