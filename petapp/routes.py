@@ -4,8 +4,12 @@ from werkzeug.utils import secure_filename
 
 from petapp import app, db
 from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm, \
+<<<<<<< HEAD
     PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, \
     PetForm, HandleForm
+=======
+    PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, HandleForm
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question, \
     Answer, Pet, HandleDetails
 
@@ -33,12 +37,16 @@ def get_locale():
         return language
     return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 @app.route('/language/<language>')
 def choose_language(language=None):
     session['language'] = language
     return redirect(url_for(session.get("currentPage")))
 
+<<<<<<< HEAD
 
 @app.context_processor
 def inject_conf_var():
@@ -47,12 +55,23 @@ def inject_conf_var():
                                              request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
 
 
+=======
+@app.context_processor
+def inject_conf_var():
+    return dict(AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
+                    CURRENT_LANGUAGE=session.get('language',request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 # reference: https://www.thinbug.com/q/42393831
 
 @app.route('/')
+
 @app.route('/index')
 def index():
+<<<<<<< HEAD
     session['currentPage'] = 'index'
+=======
+    session['currentPage']='index'
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
     return render_template('index.html')
 
 
@@ -63,7 +82,11 @@ def login():
     if form.validate_on_submit():
         user_in_db = Customer.query.filter(Customer.username == form.username.data).first()
         if not user_in_db:
+<<<<<<< HEAD
             flash(gettext('No user found with username: %(name)s', name=form.username.data))
+=======
+            flash(gettext('No user found with username: %(name)s',name = form.username.data))
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
             return redirect(url_for('login'))
         if check_password_hash(user_in_db.password_hash, form.password.data):
             # flash('Login success!')
@@ -109,7 +132,10 @@ def signup():
         session["USERNAME"] = customer.username
         return redirect(url_for("login"))
     return render_template('signup.html', title=gettext('Register a new user'), form=form)
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 
 @app.route('/checkuser', methods=['POST'])
 def check_username():
@@ -135,7 +161,10 @@ def check_email():
             return jsonify({'text': gettext('Incorrect format!'), 'returnvalue': 1})
     else:
         return jsonify({'text': gettext('Email is already existed'), 'returnvalue': 0})
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 
 @app.route('/employee_signup', methods=['GET', 'POST'])
 def employee_signup():
@@ -355,7 +384,10 @@ def customer_question():
                                               Question.detail.like("%" + form.search.data + "%"))).all()
         return render_template('customer_question.html', title=gettext('Search'), form=form, question=question)
     return render_template('customer_question.html', title=gettext('Search'), form=form, question=question)
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 
 @app.route('/question_detail/<q_id>/')
 def question_detail(q_id):
@@ -368,6 +400,36 @@ def question_detail(q_id):
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():
     session['currentPage'] = 'orders'
+<<<<<<< HEAD
+=======
+    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+    c = request.args.get("c")
+    ce = request.args.get("ce")
+    d = request.args.get("d")
+    de = request.args.get("de")
+    if c is not None:
+        print("1")
+        cat = CatAppointment.query.filter(CatAppointment.id == c).first()
+        cat.status = user_in_db.employee_number
+        db.session.commit()
+    if ce is not None:
+        print("2")
+        cat = CatEmergency.query.filter(CatEmergency.id == ce).first()
+        cat.status = user_in_db.employee_number
+        db.session.commit()
+    if d is not None:
+        print("3")
+        dog = DogAppointment.query.filter(DogAppointment.id == d).first()
+        dog.status = user_in_db.employee_number
+        db.session.commit()
+    if de is not None:
+        dog = DogEmergency.query.filter(DogEmergency.id == de).first()
+        dog.status = user_in_db.employee_number
+        db.session.commit()
+        print(dog.status)
+        flash(gettext("Appointment handled successfully"))
+
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
     cat_orders_e = CatEmergency.query.filter(CatEmergency.status == 0).all()
     dog_orders_e = DogEmergency.query.filter(DogEmergency.status == 0).all()
     cat_orders = CatAppointment.query.filter(CatAppointment.status == 0).all()
@@ -375,6 +437,10 @@ def orders():
     return render_template('orders.html', title=gettext('Order List'), cat_orders_e=cat_orders_e,
                            dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
 
+<<<<<<< HEAD
+=======
+    return render_template('orders.html', title=gettext('Order List'), cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 
 @app.route('/handle_details', methods=['GET', 'POST'])
 def handle_details():
@@ -451,6 +517,12 @@ def handle_details():
 def handled_appointment():
     session['currentPage'] = 'handled_appointment'
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+    cat_orders_e = CatEmergency.query.filter(CatEmergency.status == user_in_db.employee_number).all()
+    dog_orders_e = DogEmergency.query.filter(DogEmergency.status == user_in_db.employee_number).all()
+    cat_orders = CatAppointment.query.filter(CatAppointment.status == user_in_db.employee_number).all()
+    dog_orders = DogAppointment.query.filter(DogEmergency.status == user_in_db.employee_number).all()
+
+    return render_template('handled_appointment.html', title=gettext('handled_appointment'), cat_orders_e=cat_orders_e, dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
     order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
     return render_template('handled_appointment.html', title='handled_appointment', order_details=order_details)
 
@@ -483,6 +555,7 @@ def delete_order():
     return redirect(url_for('orders'))
 
 
+
 @app.route('/qa_e', methods=['GET', 'POST'])
 def qa_e():
     session['currentPage'] = 'qa_e'
@@ -512,6 +585,7 @@ def answer():
         db.session.add(answer)
         db.session.commit()
         return redirect(url_for('qa_e'))
+<<<<<<< HEAD
     return render_template('answer.html', title=gettext('Q&A'), prev_questions=prev_questions, form=form,
                            prev_answers=prev_answers)
 
@@ -522,6 +596,9 @@ def employee_track():
     t_pets = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
     return render_template('employee_track.html', title='track', t_pets = t_pets)
 
+=======
+    return render_template('answer.html', title=gettext('Q&A'), prev_questions=prev_questions, form=form, prev_answers=prev_answers)
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 
 @app.route('/add_pet', methods=['GET', 'POST'])
 def add_pet():
@@ -549,7 +626,10 @@ def add_pet():
             flash(gettext("User needs to either login or signup first"))
             return redirect(url_for('login'))
     return render_template('add_pet.html', title=gettext('Add Pet'), form=form)
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 
 @app.route('/my_pets')
 def my_pets():
@@ -557,15 +637,29 @@ def my_pets():
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
         pet = Pet.query.filter(Pet.owner_id == user_in_db.id)
+<<<<<<< HEAD
         return render_template('my_pets.html', title=gettext('My Pets'), pet=pet)
     else:
         flash(gettext("User needs to either login or signup first"))
         return redirect(url_for('login'))
     return render_template('my_pets.html', title=gettext('My Pets'), pet=pet)
 
+=======
+        return render_template('my_pets.html', title=gettext('My Pets'),pet=pet)
+    else:
+        flash(gettext("User needs to either login or signup first"))
+        return redirect(url_for('login'))
+    return render_template('my_pets.html', title=gettext('My Pets'),pet=pet)
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
 
 @app.route('/pet_detail/<pet_id>/')
 def pet_detail(pet_id):
     session['currentPage'] = 'pet_detail'
     pet = Pet.query.filter(Pet.id == pet_id)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf

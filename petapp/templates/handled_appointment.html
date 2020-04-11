@@ -2,6 +2,7 @@
 
 {% block content %}
     <div class="e_appointment">
+<<<<<<< HEAD
 {#<<<<<<< HEAD#}
 {#            {% if cat_orders_e %}#}
 {#                {% for cats in cat_orders_e %}#}
@@ -49,6 +50,54 @@
 {#                {% endfor %}#}
 {#            {% endif %}#}
 {#=======#}
+=======
+<<<<<<< HEAD
+            {% if cat_orders_e %}
+                {% for cats in cat_orders_e %}
+                    <h2>{{ _('Cat emergency appointments:') }}</h2>
+                    <p>{{ _('Owner:') }} {{ cats.name }}</p>
+                    <p>{{ _('Phone number:') }} {{ cats.phone }}</p>
+                    <p>{{ _('City:') }} {{ cats.city }}</p>  <a href="{{ url_for('orders', ce=cats.id) }}"> {{ _('Delete this appointment') }} </a>
+                    <br/>
+                    <hr style="border-top: 2px dotted #31708f">
+                {% endfor %}
+            {% endif %}
+
+            {% if dog_orders_e %}
+                {% for dogs in dog_orders_e %}
+                    <h2>{{ _('Dog emergency appointments:') }}</h2>
+                    <p>{{ _('Owner:') }} {{ dogs.name }}</p>
+                    <p>{{ _('Phone number:') }} {{ dogs.phone }}</p>
+                    <p>{{ _('City:') }} {{ dogs.city }}</p>   <a href="{{ url_for('orders', de=dogs.id) }}"> {{ _('Delete this appointment') }} </a>
+                    <br/>
+                    <hr style="border-top: 2px dotted #31708f">
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="n_appointment">
+            {% if cat_orders %}
+                {% for cats in cat_orders %}
+                    <h2>{{ _('Cat normal appointments:') }}</h2>
+                    <p>{{ _('Owner:') }} {{ cats.name }}</p>
+                    <p>{{ _('Phone number:') }} {{ cats.phone }}</p>
+                    <p>{{ _('City:') }} {{ cats.city }}</p>  <a href="{{ url_for('orders', c=cats.id) }}"> {{ _('Delete this appointment') }} </a>
+                    <br/>
+                    <hr style="border-top: 2px dotted #31708f">
+                {% endfor %}
+            {% endif %}
+
+            {% if dog_orders %}
+                {% for dogs in dog_orders %}
+                    <h2>{{ _('Dog normal appointments:') }}</h2>
+                    <p>{{ _('Owner:') }} {{ dogs.name }}</p>
+                    <p>{{ _('Phone number:') }} {{ dogs.phone }}</p>
+                    <p>{{ _('City:') }} {{ dogs.city }}</p>  <a href="{{ url_for('orders', d=dogs.id) }}"> {{ _('Delete this appointment') }} </a>
+                    <br/>
+                    <hr style="border-top: 2px dotted #31708f">
+                {% endfor %}
+=======
+>>>>>>> c1122cfb55214f1604deee58947c5a4bd3038adf
         {% for order in order_details %}
             {% if order.appointment_type == 1 %}
                 <h2>Appointment type: Emergency</h2>
@@ -61,6 +110,7 @@
             {% endif %}
             {% if order.pet_type == 2 %}
                 <h2>Pet type: Dog</h2>
+>>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f
             {% endif %}
             <h2>Date: {{ order.date }}</h2>
             <br/>
