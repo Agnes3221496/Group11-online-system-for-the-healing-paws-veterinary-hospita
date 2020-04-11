@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-11 12:17+0800\n"
+"POT-Creation-Date: 2020-04-11 12:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +17,161 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
+#: petapp/forms.py:11 petapp/forms.py:27
+msgid "Username"
+msgstr ""
+
+#: petapp/forms.py:12 petapp/forms.py:20 petapp/forms.py:29 petapp/forms.py:39
+msgid "Password"
+msgstr ""
+
+#: petapp/forms.py:13 petapp/forms.py:21
+msgid "Remember Me"
+msgstr ""
+
+#: petapp/forms.py:14 petapp/forms.py:22 petapp/routes.py:69
+#: petapp/routes.py:87 petapp/templates/employee_login.html:14
+#: petapp/templates/login.html:16
+msgid "Sign In"
+msgstr ""
+
+#: petapp/forms.py:19 petapp/forms.py:37
+msgid "Employee&nbspNumber"
+msgstr ""
+
+#: petapp/forms.py:28 petapp/forms.py:38
+msgid "Email"
+msgstr ""
+
+#: petapp/forms.py:30 petapp/forms.py:40
+msgid "Repeat Password"
+msgstr ""
+
+#: petapp/forms.py:31 petapp/forms.py:42
+msgid "I accept the site rules"
+msgstr ""
+
+#: petapp/forms.py:32 petapp/forms.py:43
+msgid "Register"
+msgstr ""
+
+#: petapp/forms.py:41
+msgid "Register Password"
+msgstr ""
+
+#: petapp/forms.py:47
+msgid "Real Name: "
+msgstr ""
+
+#: petapp/forms.py:48
+msgid "Phone Number: "
+msgstr ""
+
+#: petapp/forms.py:49
+msgid "City"
+msgstr ""
+
+#: petapp/forms.py:49 petapp/routes.py:164 petapp/routes.py:200
+msgid "Beijing"
+msgstr ""
+
+#: petapp/forms.py:49 petapp/routes.py:165 petapp/routes.py:201
+msgid "Shanghai"
+msgstr ""
+
+#: petapp/forms.py:49
+msgid "chengdu"
+msgstr ""
+
+#: petapp/forms.py:51
+msgid "Please choose an existed pet "
+msgstr ""
+
+#: petapp/forms.py:52
+msgid "book"
+msgstr ""
+
+#: petapp/forms.py:57
+msgid "Title"
+msgstr ""
+
+#: petapp/forms.py:58
+msgid "Detail Description of The Question"
+msgstr ""
+
+#: petapp/forms.py:59 petapp/forms.py:79
+msgid "Image"
+msgstr ""
+
+#: petapp/forms.py:60
+msgid "Post"
+msgstr ""
+
+#: petapp/forms.py:65
+msgid "Question"
+msgstr ""
+
+#: petapp/forms.py:66 petapp/routes.py:343 petapp/routes.py:344
+msgid "Search"
+msgstr ""
+
+#: petapp/forms.py:70
+msgid "Post body:"
+msgstr ""
+
+#: petapp/forms.py:70
+msgid "Enter your post body"
+msgstr ""
+
+#: petapp/forms.py:71
+msgid "Post answer"
+msgstr ""
+
+#: petapp/forms.py:75
+msgid "Pet Name: "
+msgstr ""
+
+#: petapp/forms.py:76
+msgid "Age: "
+msgstr ""
+
+#: petapp/forms.py:77
+msgid "Species"
+msgstr ""
+
+#: petapp/forms.py:77 petapp/templates/emergency_dog.html:25
+#: petapp/templates/standard_appointment_cat.html:25
+#: petapp/templates/standard_appointment_dog.html:25
+msgid "Cat"
+msgstr ""
+
+#: petapp/forms.py:77 petapp/templates/emergency_cat.html:26
+#: petapp/templates/emergency_dog.html:26
+#: petapp/templates/standard_appointment_cat.html:26
+#: petapp/templates/standard_appointment_dog.html:26
+msgid "Dog"
+msgstr ""
+
+#: petapp/forms.py:80 petapp/forms.py:86
+msgid "Submit"
+msgstr ""
+
+#: petapp/forms.py:83
+msgid "Employee Name: "
+msgstr ""
+
+#: petapp/forms.py:84
+msgid "Appointment date: "
+msgstr ""
+
+#: petapp/forms.py:85
+msgid "Confirm handle this appointment"
+msgstr ""
+
+#: petapp/forms.py:85
+msgid "You need to confirm"
+msgstr ""
+
 #: petapp/routes.py:61
 #, python-format
 msgid "No user found with username: %(name)s"
@@ -23,11 +179,6 @@ msgstr ""
 
 #: petapp/routes.py:67 petapp/routes.py:85
 msgid "Incorrect Password"
-msgstr ""
-
-#: petapp/routes.py:69 petapp/routes.py:87
-#: petapp/templates/employee_login.html:14 petapp/templates/login.html:16
-msgid "Sign In"
 msgstr ""
 
 #: petapp/routes.py:79
@@ -70,14 +221,6 @@ msgstr ""
 msgid "Register a new employee"
 msgstr ""
 
-#: petapp/routes.py:164 petapp/routes.py:200
-msgid "Beijing"
-msgstr ""
-
-#: petapp/routes.py:165 petapp/routes.py:201
-msgid "Shanghai"
-msgstr ""
-
 #: petapp/routes.py:166 petapp/routes.py:202
 msgid "Chengdu"
 msgstr ""
@@ -103,10 +246,6 @@ msgstr ""
 
 #: petapp/routes.py:332 petapp/templates/customer_question.html:18
 msgid "Post Question"
-msgstr ""
-
-#: petapp/routes.py:343 petapp/routes.py:344
-msgid "Search"
 msgstr ""
 
 #: petapp/routes.py:351 petapp/routes.py:560
@@ -485,22 +624,9 @@ msgstr ""
 msgid "Emergency"
 msgstr ""
 
-#: petapp/templates/emergency_cat.html:26
-#: petapp/templates/emergency_dog.html:26
-#: petapp/templates/standard_appointment_cat.html:26
-#: petapp/templates/standard_appointment_dog.html:26
-msgid "Dog"
-msgstr ""
-
 #: petapp/templates/emergency_cat.html:89
 #: petapp/templates/standard_appointment_cat.html:88
 msgid "No exsited cat! Please add one ^_^"
-msgstr ""
-
-#: petapp/templates/emergency_dog.html:25
-#: petapp/templates/standard_appointment_cat.html:25
-#: petapp/templates/standard_appointment_dog.html:25
-msgid "Cat"
 msgstr ""
 
 #: petapp/templates/emergency_dog.html:90

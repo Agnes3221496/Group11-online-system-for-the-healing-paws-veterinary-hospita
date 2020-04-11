@@ -58,7 +58,7 @@ def login():
     if form.validate_on_submit():
         user_in_db = Customer.query.filter(Customer.username == form.username.data).first()
         if not user_in_db:
-            flash(lazy_gettext('No user found with username: %(name)s',name = form.username.data))
+            flash(gettext('No user found with username: %(name)s',name = form.username.data))
             return redirect(url_for('login'))
         if check_password_hash(user_in_db.password_hash, form.password.data):
             # flash('Login success!')

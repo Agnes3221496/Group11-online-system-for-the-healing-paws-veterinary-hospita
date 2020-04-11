@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-11 10:41+0800\n"
+"POT-Creation-Date: 2020-04-11 12:38+0800\n"
 "PO-Revision-Date: 2020-04-06 00:51+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -120,6 +120,10 @@ msgstr "搜索"
 msgid "Post body:"
 msgstr "发送内容"
 
+#: petapp/forms.py:70
+msgid "Enter your post body"
+msgstr "输入你发送的内容"
+
 #: petapp/forms.py:71
 msgid "Post answer"
 msgstr "发送回答"
@@ -164,6 +168,10 @@ msgstr "预约日期："
 #: petapp/forms.py:85
 msgid "Confirm handle this appointment"
 msgstr "确认处理此预约"
+
+#: petapp/forms.py:85
+msgid "You need to confirm"
+msgstr "你需要确认"
 
 #: petapp/routes.py:61
 #, python-format
@@ -225,6 +233,7 @@ msgstr "请先添加宠物 *^_^*"
 
 #: petapp/routes.py:191 petapp/routes.py:226 petapp/routes.py:257
 #: petapp/routes.py:290 petapp/routes.py:330 petapp/routes.py:540
+#: petapp/routes.py:552
 msgid "User needs to either login or signup first"
 msgstr "用户需先登录或注册"
 
@@ -256,14 +265,9 @@ msgstr "订单列表"
 msgid "handled_appointment"
 msgstr "预约处理"
 
-
 #: petapp/routes.py:490 petapp/routes.py:515
-#: petapp/templates/customer_base.html:16
-#: petapp/templates/employee_base.html:16
-#: petapp/routes.py:403 petapp/routes.py:427
 #: petapp/templates/customer_base.html:27
 #: petapp/templates/employee_base.html:30
-
 msgid "Q&A"
 msgstr "问&答"
 
@@ -271,22 +275,18 @@ msgstr "问&答"
 msgid "Add Pet"
 msgstr "添加宠物"
 
-
 #: petapp/routes.py:550 petapp/routes.py:554
-#: petapp/templates/customer_base.html:18 petapp/templates/my_pets.html:7
-#: petapp/routes.py:460 petapp/routes.py:464
 #: petapp/templates/customer_base.html:30 petapp/templates/my_pets.html:7
 msgid "My Pets"
 msgstr "我的宠物"
 
 #: petapp/static/static/about.html:15 petapp/static/static/about.html:59
 #: petapp/static/static/blog.html:35 petapp/static/static/gallery.html:38
-#: petapp/templates/emergency_cat.html:15
+#: petapp/templates/base.html:58 petapp/templates/emergency_cat.html:15
 #: petapp/templates/emergency_dog.html:15 petapp/templates/index.html:24
 #: petapp/templates/services.html:25
 #: petapp/templates/standard_appointment_cat.html:15
 #: petapp/templates/standard_appointment_dog.html:15
-#: petapp/static/static/about.html:20 petapp/templates/base.html:58
 msgid "Home"
 msgstr "主页"
 
@@ -298,14 +298,11 @@ msgstr "简况"
 msgid "Messages"
 msgstr "信息"
 
-#: petapp/static/static/about.html:20 petapp/templates/base.html:23
 #: petapp/static/static/about.html:20 petapp/templates/base.html:61
 #: petapp/templates/employee_login.html:66 petapp/templates/login.html:67
 msgid "Login"
 msgstr "登录"
 
-
-#: petapp/static/static/about.html:22 petapp/templates/base.html:25
 #: petapp/static/static/about.html:22 petapp/templates/base.html:64
 #: petapp/templates/employee_signup.html:85 petapp/templates/signup.html:75
 msgid "Sign up"
@@ -602,11 +599,10 @@ msgstr "预约成功！"
 msgid "Vet for Pet"
 msgstr "Vet for Pet"
 
-#: petapp/templates/customer_base.html:4 petapp/templates/employee_base.html:4
-msgid "Employee Main Page"
-msgstr "员工主页"
+#: petapp/templates/customer_base.html:4
+msgid "Customer Main Page"
+msgstr "顾客主页"
 
-#: petapp/templates/customer_base.html:14
 #: petapp/templates/customer_base.html:24
 #: petapp/templates/emergency_cat.html:16
 #: petapp/templates/emergency_dog.html:16
@@ -619,8 +615,6 @@ msgstr "员工主页"
 msgid "Standard Appointment"
 msgstr "标准预约"
 
-#: petapp/templates/customer_base.html:20
-#: petapp/templates/employee_base.html:20
 #: petapp/templates/customer_base.html:33
 #: petapp/templates/employee_base.html:36
 msgid "Sign Out"
@@ -653,12 +647,10 @@ msgstr "猫咪不存在！请先添加哟 ^_^"
 msgid "No exsited dog! Please add one ^_^"
 msgstr "狗狗不存在！请先添加哟^_^"
 
+#: petapp/templates/employee_base.html:4
+msgid "Employee Main Page"
+msgstr "员工主页"
 
-#: petapp/templates/employee_base.html:14
-msgid "Orders"
-msgstr "订单"
-
-#: petapp/templates/employee_base.html:18
 #: petapp/templates/employee_base.html:27
 msgid "Orders"
 msgstr "订单"
@@ -840,4 +832,7 @@ msgstr "狗"
 
 #~ msgid "No user found with username: {}"
 #~ msgstr "未找到用户名为{}的用户"
+
+#~ msgid "No user found with username: %(name)s"
+#~ msgstr "没有找到用户名为 %(name)s 的用户"
 
