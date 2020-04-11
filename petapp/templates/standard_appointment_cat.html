@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{_('Standard Appointment')}}</title>
 </head>
 <body>
 
@@ -12,18 +12,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap-responsive.css') }}">
 
     <ul class="nav nav-tabs">
-      <li role="presentation"><a href="{{ url_for('index') }}">Home</a></li>
-      <li role="presentation" class="active"><a href="#">Standard Appointment</a></li>
-      <li role="presentation"><a href="{{ url_for('emergency_cat') }}">Emergency</a></li>
+      <li role="presentation"><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
+      <li role="presentation" class="active"><a href="#">{{ _('Standard Appointment') }}</a></li>
+      <li role="presentation"><a href="{{ url_for('emergency_cat') }}">{{ _('Emergency') }}</a></li>
     </ul>
 
     <br><br>
 
     <form action="" method="post" novalidate id="loginForm" class="container" style="margin-top: 30px", onsubmit="return conf('{{ b_count }}', '{{ s_count }}', '{{ c_count }}')">
-    <h2>Standard Appointment</h2>
+    <h2>{{ _('Standard Appointment') }}</h2>
     <div class="form-inline">
-        <a href="#" class="btn btn-default btn-lg active">Cat</a> &nbsp&nbsp&nbsp
-        <a href="{{ url_for('standard_appointment_dog')}}" class="btn btn-default btn-lg">Dog</a>
+        <a href="#" class="btn btn-default btn-lg active">{{ _('Cat') }}</a> &nbsp&nbsp&nbsp
+        <a href="{{ url_for('standard_appointment_dog')}}" class="btn btn-default btn-lg">{{ _('Dog') }}</a>
     </div><br>
     {{ form.hidden_tag() }}
         <div class="form-group">
@@ -76,7 +76,7 @@
         </p>
 
         <p>
-        <b>Cats</b>
+        <b>{{ _('Cats') }}</b>
         {% if cats %}
 		<ul>
 		{% for c in cats %}
@@ -85,7 +85,7 @@
 		</ul>
 		<hr>
         {% else %}
-            <p>No exsited cat! Please add one ^_^</p>
+            <p>{{ _('No exsited cat! Please add one ^_^') }}</p>
             <hr id="below_line">
         {% endif %}
 

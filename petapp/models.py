@@ -34,6 +34,7 @@ class CatAppointment(db.Model):
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
+
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
 
@@ -47,6 +48,7 @@ class DogAppointment(db.Model):
     status = db.Column(db.Integer(), default=0)
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
+
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -62,6 +64,7 @@ class CatEmergency(db.Model):
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
 
+
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
 
@@ -75,6 +78,7 @@ class DogEmergency(db.Model):
     status = db.Column(db.Integer(), default=0)
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'))
+
 
     def __repr__(self):
         return '<name {}>, <phone {}>, <city {}>'.format(self.name, self.phone, self.city)
@@ -124,3 +128,9 @@ class HandleDetails(db.Model):
     employee_name = db.Column(db.String(64), index=True)
     date = db.Column(db.String(64), index=True)
     employee_id = db.Column(db.Integer, db.ForeignKey(Employee.id))
+    treatment_date = db.Column(db.String(32), default='Undetermined')
+    finish_date = db.Column(db.String(32), default='Undetermined')
+    name = db.Column(db.String(32))
+    phone = db.Column(db.Integer())
+    city = db.Column(db.String(10))
+    pet_name = db.Column(db.String(32))

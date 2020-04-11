@@ -34,8 +34,8 @@
     <div class="answer-e">
         {% if prev_answers %}
             {% for answers in prev_answers %}
-                <h3>Responder：{{ answers.employee_id }}</h3>
-                <h3>Reply date: {{ answers.time }}</h3>
+                <h3>{{ _('Responder:') }}{{ answers.employee_id }}</h3>
+                <h3>{{ _('Reply date:') }} {{ answers.time }}</h3>
             {% endfor %}
         {% endif %}
     </div>
