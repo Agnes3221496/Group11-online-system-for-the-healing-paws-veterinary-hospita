@@ -1,14 +1,19 @@
 {% extends "employee_base.html" %}
 
 {% block content %}
+{#    <style>#}
+{#        .e_t h2{float: left}#}
+{#    #}
+{#    </style>#}
+    <h1>All handled pets:</h1>
     {% for pet in t_pets %}
-        {%  if pet.treatment_date == 'Undetermined'%}
-            <h1>Pets to be treated:</h1>
-            <h2>Pet name: </h2><p>{{ pet.pet_name }}</p>
-            <h2>Treatment date:</h2><p>{{ pet.treatment_date }}</p>
-            <h2>Finish date:</h2><p>{{ pet.finish_date }}</p>
-        {% endif %}
-        <h1>Pets in treatment: </h1>
-        <h1>Recently cured pets: </h1>
+        <a href={{ url_for('pet_details', pid=pet.id) }}><h2>Pet name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}&nbsp&nbsp&nbsp(click to see more information)</h2></a>
+        <h2>Appointment date:&nbsp&nbsp{{ pet.date }}</h2>
+        <h2>Treatment date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.treatment_date }}</h2>
+        <h2>Finish date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.finish_date }}</h2>
+        <a class="bt" href={{ url_for('start_treatment', p=pet.id) }}>Start Treatment</a>
+        <a class="bt" href={{ url_for('finish_treatment', p2=pet.id) }}>Finish Treatment</a>
+        <a class="bt" href={{ url_for('reset', p3=pet.id) }}>Reset</a>
+        <hr>
     {% endfor %}
 {% endblock %}

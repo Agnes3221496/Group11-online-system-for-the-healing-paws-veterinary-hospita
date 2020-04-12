@@ -1,0 +1,12 @@
+{% extends "employee_base.html" %}
+
+{% block content %}
+    {% for pet in t_pets %}
+        <h2>Pet name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}</h2>
+        <h2>Owner's name:&nbsp&nbsp{{ pet.name }}</h2>
+        <h2>Owner's phone number:&nbsp&nbsp{{ pet.phone }}</h2>
+        <h2>City:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.city }}</h2>
+        <input type=”button” name="Submit" onclick="javascript:history.back(-1);" value="Back">
+        <br>
+    {% endfor %}
+{% endblock %}

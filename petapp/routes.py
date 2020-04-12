@@ -5,7 +5,8 @@ from werkzeug.utils import secure_filename
 from petapp import app, db
 from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm, \
     PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, \
-    PetForm, HandleForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, HandleForm
+    PetForm, HandleForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, \
+    SearchQuestionForm, PostAnswerForm, PetForm, HandleForm
 from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question, \
     Answer, Pet, HandleDetails
 
@@ -33,10 +34,12 @@ def get_locale():
         return language
     return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
+
 @app.route('/language/<language>')
 def choose_language(language=None):
     session['language'] = language
     return redirect(url_for(session.get("currentPage")))
+
 
 @app.context_processor
 def inject_conf_var():
@@ -44,18 +47,21 @@ def inject_conf_var():
                 CURRENT_LANGUAGE=session.get('language',
                                              request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
 
+
 @app.context_processor
 def inject_conf_var():
     return dict(AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
-                    CURRENT_LANGUAGE=session.get('language',request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
+                CURRENT_LANGUAGE=session.get('language',
+                                             request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
+
+
 # reference: https://www.thinbug.com/q/42393831
 
 @app.route('/')
-
 @app.route('/index')
 def index():
     session['currentPage'] = 'index'
-    session['currentPage']='index'
+    session['currentPage'] = 'index'
     return render_template('index.html')
 
 
@@ -67,7 +73,7 @@ def login():
         user_in_db = Customer.query.filter(Customer.username == form.username.data).first()
         if not user_in_db:
             flash(gettext('No user found with username: %(name)s', name=form.username.data))
-            flash(gettext('No user found with username: %(name)s',name = form.username.data))
+            flash(gettext('No user found with username: %(name)s', name=form.username.data))
             return redirect(url_for('login'))
         if check_password_hash(user_in_db.password_hash, form.password.data):
             # flash('Login success!')
@@ -114,6 +120,7 @@ def signup():
         return redirect(url_for("login"))
     return render_template('signup.html', title=gettext('Register a new user'), form=form)
 
+
 @app.route('/checkuser', methods=['POST'])
 def check_username():
     chosen_name = request.form['username']
@@ -138,6 +145,7 @@ def check_email():
             return jsonify({'text': gettext('Incorrect format!'), 'returnvalue': 1})
     else:
         return jsonify({'text': gettext('Email is already existed'), 'returnvalue': 0})
+
 
 @app.route('/employee_signup', methods=['GET', 'POST'])
 def employee_signup():
@@ -358,6 +366,7 @@ def customer_question():
         return render_template('customer_question.html', title=gettext('Search'), form=form, question=question)
     return render_template('customer_question.html', title=gettext('Search'), form=form, question=question)
 
+
 @app.route('/question_detail/<q_id>/')
 def question_detail(q_id):
     session['currentPage'] = 'question_detail'
@@ -375,6 +384,7 @@ def orders():
     dog_orders = DogAppointment.query.filter(DogAppointment.status == 0).all()
     return render_template('orders.html', title=gettext('Order List'), cat_orders_e=cat_orders_e,
                            dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
+
 
 @app.route('/handle_details', methods=['GET', 'POST'])
 def handle_details():
@@ -439,7 +449,8 @@ def handle_details():
             pet_name = dog.pet_name
 
         new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at, employee_name=form.name.data,
-                                   date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone, city=city, pet_name=pet_name)
+                                   date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone, city=city,
+                                   pet_name=pet_name)
         db.session.add(new_handle)
         db.session.commit()
         flash("Appointment handled successfully")
@@ -484,7 +495,6 @@ def delete_order():
     return redirect(url_for('orders'))
 
 
-
 @app.route('/qa_e', methods=['GET', 'POST'])
 def qa_e():
     session['currentPage'] = 'qa_e'
@@ -518,12 +528,69 @@ def answer():
                            prev_answers=prev_answers)
 
 
+def takeDate(elem):
+    return elem.date
+
+
 @app.route('/employee_track', methods=['GET', 'POST'])
 def employee_track():
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     t_pets = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
-    return render_template('employee_track.html', title='track', t_pets = t_pets)
-    return render_template('answer.html', title=gettext('Q&A'), prev_questions=prev_questions, form=form, prev_answers=prev_answers)
+    print(t_pets[0].date < t_pets[1].date)
+    t_pets.sort(key=takeDate)
+    return render_template('employee_track.html', title='track', t_pets=t_pets)
+
+
+@app.route('/start_treatment', methods=['GET', 'POST'])
+def start_treatment():
+    pid = request.args.get("p")
+    print(pid)
+    t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
+    dt = datetime.datetime.now()
+    time = str(dt)
+    time = time[:16]
+    t_pets.treatment_date = time
+    t_pets.finish_date = 'In treatment'
+    db.session.commit()
+    return redirect(url_for('employee_track'))
+
+
+@app.route('/finish_treatment', methods=['GET', 'POST'])
+def finish_treatment():
+    pid = request.args.get("p2")
+    print(pid)
+    t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
+    if t_pets.treatment_date != 'Undetermined':
+        dt = datetime.datetime.now()
+        time = str(dt)
+        time = time[:16]
+        t_pets.finish_date = time
+        db.session.commit()
+    else:
+        flash("This treatment haven't start yet")
+    return redirect(url_for('employee_track'))
+
+
+@app.route('/reset', methods=['GET', 'POST'])
+def reset():
+    pid = request.args.get("p3")
+    print(pid)
+    t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
+    if t_pets.finish_date != 'Undetermined' and  t_pets.finish_date != 'In treatment':
+        flash("This treatment has already finished, you cannot reset it")
+    else:
+        t_pets.treatment_date = 'Undetermined'
+        t_pets.finish_date = 'Undetermined'
+        db.session.commit()
+    return redirect(url_for('employee_track'))
+
+
+@app.route('/pet_details', methods=['GET', 'POST'])
+def pet_details():
+    print(1)
+    pid = request.args.get("pid")
+    t_pets = HandleDetails.query.filter(HandleDetails.id == pid).all()
+    return render_template('pet_details.html', title='pet_details', t_pets=t_pets)
 
 
 @app.route('/add_pet', methods=['GET', 'POST'])
@@ -553,6 +620,7 @@ def add_pet():
             return redirect(url_for('login'))
     return render_template('add_pet.html', title=gettext('Add Pet'), form=form)
 
+
 @app.route('/my_pets')
 def my_pets():
     session['currentPage'] = 'my_pets'
@@ -563,7 +631,7 @@ def my_pets():
     else:
         flash(gettext("User needs to either login or signup first"))
         return redirect(url_for('login'))
-    return render_template('my_pets.html', title=gettext('My Pets'),pet=pet)
+    return render_template('my_pets.html', title=gettext('My Pets'), pet=pet)
 
 
 @app.route('/pet_detail/<pet_id>/')
@@ -571,4 +639,3 @@ def pet_detail(pet_id):
     session['currentPage'] = 'pet_detail'
     pet = Pet.query.filter(Pet.id == pet_id)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
-
