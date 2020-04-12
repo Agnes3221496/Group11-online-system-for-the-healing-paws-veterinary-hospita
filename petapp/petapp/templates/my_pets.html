@@ -1,0 +1,18 @@
+{% extends "customer_base.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <h1>{{ _('My Pets') }}</h1>
+    <a href="{{ url_for('add_pet')}}">{{ _('Add Pet') }}</a>
+</head>
+<body>
+    {% if pet %}
+        {% for p in pet %}
+            <p>{{ _('Name:') }} <a href="{{ url_for('pet_detail', pet_id=p.id) }}"> {{ p.name }}</a> </p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,1781 @@
+/* ------------------------------------------------------------------
+[Table of contents]
+01. Fonts settings
+02. Default styles
+03. Header styles
+04. Content Styles
+05. Footer Styles
+06. Navigation Menu
+07. Home Slider 
+08. Services Styles 
+09. Button Styles
+10. Thumbnails Styles
+11. Contact Styles
+12. Pricing Styles
+13. Media Query
+------------------------------------------------------------------- */
+
+
+/*** 01. Fonts settings ***/
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700|Poppins:300,400,500,600,700');
+
+/*** 02. Default styles ***/
+
+html,
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+body {
+    background: url('../images/icons/bg.jpg') no-repeat fixed;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 300;
+    color: #888;
+    border: 0;
+}
+
+
+/*** typography ***/
+
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 15px;
+    line-height: 1.5em;
+}
+
+h1 {
+    color: #444;
+    font-size: 32px;
+    padding: 20px 0 5px 0;
+    margin: 0;
+    position: relative;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #86C775;
+    font-weight: 400;
+    font-size: 27px;
+    margin: 0;
+    position: relative;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #86C775;
+    font-size: 24px;
+    padding-bottom: 15px;
+}
+
+h4 {
+    color: #444;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+h5 {
+    color: #444;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+h6 {
+    color: #444;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+}
+
+
+/* paragraph */
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 300;
+    margin: 0 0 15px;
+    color: #888;
+}
+
+span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+
+/* lists */
+
+ul {
+    list-style-type: none;
+}
+
+
+/* links */
+
+a[href^="tel:"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+    outline: none
+}
+
+a:hover {
+    color: #86c775;
+    text-decoration: none;
+    outline: none
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+
+/* Selection */
+
+::selection {
+    background: #86c775 !important;
+    color: #fff
+}
+
+::-moz-selection {
+    background: #86c775 !important;
+    color: #fff
+}
+
+
+/* Scrollbar  */
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #86C775;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #86C775;
+}
+
+
+/*** 03. Header Styles ***/
+
+header {
+    position: absolute;
+    left: 0;
+    top: -58px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*** 04. Content Styles ***/
+
+.inner {
+    overflow: hidden;
+}
+
+.content {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+#team {
+    padding-top: 30px;
+}
+
+#pricing {
+    padding-top: 30px;
+}
+
+.vfp-box1 {
+    background: #fff;
+    padding: 20px;
+    position: relative;
+    z-index: 20;
+}
+
+.vfp-box2 {
+    background: #fff;
+    margin-left: -20px;
+    padding: 20px;
+}
+
+.vfp-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: #86c775;
+    padding: 0 0 5px 0;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f3f3f3;
+    position: relative;
+}
+
+.vfp-heading:after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 1px;
+    background: #86C775;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+.post-img {
+    padding-bottom: 20px;
+}
+
+.vfp-author-date {
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.vfp-author-date span {
+    margin: 0 3px 0 10px;
+}
+
+.vfp-author-date span:first-child {
+    margin: 0 3px 0 0;
+}
+
+
+/*** 05. Footer Styles ***/
+
+footer {
+    padding: 0 20px 30px 20px;
+    text-align: center;
+    background: #86c775;
+}
+
+footer img {
+    max-width: 115px;
+    margin-top: -38px;
+}
+
+footer h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1em;
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+footer .subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    margin-top: 3px;
+}
+
+.copyright {
+    color: #fff;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.copyright a {
+    color: #fff;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.copyright a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.vfp-bottom-wrapper {
+    padding: 90px 0 120px 0;
+}
+
+
+/* footer social */
+
+.social {
+    display: inline-block;
+    margin: 0;
+    padding-top: 20px;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.social li {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    float: left;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.social li a {
+    color: #fff;
+}
+
+.social li a:hover {
+    color: #444;
+}
+
+hr {
+    margin: 20px 0 0 0;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #ffffff;
+}
+
+.cdate {
+    font-size: 12px;
+    color: #888;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.emergency-call {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 27px;
+    line-height: 1.5em;
+    color: #444;
+}
+
+.opening-hours {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 27px;
+    line-height: 1.5em;
+    color: #444;
+}
+
+
+/*** 06. Navigation Menu ***/
+
+.menu-wrapper {
+    padding-top: 120px;
+}
+
+.navbar_ {
+    margin: 0;
+    padding: 0;
+    background: none;
+    position: relative;
+    z-index: 30;
+}
+
+.navbar_ .navbar-inner_ {
+    padding: 0;
+    margin: 0;
+    border: none;
+    min-height: inherit;
+    background: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    filter: none;
+}
+
+.navbar_ .btn-navbar {
+    background: #86c775;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.navbar_ .btn-navbar:hover {
+    background: #86c775;
+}
+
+.navbar_ .btn-navbar .icon-bar {
+    background-image: none;
+}
+
+.nav-collapse_.collapse {
+    position: relative;
+    display: block;
+    text-align: left;
+}
+
+.navbar_ .nav {
+    position: relative;
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    left: auto;
+}
+
+.navbar_ .nav > li {
+    position: relative;
+    display: block;
+    float: none;
+    padding-left: 0px;
+    white-space: nowrap;
+    background: none;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.navbar_ .nav > li > a {
+    display: block;
+    text-decoration: none;
+    background: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5em;
+    color: #888;
+    text-shadow: none;
+    padding: 0;
+    border: none;
+    margin: 0;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    position: relative;
+    transition: color 0.3s ease-out;
+    -moz-transition: color 0.3s ease-out;
+    -webkit-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+}
+
+.navbar_ .nav > li > a .over1:before {
+    display: block;
+    font-family: themify;
+    content: "\e649";
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.navbar_ .nav > li.active > a,
+.navbar_ .nav > li.active > a:hover,
+.navbar_ .nav > li.active > a:focus,
+.navbar_ .nav > li > a:hover,
+.navbar_ .nav > li > a:focus,
+.navbar_ .nav > li.sfHover > a,
+.navbar_ .nav > li.sfHover > a:hover {
+    color: #86C775;
+    text-decoration: none;
+    background: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.navbar_ .nav > li.active > a .over1,
+.navbar_ .nav > li.active > a:hover .over1,
+.navbar_ .nav > li.active > a:focus .over1,
+.navbar_ .nav > li > a:hover .over1,
+.navbar_ .nav > li > a:focus .over1,
+.navbar_ .nav > li.sfHover > a .over1,
+.navbar_ .nav > li.sfHover > a:hover .over1 {
+    background-position: bottom;
+}
+
+.navbar_ .nav > li:last-child {
+    border-bottom: 1px solid white;
+}
+
+
+/* submenu */
+
+.sub-menu ul {
+    position: absolute;
+    display: none;
+    left: 100%;
+    top: 0px;
+    list-style: none;
+    zoom: 1;
+    z-index: 109;
+    margin: 0;
+    margin-left: 20px;
+    padding: 0px;
+    border: 1px solid #f3f3f3;
+    text-align: left;
+}
+
+.sub-menu li {
+    margin: 0;
+    position: relative;
+    zoom: 1;
+    display: block;
+    background: #fff;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.sub-menu li:first-child {
+    margin-top: 0;
+}
+
+.sub-menu li a {
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #888;
+    text-decoration: none;
+    padding: 15px 40px 15px 15px;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.sub-menu li a:hover {
+    text-decoration: none;
+    color: #86c775;
+}
+
+.sub-menu li a em {
+    display: inline-block;
+    width: 7px;
+    height: 10px;
+    background: none;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.sub-menu li a:hover em {
+    background-position: bottom;
+}
+
+.sub-menu-1 > ul {}
+
+.sub-menu-2 > ul {
+    left: 100%;
+    top: 0px;
+    margin-left: 0px;
+}
+
+
+/*** 07. Homepage Slider ***/
+
+.vfp-caroufredsel-slider1-wrapper {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.vfp-caroufredsel-slider1-wrapper .vfp-caroufredsel-wrapper {
+    width: 100% !important;
+}
+
+.vfp-caroufredsel-slider1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+.vfp-caroufredsel-slider1 li {
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: left;
+}
+
+.vfp-pagination1 {
+    position: absolute;
+    bottom: 60px;
+    right: 0px;
+}
+
+.vfp-pagination1 a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.vfp-pagination1 a:hover,
+.vfp-pagination1 a.selected {
+    background-position: right;
+    border: 2px solid #86c775;
+}
+
+.vfp-pagination1 a span {
+    display: none;
+}
+
+.vfp-caroufredsel-slide1 {}
+
+.vfp-caroufredsel-slide1 .img {
+    width: 100%;
+}
+
+.vfp-caroufredsel-slide1 .txt1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #86c775;
+    padding-top: 20px;
+}
+
+.vfp-caroufredsel-slide1 .txt2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #888;
+    padding-top: 5px;
+}
+
+
+/*** 08. Services Styles ***/
+
+.vfp-caroufredsel-slider2-wrapper {
+    padding-bottom: 120px;
+    background-color: #fff;
+}
+
+.vfp-caroufredsel-slider2 {
+    position: relative;
+}
+
+.vfp-caroufredsel-slider2-txt1 {
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.5em;
+    color: #86c775;
+    margin-bottom: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.vfp-prev3 {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background: url(../images/icons/prev.png) left top no-repeat;
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    margin-top: -25px;
+    z-index: 100;
+}
+
+.vfp-prev3:hover {
+    background-position: bottom;
+}
+
+.vfp-next3 {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background: url(../images/icons/next.png) left top no-repeat;
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    margin-top: -25px;
+    z-index: 100;
+}
+
+.vfp-next3:hover {
+    background-position: bottom;
+}
+
+.vfp-carousel-box {
+    position: relative;
+}
+
+.vfp-carousel-box .inner {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel.main {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-right: -20px;
+}
+
+.vfp-caroufredsel-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.vfp-caroufredsel-wrapper ul {
+    padding: 0;
+    margin: 0;
+}
+
+.vfp-carousel-box ul li {
+    float: left;
+    display: inline-block;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    padding-right: 20px
+}
+
+.vfp-carousel-services {}
+
+.vfp-caroufredsel-slide2 {
+    text-align: center;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    background: url('../images/icons/bg.jpg') no-repeat fixed;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a:hover {
+    background: #86c775;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a .img {
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a .txt {
+    padding: 20px;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a .txt1 {
+    font-family: 'Poppins'sans-serif;
+    color: #444;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5em;
+    padding-top: 10px;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a:hover .txt1 {
+    color: #fff;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a .txt2 {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5em;
+    color: #888;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-carousel-services .vfp-caroufredsel-slide2 a:hover .txt2 {
+    color: #fff;
+}
+
+
+/*** 09. Button Styles ***/
+
+.vfp-button1 {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid #86c775;
+    color: #86c775;
+    background: transparent;
+    padding: 7px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-button1:hover {
+    background: #86c775;
+    color: #fff;
+}
+
+
+/*** 10. Thumbnails Styles ***/
+
+.thumbnails {}
+
+.thumbnails .thumbnail {
+    line-height: 1.5em;
+}
+
+.vfp-thumbnails1 {
+    margin: 0 0 0 -20px;
+    padding: 0;
+}
+
+.vfp-thumbnails1 > li {
+    width: 273px;
+    float: left;
+    margin: 0 0 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.vfp-thumbnails1 > li.last {
+    margin-bottom: 0;
+}
+
+.vfp-thumbnails1 .thumbnail {
+    text-align: center;
+    padding: 0;
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.vfp-thumbnails1 .thumbnail figure {
+    margin: 0;
+    float: none;
+    margin: 0px 0px 20px 0px;
+}
+
+.vfp-thumbnails1 .thumbnail figure img {
+    width: 100%;
+}
+
+.vfp-thumbnails1 .thumbnail .caption {}
+
+.vfp-thumbnails2 {
+    margin: 0 0 0 -27px;
+    padding: 0;
+}
+
+.vfp-thumbnails2 > li {
+    width: 325px;
+    float: left;
+    margin: 0 0 30px 27px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.vfp-thumbnails2 > li.last {
+    margin-bottom: 0;
+}
+
+.vfp-thumbnails2 .thumbnail {
+    padding: 0;
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.vfp-thumbnails2 .thumbnail figure {
+    margin: 0;
+    float: none;
+    padding-bottom: 20px;
+}
+
+.vfp-thumbnails2 .thumbnail figure img {
+    width: 100%;
+}
+
+.vfp-thumbnails2 .thumbnail .caption {}
+
+.vfp-thumbnails-iisotope {
+    margin: 0 0 0 -30px;
+    padding: 0;
+}
+
+.vfp-thumbnails-iisotope > li {
+    width: 206px;
+    float: left;
+    margin: 0 0 30px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.thumbnail .caption {
+    padding: 0;
+    color: #888;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5;
+}
+
+.vfp-thumb1 {
+    margin-bottom: 20px;
+}
+
+.vfp-thumb1.last {
+    margin-bottom: 0px;
+}
+
+.vfp-thumb1 .thumbnail {
+    padding: 0;
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.vfp-thumb1 figure {
+    margin: 0;
+    float: left;
+    margin: 0px 20px 20px 0px;
+}
+
+.vfp-thumb2 figure img {
+    width: auto;
+}
+
+.vfp-thumb1 .caption {}
+
+.vfp-thumb2 {
+    margin-bottom: 20px;
+}
+
+.vfp-thumb2.last {
+    margin-bottom: 0px;
+}
+
+.vfp-thumb2 .thumbnail {
+    padding: 20px 20px 20px 0;
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.vfp-thumb2 figure {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+.vfp-thumb2 figure2 img {
+    width: auto;
+    border-radius: 50%;
+}
+
+.vfp-thumb2 figure2 {
+    margin: 0;
+    float: left;
+    margin: 0px 20px 20px 100px;
+}
+
+.vfp-thumb2 figure img {
+    width: auto;
+    border-radius: 50%;
+}
+
+.vfp-thumb2 .caption {}
+
+.vfp-thumb-isotope {}
+
+.vfp-thumb-isotope .thumbnail {
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.vfp-thumb-isotope .thumbnail a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    padding: 0px;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-thumb-isotope .thumbnail a figure {
+    position: relative;
+    margin: 0;
+    float: none;
+    margin: 0px;
+    padding: 0;
+    border: none;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-thumb-isotope .thumbnail a img {
+    width: 100%;
+}
+
+.vfp-thumb-isotope .thumbnail a em {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: url("../images/icons/zoom.png") center center no-repeat;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-thumb-isotope .thumbnail a:hover em {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.vfp-thumb-isotope .thumbnail a .caption {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    padding: 5px;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-thumb-isotope .thumbnail a:hover .caption {
+    color: #222;
+}
+
+
+/*** 11. Contact Styles ***/
+
+
+/* Branch Table */
+
+.vfp-branch-box {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.vfp-branch-box h3 {
+    color: #86C775;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.vfp-branch-box p {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.vfp-branch-table ul {
+    padding: 0;
+    margin: 0;
+}
+
+.vfp-branch-table ul li {
+    border-bottom: 1px solid #ececec;
+    margin: 0;
+    padding: 10px 0;
+    display: block;
+    line-height: 1.5em;
+}
+
+.vfp-branch-table ul li:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+.vfp-branch-table ul li span.vfp-branch-table-light-text {
+    min-width: 120px;
+}
+
+.vfp-branch-table ul li span i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.vfp-branch-table ul li span {
+    display: table-cell;
+}
+
+.vfp-branch-table ul li span a {
+    color: #86C775;
+    font-weight: bold;
+}
+
+
+/* Contct Form */
+
+.vfp-ajax-contact-form .block3 {
+    float: left;
+}
+
+.vfp-ajax-contact-form .block4 {
+    float: left;
+    padding-left: 30px;
+}
+
+.vfp-ajax-contact-form .control-group {
+    margin-bottom: 10px;
+}
+
+.vfp-ajax-contact-form .control-label {
+    display: none;
+}
+
+.vfp-ajax-contact-form .controls {
+    margin-left: 0;
+}
+
+.vfp-ajax-contact-form input,
+.vfp-ajax-contact-form input[type="password"],
+.vfp-ajax-contact-form input[type="email"],
+.vfp-ajax-contact-form input[type="text"],
+.vfp-ajax-contact-form textarea {
+    max-width: 100%;
+    margin-bottom: 10px;
+    border-color: #f3f3f3;
+    padding: 10px 0 10px 0;
+    height: auto;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-width: 0 0 1px;
+    border-style: solid;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 300;
+    color: #888;
+    font-family: 'Poppins', sans-serif;
+    background-image: none;
+    border-bottom: 1px solid #f3f3f3;
+    border-color: ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.vfp-ajax-contact-form input:focus,
+.vfp-ajax-contact-form textarea:focus {
+    border-color: #86c775;
+}
+
+.vfp-ajax-contact-form textarea {
+    height: 90px;
+}
+
+.vfp-ajax-contact-form input,
+.vfp-ajax-contact-form textarea {
+    width: 311px;
+}
+
+.vfp-ajax-contact-form .control-group.capthca {
+    margin-bottom: 0px;
+}
+
+.vfp-ajax-contact-form .capthca input {
+    width: 106px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.vfp-ajax-contact-form img {
+    float: left;
+    width: 120px;
+    height: 42px;
+    margin-bottom: 10px;
+}
+
+.vfp-ajax-contact-form .submit {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid #86c775;
+    color: #86c775;
+    background: #fff;
+    padding: 7px 21px;
+    border-radius: 30px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.vfp-ajax-contact-form .submit:hover {
+    background: #86c775;
+    color: #FFF;
+    background-position: bottom;
+}
+
+
+/*** 12. Pricing Styles ***/
+
+.vfp-block-pricing {
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.vfp-block-pricing .block-caption {
+    margin-top: 30px;
+}
+
+.vfp-block-pricing .table {
+    padding: 30px 0 !important;
+}
+
+.vfp-block-pricing h1 small {
+    font-size: 18px;
+}
+
+.vfp-block-pricing h1 small:first-child {
+    position: relative;
+    top: -17px;
+    font-size: 26px;
+}
+
+.vfp-block-pricing h4 {
+    padding: 0;
+    font-size: 16px;
+}
+
+.vfp-block-pricing ul {
+    list-style: none;
+    padding: 0;
+    max-width: 240px;
+    margin: 10px auto;
+}
+
+.vfp-block-pricing ul li {
+    color: #888;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ececec;
+}
+
+.vfp-block-pricing ul li:last-child {
+    border: 0;
+}
+
+.vfp-block-pricing .block-caption {
+    font-family: 'Oswald', sans-serif;
+    margin: 20px 0;
+    background-color: #86c775;
+    color: #fff;
+    padding-bottom: 20px;
+    font-size: 50px;
+}
+
+.vfp-block-pricing .block-caption small {
+    color: #fff;
+}
+
+
+/*** 13. Media Query ***/
+
+
+/* Large desktop */
+
+@media (min-width: 1200px) {
+    .vfp-box2 {
+        margin-left: -30px;
+        padding: 20px;
+    }
+
+    .main .content .vfp-box1,
+    .main .content .vfp-box2 {
+        height: 515px;
+    }
+
+    .navbar_ .nav > li > a {
+        line-height: 55px;
+        padding: 0;
+    }
+
+    .vfp-thumbnails1 > li {
+        width: 273px;
+    }
+
+    .vfp-thumbnails2 > li {
+        width: 415px;
+    }
+
+    .vfp-thumbnails-iisotope > li {
+        width: 266px;
+    }
+
+    .vfp-ajax-contact-form input,
+    .vfp-ajax-contact-form textarea {
+        width: 401px;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .page_notfound .block1 {
+        width: 490px;
+    }
+
+    .page_notfound .block2 {
+        width: 340px;
+    }
+
+    .subpage .vfp-box1 {
+        position: fixed;
+        width: 230px;
+    }
+}
+
+
+/* Default landscape and desktop to large desktop */
+
+@media (max-width: 1199px) {}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+    .content {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+
+    .subpage .vfp-box1 {
+        position: fixed;
+        width: 180px;
+    }
+
+    .vfp-caroufredsel-slider2-txt1 {
+        padding-top: 30px;
+    }
+
+    .vfp-caroufredsel-slider2-wrapper {
+        padding-bottom: 60px;
+    }
+
+    .vfp-bottom-wrapper {
+        padding: 60px 0 90px 0;
+    }
+
+    .vfp-thumbnails1 > li {
+        width: 212px;
+    }
+
+    .navbar_ .nav > li > a {
+        font-size: 14px;
+        line-height: 58px;
+        padding: 0px 0 0 0;
+    }
+
+    .menu-wrapper {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width: 979px) {
+    .vfp-pagination1 {
+        bottom: 50px;
+    }
+
+    .vfp-caroufredsel-slide1 .txt1 {
+        font-size: 30px;
+        line-height: 30px;
+        padding-top: 10px;
+    }
+
+    .vfp-caroufredsel-slide1 .txt2 {
+        font-size: 14px;
+        line-height: 16px;
+        padding-top: 7px;
+    }
+
+    .nav-collapse_.collapse {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .navbar_ .btn-navbar {
+        display: none;
+    }
+
+    .page_notfound .block1 {
+        width: auto;
+        float: none;
+    }
+
+    .page_notfound .block2 {
+        width: auto;
+        margin-left: 0;
+        float: none;
+    }
+}
+
+
+/* Portrait tablet to landscape and desktop */
+
+@media (max-width: 979px) {
+    .vfp-pagination1 {
+        bottom: 50px;
+    }
+
+    .vfp-caroufredsel-slide1 .txt1 {
+        font-size: 30px;
+        line-height: 30px;
+        padding-top: 10px;
+    }
+
+    .vfp-caroufredsel-slide1 .txt2 {
+        font-size: 14px;
+        line-height: 16px;
+        padding-top: 7px;
+    }
+
+    .nav-collapse_.collapse {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .navbar_ .btn-navbar {
+        display: none;
+    }
+
+    .page_notfound .block1 {
+        width: auto;
+        float: none;
+    }
+
+    .page_notfound .block2 {
+        width: auto;
+        margin-left: 0;
+        float: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .content {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+
+    .vfp-bottom-wrapper {
+        padding: 60px 0 90px 0;
+    }
+
+    .vfp-caroufredsel-slide1 .txt1 {
+        font-size: 20px;
+        line-height: 1.5em;
+        padding-top: 20px;
+    }
+
+    .vfp-caroufredsel-slider2-wrapper {
+        padding-bottom: 60px;
+    }
+
+    .vfp-caroufredsel-slider2-txt1 {
+        padding-top: 30px;
+    }
+
+    .main .content .vfp-box1,
+    .main .content .vfp-box2 {
+        height: 330px;
+    }
+
+    .navbar_ .nav > li > a {
+        font-size: 13px;
+        line-height: 38px;
+        padding: 0px 0 0 0;
+    }
+
+    #menu_bot > li {
+        margin-left: 10px;
+    }
+
+    #menu_bot > li > a {
+        font-size: 14px;
+    }
+
+    .vfp-thumbnails1 > li {
+        width: 152px;
+    }
+
+    .vfp-thumbnails2 > li {
+        width: 244px;
+    }
+
+    .vfp-thumbnails-iisotope > li {
+        width: 152px;
+    }
+
+    .vfp-ajax-contact-form input,
+    .vfp-ajax-contact-form textarea {
+        width: 230px;
+    }
+
+    .menu-wrapper {
+        padding-top: 50px;
+    }
+}
+
+
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 767px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .content {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .container {
+        width: 440px;
+    }
+
+    .vfp-box2 {
+        margin-left: 0px;
+        margin-top: 1px;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .vfp-caroufredsel-slider1-wrapper {
+        padding-bottom: 40px;
+    }
+
+    .vfp-pagination1 {
+        bottom: 10px;
+        left: 0;
+        right: auto;
+    }
+
+    .vfp-caroufredsel-slide1 .txt1 {
+        font-size: 20px;
+        line-height: 1.5em;
+        padding-top: 20px;
+    }
+
+    .vfp-caroufredsel-slide1 .txt2 {
+        font-size: 14px;
+        line-height: 1.5em;
+        padding-bottom: 10px;
+    }
+
+    .vfp-caroufredsel-slider2-txt1 {
+        padding-top: 30px;
+    }
+
+    .vfp-caroufredsel-slider2-wrapper {
+        padding-bottom: 60px;
+    }
+
+    .vfp-bottom-wrapper {
+        padding: 0 0 90px 0;
+    }
+
+    .vfp-bottom-wrapper h3 {
+        padding-top: 60px;
+    }
+
+    .main .content .vfp-box1,
+    .main .content .vfp-box2 {
+        height: auto;
+    }
+
+    .vfp-thumb2 figure {
+        margin: 0 20px 90px 0;
+    }
+
+    .navbar_ .nav > li > a {
+        padding: 15px 0 15px 0;
+    }
+
+    .sub-menu ul {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-left: 0;
+    }
+
+    .sub-menu li a {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 10px 20px 10px 10px;
+    }
+
+    .menu_bot {
+        float: none;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    #menu_bot {}
+
+    #menu_bot > li {
+        display: block;
+        float: none;
+        margin-left: 0;
+        padding: 3px 0;
+        border-bottom: 1px solid #2e2a23;
+    }
+
+    #menu_bot > li > a {
+        line-height: 30px;
+        font-size: 16px;
+    }
+
+    .vfp-social-wrapper {
+        float: none;
+        text-align: center;
+    }
+
+    .vfp-thumbnails1 {
+        margin-left: 0;
+    }
+
+    .vfp-thumbnails1 > li {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .vfp-thumbnails2 {
+        margin-left: 0;
+    }
+
+    .vfp-thumbnails2 > li {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .vfp-thumbnails-iisotope {
+        margin-left: 0;
+    }
+
+    .vfp-thumbnails-iisotope > li {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .vfp-ajax-contact-form .block3 {
+        float: none;
+    }
+
+    .vfp-ajax-contact-form .block4 {
+        float: none;
+        padding-left: 0px;
+    }
+
+    .vfp-ajax-contact-form input,
+    .vfp-ajax-contact-form textarea {
+        width: 386px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .menu-wrapper {
+        padding-top: 225px;
+    }
+
+    .vfp-thumbnails1 .thumbnail figure img {
+        width: 50%;
+        border-radius: 50%;
+    }
+}
+
+
+/* Landscape phones and down */
+
+@media (max-width: 480px) {
+    .container {
+        width: 300px;
+    }
+
+    .navbar_ .nav > li > a {
+        padding: 15px 0 15px 0;
+    }
+
+    .vfp-ajax-contact-form input,
+    .vfp-ajax-contact-form textarea {
+        width: 246px;
+    }
+
+    .vfp-thumbnails1 .thumbnail figure img {
+        width: 50%;
+        border-radius: 50%;
+    }
+}
