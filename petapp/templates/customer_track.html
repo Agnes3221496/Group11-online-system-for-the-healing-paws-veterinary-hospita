@@ -1,0 +1,38 @@
+{% extends "customer_base.html" %}
+{% block content %}
+
+<h1>Handlded Appointments</h1>
+{% if ha %}
+    {% for h in ha %}
+    <h2>{{ h.pet_name }}</h2>
+        <p>Appointment date:&nbsp&nbsp{{ h.date }}</p>
+        <p>Treatment start date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ h.treatment_date }}</p>
+        <p>Finish date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ h.finish_date }}</p>
+
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>
+        <hr>
+    </p>
+{% endif %}
+
+<h1>Unhandlded Appointments</h1>
+{% if nha %}
+    {% for n in nha %}
+    <h2>{{ n.pet_name }}</h2>
+        <p>Owner: &nbsp&nbsp {{ n.name }}</p>
+        <p>Phone:  &nbsp&nbsp{{ n.phone }}</p>
+        <p>City:  &nbsp&nbsp&nbsp {{ n.city }}</p>
+        The appointment is still pending.
+
+        <hr>
+    {% endfor %}
+{% else %}
+    <p><hr></p>
+{% endif %}
+
+
+
+
+{% endblock %}

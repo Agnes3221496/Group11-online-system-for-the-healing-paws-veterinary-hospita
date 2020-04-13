@@ -411,6 +411,7 @@ def handle_details():
             phone = cat.phone
             city = cat.city
             pet_name = cat.pet_name
+            pet_id = cat.pet_id
         if ce is not None:
             print("2")
             cat = CatEmergency.query.filter(CatEmergency.id == ce).first()
@@ -423,6 +424,7 @@ def handle_details():
             phone = cat.phone
             city = cat.city
             pet_name = cat.pet_name
+            pet_id = cat.pet_id
         if d is not None:
             print("3")
             dog = DogAppointment.query.filter(DogAppointment.id == d).first()
@@ -435,6 +437,7 @@ def handle_details():
             phone = dog.phone
             city = dog.city
             pet_name = dog.pet_name
+            pet_id = dog.pet_id
         if de is not None:
             dog = DogEmergency.query.filter(DogEmergency.id == de).first()
             dog.status = user_in_db.id
@@ -447,10 +450,11 @@ def handle_details():
             phone = dog.phone
             city = dog.city
             pet_name = dog.pet_name
+            pet_id = dog.pet_id
 
         new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at, employee_name=form.name.data,
                                    date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone, city=city,
-                                   pet_name=pet_name)
+                                   pet_name=pet_name, pet_id=pet_id)
         db.session.add(new_handle)
         db.session.commit()
         flash("Appointment handled successfully")
@@ -536,9 +540,57 @@ def takeDate(elem):
 def employee_track():
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     t_pets = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
-    print(t_pets[0].date < t_pets[1].date)
+    #print(t_pets[0].date < t_pets[1].date)
     t_pets.sort(key=takeDate)
     return render_template('employee_track.html', title='track', t_pets=t_pets)
+
+@app.route('/customer_track')
+def customer_track():
+    if not session.get("USERNAME") is None:
+        user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
+        owner_id = user_in_db.id
+        handled = set()
+        nhandled = set()
+        cas = CatAppointment.query.filter(CatAppointment.customer_id == owner_id).all()
+        for ca in cas:
+            if ca.status == 1:
+                ha = HandleDetails.query.filter(
+                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == ca.id))).first()
+                handled.add(ha)
+            else:
+                nhandled.add(ca)
+
+        das = DogAppointment.query.filter(DogAppointment.customer_id == owner_id).all()
+        for da in das:
+            if da.status == 1:
+                ha = HandleDetails.query.filter(
+                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == da.id))).first()
+                handled.add(ha)
+            else:
+                nhandled.add(da)
+
+        ces = CatEmergency.query.filter(CatEmergency.customer_id == owner_id).all()
+        for ce in ces:
+            if ce.status == 1:
+                ha = HandleDetails.query.filter(
+                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == ce.id))).first()
+                handled.add(ha)
+            else:
+                nhandled.add(ce)
+
+        des = DogEmergency.query.filter(DogEmergency.customer_id == owner_id).all()
+        for de in des:
+            if de.status == 1:
+                ha = HandleDetails.query.filter(
+                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == de.id))).first()
+                handled.add(ha)
+            else:
+                nhandled.add(de)
+
+        return render_template('customer_track.html', title='track', nha=nhandled, ha=handled)
+    else:
+        flash(gettext("User needs to either login or signup first"))
+        return redirect(url_for('login'))
 
 
 @app.route('/start_treatment', methods=['GET', 'POST'])
@@ -587,7 +639,7 @@ def reset():
 
 @app.route('/pet_details', methods=['GET', 'POST'])
 def pet_details():
-    print(1)
+    #print(1)
     pid = request.args.get("pid")
     t_pets = HandleDetails.query.filter(HandleDetails.id == pid).all()
     return render_template('pet_details.html', title='pet_details', t_pets=t_pets)
@@ -639,3 +691,5 @@ def pet_detail(pet_id):
     session['currentPage'] = 'pet_detail'
     pet = Pet.query.filter(Pet.id == pet_id)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
+
+
