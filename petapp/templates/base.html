@@ -43,14 +43,14 @@
 {#    </script>#}
 {#    <script src="https://translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit"></script>#}
 
-	<hr>
-    {% for language in AVAILABLE_LANGUAGES.items() %}
-        {% if CURRENT_LANGUAGE == language[0] %}
-            {{ language[1] }}
-        {% else %}
-            <a href="{{ url_for('choose_language', language=language[0]) }}" >{{ language[1] }}</a>
-        {%  endif %}
-    {% endfor %}
+{#	<hr>#}
+{#    {% for language in AVAILABLE_LANGUAGES.items() %}#}
+{#        {% if CURRENT_LANGUAGE == language[0] %}#}
+{#            {{ language[1] }}#}
+{#        {% else %}#}
+{#            <a href="{{ url_for('choose_language', language=language[0]) }}" >{{ language[1] }}</a>#}
+{#        {%  endif %}#}
+{#    {% endfor %}#}
 {#    reference: https://www.thinbug.com/q/42393831#}
 
     <ul id="myTab" class="nav nav-tabs" style="padding-left: 2%;background: gainsboro;font-family: 'Comic Sans MS'">
@@ -78,5 +78,15 @@
     {% block content %}{% endblock %}
 </body>
 
+<footer>
+    {% for language in AVAILABLE_LANGUAGES.items() %}
+        {% if CURRENT_LANGUAGE == language[0] %}
+            {{ language[1] }}&nbsp &nbsp
+        {% else %}
+            <a href="{{ url_for('choose_language', language=language[0]) }}" >{{ language[1] }}&nbsp &nbsp</a>
+        {%  endif %}
+    {% endfor %}
+{#    reference: https://www.thinbug.com/q/42393831#}
+</footer>
 
 </html>
