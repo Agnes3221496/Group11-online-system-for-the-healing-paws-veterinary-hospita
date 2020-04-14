@@ -4,6 +4,13 @@
 	<title>{{ _('Employee Main Page') }}</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='../static/style/employee_base.css') }}" />
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/icons/favicon.png" type="image/png" rel="icon">
+    <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="../static/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
+    <link href="../static/css/themify-icons.css" type="text/css" rel="stylesheet">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
 	<script src="{{ url_for('static', filename='../static/script/jquery-3.4.1.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
 </head>
@@ -50,5 +57,15 @@
         {% block content %}{% endblock %}
 </body>
 
+<footer>
+    {% for language in AVAILABLE_LANGUAGES.items() %}
+        {% if CURRENT_LANGUAGE == language[0] %}
+            {{ language[1] }}&nbsp &nbsp
+        {% else %}
+            <a href="{{ url_for('choose_language', language=language[0]) }}" >{{ language[1] }}&nbsp &nbsp</a>
+        {%  endif %}
+    {% endfor %}
+{#    reference: https://www.thinbug.com/q/42393831#}
+</footer>
 
 </html>

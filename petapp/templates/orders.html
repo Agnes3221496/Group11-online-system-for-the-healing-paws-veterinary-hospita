@@ -2,24 +2,61 @@
 
 {% block content %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/orders.css') }}" />
+{#    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/orders.css') }}" />#}
+{##}
+{#    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">#}
+{##}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">#}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">#}
+{#    <script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='js/locales/bootstrap-datetimepicker.uk.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='js/datepicker.js') }}"></script>#}
+{##}
+{#    <div class="panel panel-info"/>#}
+{#    <div class="panel-heading"/>#}
+{#    <div class="panel-body"/>#}
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
-    <script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/locales/bootstrap-datetimepicker.uk.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/datepicker.js') }}"></script>
-
-    <div class="panel panel-info"/>
-    <div class="panel-heading"/>
-    <div class="panel-body"/>
-
-    <h1>{{ _('Welcome! Here are all the orders.') }}  <a href="{{ url_for('handled_appointment') }}">{{ _('Handled appointments') }}</a></h1>
-    <div id="appointment">
+{#    <h1>{{ _('Welcome! Here are all the orders.') }}  <a href="{{ url_for('handled_appointment') }}">{{ _('Handled appointments') }}</a></h1>#}
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <div class="vfp-box1">
+                        <header>
+                            <!-- Logo -->
+                            <div class="vfp-logo-wrapper">
+                                <a href="index.html" class="logo"><img src="../static/images/logo.png" alt="" class="img-responsive"></a>
+                            </div>
+                        </header>
+                        <!-- Navigation Menu -->
+                        <nav>
+                            <div class="menu-wrapper">
+                                <div class="navbar navbar_">
+                                    <div class="navbar-inner navbar-inner_">
+                                        <a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                                        <div class="nav-collapse nav-collapse_ collapse">
+                                            <ul class="nav sf-menu clearfix">
+                                                <li class="active"><a href="{{ url_for('orders')}}">{{ _('Orders') }}<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('employee_track')}}">Tracking Pets<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}<span class="over1"></span></a></li>
+                                                <li> <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}<span class="over1"></span></a></li>
+{#                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>#}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div class="vfp-box2">
+                        <div id="appointment">
     <div class="e_appointment">
+    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Welcome! Here are all the orders.') }}</div>
+    <a href="{{ url_for('handled_appointment') }}">{{ _('Handled appointments') }}</a><hr style="border-top: 2px dotted green">
         {% if cat_orders_e %}
             {% for cats in cat_orders_e %}
                 <h2>{{ _('Cat emergency appointments:') }}</h2>
@@ -30,8 +67,8 @@
 {#                <p>Owner: {{ cats.name }}</p>#}
 {#                <p>Phone number: {{ cats.phone }}</p>#}
 {#                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('handle_details', ce=cats.id) }}"> Handle this appointment </a>#}
-                <br/>
-                <hr style="border-top: 2px dotted #31708f">
+                <br/><hr>
+{#                <hr style="border-top: 2px dotted #31708f">#}
             {% endfor %}
         {% endif %}
 
@@ -45,8 +82,8 @@
 {#                <p>Owner: {{ dogs.name }}</p>#}
 {#                <p>Phone number: {{ dogs.phone }}</p>#}
 {#                <p>City: {{ dogs.city }}</p>   <a href="{{ url_for('handle_details', de=dogs.id) }}"> Handle this appointment </a>#}
-                <br/>
-                <hr style="border-top: 2px dotted #31708f">
+                <br/><hr>
+{#                <hr style="border-top: 2px dotted #31708f">#}
             {% endfor %}
         {% endif %}
     </div>
@@ -62,8 +99,8 @@
 {#                <p>Owner: {{ cats.name }}</p>#}
 {#                <p>Phone number: {{ cats.phone }}</p>#}
 {#                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('handle_details', c=cats.id) }}"> Handle this appointment </a>#}
-                <br/>
-                <hr style="border-top: 2px dotted #31708f">
+                <br/><hr>
+{#                <hr style="border-top: 2px dotted #31708f">#}
             {% endfor %}
         {% endif %}
 
@@ -77,8 +114,8 @@
 {#                <p>Owner: {{ dogs.name }}</p>#}
 {#                <p>Phone number: {{ dogs.phone }}</p>#}
 {#                <p>City: {{ dogs.city }}</p>  <a href="{{ url_for('handle_details', d=dogs.id) }}"> Handle this appointment </a>#}
-                <br/>
-                <hr style="border-top: 2px dotted #31708f">
+                <br/><hr>
+{#                <hr style="border-top: 2px dotted #31708f">#}
             {% endfor %}
         {% endif %}
     </div>
@@ -87,7 +124,48 @@
 
     <div class="row">
         <div class="col-md-4" id="data">
-            <input type="text" class="form-control">
+            <input style="margin-top: 2%;margin-left: 3%" type="text" class="form-control">
         </div>
     </div>
+	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
+        <h1>VET FOR PET</h1>
+        <p class="subtitle">Veterinary Hospital</p>
+        <div class="vfp-social-wrapper">
+            <ul class="social clearfix">
+                <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>
+                <li><a href="index.html#"><i class="ti-instagram"></i></a></li>
+                <li><a href="index.html#"><i class="ti-youtube"></i></a></li>
+            </ul>
+        </div>
+        <div class="copyright">Copyright © 2019, by DuruThemes</div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="js/jquery.caroufredsel.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+
+        var buttons = document.querySelectorAll(".vfp-button1");
+        for(var i = 0; i < buttons.length; i++) {
+          var button = buttons[i];
+          button.addEventListener("click", function() {
+            if(!button.classList.contains("active"))
+              button.classList.add("active");
+            else
+              button.classList.remove("active");
+          });
+        }
+    </script>
+
 {% endblock %}

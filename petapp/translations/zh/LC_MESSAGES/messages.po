@@ -31,7 +31,7 @@ msgid "Remember Me"
 msgstr "记住我"
 
 #: petapp/forms.py:14 petapp/forms.py:22 petapp/routes.py:69
-#: petapp/routes.py:87 petapp/templates/employee_login.html:14
+#: petapp/routes.py:87 petapp/templates/employee_login.html:47
 #: petapp/templates/login.html:16
 msgid "Sign In"
 msgstr "登录"
@@ -659,11 +659,11 @@ msgstr "订单"
 msgid "Add New Employee"
 msgstr "添加新员工"
 
-#: petapp/templates/employee_login.html:23 petapp/templates/login.html:24
+#: petapp/templates/employee_login.html:52 petapp/templates/login.html:24
 msgid "User"
 msgstr "用户"
 
-#: petapp/templates/employee_login.html:24 petapp/templates/login.html:25
+#: petapp/templates/employee_login.html:53 petapp/templates/login.html:25
 msgid "Employee"
 msgstr "员工"
 

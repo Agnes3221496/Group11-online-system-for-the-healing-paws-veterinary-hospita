@@ -691,47 +691,47 @@ msgstr ""
 msgid "Name:"
 msgstr ""
 
-#: petapp/templates/orders.html:20
+#: petapp/templates/orders.html:58
 msgid "Welcome! Here are all the orders."
 msgstr ""
 
-#: petapp/templates/orders.html:20
+#: petapp/templates/orders.html:59
 msgid "Handled appointments"
 msgstr ""
 
-#: petapp/templates/orders.html:26
+#: petapp/templates/orders.html:62
 msgid "Cat emergency appointments:"
 msgstr ""
 
-#: petapp/templates/orders.html:27 petapp/templates/orders.html:45
-#: petapp/templates/orders.html:65 petapp/templates/orders.html:83
+#: petapp/templates/orders.html:63 petapp/templates/orders.html:78
+#: petapp/templates/orders.html:95 petapp/templates/orders.html:110
 msgid "Owner:"
 msgstr ""
 
-#: petapp/templates/orders.html:28 petapp/templates/orders.html:46
-#: petapp/templates/orders.html:66 petapp/templates/orders.html:84
+#: petapp/templates/orders.html:64 petapp/templates/orders.html:79
+#: petapp/templates/orders.html:96 petapp/templates/orders.html:111
 msgid "Phone number:"
 msgstr ""
 
-#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
-#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
+#: petapp/templates/orders.html:65 petapp/templates/orders.html:80
+#: petapp/templates/orders.html:97 petapp/templates/orders.html:112
 msgid "City:"
 msgstr ""
 
-#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
-#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
+#: petapp/templates/orders.html:65 petapp/templates/orders.html:80
+#: petapp/templates/orders.html:97 petapp/templates/orders.html:112
 msgid "Handle this appointment"
 msgstr ""
 
-#: petapp/templates/orders.html:44
+#: petapp/templates/orders.html:77
 msgid "Dog emergency appointments:"
 msgstr ""
 
-#: petapp/templates/orders.html:64
+#: petapp/templates/orders.html:94
 msgid "Cat normal appointments:"
 msgstr ""
 
-#: petapp/templates/orders.html:82
+#: petapp/templates/orders.html:109
 msgid "Dog normal appointments:"
 msgstr ""
 
