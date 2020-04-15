@@ -1,9 +1,52 @@
 .q_title{
     font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
     font-size: 20px;
-    position: absolute;
+    /* position: absolute; */
     width: 1525px;
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 50px;
+}
+
+.panel-body {
+    width: 100%;
+    background-color: rgb(161, 207, 209);
+    border: solid;
+    opacity: 0.8;
+    filter: 80%;
+    border-radius: 10px;
+    border-color: rgb(161, 207, 209);
+    margin: 10px;
+    margin-top: 80px;
+    float: left;
+    writing-mode : horizontal-tb;    
+}
+
+footer {
+    width: 100%;
+    padding: 10px;
+    float: left;
+}
+
+
+
+h3 {
+    float: left;
+}
+
+img{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    writing-mode : vertical-lr;
+    float: right;
+}
+
+hr {
+    width: 100%;
+}
+
+.q_graphic {
+    margin-right: 10px;
+    writing-mode : vertical-lr;
+    float: right;
 }
