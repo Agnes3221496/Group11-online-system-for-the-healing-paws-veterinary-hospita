@@ -56,10 +56,10 @@
                         <div id="appointment">
     <div class="e_appointment">
     <div class="vfp-caroufredsel-slider2-txt1">{{ _('Welcome! Here are all the orders.') }}</div>
-    <a href="{{ url_for('handled_appointment') }}">{{ _('Handled appointments') }}</a><hr style="border-top: 2px dotted green">
+    <a href="{{ url_for('handled_appointment') }}">{{ _('Handled appointments') }}</a><hr>
         {% if cat_orders_e %}
             {% for cats in cat_orders_e %}
-                <h2>{{ _('Cat emergency appointments:') }}</h2>
+                <h2 style="font-size: 20px;color: #3c763d">{{ _('Cat emergency appointments:') }}</h2>
                 <p>{{ _('Owner:') }} {{ cats.name }}</p>
                 <p>{{ _('Phone number:') }} {{ cats.phone }}</p>
                 <p>{{ _('City:') }} {{ cats.city }}</p>  <a href="{{ url_for('handle_details', ce=cats.id) }}"> {{ _('Handle this appointment') }} </a>
@@ -67,14 +67,14 @@
 {#                <p>Owner: {{ cats.name }}</p>#}
 {#                <p>Phone number: {{ cats.phone }}</p>#}
 {#                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('handle_details', ce=cats.id) }}"> Handle this appointment </a>#}
-                <br/><hr>
-{#                <hr style="border-top: 2px dotted #31708f">#}
+                <br/>
+                <hr style="border-top: 2px dotted green">
             {% endfor %}
         {% endif %}
 
         {% if dog_orders_e %}
             {% for dogs in dog_orders_e %}
-                <h2>{{ _('Dog emergency appointments:') }}</h2>
+                <h2 style="font-size: 20px;color: #3c763d">{{ _('Dog emergency appointments:') }}</h2>
                 <p>{{ _('Owner:') }} {{ dogs.name }}</p>
                 <p>{{ _('Phone number:') }} {{ dogs.phone }}</p>
                 <p>{{ _('City:') }} {{ dogs.city }}</p>   <a href="{{ url_for('handle_details', de=dogs.id) }}"> {{ _('Handle this appointment') }} </a>
@@ -82,8 +82,8 @@
 {#                <p>Owner: {{ dogs.name }}</p>#}
 {#                <p>Phone number: {{ dogs.phone }}</p>#}
 {#                <p>City: {{ dogs.city }}</p>   <a href="{{ url_for('handle_details', de=dogs.id) }}"> Handle this appointment </a>#}
-                <br/><hr>
-{#                <hr style="border-top: 2px dotted #31708f">#}
+                <br/>
+                <hr style="border-top: 2px dotted green">
             {% endfor %}
         {% endif %}
     </div>
@@ -91,7 +91,7 @@
     <div class="n_appointment">
         {% if cat_orders %}
             {% for cats in cat_orders %}
-                <h2>{{ _('Cat normal appointments:') }}</h2>
+                <h2 style="font-size: 20px;color: #3c763d">{{ _('Cat normal appointments:') }}</h2>
                 <p>{{ _('Owner:') }} {{ cats.name }}</p>
                 <p>{{ _('Phone number:') }} {{ cats.phone }}</p>
                 <p>{{ _('City:') }} {{ cats.city }}</p>  <a href="{{ url_for('handle_details', c=cats.id) }}"> {{ _('Handle this appointment') }} </a>
@@ -99,14 +99,14 @@
 {#                <p>Owner: {{ cats.name }}</p>#}
 {#                <p>Phone number: {{ cats.phone }}</p>#}
 {#                <p>City: {{ cats.city }}</p>  <a href="{{ url_for('handle_details', c=cats.id) }}"> Handle this appointment </a>#}
-                <br/><hr>
-{#                <hr style="border-top: 2px dotted #31708f">#}
+                <br/>
+                <hr style="border-top: 2px dotted green">
             {% endfor %}
         {% endif %}
 
         {% if dog_orders %}
             {% for dogs in dog_orders %}
-                <h2>{{ _('Dog normal appointments:') }}</h2>
+                <h2 style="font-size: 20px;color: #3c763d">{{ _('Dog normal appointments:') }}</h2>
                 <p>{{ _('Owner:') }} {{ dogs.name }}</p>
                 <p>{{ _('Phone number:') }} {{ dogs.phone }}</p>
                 <p>{{ _('City:') }} {{ dogs.city }}</p>  <a href="{{ url_for('handle_details', d=dogs.id) }}"> {{ _('Handle this appointment') }} </a>
@@ -114,8 +114,8 @@
 {#                <p>Owner: {{ dogs.name }}</p>#}
 {#                <p>Phone number: {{ dogs.phone }}</p>#}
 {#                <p>City: {{ dogs.city }}</p>  <a href="{{ url_for('handle_details', d=dogs.id) }}"> Handle this appointment </a>#}
-                <br/><hr>
-{#                <hr style="border-top: 2px dotted #31708f">#}
+                <br/>
+                <hr style="border-top: 2px dotted green">
             {% endfor %}
         {% endif %}
     </div>

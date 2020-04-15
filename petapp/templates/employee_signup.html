@@ -44,7 +44,7 @@
                 </div>
                 <div class="span9">
                     <div class="vfp-box2">
-                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Help your new colleague to register:') }}</div>
+                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Help your new colleague to register:') }}</div><hr>
                         <p>{{ _('Enter the details and register here') }}</p>
                         <form action="" method="post" novalidate id="signupForm">
                             {{ form.hidden_tag() }}
@@ -89,7 +89,7 @@
                                     {% for error in form.register_password.errors %}
                                         <span style="color: red;">[{{ error }}]</span>
                                     {% endfor %}
-                                </p>
+                                </p><hr>
                                 <p>
                                     {{ form.accept_rules() }} {{ form.accept_rules.label }}
                                     {% for error in form.accept_rules.errors %}

@@ -34,7 +34,7 @@
                 </div>
                 <div class="span9">
                     <div class="vfp-box2">
-                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Handled Appointments') }}</div>
+                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Handled Appointments') }}</div><hr>
                         <div class="e_appointment">
 {#<<<<<<< HEAD#}
 {#            {% if cat_orders_e %}#}
@@ -85,21 +85,21 @@
 {#=======#}
                             {% for order in order_details %}
                                 {% if order.appointment_type == 1 %}
-                                    <h2>Appointment type: Emergency</h2>
+                                    <h2 style="font-size: 20px;color: #3c763d">Appointment type: Emergency</h2>
                                 {% endif %}
                                 {% if order.appointment_type == 2 %}
-                                    <h2>Appointment type: Normal</h2>
+                                    <h2 style="font-size: 20px;color: #3c763d">Appointment type: Normal</h2>
                                 {% endif %}
                                 {% if order.pet_type == 1 %}
-                                    <h2>Pet type: Cat</h2>
+                                    <h2 style="font-size: 20px;color: #3c763d">Pet type: Cat</h2>
                                 {% endif %}
                                 {% if order.pet_type == 2 %}
-                                    <h2>Pet type: Dog</h2>
+                                    <h2 style="font-size: 20px;color: #3c763d">Pet type: Dog</h2>
                                 {% endif %}
-                                <h2>Date: {{ order.date }}</h2>
+                                <h2 style="font-size: 20px;color: #3c763d">Date: {{ order.date }}</h2>
                                 <br/>
-                                <hr style="border-top: 2px dotted #31708f">
                                 <a href={{ url_for('delete_order', id = order.id) }}>Delete this appointment</a>
+                                <hr style="border-top: 2px dotted green">
                             {% endfor %}
                         </div>
                     </div>

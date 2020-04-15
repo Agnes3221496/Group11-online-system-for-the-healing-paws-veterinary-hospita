@@ -1,6 +1,5 @@
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
+import sys,importlib
+importlib.reload(sys)
 
 from flask import Flask
 from petapp.config import Config

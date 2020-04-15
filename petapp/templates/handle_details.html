@@ -50,7 +50,7 @@
                 </div>
                 <div class="span9">
                     <div class="vfp-box2">
-                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Please enter the details to confirm.') }}</div>
+                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Please enter the details to confirm.') }}</div><hr>
                         <form action="" method="post" novalidate>
                             {{ form.hidden_tag() }}
                             <p>
@@ -72,7 +72,7 @@
                                 {% endfor %}
                             </p>
                             <p>
-                                {{ form.confirm.label }}<br>
+                                {{ form.confirm.label }}
                                 {{ form.confirm}}
                                 {% for error in form.confirm.errors %}
                                     <span style="color: red;">[{{ error }}]</span>
