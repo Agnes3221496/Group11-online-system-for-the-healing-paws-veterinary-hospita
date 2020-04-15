@@ -40,10 +40,10 @@
                     <div class="vfp-box2">
                     <div class="vfp-caroufredsel-slider2-txt1">{{ _('All handled pets:') }}</div><hr>
                         {% for pet in t_pets %}
-                            <a href={{ url_for('pet_details', pid=pet.id) }}><h2>Pet name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}&nbsp&nbsp&nbsp(click to see more information)</h2></a>
-                            <h2>Appointment date:&nbsp&nbsp{{ pet.date }}</h2>
-                            <h2>Treatment date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.treatment_date }}</h2>
-                            <h2>Finish date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.finish_date }}</h2>
+                            <a href={{ url_for('pet_details', pid=pet.id) }}><h2 style="font-size: 20px;color: #3c763d">Pet name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}&nbsp&nbsp&nbsp(click to see more information)</h2></a>
+                            <p>Appointment date:&nbsp&nbsp{{ pet.date }}</p>
+                            <p>Treatment date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.treatment_date }}</p>
+                            <p>Finish date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.finish_date }}</p>
                             <a class="bt" href={{ url_for('start_treatment', p=pet.id) }}>Start Treatment</a>
                             <a class="bt" href={{ url_for('finish_treatment', p2=pet.id) }}>Finish Treatment</a>
                             <a class="bt" href={{ url_for('reset', p3=pet.id) }}>Reset</a>
