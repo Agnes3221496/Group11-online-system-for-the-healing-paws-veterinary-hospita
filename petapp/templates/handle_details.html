@@ -72,13 +72,13 @@
                                 {% endfor %}
                             </p>
                             <p>
-                                {{ form.confirm.label }}
                                 {{ form.confirm}}
+                                {{ form.confirm.label }}
                                 {% for error in form.confirm.errors %}
                                     <span style="color: red;">[{{ error }}]</span>
                                 {% endfor %}
                             </p>
-                            <p>{{ form.submit() }}</p>
+                            <br><input type="submit" value="Confirm" style="background-color: #7aba7b;color: white;border-radius: 10px;border: #7aba7b;height: 30px">
                         </form>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
     </div>
 
     <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
-        <h1>VET FOR PET</h1>
+        <h1>HEALING PAWS</h1>
         <p class="subtitle">Veterinary Hospital</p>
         <div class="vfp-social-wrapper">
             <ul class="social clearfix">
@@ -96,7 +96,6 @@
                 <li><a href="index.html#"><i class="ti-youtube"></i></a></li>
             </ul>
         </div>
-        <div class="copyright">Copyright © 2019, by DuruThemes</div>
     </footer>
 
     <script src="js/jquery.js"></script>

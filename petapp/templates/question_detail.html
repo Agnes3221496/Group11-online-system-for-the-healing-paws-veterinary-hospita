@@ -1,8 +1,8 @@
 {% extends "customer_base.html" %}
 {% block content %}
-    <html>
+
         <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />
-        <h1>{{ _('Question&Answer') }}</h1>
+
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
@@ -10,8 +10,42 @@
         <div class="panel panel-info"/>
         <div class="panel-heading"/>
         <div class="panel-body"/>
-
-
+ <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <div class="vfp-box1">
+                        <header>
+                            <!-- Logo -->
+                            <div class="vfp-logo-wrapper">
+                                <a href="index.html" class="logo"><img src="../static/images/logo.png" alt="" class="img-responsive"></a>
+                            </div>
+                        </header>
+                        <!-- Navigation Menu -->
+                        <nav>
+                            <div class="menu-wrapper">
+                                <div class="navbar navbar_">
+                                    <div class="navbar-inner navbar-inner_">
+                                        <a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                                        <div class="nav-collapse nav-collapse_ collapse">
+                                            <ul class="nav sf-menu clearfix">
+                                                <li><a href="{{ url_for('standard_appointment_cat')}}">{{ _('Standard Appointment') }}<span class="over1"></span></a></li>
+                                                <li class="active"><a href="{{ url_for('customer_question')}}">{{ _('Q&A') }}<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('my_pets')}}">My Pets<span class="over1"></span></a></li>
+                                                <li> <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}<span class="over1"></span></a></li>
+                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            <div class="span9">
+                    <div class="vfp-box2">
+                    <div class="question">
+                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Question&Answer.') }}</div>
         {% if question %}
             {% for q in question %}
                 <h2>{{ _('Title:') }} {{ q.title }}</h2>
@@ -19,7 +53,7 @@
                 <p>{{ _('Publisher:') }} {{ q.publisher }}</p>
                 <h3>{{ _('Detail:') }}</h3>
                 <p>{{ q.detail }}</p>
-                <img style="width:360px" src='/static/uploaded_image/question_image/{{ q.image }}'>
+{#                <img style="width:360px" src='/static/uploaded_image/question_image/{{ q.image }}'>#}
             {% endfor %}
         {% endif %}
         <h3>Reply:</h3>
@@ -29,5 +63,19 @@
                 <p>{{ a.time }}</p>
             {% endfor %}
         {% endif %}
-    </html>
+                    </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+ </div>
+
+
+    <!-- JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="js/jquery.caroufredsel.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 {% endblock %}

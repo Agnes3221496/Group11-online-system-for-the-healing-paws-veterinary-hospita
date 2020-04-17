@@ -1,21 +1,53 @@
 {% extends "customer_base.html" %}
 {% block content %}
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />
-
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
-
-        <div class="panel panel-info"/>
-        <div class="panel-heading"/>
-        <div class="panel-body"/>
-
-        <h1>{{ _('Question&Answer') }}</h1>
-
-        <div class="body">
-        <a href="{{ url_for('post_question')}}">{{ _('Post Question') }}</a>
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />#}
+{##}
+{#        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">#}
+{##}
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">#}
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">#}
+{##}
+{#        <div class="panel panel-info"/>#}
+{#        <div class="panel-heading"/>#}
+{#        <div class="panel-body"/>#}
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <div class="vfp-box1">
+                        <header>
+                            <!-- Logo -->
+                            <div class="vfp-logo-wrapper">
+                                <a href="index.html" class="logo"><img src="../static/images/logo.png" alt="" class="img-responsive"></a>
+                            </div>
+                        </header>
+                        <!-- Navigation Menu -->
+                        <nav>
+                            <div class="menu-wrapper">
+                                <div class="navbar navbar_">
+                                    <div class="navbar-inner navbar-inner_">
+                                        <a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                                        <div class="nav-collapse nav-collapse_ collapse">
+                                            <ul class="nav sf-menu clearfix">
+                                                <li><a href="{{ url_for('standard_appointment_cat')}}">{{ _('Standard Appointment') }}<span class="over1"></span></a></li>
+                                                <li class="active"><a href="{{ url_for('customer_question')}}">{{ _('Q&A') }}<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('my_pets')}}">My Pets<span class="over1"></span></a></li>
+                                                <li> <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}<span class="over1"></span></a></li>
+{#                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>#}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            <div class="span9">
+                    <div class="vfp-box2">
+                    <div class="body">
+                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Question&Answer.') }}</div>
+                    <a href="{{ url_for('post_question')}}">{{ _('Post Question') }}</a>
 
         <form action="" method="post" novalidate id="SearchQuestionForm" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
@@ -30,7 +62,7 @@
                     {% endfor %}
                     </div>
                 </p>
-                <p align="center">{{ form.submit }}</p>
+                <p align="center"><input type="submit" value="Search" style="background-color: #7aba7b;color: white;border-radius: 10px;border: #7aba7b;height: 30px"></p>
             </div>
         </form>
         {% if question %}
@@ -40,5 +72,32 @@
                 <img style="width: 180px" src='/static/uploaded_image/question_image/{{ q.image }}'>
             {% endfor %}
         {% endif %}
+        </div>
+                    <hr>
+                    </div>
+            </div>
+            </div>
+        </div>
     </div>
+
+
+     <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
+        <h1>HEALING PAWS</h1>
+        <p class="subtitle">Veterinary Hospital</p>
+        <div class="vfp-social-wrapper">
+            <ul class="social clearfix">
+                <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>
+                <li><a href="index.html#"><i class="ti-instagram"></i></a></li>
+                <li><a href="index.html#"><i class="ti-youtube"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="js/jquery.caroufredsel.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 {% endblock %}

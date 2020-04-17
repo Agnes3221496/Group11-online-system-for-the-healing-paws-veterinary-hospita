@@ -1,53 +1,127 @@
-<<<<<<< HEAD
 {% extends "employee_base.html" %}
 
 {% block content %}
-    <div class="q_title">
-        {% if prev_questions %}
-            {% for question in prev_questions %}
-                <h2> {{ question.title }}</h2>
-            {% endfor %}
-        {% endif %}
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <div class="vfp-box1">
+                        <header>
+                            <div class="vfp-logo-wrapper">
+                                <a href="index.html" class="logo"><img src="../static/images/logo.png" alt="" class="img-responsive"></a>
+                            </div>
+                        </header>
+                        <nav>
+                            <div class="menu-wrapper">
+                                <div class="navbar navbar_">
+                                    <div class="navbar-inner navbar-inner_">
+                                        <a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                                        <div class="nav-collapse nav-collapse_ collapse">
+                                            <ul class="nav sf-menu clearfix">
+                                                <li><a href="{{ url_for('orders')}}">{{ _('Cancel') }}<span class="over1"></span></a></li>
+{#                                                <li><a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}<span class="over1"></span></a></li>#}
+{#                                                <li><a href="{{ url_for('employee_track')}}">Tracking Pets<span class="over1"></span></a></li>#}
+{#                                                <li><a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}<span class="over1"></span></a></li>#}
+{#                                                <li> <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}<span class="over1"></span></a></li>#}
+{#                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>#}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div class="vfp-box2">
+                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('Please enter the details to confirm.') }}</div><hr>
+                        <div class="q_title">
+                            {% if prev_questions %}
+                                {% for question in prev_questions %}
+                                    <h2 style="font-size: 20px;color: #3c763d"> {{ question.title }}</h2>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div class="q_details">
+                            {% if prev_questions %}
+                                {% for question in prev_questions %}
+                                    <p>{{ question.detail }}</p>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div class="q_graphic">
+                            {% if prev_questions %}
+                                {% for question in prev_questions %}
+                                    <img src='/static/uploaded_image/question_image/{{ question.image }}'>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <br>
+{#                        <div class="answer-body">#}
+{#                            {% if prev_answers %}#}
+{#                                {% for answers in prev_answers %}#}
+{#                                    <h2 style="font-size: 20px;color: #3c763d">{{ answers.answer }}</h2>#}
+{#                                {% endfor %}#}
+{#                            {% endif %}#}
+{#                        </div>#}
+                        <div class="answer-e">
+                            {% if prev_answers %}
+                                {% for answers in prev_answers %}
+                                    <hr>
+                                    <h2 style="font-size: 20px;color: #3c763d">{{ answers.answer }}</h2>
+                                    <p>{{ _('Responder:') }}{{ answers.employee_id }}</p>
+                                    <p>{{ _('Reply date:') }} {{ answers.time }}</p>
+                                 {% endfor %}
+                            {% endif %}
+                        </div>
+                        <hr>
+                        <form action="" method="post" novalidate>
+                            {{ form.hidden_tag() }}
+                            <h2 style="color: #3c763d" id="replyTitle">
+                                {{ form.postbody.label }}</h2>
+                            <p id="answerBody">{{ form.postbody(size=100) }}</p>
+                            {% for error in form.postbody.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                            </p>
+                            <input type="submit" value="Reply" style="background-color: #7aba7b;color: white;border-radius: 10px;border: #7aba7b;height: 30px">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="q_details">
-        {% if prev_questions %}
-            {% for question in prev_questions %}
-                <h2>{{ question.detail }}</h2>
-            {% endfor %}
-        {% endif %}
-    </div>
-    <div class="q_graphic">
-        {% if prev_questions %}
-            {% for question in prev_questions %}
-                <img src='/static/uploaded_image/question_image/{{ question.image }}'>
-            {% endfor %}
-        {% endif %}
-    </div>
-    <br>
-    <div class="answer-body">
-        {% if prev_answers %}
-             {% for answers in prev_answers %}
-                <h2>{{ answers.answer }}</h2>
-            {% endfor %}
-        {% endif %}
-    </div>
-    <div class="answer-e">
-        {% if prev_answers %}
-            {% for answers in prev_answers %}
-                <h3>{{ _('Responder:') }}{{ answers.employee_id }}</h3>
-                <h3>{{ _('Reply date:') }} {{ answers.time }}</h3>
-            {% endfor %}
-        {% endif %}
-    </div>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p id="replyTitle">
-            {{ form.postbody.label }}<br>
-        <p id="answerBody">{{ form.postbody(size=100) }}</p>
-        {% for error in form.postbody.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
+
+    <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
+        <h1>HEALING PAWS</h1>
+        <p class="subtitle">Veterinary Hospital</p>
+        <div class="vfp-social-wrapper">
+            <ul class="social clearfix">
+                <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>
+                <li><a href="index.html#"><i class="ti-instagram"></i></a></li>
+                <li><a href="index.html#"><i class="ti-youtube"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="js/jquery.caroufredsel.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+
+        var buttons = document.querySelectorAll(".vfp-button1");
+        for(var i = 0; i < buttons.length; i++) {
+          var button = buttons[i];
+          button.addEventListener("click", function() {
+            if(!button.classList.contains("active"))
+              button.classList.add("active");
+            else
+              button.classList.remove("active");
+          });
+        }
+    </script>
 {% endblock %}
