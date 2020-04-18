@@ -38,7 +38,12 @@ def get_locale():
 @app.route('/language/<language>')
 def choose_language(language=None):
     session['language'] = language
-    return redirect(url_for(session.get("currentPage")))
+    if session.get("currentPage") == 'pet_detail':
+        return redirect(url_for(session.get("currentPage"), pet_id= session.get('petID')))
+    elif session.get("currentPage") == 'question_detail':
+        return redirect(url_for(session.get("currentPage"), q_id= session.get('questionID')))
+    else:
+        return redirect(url_for(session.get("currentPage")))
 
 
 @app.context_processor
@@ -48,11 +53,11 @@ def inject_conf_var():
                                              request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
 
 
-@app.context_processor
-def inject_conf_var():
-    return dict(AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
-                CURRENT_LANGUAGE=session.get('language',
-                                             request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
+# @app.context_processor
+# def inject_conf_var():
+#     return dict(AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
+#                 CURRENT_LANGUAGE=session.get('language',
+#                                              request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
 
 
 # reference: https://www.thinbug.com/q/42393831
@@ -180,9 +185,9 @@ def standard_appointment_cat():
     session['currentPage'] = 'standard_appointment_cat'
     form = CatAppointmentForm()
     # count = CatAppointment.query.count()
-    b_count = CatAppointment.query.filter(CatAppointment.city == gettext("Beijing")).count()
-    s_count = CatAppointment.query.filter(CatAppointment.city == gettext("Shanghai")).count()
-    c_count = CatAppointment.query.filter(CatAppointment.city == gettext("Chengdu")).count()
+    b_count = CatAppointment.query.filter(CatAppointment.city == "Beijing").count()
+    s_count = CatAppointment.query.filter(CatAppointment.city == "Shanghai").count()
+    c_count = CatAppointment.query.filter(CatAppointment.city == "Chengdu").count()
 
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
@@ -217,9 +222,9 @@ def standard_appointment_dog():
     session['currentPage'] = 'standard_appointment_dog'
     form = CatAppointmentForm()
     # count = CatAppointment.query.count()
-    b_count = DogAppointment.query.filter(DogAppointment.city == gettext("Beijing")).count()
-    s_count = DogAppointment.query.filter(DogAppointment.city == gettext("Shanghai")).count()
-    c_count = DogAppointment.query.filter(DogAppointment.city == gettext("Chengdu")).count()
+    b_count = DogAppointment.query.filter(DogAppointment.city == "Beijing").count()
+    s_count = DogAppointment.query.filter(DogAppointment.city == "Shanghai").count()
+    c_count = DogAppointment.query.filter(DogAppointment.city == "Chengdu").count()
 
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
@@ -370,6 +375,7 @@ def customer_question():
 @app.route('/question_detail/<q_id>/')
 def question_detail(q_id):
     session['currentPage'] = 'question_detail'
+    session['questionID'] = q_id
     question = Question.query.filter(Question.id == q_id)
     answer = Answer.query.filter(Answer.question_id == q_id)
     return render_template('question_detail.html', title=gettext('Detail'), question=question, answer=answer)
@@ -457,9 +463,9 @@ def handle_details():
                                    pet_name=pet_name, pet_id=pet_id)
         db.session.add(new_handle)
         db.session.commit()
-        flash("Appointment handled successfully")
+        flash(gettext("Appointment handled successfully"))
         return redirect(url_for('orders'))
-    return render_template('handle_details.html', title='handle detials', form=form)
+    return render_template('handle_details.html', title=gettext('handle detials'), form=form)
 
 
 @app.route('/handled_appointment', methods=['GET', 'POST'])
@@ -468,11 +474,12 @@ def handled_appointment():
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id)
 
-    return render_template('handled_appointment.html', title='handled_appointment', order_details=order_details)
+    return render_template('handled_appointment.html', title=gettext('handled_appointment'), order_details=order_details)
 
 
 @app.route('/delete_order', methods=['GET', 'POST'])
 def delete_order():
+    session['currentPage'] = 'delete_order'
     id = request.args.get("id")
     appointment = HandleDetails.query.filter(HandleDetails.id == id).first()
     if appointment.appointment_type == 1 and appointment.pet_type == 1:
@@ -538,14 +545,16 @@ def takeDate(elem):
 
 @app.route('/employee_track', methods=['GET', 'POST'])
 def employee_track():
+    session['currentPage'] = 'employee_track'
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     t_pets = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
     #print(t_pets[0].date < t_pets[1].date)
     t_pets.sort(key=takeDate)
-    return render_template('employee_track.html', title='track', t_pets=t_pets)
+    return render_template('employee_track.html', title=gettext('track'), t_pets=t_pets)
 
 @app.route('/customer_track')
 def customer_track():
+    session['currentPage'] = 'customer_track'
     if not session.get("USERNAME") is None:
         user_in_db = Customer.query.filter(Customer.username == session.get("USERNAME")).first()
         owner_id = user_in_db.id
@@ -587,7 +596,7 @@ def customer_track():
             else:
                 nhandled.add(de)
 
-        return render_template('customer_track.html', title='track', nha=nhandled, ha=handled)
+        return render_template('customer_track.html', title=gettext('track'), nha=nhandled, ha=handled)
     else:
         flash(gettext("User needs to either login or signup first"))
         return redirect(url_for('login'))
@@ -619,7 +628,7 @@ def finish_treatment():
         t_pets.finish_date = time
         db.session.commit()
     else:
-        flash("This treatment haven't start yet")
+        flash(gettext("This treatment haven't start yet"))
     return redirect(url_for('employee_track'))
 
 
@@ -629,7 +638,7 @@ def reset():
     print(pid)
     t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
     if t_pets.finish_date != 'Undetermined' and  t_pets.finish_date != 'In treatment':
-        flash("This treatment has already finished, you cannot reset it")
+        flash(gettext("This treatment has already finished, you cannot reset it"))
     else:
         t_pets.treatment_date = 'Undetermined'
         t_pets.finish_date = 'Undetermined'
@@ -640,9 +649,10 @@ def reset():
 @app.route('/pet_details', methods=['GET', 'POST'])
 def pet_details():
     #print(1)
+    session['currentPage'] = 'pet_details'
     pid = request.args.get("pid")
     t_pets = HandleDetails.query.filter(HandleDetails.id == pid).all()
-    return render_template('pet_details.html', title='pet_details', t_pets=t_pets)
+    return render_template('pet_details.html', title=gettext('pet_details'), t_pets=t_pets)
 
 
 @app.route('/add_pet', methods=['GET', 'POST'])
@@ -689,6 +699,7 @@ def my_pets():
 @app.route('/pet_detail/<pet_id>/')
 def pet_detail(pet_id):
     session['currentPage'] = 'pet_detail'
+    session['petID'] = pet_id
     pet = Pet.query.filter(Pet.id == pet_id)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
 

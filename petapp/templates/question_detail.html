@@ -31,9 +31,9 @@
                                             <ul class="nav sf-menu clearfix">
                                                 <li><a href="{{ url_for('standard_appointment_cat')}}">{{ _('Standard Appointment') }}<span class="over1"></span></a></li>
                                                 <li class="active"><a href="{{ url_for('customer_question')}}">{{ _('Q&A') }}<span class="over1"></span></a></li>
-                                                <li><a href="{{ url_for('my_pets')}}">My Pets<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('my_pets')}}">{{ _('My Pets') }}<span class="over1"></span></a></li>
                                                 <li> <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}<span class="over1"></span></a></li>
-                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>
+                                                <li><a href="contact.html">{{ _('Contact Us') }}<span class="over1"></span></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
 {#                <img style="width:360px" src='/static/uploaded_image/question_image/{{ q.image }}'>#}
             {% endfor %}
         {% endif %}
-        <h3>Reply:</h3>
+        <h3>{{ _('Reply:') }}</h3>
         {% if answer %}
             {% for a in answer %}
                 <p>{{ a.answer }}</p>

@@ -24,7 +24,7 @@
                                             <ul class="nav sf-menu clearfix">
                                                 <li><a href="{{ url_for('orders')}}">{{ _('Orders') }}<span class="over1"></span></a></li>
                                                 <li><a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}<span class="over1"></span></a></li>
-                                                <li class="active"><a href="{{ url_for('employee_track')}}">Tracking Pets<span class="over1"></span></a></li>
+                                                <li class="active"><a href="{{ url_for('employee_track')}}">{{ _('Tracking Pets') }}<span class="over1"></span></a></li>
                                                 <li><a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}<span class="over1"></span></a></li>
                                                 <li> <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}<span class="over1"></span></a></li>
 {#                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>#}
@@ -40,13 +40,13 @@
                     <div class="vfp-box2">
                     <div class="vfp-caroufredsel-slider2-txt1">{{ _('All handled pets:') }}</div><hr>
                         {% for pet in t_pets %}
-                            <a href={{ url_for('pet_details', pid=pet.id) }}><h2 style="font-size: 20px;color: #3c763d">Pet name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}&nbsp&nbsp&nbsp(click to see more information)</h2></a>
-                            <p>Appointment date:&nbsp&nbsp{{ pet.date }}</p>
-                            <p>Treatment date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.treatment_date }}</p>
-                            <p>Finish date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.finish_date }}</p>
-                            <a class="bt" href={{ url_for('start_treatment', p=pet.id) }}>Start Treatment</a>
-                            <a class="bt" href={{ url_for('finish_treatment', p2=pet.id) }}>Finish Treatment</a>
-                            <a class="bt" href={{ url_for('reset', p3=pet.id) }}>Reset</a>
+                            <a href={{ url_for('pet_details', pid=pet.id) }}><h2 style="font-size: 20px;color: #3c763d">{{ _('Pet name:') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}&nbsp&nbsp&nbsp({{ _('click to see more information') }})</h2></a>
+                            <p>{{ _('Appointment date:') }}&nbsp&nbsp{{ pet.date }}</p>
+                            <p>{{ _('Treatment date:') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.treatment_date }}</p>
+                            <p>{{ _('Finish date:') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.finish_date }}</p>
+                            <a class="bt" href={{ url_for('start_treatment', p=pet.id) }}>{{ _('Start Treatment') }}</a>
+                            <a class="bt" href={{ url_for('finish_treatment', p2=pet.id) }}>{{ _('Finish Treatment') }}</a>
+                            <a class="bt" href={{ url_for('reset', p3=pet.id) }}>{{ _('Reset') }}</a>
                             <hr>
                         {% endfor %}
                     </div>
@@ -56,8 +56,8 @@
     </div>
 
     <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
-        <h1>HEALING PAWS</h1>
-        <p class="subtitle">Veterinary Hospital</p>
+        <h1>{{ _('HEALING PAWS') }}</h1>
+        <p class="subtitle">{{ _('Veterinary Hospital') }}</p>
         <div class="vfp-social-wrapper">
             <ul class="social clearfix">
                 <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>

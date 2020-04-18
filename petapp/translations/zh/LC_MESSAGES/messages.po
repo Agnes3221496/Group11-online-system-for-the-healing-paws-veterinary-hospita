@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-11 12:38+0800\n"
+"POT-Creation-Date: 2020-04-19 01:25+0800\n"
 "PO-Revision-Date: 2020-04-06 00:51+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -30,9 +30,9 @@ msgstr "密码"
 msgid "Remember Me"
 msgstr "记住我"
 
-#: petapp/forms.py:14 petapp/forms.py:22 petapp/routes.py:69
-#: petapp/routes.py:87 petapp/templates/employee_login.html:47
-#: petapp/templates/login.html:16
+#: petapp/forms.py:14 petapp/forms.py:22 petapp/routes.py:84
+#: petapp/routes.py:102 petapp/templates/employee_login.html:47
+#: petapp/templates/login.html:47
 msgid "Sign In"
 msgstr "登录"
 
@@ -50,7 +50,7 @@ msgstr "重复密码"
 
 #: petapp/forms.py:31 petapp/forms.py:42
 msgid "I accept the site rules"
-msgstr "我接受该网站规章"
+msgstr "我接受该网站的规章"
 
 #: petapp/forms.py:32 petapp/forms.py:43
 msgid "Register"
@@ -72,11 +72,11 @@ msgstr "电话号码："
 msgid "City"
 msgstr "城市"
 
-#: petapp/forms.py:49 petapp/routes.py:164 petapp/routes.py:200
+#: petapp/forms.py:49
 msgid "Beijing"
 msgstr "北京"
 
-#: petapp/forms.py:49 petapp/routes.py:165 petapp/routes.py:201
+#: petapp/forms.py:49
 msgid "Shanghai"
 msgstr "上海"
 
@@ -86,7 +86,7 @@ msgstr "成都"
 
 #: petapp/forms.py:51
 msgid "Please choose an existed pet "
-msgstr "请选择一只已有的宠物"
+msgstr "请选择一只已存在的宠物"
 
 #: petapp/forms.py:52
 msgid "book"
@@ -106,27 +106,27 @@ msgstr "图片"
 
 #: petapp/forms.py:60
 msgid "Post"
-msgstr "发送"
+msgstr "发布"
 
 #: petapp/forms.py:65
 msgid "Question"
 msgstr "问题"
 
-#: petapp/forms.py:66 petapp/routes.py:343 petapp/routes.py:344
+#: petapp/forms.py:66 petapp/routes.py:366 petapp/routes.py:367
 msgid "Search"
 msgstr "搜索"
 
 #: petapp/forms.py:70
 msgid "Post body:"
-msgstr "发送内容"
+msgstr "发布的内容："
 
 #: petapp/forms.py:70
 msgid "Enter your post body"
-msgstr "输入你发送的内容"
+msgstr "输入你发布的内容"
 
 #: petapp/forms.py:71
 msgid "Post answer"
-msgstr "发送回答"
+msgstr "发布回答"
 
 #: petapp/forms.py:75
 msgid "Pet Name: "
@@ -140,16 +140,17 @@ msgstr "年龄："
 msgid "Species"
 msgstr "品种"
 
-#: petapp/forms.py:77 petapp/templates/emergency_dog.html:25
-#: petapp/templates/standard_appointment_cat.html:25
-#: petapp/templates/standard_appointment_dog.html:25
+#: petapp/forms.py:77 petapp/templates/emergency_cat.html:51
+#: petapp/templates/emergency_dog.html:51
+#: petapp/templates/standard_appointment_cat.html:64
+#: petapp/templates/standard_appointment_dog.html:52
 msgid "Cat"
 msgstr "猫"
 
-#: petapp/forms.py:77 petapp/templates/emergency_cat.html:26
-#: petapp/templates/emergency_dog.html:26
-#: petapp/templates/standard_appointment_cat.html:26
-#: petapp/templates/standard_appointment_dog.html:26
+#: petapp/forms.py:77 petapp/templates/emergency_cat.html:52
+#: petapp/templates/emergency_dog.html:52
+#: petapp/templates/standard_appointment_cat.html:65
+#: petapp/templates/standard_appointment_dog.html:53
 msgid "Dog"
 msgstr "狗"
 
@@ -167,126 +168,158 @@ msgstr "预约日期："
 
 #: petapp/forms.py:85
 msgid "Confirm handle this appointment"
-msgstr "确认处理此预约"
+msgstr "确认处理该预约"
 
 #: petapp/forms.py:85
 msgid "You need to confirm"
 msgstr "你需要确认"
 
-#: petapp/routes.py:61
+#: petapp/routes.py:75 petapp/routes.py:76
 #, python-format
 msgid "No user found with username: %(name)s"
 msgstr "没有找到用户名为 %(name)s 的用户"
 
-#: petapp/routes.py:67 petapp/routes.py:85
+#: petapp/routes.py:82 petapp/routes.py:100
 msgid "Incorrect Password"
 msgstr "密码错误"
 
-#: petapp/routes.py:79
+#: petapp/routes.py:94
 msgid "No user found with employee number: {}"
 msgstr "未找到员工编号为{}的用户"
 
-#: petapp/routes.py:96 petapp/routes.py:138
+#: petapp/routes.py:111 petapp/routes.py:156
 msgid "Passwords do not match!"
 msgstr "密码不一致！"
 
-#: petapp/routes.py:106
+#: petapp/routes.py:121
 msgid "Register a new user"
 msgstr "新用户注册"
 
-#: petapp/routes.py:113
+#: petapp/routes.py:129
 msgid "Username is available"
 msgstr "用户名可用"
 
-#: petapp/routes.py:116
+#: petapp/routes.py:132
 msgid "Sorry! Username is already taken"
 msgstr "对不起！用户名已被占用"
 
-#: petapp/routes.py:126
+#: petapp/routes.py:143
 msgid "Email is available"
 msgstr "邮箱正确"
 
-#: petapp/routes.py:128
+#: petapp/routes.py:145
 msgid "Incorrect format!"
 msgstr "格式错误！"
 
-#: petapp/routes.py:130
+#: petapp/routes.py:147
 msgid "Email is already existed"
 msgstr "邮箱已存在"
 
-#: petapp/routes.py:141
+#: petapp/routes.py:159
 msgid "Register password is not right!"
 msgstr "注册密码错误！"
 
-#: petapp/routes.py:151
+#: petapp/routes.py:169
 msgid "Register a new employee"
 msgstr "新员工注册"
 
-#: petapp/routes.py:166 petapp/routes.py:202
-msgid "Chengdu"
-msgstr "成都"
-
-#: petapp/routes.py:184 petapp/routes.py:220 petapp/routes.py:252
-#: petapp/routes.py:285
+#: petapp/routes.py:204 petapp/routes.py:241 petapp/routes.py:274
+#: petapp/routes.py:306
 msgid "Please add the pet first *^_^*"
 msgstr "请先添加宠物 *^_^*"
 
-#: petapp/routes.py:191 petapp/routes.py:226 petapp/routes.py:257
-#: petapp/routes.py:290 petapp/routes.py:330 petapp/routes.py:540
-#: petapp/routes.py:552
+#: petapp/routes.py:211 petapp/routes.py:247 petapp/routes.py:279
+#: petapp/routes.py:311 petapp/routes.py:353 petapp/routes.py:595
+#: petapp/routes.py:675 petapp/routes.py:688
 msgid "User needs to either login or signup first"
 msgstr "用户需先登录或注册"
 
-#: petapp/routes.py:324 petapp/routes.py:534
+#: petapp/routes.py:347 petapp/routes.py:669
 msgid "Post successfully"
 msgstr "发布成功"
 
-#: petapp/routes.py:327 petapp/routes.py:537
+#: petapp/routes.py:350 petapp/routes.py:672
 msgid "The image format is wrong, please upload it again."
 msgstr "图片格式错误，请重新上传。"
 
-#: petapp/routes.py:332 petapp/templates/customer_question.html:18
+#: petapp/routes.py:355 petapp/templates/customer_question.html:50
 msgid "Post Question"
 msgstr "发布问题"
 
-#: petapp/routes.py:351 petapp/routes.py:560
+#: petapp/routes.py:375 petapp/routes.py:697
 msgid "Detail"
 msgstr "详情"
 
-#: petapp/routes.py:382
-msgid "Appointment handled successfully"
-msgstr "预约处理成功"
-
-#: petapp/routes.py:389
+#: petapp/routes.py:385
 msgid "Order List"
 msgstr "订单列表"
 
-#: petapp/routes.py:453
+#: petapp/routes.py:460
+msgid "Appointment handled successfully"
+msgstr "预约处理成功"
+
+#: petapp/routes.py:462
+msgid "handle detials"
+msgstr "处理详情"
+
+#: petapp/routes.py:471
 msgid "handled_appointment"
 msgstr "预约处理"
 
-#: petapp/routes.py:490 petapp/routes.py:515
-#: petapp/templates/customer_base.html:27
-#: petapp/templates/employee_base.html:30
+#: petapp/routes.py:507 petapp/routes.py:532 petapp/templates/add_pet.html:25
+#: petapp/templates/customer_base.html:37
+#: petapp/templates/customer_question.html:34
+#: petapp/templates/emergency_cat.html:28
+#: petapp/templates/emergency_dog.html:28
+#: petapp/templates/employee_base.html:36
+#: petapp/templates/employee_signup.html:32
+#: petapp/templates/employee_track.html:26 petapp/templates/my_pets.html:27
+#: petapp/templates/orders.html:41 petapp/templates/pet_detail.html:35
+#: petapp/templates/post_question.html:32 petapp/templates/qa_e.html:32
+#: petapp/templates/question_detail.html:33
+#: petapp/templates/standard_appointment_cat.html:41
+#: petapp/templates/standard_appointment_dog.html:29
 msgid "Q&A"
 msgstr "问&答"
 
-#: petapp/routes.py:542 petapp/templates/my_pets.html:8
+#: petapp/routes.py:547 petapp/routes.py:593
+msgid "track"
+msgstr "追踪"
+
+#: petapp/routes.py:625
+msgid "This treatment haven't start yet"
+msgstr "该预约还未到预约时间"
+
+#: petapp/routes.py:635
+msgid "This treatment has already finished, you cannot reset it"
+msgstr "该治疗已经结束，无法重置"
+
+#: petapp/routes.py:649
+msgid "pet_details"
+msgstr "宠物详情"
+
+#: petapp/routes.py:677 petapp/templates/my_pets.html:42
 msgid "Add Pet"
 msgstr "添加宠物"
 
-#: petapp/routes.py:550 petapp/routes.py:554
-#: petapp/templates/customer_base.html:30 petapp/templates/my_pets.html:7
+#: petapp/routes.py:686 petapp/routes.py:690 petapp/templates/add_pet.html:26
+#: petapp/templates/customer_base.html:40
+#: petapp/templates/customer_question.html:35
+#: petapp/templates/emergency_cat.html:29
+#: petapp/templates/emergency_dog.html:29 petapp/templates/my_pets.html:28
+#: petapp/templates/my_pets.html:41 petapp/templates/pet_detail.html:36
+#: petapp/templates/post_question.html:33
+#: petapp/templates/question_detail.html:34
+#: petapp/templates/standard_appointment_cat.html:42
+#: petapp/templates/standard_appointment_dog.html:30
 msgid "My Pets"
 msgstr "我的宠物"
 
 #: petapp/static/static/about.html:15 petapp/static/static/about.html:59
 #: petapp/static/static/blog.html:35 petapp/static/static/gallery.html:38
-#: petapp/templates/base.html:58 petapp/templates/emergency_cat.html:15
-#: petapp/templates/emergency_dog.html:15 petapp/templates/index.html:24
+#: petapp/templates/base.html:58 petapp/templates/employee_login.html:31
+#: petapp/templates/index.html:24 petapp/templates/login.html:31
 #: petapp/templates/services.html:25
-#: petapp/templates/standard_appointment_cat.html:15
-#: petapp/templates/standard_appointment_dog.html:15
 msgid "Home"
 msgstr "主页"
 
@@ -299,48 +332,50 @@ msgid "Messages"
 msgstr "信息"
 
 #: petapp/static/static/about.html:20 petapp/templates/base.html:61
-#: petapp/templates/employee_login.html:66 petapp/templates/login.html:67
+#: petapp/templates/employee_login.html:90 petapp/templates/login.html:90
 msgid "Login"
 msgstr "登录"
 
 #: petapp/static/static/about.html:22 petapp/templates/base.html:64
-#: petapp/templates/employee_signup.html:85 petapp/templates/signup.html:75
+#: petapp/templates/employee_signup.html:99 petapp/templates/signup.html:75
 msgid "Sign up"
 msgstr "注册"
 
 #: petapp/static/static/about.html:27 petapp/static/static/about.html:177
 #: petapp/static/static/blog.html:5 petapp/static/static/blog.html:123
-#: petapp/static/static/gallery.html:157 petapp/templates/services.html:113
+#: petapp/static/static/gallery.html:157
 msgid "VET FOR PET"
 msgstr "VET FOR PET"
 
 #: petapp/static/static/about.html:60 petapp/static/static/about.html:76
 #: petapp/static/static/blog.html:36 petapp/static/static/gallery.html:39
-#: petapp/templates/services.html:26
 msgid "About Us"
 msgstr "关于我们"
 
 #: petapp/static/static/about.html:61 petapp/static/static/blog.html:37
-#: petapp/static/static/gallery.html:40 petapp/templates/index.html:26
+#: petapp/static/static/gallery.html:40 petapp/templates/employee_login.html:33
+#: petapp/templates/index.html:26 petapp/templates/login.html:33
 #: petapp/templates/services.html:27 petapp/templates/services.html:41
 msgid "Our Services"
 msgstr "我们的服务"
 
 #: petapp/static/static/about.html:62 petapp/static/static/blog.html:38
 #: petapp/static/static/blog.html:52 petapp/static/static/gallery.html:41
-#: petapp/templates/index.html:27 petapp/templates/services.html:28
+#: petapp/templates/employee_login.html:34 petapp/templates/login.html:34
 msgid "Blog"
 msgstr "博客"
 
 #: petapp/static/static/about.html:63 petapp/static/static/blog.html:39
 #: petapp/static/static/gallery.html:42 petapp/static/static/gallery.html:56
-#: petapp/templates/index.html:28 petapp/templates/services.html:29
+#: petapp/templates/employee_login.html:35 petapp/templates/index.html:28
+#: petapp/templates/login.html:35 petapp/templates/services.html:29
 msgid "Gallery"
 msgstr "画廊"
 
 #: petapp/static/static/about.html:64 petapp/static/static/blog.html:40
-#: petapp/static/static/gallery.html:43 petapp/templates/index.html:29
-#: petapp/templates/services.html:30
+#: petapp/static/static/gallery.html:43 petapp/templates/employee_login.html:36
+#: petapp/templates/index.html:29 petapp/templates/login.html:36
+#: petapp/templates/question_detail.html:36 petapp/templates/services.html:30
 msgid "Contact Us"
 msgstr "联系我们"
 
@@ -487,12 +522,26 @@ msgid "50 Vet Calls"
 msgstr "50次兽医电话"
 
 #: petapp/static/static/about.html:178 petapp/static/static/blog.html:124
-#: petapp/static/static/gallery.html:158 petapp/templates/services.html:114
+#: petapp/static/static/gallery.html:158 petapp/templates/add_pet.html:111
+#: petapp/templates/answer.html:98 petapp/templates/customer_question.html:86
+#: petapp/templates/emergency_cat.html:139
+#: petapp/templates/emergency_dog.html:136
+#: petapp/templates/employee_login.html:103
+#: petapp/templates/employee_signup.html:109
+#: petapp/templates/employee_track.html:60
+#: petapp/templates/handle_details.html:91
+#: petapp/templates/handled_appointment.html:113
+#: petapp/templates/index.html:186 petapp/templates/login.html:103
+#: petapp/templates/my_pets.html:63 petapp/templates/orders.html:139
+#: petapp/templates/pet_details.html:54 petapp/templates/post_question.html:108
+#: petapp/templates/qa_e.html:68 petapp/templates/services.html:114
+#: petapp/templates/standard_appointment_cat.html:183
+#: petapp/templates/standard_appointment_dog.html:165
 msgid "Veterinary Hospital"
-msgstr "兽医院"
+msgstr "宠物医院"
 
 #: petapp/static/static/about.html:186 petapp/static/static/blog.html:132
-#: petapp/static/static/gallery.html:166 petapp/templates/services.html:122
+#: petapp/static/static/gallery.html:166
 msgid "Copyright © 2019, by DuruThemes"
 msgstr "Copyright © 2019, by DuruThemes"
 
@@ -513,6 +562,8 @@ msgstr "为你的狗清洁牙齿"
 #: petapp/static/static/blog.html:60 petapp/static/static/blog.html:71
 #: petapp/static/static/blog.html:82 petapp/static/static/blog.html:91
 #: petapp/static/static/blog.html:102 petapp/static/static/blog.html:111
+#: petapp/templates/index.html:98 petapp/templates/index.html:110
+#: petapp/templates/index.html:122 petapp/templates/index.html:134
 #: petapp/templates/services.html:51 petapp/templates/services.html:60
 #: petapp/templates/services.html:71 petapp/templates/services.html:80
 #: petapp/templates/services.html:91 petapp/templates/services.html:100
@@ -579,15 +630,69 @@ msgstr "狗"
 msgid "CATS"
 msgstr "猫"
 
-#: petapp/templates/add_pet.html:6
+#: petapp/templates/add_pet.html:24 petapp/templates/customer_base.html:34
+#: petapp/templates/customer_question.html:33 petapp/templates/my_pets.html:26
+#: petapp/templates/pet_detail.html:34 petapp/templates/post_question.html:31
+#: petapp/templates/question_detail.html:32
+#: petapp/templates/standard_appointment_cat.html:6
+#: petapp/templates/standard_appointment_cat.html:40
+#: petapp/templates/standard_appointment_cat.html:60
+#: petapp/templates/standard_appointment_dog.html:6
+#: petapp/templates/standard_appointment_dog.html:28
+#: petapp/templates/standard_appointment_dog.html:48
+msgid "Standard Appointment"
+msgstr "标准预约"
+
+#: petapp/templates/add_pet.html:27 petapp/templates/customer_base.html:46
+#: petapp/templates/customer_question.html:36
+#: petapp/templates/emergency_cat.html:30
+#: petapp/templates/emergency_dog.html:30
+#: petapp/templates/employee_base.html:45
+#: petapp/templates/employee_signup.html:35
+#: petapp/templates/employee_track.html:29 petapp/templates/my_pets.html:29
+#: petapp/templates/orders.html:44 petapp/templates/pet_detail.html:37
+#: petapp/templates/post_question.html:34 petapp/templates/qa_e.html:35
+#: petapp/templates/question_detail.html:35
+#: petapp/templates/standard_appointment_cat.html:43
+#: petapp/templates/standard_appointment_dog.html:31
+msgid "Sign Out"
+msgstr "退出登录"
+
+#: petapp/templates/add_pet.html:39
 msgid "Add Pet Information"
 msgstr "添加宠物信息"
 
-#: petapp/templates/answer.html:37
+#: petapp/templates/add_pet.html:110 petapp/templates/answer.html:97
+#: petapp/templates/customer_question.html:85
+#: petapp/templates/emergency_cat.html:138
+#: petapp/templates/emergency_dog.html:135
+#: petapp/templates/employee_login.html:102
+#: petapp/templates/employee_signup.html:108
+#: petapp/templates/employee_track.html:59
+#: petapp/templates/handle_details.html:90
+#: petapp/templates/handled_appointment.html:112
+#: petapp/templates/index.html:185 petapp/templates/login.html:102
+#: petapp/templates/my_pets.html:62 petapp/templates/orders.html:138
+#: petapp/templates/pet_details.html:53 petapp/templates/post_question.html:107
+#: petapp/templates/qa_e.html:67 petapp/templates/services.html:113
+#: petapp/templates/standard_appointment_cat.html:182
+#: petapp/templates/standard_appointment_dog.html:164
+msgid "HEALING PAWS"
+msgstr "HEALING PAWS"
+
+#: petapp/templates/answer.html:21 petapp/templates/handle_details.html:37
+msgid "Cancel"
+msgstr "取消"
+
+#: petapp/templates/answer.html:37 petapp/templates/handle_details.html:53
+msgid "Please enter the details to confirm."
+msgstr "请输入详细信息以便确认。"
+
+#: petapp/templates/answer.html:72
 msgid "Responder:"
 msgstr "回复者："
 
-#: petapp/templates/answer.html:38
+#: petapp/templates/answer.html:73
 msgid "Reply date:"
 msgstr "回复时间："
 
@@ -603,47 +708,49 @@ msgstr "Vet for Pet"
 msgid "Customer Main Page"
 msgstr "顾客主页"
 
-#: petapp/templates/customer_base.html:24
-#: petapp/templates/emergency_cat.html:16
-#: petapp/templates/emergency_dog.html:16
-#: petapp/templates/standard_appointment_cat.html:6
-#: petapp/templates/standard_appointment_cat.html:16
-#: petapp/templates/standard_appointment_cat.html:23
-#: petapp/templates/standard_appointment_dog.html:6
-#: petapp/templates/standard_appointment_dog.html:16
-#: petapp/templates/standard_appointment_dog.html:23
-msgid "Standard Appointment"
-msgstr "标准预约"
+#: petapp/templates/customer_question.html:49
+#: petapp/templates/question_detail.html:48
+msgid "Question&Answer."
+msgstr "提问&回答"
 
-#: petapp/templates/customer_base.html:33
-#: petapp/templates/employee_base.html:36
-msgid "Sign Out"
-msgstr "退出登录"
-
-#: petapp/templates/customer_question.html:15
-#: petapp/templates/question_detail.html:5
-msgid "Question&Answer"
-msgstr "问题&答案"
-
-#: petapp/templates/emergency_cat.html:6 petapp/templates/emergency_cat.html:23
-#: petapp/templates/emergency_dog.html:6 petapp/templates/emergency_dog.html:23
+#: petapp/templates/emergency_cat.html:6 petapp/templates/emergency_cat.html:27
+#: petapp/templates/emergency_cat.html:47 petapp/templates/emergency_dog.html:6
+#: petapp/templates/emergency_dog.html:27
+#: petapp/templates/emergency_dog.html:47
 msgid "Emergency Appointment"
 msgstr "紧急预约"
 
-#: petapp/templates/emergency_cat.html:17
-#: petapp/templates/emergency_dog.html:17
-#: petapp/templates/standard_appointment_cat.html:17
-#: petapp/templates/standard_appointment_dog.html:17
+#: petapp/templates/emergency_cat.html:43
+#: petapp/templates/emergency_dog.html:43
+#: petapp/templates/standard_appointment_cat.html:56
+#: petapp/templates/standard_appointment_dog.html:44
+msgid "Standard"
+msgstr "标准预约"
+
+#: petapp/templates/emergency_cat.html:44
+#: petapp/templates/emergency_dog.html:44
+#: petapp/templates/standard_appointment_cat.html:57
+#: petapp/templates/standard_appointment_dog.html:45
 msgid "Emergency"
 msgstr "紧急预约"
 
-#: petapp/templates/emergency_cat.html:89
-#: petapp/templates/standard_appointment_cat.html:88
+#: petapp/templates/emergency_cat.html:98
+#: petapp/templates/standard_appointment_cat.html:118
+msgid "Cats"
+msgstr "猫"
+
+#: petapp/templates/emergency_cat.html:107
+#: petapp/templates/standard_appointment_cat.html:127
 msgid "No exsited cat! Please add one ^_^"
 msgstr "猫咪不存在！请先添加哟 ^_^"
 
-#: petapp/templates/emergency_dog.html:90
-#: petapp/templates/standard_appointment_dog.html:90
+#: petapp/templates/emergency_dog.html:97
+#: petapp/templates/standard_appointment_dog.html:98
+msgid "Dogs"
+msgstr "狗"
+
+#: petapp/templates/emergency_dog.html:105
+#: petapp/templates/standard_appointment_dog.html:106
 msgid "No exsited dog! Please add one ^_^"
 msgstr "狗狗不存在！请先添加哟^_^"
 
@@ -651,33 +758,120 @@ msgstr "狗狗不存在！请先添加哟^_^"
 msgid "Employee Main Page"
 msgstr "员工主页"
 
-#: petapp/templates/employee_base.html:27
+#: petapp/templates/employee_base.html:33
+#: petapp/templates/employee_signup.html:31
+#: petapp/templates/employee_track.html:25 petapp/templates/orders.html:40
+#: petapp/templates/qa_e.html:31
 msgid "Orders"
 msgstr "订单"
 
-#: petapp/templates/employee_base.html:33
+#: petapp/templates/employee_base.html:39
+#: petapp/templates/employee_signup.html:33
+#: petapp/templates/employee_track.html:27 petapp/templates/orders.html:42
+#: petapp/templates/qa_e.html:33
+msgid "Tracking Pets"
+msgstr "宠物追踪"
+
+#: petapp/templates/employee_base.html:42
+#: petapp/templates/employee_signup.html:34
+#: petapp/templates/employee_track.html:28 petapp/templates/orders.html:43
+#: petapp/templates/qa_e.html:34
 msgid "Add New Employee"
 msgstr "添加新员工"
 
-#: petapp/templates/employee_login.html:52 petapp/templates/login.html:24
+#: petapp/templates/employee_login.html:32 petapp/templates/index.html:25
+#: petapp/templates/login.html:32 petapp/templates/services.html:26
+msgid "Appointment"
+msgstr "预约"
+
+#: petapp/templates/employee_login.html:52 petapp/templates/login.html:52
 msgid "User"
 msgstr "用户"
 
-#: petapp/templates/employee_login.html:53 petapp/templates/login.html:25
+#: petapp/templates/employee_login.html:53 petapp/templates/login.html:53
 msgid "Employee"
 msgstr "员工"
 
-#: petapp/templates/employee_signup.html:14
+#: petapp/templates/employee_signup.html:47
 msgid "Help your new colleague to register:"
 msgstr "帮助新同事注册："
 
-#: petapp/templates/employee_signup.html:16
+#: petapp/templates/employee_signup.html:48
 msgid "Enter the details and register here"
 msgstr "请输入详细资料并在此登记"
 
-#: petapp/templates/index.html:25
-msgid "Appointment"
-msgstr "预约"
+#: petapp/templates/employee_track.html:41
+msgid "All handled pets:"
+msgstr "所有已处理的宠物："
+
+#: petapp/templates/employee_track.html:43 petapp/templates/pet_details.html:39
+msgid "Pet name:"
+msgstr "宠物姓名："
+
+#: petapp/templates/employee_track.html:43
+msgid "click to see more information"
+msgstr "点击查看更多信息"
+
+#: petapp/templates/employee_track.html:44
+msgid "Appointment date:"
+msgstr "预约日期:"
+
+#: petapp/templates/employee_track.html:45
+msgid "Treatment date:"
+msgstr "治疗日期："
+
+#: petapp/templates/employee_track.html:46
+msgid "Finish date:"
+msgstr "结束日期："
+
+#: petapp/templates/employee_track.html:47
+msgid "Start Treatment"
+msgstr "开始治疗"
+
+#: petapp/templates/employee_track.html:48
+msgid "Finish Treatment"
+msgstr "结束治疗"
+
+#: petapp/templates/employee_track.html:49
+msgid "Reset"
+msgstr "重置"
+
+#: petapp/templates/handled_appointment.html:21
+#: petapp/templates/pet_details.html:21
+msgid "Back"
+msgstr "返回"
+
+#: petapp/templates/handled_appointment.html:37
+msgid "Handled Appointments"
+msgstr "处理预约"
+
+#: petapp/templates/handled_appointment.html:88
+msgid "Appointment type: Emergency"
+msgstr "预约类型：紧急"
+
+#: petapp/templates/handled_appointment.html:91
+msgid "Appointment type: Normal"
+msgstr "预约类型：普通"
+
+#: petapp/templates/handled_appointment.html:94
+msgid "Pet type: Cat"
+msgstr "宠物类型：猫"
+
+#: petapp/templates/handled_appointment.html:97
+msgid "Pet type: Dog"
+msgstr "宠物类型：狗"
+
+#: petapp/templates/handled_appointment.html:99
+msgid "Date:"
+msgstr "日期："
+
+#: petapp/templates/handled_appointment.html:101
+msgid "Delete this appointment"
+msgstr "删除该预约"
+
+#: petapp/templates/index.html:27 petapp/templates/services.html:28
+msgid "Tracking"
+msgstr "追踪"
 
 #: petapp/templates/index.html:47
 msgid "OUR VETERINARY PRACTICE"
@@ -700,105 +894,166 @@ msgstr "节育手术"
 msgid "SENIOR PET CARE"
 msgstr "高级宠物护理"
 
-#: petapp/templates/my_pets.html:13 petapp/templates/pet_detail.html:12
-msgid "Name:"
-msgstr "姓名："
+#: petapp/templates/index.html:84
+msgid "OUR SERVICES"
+msgstr "我们的服务"
 
-#: petapp/templates/orders.html:20
-msgid "Welcome! Here are all the orders."
-msgstr "欢迎！这里是所有的订单。"
-
-#: petapp/templates/orders.html:20
-msgid "Handled appointments"
-msgstr "预约处理"
-
-#: petapp/templates/orders.html:26
-msgid "Cat emergency appointments:"
-msgstr "猫咪紧急预约："
-
-#: petapp/templates/orders.html:27 petapp/templates/orders.html:45
-#: petapp/templates/orders.html:65 petapp/templates/orders.html:83
-msgid "Owner:"
-msgstr "主人："
-
-#: petapp/templates/orders.html:28 petapp/templates/orders.html:46
-#: petapp/templates/orders.html:66 petapp/templates/orders.html:84
-msgid "Phone number:"
-msgstr "电话号码："
-
-#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
-#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
-msgid "City:"
-msgstr "城市："
-
-#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
-#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
-msgid "Handle this appointment"
-msgstr "处理该预约"
-
-#: petapp/templates/orders.html:44
-msgid "Dog emergency appointments:"
-msgstr "狗狗紧急预约："
-
-#: petapp/templates/orders.html:64
-msgid "Cat normal appointments:"
-msgstr "猫咪普通预约："
-
-#: petapp/templates/orders.html:82
-msgid "Dog normal appointments:"
-msgstr "狗狗普通预约："
-
-#: petapp/templates/pet_detail.html:7
-msgid "Pet Detail"
-msgstr "宠物详情"
-
-#: petapp/templates/pet_detail.html:13
-msgid "Age:"
-msgstr "年龄："
-
-#: petapp/templates/pet_detail.html:14
-msgid "Species:"
-msgstr "品种："
-
-#: petapp/templates/post_question.html:13
-msgid "Post Your Question"
-msgstr "发布问题"
-
-#: petapp/templates/qa_e.html:14
-msgid "Customers Asked:"
-msgstr "客户提问："
-
-#: petapp/templates/question_detail.html:17
-msgid "Title:"
-msgstr "标题："
-
-#: petapp/templates/question_detail.html:18
-msgid "Post Date:"
-msgstr "发布日期："
-
-#: petapp/templates/question_detail.html:19
-msgid "Publisher:"
-msgstr "发布者："
-
-#: petapp/templates/question_detail.html:20
-msgid "Detail:"
-msgstr "详情："
-
-#: petapp/templates/services.html:50
+#: petapp/templates/index.html:97 petapp/templates/services.html:50
 msgid "Senior Pet Care"
 msgstr "高级宠物护理"
 
-#: petapp/templates/services.html:59
+#: petapp/templates/index.html:109 petapp/templates/services.html:59
 msgid "Animal Dental Care"
 msgstr "动物牙齿护理"
 
-#: petapp/templates/services.html:70
+#: petapp/templates/index.html:121 petapp/templates/services.html:79
+msgid "Microchipping"
+msgstr "植入芯片"
+
+#: petapp/templates/index.html:133 petapp/templates/services.html:70
 msgid "Surgeries"
 msgstr "手术"
 
-#: petapp/templates/services.html:79
-msgid "Microchipping"
-msgstr "植入芯片"
+#: petapp/templates/index.html:159
+msgid "Request Now"
+msgstr "现在申请"
+
+#: petapp/templates/index.html:160
+msgid ""
+"Request appointment only Mon - Sat 5:00pm - 10:00pm! Easy and convenient "
+"for busy pet owners!"
+msgstr "申请预约的时间为星期一 - 星期五 下午5:00 - 下午10:00！ 为忙碌的宠物主人提供方便！"
+
+#: petapp/templates/index.html:161
+msgid "Request an Appointment"
+msgstr "申请预约"
+
+#: petapp/templates/index.html:165
+msgid "Emergency Call"
+msgstr "紧急呼叫"
+
+#: petapp/templates/index.html:166
+msgid ""
+"If you'll notice that something is wrong with your pet, you can call to "
+"our 24/7/365 emergency number."
+msgstr "如果你发现你的宠物出现问题，你可以拨打我们的 24/7/365 紧急电话。"
+
+#: petapp/templates/index.html:167
+msgid "+1 212 123 9999"
+msgstr "+1 212 123 9999"
+
+#: petapp/templates/index.html:171
+msgid "Opening Hours"
+msgstr "营业时间"
+
+#: petapp/templates/index.html:172
+msgid "1000 Franklin Pkwy, San Mateo, California 94403, United States."
+msgstr "美国 加利福尼亚州 圣马特奥市 富兰克林Pkwy街1000号，邮编94403"
+
+#: petapp/templates/index.html:173
+msgid "8:00am - 10:00pm"
+msgstr "上午8:00 - 下午10:00"
+
+#: petapp/templates/my_pets.html:53 petapp/templates/pet_detail.html:54
+msgid "Name:"
+msgstr "姓名："
+
+#: petapp/templates/orders.html:58
+msgid "Welcome! Here are all the orders."
+msgstr "欢迎！这里是所有的订单。"
+
+#: petapp/templates/orders.html:59
+msgid "Handled appointments"
+msgstr "预约处理"
+
+#: petapp/templates/orders.html:62
+msgid "Cat emergency appointments:"
+msgstr "猫咪紧急预约："
+
+#: petapp/templates/orders.html:63 petapp/templates/orders.html:78
+#: petapp/templates/orders.html:95 petapp/templates/orders.html:110
+msgid "Owner:"
+msgstr "主人："
+
+#: petapp/templates/orders.html:64 petapp/templates/orders.html:79
+#: petapp/templates/orders.html:96 petapp/templates/orders.html:111
+msgid "Phone number:"
+msgstr "电话号码："
+
+#: petapp/templates/orders.html:65 petapp/templates/orders.html:80
+#: petapp/templates/orders.html:97 petapp/templates/orders.html:112
+#: petapp/templates/pet_details.html:42
+msgid "City:"
+msgstr "城市："
+
+#: petapp/templates/orders.html:65 petapp/templates/orders.html:80
+#: petapp/templates/orders.html:97 petapp/templates/orders.html:112
+msgid "Handle this appointment"
+msgstr "处理该预约"
+
+#: petapp/templates/orders.html:77
+msgid "Dog emergency appointments:"
+msgstr "狗狗紧急预约："
+
+#: petapp/templates/orders.html:94
+msgid "Cat normal appointments:"
+msgstr "猫咪普通预约："
+
+#: petapp/templates/orders.html:109
+msgid "Dog normal appointments:"
+msgstr "狗狗普通预约："
+
+#: petapp/templates/pet_detail.html:49
+msgid "Pet Detail"
+msgstr "宠物详情"
+
+#: petapp/templates/pet_detail.html:55
+msgid "Age:"
+msgstr "年龄："
+
+#: petapp/templates/pet_detail.html:56
+msgid "Species:"
+msgstr "品种："
+
+#: petapp/templates/pet_details.html:37
+msgid "Pet Details"
+msgstr "宠物详情"
+
+#: petapp/templates/pet_details.html:40
+msgid "Owner's name:"
+msgstr "主人姓名："
+
+#: petapp/templates/pet_details.html:41
+msgid "Owner's phone number:"
+msgstr "主人的电话号码："
+
+#: petapp/templates/post_question.html:47
+msgid "Post Your Question."
+msgstr "发布你的问题。"
+
+#: petapp/templates/qa_e.html:47
+msgid "Customers Asked:"
+msgstr "客户提问："
+
+#: petapp/templates/question_detail.html:51
+msgid "Title:"
+msgstr "标题："
+
+#: petapp/templates/question_detail.html:52
+msgid "Post Date:"
+msgstr "发布日期："
+
+#: petapp/templates/question_detail.html:53
+msgid "Publisher:"
+msgstr "发布者："
+
+#: petapp/templates/question_detail.html:54
+msgid "Detail:"
+msgstr "详情："
+
+#: petapp/templates/question_detail.html:59
+msgid "Reply:"
+msgstr "回复："
 
 #: petapp/templates/services.html:90
 msgid "Vaccinations"
@@ -821,18 +1076,4 @@ msgstr "欢迎新用户"
 #: petapp/templates/signup.html:19
 msgid "Enter your details and register here"
 msgstr "请输入您的详细资料并在这里注册"
-
-#: petapp/templates/standard_appointment_cat.html:79
-msgid "Cats"
-msgstr "猫"
-
-#: petapp/templates/standard_appointment_dog.html:81
-msgid "Dogs"
-msgstr "狗"
-
-#~ msgid "No user found with username: {}"
-#~ msgstr "未找到用户名为{}的用户"
-
-#~ msgid "No user found with username: %(name)s"
-#~ msgstr "没有找到用户名为 %(name)s 的用户"
 

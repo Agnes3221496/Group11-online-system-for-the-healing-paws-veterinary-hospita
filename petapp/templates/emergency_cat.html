@@ -26,7 +26,7 @@
                                             <ul class="nav sf-menu clearfix">
                                                 <li class="active"><a href="{{ url_for('emergency_cat')}}">{{ _('Emergency Appointment') }}<span class="over1"></span></a></li>
                                                 <li><a href="{{ url_for('customer_question')}}">{{ _('Q&A') }}<span class="over1"></span></a></li>
-                                                <li><a href="{{ url_for('my_pets')}}">My Pets<span class="over1"></span></a></li>
+                                                <li><a href="{{ url_for('my_pets')}}">{{ _('My Pets') }}<span class="over1"></span></a></li>
                                                 <li> <a href="{{ url_for('login')}}">{{ _('Sign Out') }}<span class="over1"></span></a></li>
 {#                                                <li><a href="contact.html">Contact Us<span class="over1"></span></a></li>#}
                                             </ul>
@@ -135,8 +135,8 @@
 
 
 <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
-        <h1>HEALING PAWS</h1>
-        <p class="subtitle">Veterinary Hospital</p>
+        <h1>{{ _('HEALING PAWS') }}</h1>
+        <p class="subtitle">{{ _('Veterinary Hospital') }}</p>
         <div class="vfp-social-wrapper">
             <ul class="social clearfix">
                 <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>

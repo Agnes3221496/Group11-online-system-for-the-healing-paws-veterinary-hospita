@@ -81,7 +81,7 @@
         <div class="container">
             <div class="row">
                 <div class="span12">
-                    <div class="vfp-caroufredsel-slider2-txt1">OUR SERVICES</div>
+                    <div class="vfp-caroufredsel-slider2-txt1">{{ _('OUR SERVICES') }}</div>
                     <div class="vfp-caroufredsel-slider2">
                         <a class="vfp-prev3" href="index.html#"></a>
                         <a class="vfp-next3" href="index.html#"></a>
@@ -94,8 +94,8 @@
                                                 <div class="vfp-caroufredsel-slide2">
                                                     <a href="index.html#"> <img src="../static/images/services/services04.jpg" alt="" class="img-responsive">
                                                         <div class="txt">
-                                                            <div class="txt1">Senior Pet Care</div>
-                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                            <div class="txt1">{{ _('Senior Pet Care') }}</div>
+                                                            <div class="txt2">{{ _('Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.') }}</div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -106,8 +106,8 @@
                                                 <div class="vfp-caroufredsel-slide2">
                                                     <a href="index.html#"> <img src="../static/images/services/services02.jpg" alt="" class="img-responsive">
                                                         <div class="txt">
-                                                            <div class="txt1">Animal Dental Care</div>
-                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                            <div class="txt1">{{ _('Animal Dental Care') }}</div>
+                                                            <div class="txt2">{{ _('Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.') }}</div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -118,8 +118,8 @@
                                                 <div class="vfp-caroufredsel-slide2">
                                                     <a href="index.html#"> <img src="../static/images/services/services01.jpg" alt="" class="img-responsive">
                                                         <div class="txt">
-                                                            <div class="txt1">Microchipping</div>
-                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                            <div class="txt1">{{ _('Microchipping') }}</div>
+                                                            <div class="txt2">{{ _('Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.') }}</div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -130,8 +130,8 @@
                                                 <div class="vfp-caroufredsel-slide2">
                                                     <a href="index.html#"> <img src="../static/images/services/services03.jpg" alt="" class="img-responsive">
                                                         <div class="txt">
-                                                            <div class="txt1">Surgeries</div>
-                                                            <div class="txt2">Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.</div>
+                                                            <div class="txt1">{{ _('Surgeries') }}</div>
+                                                            <div class="txt2">{{ _('Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a feugiat.') }}</div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -156,21 +156,21 @@
                         <div class="row">
                             <!-- Request Now -->
                             <div class="span4">
-                                <h3>Request Now</h3>
-                                <p>Request appointment only Mon - Sat 5:00pm - 10:00pm! Easy and convenient for busy pet owners!</p>
-                                <a href="{{ url_for('standard_appointment_cat') }}"><button class="vfp-button1">Request an Appointment</button></a>
+                                <h3>{{ _('Request Now') }}</h3>
+                                <p>{{ _('Request appointment only Mon - Sat 5:00pm - 10:00pm! Easy and convenient for busy pet owners!') }}</p>
+                                <a href="{{ url_for('standard_appointment_cat') }}"><button class="vfp-button1">{{ _('Request an Appointment') }}</button></a>
                             </div>
                             <!-- Emergency Call -->
                             <div class="span4">
-                                <h3>Emergency Call</h3>
-                                <p>If you'll notice that something is wrong with your pet, you can call to our 24/7/365 emergency number.</p>
-                                <div class="emergency-call">+1 212 123 9999</div>
+                                <h3>{{ _('Emergency Call') }}</h3>
+                                <p>{{ _("If you'll notice that something is wrong with your pet, you can call to our 24/7/365 emergency number.") }}</p>
+                                <div class="emergency-call">{{ _('+1 212 123 9999') }}</div>
                             </div>
                             <!-- Opening Hours -->
                             <div class="span4">
-                                <h3>Opening Hours</h3>
-                                <p>1000 Franklin Pkwy, San Mateo, California 94403, United States.</p>
-                                <div class="opening-hours">8:00am - 10:00pm</div>
+                                <h3>{{ _('Opening Hours') }}</h3>
+                                <p>{{ _('1000 Franklin Pkwy, San Mateo, California 94403, United States.') }}</p>
+                                <div class="opening-hours">{{ _('8:00am - 10:00pm') }}</div>
                             </div>
                         </div>
                     </div>
@@ -182,8 +182,8 @@
 
     <!-- Footer -->
     <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
-        <h1>HEALING PAWS</h1>
-        <p class="subtitle">Veterinary Hospital</p>
+        <h1>{{ _('HEALING PAWS') }}</h1>
+        <p class="subtitle">{{ _('Veterinary Hospital') }}</p>
         <div class="vfp-social-wrapper">
             <ul class="social clearfix">
                 <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>

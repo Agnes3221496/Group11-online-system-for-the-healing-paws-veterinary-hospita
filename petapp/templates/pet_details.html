@@ -36,10 +36,10 @@
                     <div class="vfp-box2">
                     <div class="vfp-caroufredsel-slider2-txt1">{{ _('Pet Details') }}</div><hr>
                         {% for pet in t_pets %}
-                            <h2 style="font-size: 20px;color: #3c763d">Pet name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}</h2>
-                            <h2 style="font-size: 20px;color: #3c763d">Owner's name:&nbsp&nbsp{{ pet.name }}</h2>
-                            <h2 style="font-size: 20px;color: #3c763d">Owner's phone number:&nbsp&nbsp{{ pet.phone }}</h2>
-                            <h2 style="font-size: 20px;color: #3c763d">City:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.city }}</h2>
+                            <h2 style="font-size: 20px;color: #3c763d">{{ _('Pet name:') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.pet_name }}</h2>
+                            <h2 style="font-size: 20px;color: #3c763d">{{ _("Owner's name:") }}&nbsp&nbsp{{ pet.name }}</h2>
+                            <h2 style="font-size: 20px;color: #3c763d">{{ _("Owner's phone number:") }}&nbsp&nbsp{{ pet.phone }}</h2>
+                            <h2 style="font-size: 20px;color: #3c763d">{{ _('City:') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.city }}</h2>
                             <br><input style="background-color: #7aba7b;color: white;border-radius: 10px;border: #7aba7b;height: 30px" type="button" name="Submit" onclick="javascript:history.back(-1);" value="Back">
                             <br>
                         {% endfor %}
@@ -50,8 +50,8 @@
     </div>
 
     <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
-        <h1>HEALING PAWS</h1>
-        <p class="subtitle">Veterinary Hospital</p>
+        <h1>{{ _('HEALING PAWS') }}</h1>
+        <p class="subtitle">{{ _('Veterinary Hospital') }}</p>
         <div class="vfp-social-wrapper">
             <ul class="social clearfix">
                 <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>
