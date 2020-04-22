@@ -1,0 +1,838 @@
+# Chinese translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-04-11 12:38+0800\n"
+"PO-Revision-Date: 2020-04-06 00:51+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: petapp/forms.py:11 petapp/forms.py:27
+msgid "Username"
+msgstr "用户名"
+
+#: petapp/forms.py:12 petapp/forms.py:20 petapp/forms.py:29 petapp/forms.py:39
+msgid "Password"
+msgstr "密码"
+
+#: petapp/forms.py:13 petapp/forms.py:21
+msgid "Remember Me"
+msgstr "记住我"
+
+#: petapp/forms.py:14 petapp/forms.py:22 petapp/routes.py:69
+#: petapp/routes.py:87 petapp/templates/employee_login.html:14
+#: petapp/templates/login.html:16
+msgid "Sign In"
+msgstr "登录"
+
+#: petapp/forms.py:19 petapp/forms.py:37
+msgid "Employee&nbspNumber"
+msgstr "员工编号"
+
+#: petapp/forms.py:28 petapp/forms.py:38
+msgid "Email"
+msgstr "邮箱"
+
+#: petapp/forms.py:30 petapp/forms.py:40
+msgid "Repeat Password"
+msgstr "重复密码"
+
+#: petapp/forms.py:31 petapp/forms.py:42
+msgid "I accept the site rules"
+msgstr "我接受该网站规章"
+
+#: petapp/forms.py:32 petapp/forms.py:43
+msgid "Register"
+msgstr "注册"
+
+#: petapp/forms.py:41
+msgid "Register Password"
+msgstr "注册密码"
+
+#: petapp/forms.py:47
+msgid "Real Name: "
+msgstr "真实姓名："
+
+#: petapp/forms.py:48
+msgid "Phone Number: "
+msgstr "电话号码："
+
+#: petapp/forms.py:49
+msgid "City"
+msgstr "城市"
+
+#: petapp/forms.py:49 petapp/routes.py:164 petapp/routes.py:200
+msgid "Beijing"
+msgstr "北京"
+
+#: petapp/forms.py:49 petapp/routes.py:165 petapp/routes.py:201
+msgid "Shanghai"
+msgstr "上海"
+
+#: petapp/forms.py:49
+msgid "chengdu"
+msgstr "成都"
+
+#: petapp/forms.py:51
+msgid "Please choose an existed pet "
+msgstr "请选择一只已有的宠物"
+
+#: petapp/forms.py:52
+msgid "book"
+msgstr "预约"
+
+#: petapp/forms.py:57
+msgid "Title"
+msgstr "标题"
+
+#: petapp/forms.py:58
+msgid "Detail Description of The Question"
+msgstr "问题的详细描述"
+
+#: petapp/forms.py:59 petapp/forms.py:79
+msgid "Image"
+msgstr "图片"
+
+#: petapp/forms.py:60
+msgid "Post"
+msgstr "发送"
+
+#: petapp/forms.py:65
+msgid "Question"
+msgstr "问题"
+
+#: petapp/forms.py:66 petapp/routes.py:343 petapp/routes.py:344
+msgid "Search"
+msgstr "搜索"
+
+#: petapp/forms.py:70
+msgid "Post body:"
+msgstr "发送内容"
+
+#: petapp/forms.py:70
+msgid "Enter your post body"
+msgstr "输入你发送的内容"
+
+#: petapp/forms.py:71
+msgid "Post answer"
+msgstr "发送回答"
+
+#: petapp/forms.py:75
+msgid "Pet Name: "
+msgstr "宠物姓名："
+
+#: petapp/forms.py:76
+msgid "Age: "
+msgstr "年龄："
+
+#: petapp/forms.py:77
+msgid "Species"
+msgstr "品种"
+
+#: petapp/forms.py:77 petapp/templates/emergency_dog.html:25
+#: petapp/templates/standard_appointment_cat.html:25
+#: petapp/templates/standard_appointment_dog.html:25
+msgid "Cat"
+msgstr "猫"
+
+#: petapp/forms.py:77 petapp/templates/emergency_cat.html:26
+#: petapp/templates/emergency_dog.html:26
+#: petapp/templates/standard_appointment_cat.html:26
+#: petapp/templates/standard_appointment_dog.html:26
+msgid "Dog"
+msgstr "狗"
+
+#: petapp/forms.py:80 petapp/forms.py:86
+msgid "Submit"
+msgstr "提交"
+
+#: petapp/forms.py:83
+msgid "Employee Name: "
+msgstr "员工姓名："
+
+#: petapp/forms.py:84
+msgid "Appointment date: "
+msgstr "预约日期："
+
+#: petapp/forms.py:85
+msgid "Confirm handle this appointment"
+msgstr "确认处理此预约"
+
+#: petapp/forms.py:85
+msgid "You need to confirm"
+msgstr "你需要确认"
+
+#: petapp/routes.py:61
+#, python-format
+msgid "No user found with username: %(name)s"
+msgstr "没有找到用户名为 %(name)s 的用户"
+
+#: petapp/routes.py:67 petapp/routes.py:85
+msgid "Incorrect Password"
+msgstr "密码错误"
+
+#: petapp/routes.py:79
+msgid "No user found with employee number: {}"
+msgstr "未找到员工编号为{}的用户"
+
+#: petapp/routes.py:96 petapp/routes.py:138
+msgid "Passwords do not match!"
+msgstr "密码不一致！"
+
+#: petapp/routes.py:106
+msgid "Register a new user"
+msgstr "新用户注册"
+
+#: petapp/routes.py:113
+msgid "Username is available"
+msgstr "用户名可用"
+
+#: petapp/routes.py:116
+msgid "Sorry! Username is already taken"
+msgstr "对不起！用户名已被占用"
+
+#: petapp/routes.py:126
+msgid "Email is available"
+msgstr "邮箱正确"
+
+#: petapp/routes.py:128
+msgid "Incorrect format!"
+msgstr "格式错误！"
+
+#: petapp/routes.py:130
+msgid "Email is already existed"
+msgstr "邮箱已存在"
+
+#: petapp/routes.py:141
+msgid "Register password is not right!"
+msgstr "注册密码错误！"
+
+#: petapp/routes.py:151
+msgid "Register a new employee"
+msgstr "新员工注册"
+
+#: petapp/routes.py:166 petapp/routes.py:202
+msgid "Chengdu"
+msgstr "成都"
+
+#: petapp/routes.py:184 petapp/routes.py:220 petapp/routes.py:252
+#: petapp/routes.py:285
+msgid "Please add the pet first *^_^*"
+msgstr "请先添加宠物 *^_^*"
+
+#: petapp/routes.py:191 petapp/routes.py:226 petapp/routes.py:257
+#: petapp/routes.py:290 petapp/routes.py:330 petapp/routes.py:540
+#: petapp/routes.py:552
+msgid "User needs to either login or signup first"
+msgstr "用户需先登录或注册"
+
+#: petapp/routes.py:324 petapp/routes.py:534
+msgid "Post successfully"
+msgstr "发布成功"
+
+#: petapp/routes.py:327 petapp/routes.py:537
+msgid "The image format is wrong, please upload it again."
+msgstr "图片格式错误，请重新上传。"
+
+#: petapp/routes.py:332 petapp/templates/customer_question.html:18
+msgid "Post Question"
+msgstr "发布问题"
+
+#: petapp/routes.py:351 petapp/routes.py:560
+msgid "Detail"
+msgstr "详情"
+
+#: petapp/routes.py:382
+msgid "Appointment handled successfully"
+msgstr "预约处理成功"
+
+#: petapp/routes.py:389
+msgid "Order List"
+msgstr "订单列表"
+
+#: petapp/routes.py:453
+msgid "handled_appointment"
+msgstr "预约处理"
+
+#: petapp/routes.py:490 petapp/routes.py:515
+#: petapp/templates/customer_base.html:27
+#: petapp/templates/employee_base.html:30
+msgid "Q&A"
+msgstr "问&答"
+
+#: petapp/routes.py:542 petapp/templates/my_pets.html:8
+msgid "Add Pet"
+msgstr "添加宠物"
+
+#: petapp/routes.py:550 petapp/routes.py:554
+#: petapp/templates/customer_base.html:30 petapp/templates/my_pets.html:7
+msgid "My Pets"
+msgstr "我的宠物"
+
+#: petapp/static/static/about.html:15 petapp/static/static/about.html:59
+#: petapp/static/static/blog.html:35 petapp/static/static/gallery.html:38
+#: petapp/templates/base.html:58 petapp/templates/emergency_cat.html:15
+#: petapp/templates/emergency_dog.html:15 petapp/templates/index.html:24
+#: petapp/templates/services.html:25
+#: petapp/templates/standard_appointment_cat.html:15
+#: petapp/templates/standard_appointment_dog.html:15
+msgid "Home"
+msgstr "主页"
+
+#: petapp/static/static/about.html:16
+msgid "Profile"
+msgstr "简况"
+
+#: petapp/static/static/about.html:17
+msgid "Messages"
+msgstr "信息"
+
+#: petapp/static/static/about.html:20 petapp/templates/base.html:61
+#: petapp/templates/employee_login.html:66 petapp/templates/login.html:67
+msgid "Login"
+msgstr "登录"
+
+#: petapp/static/static/about.html:22 petapp/templates/base.html:64
+#: petapp/templates/employee_signup.html:85 petapp/templates/signup.html:75
+msgid "Sign up"
+msgstr "注册"
+
+#: petapp/static/static/about.html:27 petapp/static/static/about.html:177
+#: petapp/static/static/blog.html:5 petapp/static/static/blog.html:123
+#: petapp/static/static/gallery.html:157 petapp/templates/services.html:113
+msgid "VET FOR PET"
+msgstr "VET FOR PET"
+
+#: petapp/static/static/about.html:60 petapp/static/static/about.html:76
+#: petapp/static/static/blog.html:36 petapp/static/static/gallery.html:39
+#: petapp/templates/services.html:26
+msgid "About Us"
+msgstr "关于我们"
+
+#: petapp/static/static/about.html:61 petapp/static/static/blog.html:37
+#: petapp/static/static/gallery.html:40 petapp/templates/index.html:26
+#: petapp/templates/services.html:27 petapp/templates/services.html:41
+msgid "Our Services"
+msgstr "我们的服务"
+
+#: petapp/static/static/about.html:62 petapp/static/static/blog.html:38
+#: petapp/static/static/blog.html:52 petapp/static/static/gallery.html:41
+#: petapp/templates/index.html:27 petapp/templates/services.html:28
+msgid "Blog"
+msgstr "博客"
+
+#: petapp/static/static/about.html:63 petapp/static/static/blog.html:39
+#: petapp/static/static/gallery.html:42 petapp/static/static/gallery.html:56
+#: petapp/templates/index.html:28 petapp/templates/services.html:29
+msgid "Gallery"
+msgstr "画廊"
+
+#: petapp/static/static/about.html:64 petapp/static/static/blog.html:40
+#: petapp/static/static/gallery.html:43 petapp/templates/index.html:29
+#: petapp/templates/services.html:30
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: petapp/static/static/about.html:77 petapp/static/static/gallery.html:57
+#: petapp/templates/services.html:42
+msgid ""
+"VET FOR PET Veterinary Hospital is a full-service veterinary care office."
+" Our pet health clinic is devoted to the prevention and treatment of "
+"diseases in household pets. We’ve made it our mission to provide "
+"veterinary care services that are both thoughtful and informed."
+msgstr ""
+"VET FOR "
+"PET兽医院是一个全面服务的兽医护理办公室。我们的宠物健康诊致力于家庭宠物疾病的预防和治疗。我们的使命是提供既周到又全面的兽医护理服务。"
+
+#: petapp/static/static/about.html:78 petapp/templates/services.html:43
+msgid ""
+"Query dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor"
+" incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat consectetuer adipiscing elit. Nunc suscipit. Suspendisse enim "
+"arcu, convallis non, cursus seder."
+msgstr ""
+"Query dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor"
+" incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat consectetuer adipiscing elit. Nunc suscipit. Suspendisse enim "
+"arcu, convallis non, cursus seder."
+
+#: petapp/static/static/about.html:79
+msgid ""
+"Venture dolor sit amet conse ctetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
+"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "
+"commodo consequat consectetuer adipiscing elit. Nunc suscipit. "
+"Suspendisse enim arcu yenean semper aliquet libero."
+msgstr ""
+"Venture dolor sit amet conse ctetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
+"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "
+"commodo consequat consectetuer adipiscing elit. Nunc suscipit. "
+"Suspendisse enim arcu yenean semper aliquet libero."
+
+#: petapp/static/static/about.html:83
+msgid "Our Team"
+msgstr "我们的团队"
+
+#: petapp/static/static/about.html:88
+msgid "Emma Emily"
+msgstr "艾玛·艾米丽"
+
+#: petapp/static/static/about.html:89 petapp/static/static/about.html:97
+msgid "VETERINARY"
+msgstr "兽医"
+
+#: petapp/static/static/about.html:96
+msgid "Lee Brown"
+msgstr "李·布朗"
+
+#: petapp/static/static/about.html:104
+msgid "Asia Corey"
+msgstr "科里"
+
+#: petapp/static/static/about.html:105
+msgid "NURSE"
+msgstr "护士"
+
+#: petapp/static/static/about.html:114
+msgid "Pricing Plan"
+msgstr "定价方案"
+
+#: petapp/static/static/about.html:120
+msgid "BASIC"
+msgstr "基础"
+
+#: petapp/static/static/about.html:121 petapp/static/static/about.html:138
+#: petapp/static/static/about.html:155
+msgid "/month"
+msgstr "/月"
+
+#: petapp/static/static/about.html:123
+msgid "2 Dog Walks"
+msgstr "2次遛狗"
+
+#: petapp/static/static/about.html:124
+msgid "3 Vet Visit"
+msgstr "3次兽医访问"
+
+#: petapp/static/static/about.html:125
+msgid "5 Pet Spa"
+msgstr "5次宠物SPA"
+
+#: petapp/static/static/about.html:126 petapp/static/static/about.html:143
+#: petapp/static/static/about.html:160
+msgid "Free Support"
+msgstr "免费支持"
+
+#: petapp/static/static/about.html:127
+msgid "15 Vet Calls"
+msgstr "15次兽医电话"
+
+#: petapp/static/static/about.html:128 petapp/static/static/about.html:145
+#: petapp/static/static/about.html:162
+msgid "SIGN UP"
+msgstr "报名"
+
+#: petapp/static/static/about.html:137
+msgid "ADVANCED"
+msgstr "高级"
+
+#: petapp/static/static/about.html:140
+msgid "5 Dog Walks"
+msgstr "5次遛狗"
+
+#: petapp/static/static/about.html:141
+msgid "6 Vet Visit"
+msgstr "6次兽医访问"
+
+#: petapp/static/static/about.html:142
+msgid "10 Pet Spa"
+msgstr "10次宠物SPA"
+
+#: petapp/static/static/about.html:144
+msgid "25 Vet Calls"
+msgstr "25次兽医电话"
+
+#: petapp/static/static/about.html:154
+msgid "PRESSIONAL"
+msgstr "专业"
+
+#: petapp/static/static/about.html:157
+msgid "10 Dog Walks"
+msgstr "10次遛狗"
+
+#: petapp/static/static/about.html:158
+msgid "Unlimited Vet Visit"
+msgstr "无限次兽医访问"
+
+#: petapp/static/static/about.html:159
+msgid "Unlimited Pet Spa"
+msgstr "无限次宠物SPA"
+
+#: petapp/static/static/about.html:161
+msgid "50 Vet Calls"
+msgstr "50次兽医电话"
+
+#: petapp/static/static/about.html:178 petapp/static/static/blog.html:124
+#: petapp/static/static/gallery.html:158 petapp/templates/services.html:114
+msgid "Veterinary Hospital"
+msgstr "兽医院"
+
+#: petapp/static/static/about.html:186 petapp/static/static/blog.html:132
+#: petapp/static/static/gallery.html:166 petapp/templates/services.html:122
+msgid "Copyright © 2019, by DuruThemes"
+msgstr "Copyright © 2019, by DuruThemes"
+
+#: petapp/static/static/blog.html:58
+msgid "20.11.2019"
+msgstr "20.11.2019"
+
+#: petapp/static/static/blog.html:58 petapp/static/static/blog.html:69
+#: petapp/static/static/blog.html:80 petapp/static/static/blog.html:89
+#: petapp/static/static/blog.html:100 petapp/static/static/blog.html:109
+msgid "Duru Brown"
+msgstr "Duru Brown"
+
+#: petapp/static/static/blog.html:59
+msgid "Getting Your Dog's Teeth Cleaned"
+msgstr "为你的狗清洁牙齿"
+
+#: petapp/static/static/blog.html:60 petapp/static/static/blog.html:71
+#: petapp/static/static/blog.html:82 petapp/static/static/blog.html:91
+#: petapp/static/static/blog.html:102 petapp/static/static/blog.html:111
+#: petapp/templates/services.html:51 petapp/templates/services.html:60
+#: petapp/templates/services.html:71 petapp/templates/services.html:80
+#: petapp/templates/services.html:91 petapp/templates/services.html:100
+msgid ""
+"Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a "
+"feugiat."
+msgstr "全面的高级宠物护理。这是一场战争。"
+
+#: petapp/static/static/blog.html:61 petapp/static/static/blog.html:71
+#: petapp/static/static/blog.html:82 petapp/static/static/blog.html:91
+#: petapp/static/static/blog.html:102 petapp/static/static/blog.html:111
+msgid "Read More"
+msgstr "更多"
+
+#: petapp/static/static/blog.html:69
+msgid "18.11.2019"
+msgstr "18.11.2019"
+
+#: petapp/static/static/blog.html:70
+msgid "Finding Spay &amp; Neuter Services"
+msgstr "寻找节育手术"
+
+#: petapp/static/static/blog.html:80
+msgid "17.11.2019"
+msgstr "17.11.2019"
+
+#: petapp/static/static/blog.html:81
+msgid "Vet For Pet Animal Hospital"
+msgstr "宠物医院兽医"
+
+#: petapp/static/static/blog.html:89
+msgid "12.10.2019"
+msgstr "12.10.2019"
+
+#: petapp/static/static/blog.html:90
+msgid "See our pets in action"
+msgstr "看看我们的宠物是如何行动的"
+
+#: petapp/static/static/blog.html:100
+msgid "7.10.2019"
+msgstr "7.10.2019"
+
+#: petapp/static/static/blog.html:101
+msgid "We take care of your best friend"
+msgstr "我们照顾你最好的朋友"
+
+#: petapp/static/static/blog.html:109
+msgid "5.10.2019"
+msgstr "5.10.2019"
+
+#: petapp/static/static/blog.html:110
+msgid "Little Kitten exploring the world"
+msgstr "小猫探索世界"
+
+#: petapp/static/static/gallery.html:60
+msgid "ALL"
+msgstr "全部"
+
+#: petapp/static/static/gallery.html:61
+msgid "DOGS"
+msgstr "狗"
+
+#: petapp/static/static/gallery.html:62
+msgid "CATS"
+msgstr "猫"
+
+#: petapp/templates/add_pet.html:6
+msgid "Add Pet Information"
+msgstr "添加宠物信息"
+
+#: petapp/templates/answer.html:37
+msgid "Responder:"
+msgstr "回复者："
+
+#: petapp/templates/answer.html:38
+msgid "Reply date:"
+msgstr "回复时间："
+
+#: petapp/templates/appointment_success.html:4
+msgid "Book Successfully!"
+msgstr "预约成功！"
+
+#: petapp/templates/base.html:5
+msgid "Vet for Pet"
+msgstr "Vet for Pet"
+
+#: petapp/templates/customer_base.html:4
+msgid "Customer Main Page"
+msgstr "顾客主页"
+
+#: petapp/templates/customer_base.html:24
+#: petapp/templates/emergency_cat.html:16
+#: petapp/templates/emergency_dog.html:16
+#: petapp/templates/standard_appointment_cat.html:6
+#: petapp/templates/standard_appointment_cat.html:16
+#: petapp/templates/standard_appointment_cat.html:23
+#: petapp/templates/standard_appointment_dog.html:6
+#: petapp/templates/standard_appointment_dog.html:16
+#: petapp/templates/standard_appointment_dog.html:23
+msgid "Standard Appointment"
+msgstr "标准预约"
+
+#: petapp/templates/customer_base.html:33
+#: petapp/templates/employee_base.html:36
+msgid "Sign Out"
+msgstr "退出登录"
+
+#: petapp/templates/customer_question.html:15
+#: petapp/templates/question_detail.html:5
+msgid "Question&Answer"
+msgstr "问题&答案"
+
+#: petapp/templates/emergency_cat.html:6 petapp/templates/emergency_cat.html:23
+#: petapp/templates/emergency_dog.html:6 petapp/templates/emergency_dog.html:23
+msgid "Emergency Appointment"
+msgstr "紧急预约"
+
+#: petapp/templates/emergency_cat.html:17
+#: petapp/templates/emergency_dog.html:17
+#: petapp/templates/standard_appointment_cat.html:17
+#: petapp/templates/standard_appointment_dog.html:17
+msgid "Emergency"
+msgstr "紧急预约"
+
+#: petapp/templates/emergency_cat.html:89
+#: petapp/templates/standard_appointment_cat.html:88
+msgid "No exsited cat! Please add one ^_^"
+msgstr "猫咪不存在！请先添加哟 ^_^"
+
+#: petapp/templates/emergency_dog.html:90
+#: petapp/templates/standard_appointment_dog.html:90
+msgid "No exsited dog! Please add one ^_^"
+msgstr "狗狗不存在！请先添加哟^_^"
+
+#: petapp/templates/employee_base.html:4
+msgid "Employee Main Page"
+msgstr "员工主页"
+
+#: petapp/templates/employee_base.html:27
+msgid "Orders"
+msgstr "订单"
+
+#: petapp/templates/employee_base.html:33
+msgid "Add New Employee"
+msgstr "添加新员工"
+
+#: petapp/templates/employee_login.html:23 petapp/templates/login.html:24
+msgid "User"
+msgstr "用户"
+
+#: petapp/templates/employee_login.html:24 petapp/templates/login.html:25
+msgid "Employee"
+msgstr "员工"
+
+#: petapp/templates/employee_signup.html:14
+msgid "Help your new colleague to register:"
+msgstr "帮助新同事注册："
+
+#: petapp/templates/employee_signup.html:16
+msgid "Enter the details and register here"
+msgstr "请输入详细资料并在此登记"
+
+#: petapp/templates/index.html:25
+msgid "Appointment"
+msgstr "预约"
+
+#: petapp/templates/index.html:47
+msgid "OUR VETERINARY PRACTICE"
+msgstr "我们的兽医实践"
+
+#: petapp/templates/index.html:48 petapp/templates/index.html:54
+#: petapp/templates/index.html:60 petapp/templates/index.html:66
+msgid "Let’s keep your pet healthy!"
+msgstr "愿您的宠物健康！"
+
+#: petapp/templates/index.html:53
+msgid "IN-HOME PET EUTHANASIA"
+msgstr "家庭宠物安乐死"
+
+#: petapp/templates/index.html:59
+msgid "SPAY &amp; NEUTER SURGERIES"
+msgstr "节育手术"
+
+#: petapp/templates/index.html:65
+msgid "SENIOR PET CARE"
+msgstr "高级宠物护理"
+
+#: petapp/templates/my_pets.html:13 petapp/templates/pet_detail.html:12
+msgid "Name:"
+msgstr "姓名："
+
+#: petapp/templates/orders.html:20
+msgid "Welcome! Here are all the orders."
+msgstr "欢迎！这里是所有的订单。"
+
+#: petapp/templates/orders.html:20
+msgid "Handled appointments"
+msgstr "预约处理"
+
+#: petapp/templates/orders.html:26
+msgid "Cat emergency appointments:"
+msgstr "猫咪紧急预约："
+
+#: petapp/templates/orders.html:27 petapp/templates/orders.html:45
+#: petapp/templates/orders.html:65 petapp/templates/orders.html:83
+msgid "Owner:"
+msgstr "主人："
+
+#: petapp/templates/orders.html:28 petapp/templates/orders.html:46
+#: petapp/templates/orders.html:66 petapp/templates/orders.html:84
+msgid "Phone number:"
+msgstr "电话号码："
+
+#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
+#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
+msgid "City:"
+msgstr "城市："
+
+#: petapp/templates/orders.html:29 petapp/templates/orders.html:47
+#: petapp/templates/orders.html:67 petapp/templates/orders.html:85
+msgid "Handle this appointment"
+msgstr "处理该预约"
+
+#: petapp/templates/orders.html:44
+msgid "Dog emergency appointments:"
+msgstr "狗狗紧急预约："
+
+#: petapp/templates/orders.html:64
+msgid "Cat normal appointments:"
+msgstr "猫咪普通预约："
+
+#: petapp/templates/orders.html:82
+msgid "Dog normal appointments:"
+msgstr "狗狗普通预约："
+
+#: petapp/templates/pet_detail.html:7
+msgid "Pet Detail"
+msgstr "宠物详情"
+
+#: petapp/templates/pet_detail.html:13
+msgid "Age:"
+msgstr "年龄："
+
+#: petapp/templates/pet_detail.html:14
+msgid "Species:"
+msgstr "品种："
+
+#: petapp/templates/post_question.html:13
+msgid "Post Your Question"
+msgstr "发布问题"
+
+#: petapp/templates/qa_e.html:14
+msgid "Customers Asked:"
+msgstr "客户提问："
+
+#: petapp/templates/question_detail.html:17
+msgid "Title:"
+msgstr "标题："
+
+#: petapp/templates/question_detail.html:18
+msgid "Post Date:"
+msgstr "发布日期："
+
+#: petapp/templates/question_detail.html:19
+msgid "Publisher:"
+msgstr "发布者："
+
+#: petapp/templates/question_detail.html:20
+msgid "Detail:"
+msgstr "详情："
+
+#: petapp/templates/services.html:50
+msgid "Senior Pet Care"
+msgstr "高级宠物护理"
+
+#: petapp/templates/services.html:59
+msgid "Animal Dental Care"
+msgstr "动物牙齿护理"
+
+#: petapp/templates/services.html:70
+msgid "Surgeries"
+msgstr "手术"
+
+#: petapp/templates/services.html:79
+msgid "Microchipping"
+msgstr "植入芯片"
+
+#: petapp/templates/services.html:90
+msgid "Vaccinations"
+msgstr "接种疫苗"
+
+#: petapp/templates/services.html:99
+msgid "Nutritional Counseling"
+msgstr "营养咨询"
+
+#: petapp/templates/sidebar.html:28 petapp/templates/sidebar.html:29
+#: petapp/templates/sidebar.html:30 petapp/templates/sidebar.html:31
+#: petapp/templates/sidebar.html:32
+msgid "Link"
+msgstr "链接"
+
+#: petapp/templates/signup.html:16
+msgid "Welcome New User"
+msgstr "欢迎新用户"
+
+#: petapp/templates/signup.html:19
+msgid "Enter your details and register here"
+msgstr "请输入您的详细资料并在这里注册"
+
+#: petapp/templates/standard_appointment_cat.html:79
+msgid "Cats"
+msgstr "猫"
+
+#: petapp/templates/standard_appointment_dog.html:81
+msgid "Dogs"
+msgstr "狗"
+
+#~ msgid "No user found with username: {}"
+#~ msgstr "未找到用户名为{}的用户"
+
+#~ msgid "No user found with username: %(name)s"
+#~ msgstr "没有找到用户名为 %(name)s 的用户"
+

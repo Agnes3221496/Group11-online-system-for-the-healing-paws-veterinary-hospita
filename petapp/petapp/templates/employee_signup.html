@@ -1,0 +1,92 @@
+{% extends "employee_base.html" %}
+
+{% block content %}
+     <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/signup.css') }}" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+
+    <div class="panel panel-info">
+    <div class="panel-heading">
+    <div class="panel-body">
+
+    <h1>{{ _('Help your new colleague to register:') }}</h1>
+    <div class="body">
+	<p>{{ _('Enter the details and register here') }}</p>
+    <form action="" method="post" novalidate id="signupForm">
+
+        {{ form.hidden_tag() }}
+     <div class="form-group">
+
+{#        <div class="form-inline">#}
+{#            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('signup') }}" style="left: 10%">User</a>#}
+{#            <a class="btn btn-default btn-lg btn-block" href="{{ url_for('employee_signup') }}" style="left: 10%">Employee</a>#}
+{#        </div>#}
+        <p>
+            <div id="username">
+            {{ form.employee_number.label }}<br>
+            {{ form.employee_number(size=32) }}<span id="checkuser"></span>
+            </div>
+			
+			{% for error in form.employee_number.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+			
+        </p>
+     </div>
+		<p>
+            <div id="password"></div>
+            <div id="email">
+                {{ form.email.label }}<br>
+                {{ form.email(size=32) }}<span id="checkemail"></span>
+            </div>
+			
+			{% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+			
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=35) }}
+			
+			{% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+			
+        </p>
+		<p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=35) }}
+			
+			{% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+			
+        </p>
+        <p>
+            {{ form.register_password.label }}<br>
+            {{ form.register_password(size=35) }}
+
+            {% for error in form.register_password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.accept_rules() }} {{ form.accept_rules.label }}
+			{% for error in form.accept_rules.errors %}
+			<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}
+        </p>
+{#        <p>{{ form.submit() }}</p>#}
+
+
+         <button>{{ _('Sign up') }}</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='../static/script/myjs.js') }} "></script>
+    </div>
+
+{% endblock %}
+

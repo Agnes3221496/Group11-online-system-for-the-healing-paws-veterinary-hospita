@@ -44,8 +44,10 @@
                             <p>{{ _('Appointment date:') }}&nbsp&nbsp{{ pet.date }}</p>
                             <p>{{ _('Treatment date:') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.treatment_date }}</p>
                             <p>{{ _('Finish date:') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.finish_date }}</p>
+                            <p>Leave date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ pet.leave_date }}</p>
                             <a class="bt" href={{ url_for('start_treatment', p=pet.id) }}>{{ _('Start Treatment') }}</a>
                             <a class="bt" href={{ url_for('finish_treatment', p2=pet.id) }}>{{ _('Finish Treatment') }}</a>
+                            <a class="bt" href={{ url_for('leave_hospital', p4=pet.id) }}>Leave hospital</a>
                             <a class="bt" href={{ url_for('reset', p3=pet.id) }}>{{ _('Reset') }}</a>
                             <hr>
                         {% endfor %}

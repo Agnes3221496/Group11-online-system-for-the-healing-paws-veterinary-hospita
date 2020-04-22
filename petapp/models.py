@@ -130,6 +130,7 @@ class HandleDetails(db.Model):
     employee_id = db.Column(db.Integer, db.ForeignKey(Employee.id))
     treatment_date = db.Column(db.String(32), default='Undetermined')
     finish_date = db.Column(db.String(32), default='Undetermined')
+    leave_date = db.Column(db.String(32), default='Undetermined')
     name = db.Column(db.String(32))
     phone = db.Column(db.Integer())
     city = db.Column(db.String(10))

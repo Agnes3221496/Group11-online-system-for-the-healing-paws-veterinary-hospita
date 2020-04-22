@@ -1,0 +1,36 @@
+ #loginForm{
+        font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+        font-size: 20px;
+        position: absolute;
+        top: 25%;
+        /*left: 10%;*/
+        width:450px;
+        border: 3px dotted #30799B;
+        padding: 20px;
+    }
+ /*h1{*/
+        /*position: relative;*/
+        /*top: 10%;*/
+        /*left: 10%;*/
+        /*font-family: "Baskerville Old Face", serif;*/
+        /*font-size: 50px;*/
+ /*}*/
+
+    #loginButton{
+          border-radius: 10px;
+          background-color: #A5D6D9;
+          border: none;
+          color: #FFFFFF;
+
+          font-size: 15px;
+          
+          width: 100px;
+          height: 40px;
+          margin: 5px;
+    }
+    /*body{*/
+        /*background-image: url("../login_bg.jpg");*/
+        /*background-size:100% ;*/
+        /*-moz-background-size:100% 100%;*/
+
+    /*}*/

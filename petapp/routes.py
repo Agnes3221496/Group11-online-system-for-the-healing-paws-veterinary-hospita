@@ -39,9 +39,9 @@ def get_locale():
 def choose_language(language=None):
     session['language'] = language
     if session.get("currentPage") == 'pet_detail':
-        return redirect(url_for(session.get("currentPage"), pet_id= session.get('petID')))
+        return redirect(url_for(session.get("currentPage"), pet_id=session.get('petID')))
     elif session.get("currentPage") == 'question_detail':
-        return redirect(url_for(session.get("currentPage"), q_id= session.get('questionID')))
+        return redirect(url_for(session.get("currentPage"), q_id=session.get('questionID')))
     else:
         return redirect(url_for(session.get("currentPage")))
 
@@ -474,7 +474,8 @@ def handled_appointment():
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id)
 
-    return render_template('handled_appointment.html', title=gettext('handled_appointment'), order_details=order_details)
+    return render_template('handled_appointment.html', title=gettext('handled_appointment'),
+                           order_details=order_details)
 
 
 @app.route('/delete_order', methods=['GET', 'POST'])
@@ -548,9 +549,10 @@ def employee_track():
     session['currentPage'] = 'employee_track'
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
     t_pets = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
-    #print(t_pets[0].date < t_pets[1].date)
+    # print(t_pets[0].date < t_pets[1].date)
     t_pets.sort(key=takeDate)
     return render_template('employee_track.html', title=gettext('track'), t_pets=t_pets)
+
 
 @app.route('/customer_track')
 def customer_track():
@@ -564,7 +566,8 @@ def customer_track():
         for ca in cas:
             if ca.status == 1:
                 ha = HandleDetails.query.filter(
-                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == ca.id))).first()
+                    and_(HandleDetails.pet_type == 1,
+                         and_(HandleDetails.appointment_type == 2, HandleDetails.appointment_id == ca.id))).first()
                 handled.add(ha)
             else:
                 nhandled.add(ca)
@@ -573,7 +576,8 @@ def customer_track():
         for da in das:
             if da.status == 1:
                 ha = HandleDetails.query.filter(
-                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == da.id))).first()
+                    and_(HandleDetails.pet_type == 1,
+                         and_(HandleDetails.appointment_type == 2, HandleDetails.appointment_id == da.id))).first()
                 handled.add(ha)
             else:
                 nhandled.add(da)
@@ -582,7 +586,8 @@ def customer_track():
         for ce in ces:
             if ce.status == 1:
                 ha = HandleDetails.query.filter(
-                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == ce.id))).first()
+                    and_(HandleDetails.pet_type == 1,
+                         and_(HandleDetails.appointment_type == 2, HandleDetails.appointment_id == ce.id))).first()
                 handled.add(ha)
             else:
                 nhandled.add(ce)
@@ -591,7 +596,8 @@ def customer_track():
         for de in des:
             if de.status == 1:
                 ha = HandleDetails.query.filter(
-                    and_(HandleDetails.pet_type==1, and_(HandleDetails.appointment_type==2, HandleDetails.appointment_id == de.id))).first()
+                    and_(HandleDetails.pet_type == 1,
+                         and_(HandleDetails.appointment_type == 2, HandleDetails.appointment_id == de.id))).first()
                 handled.add(ha)
             else:
                 nhandled.add(de)
@@ -607,12 +613,13 @@ def start_treatment():
     pid = request.args.get("p")
     print(pid)
     t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
-    dt = datetime.datetime.now()
-    time = str(dt)
-    time = time[:16]
-    t_pets.treatment_date = time
-    t_pets.finish_date = 'In treatment'
-    db.session.commit()
+    if t_pets.treatment_date == 'Undetermined':
+        dt = datetime.datetime.now()
+        time = str(dt)
+        time = time[:16]
+        t_pets.treatment_date = time
+        t_pets.finish_date = 'In treatment'
+        db.session.commit()
     return redirect(url_for('employee_track'))
 
 
@@ -621,14 +628,31 @@ def finish_treatment():
     pid = request.args.get("p2")
     print(pid)
     t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
-    if t_pets.treatment_date != 'Undetermined':
+    if t_pets.finish_date == 'In treatment':
         dt = datetime.datetime.now()
         time = str(dt)
         time = time[:16]
         t_pets.finish_date = time
         db.session.commit()
+    if t_pets.finish_date == 'Undetermined':
+        flash("This treatment haven't start yet")
+    return redirect(url_for('employee_track'))
+
+
+@app.route('/leave_hospital', methods=['GET', 'POST'])
+def leave_hospital():
+    pid = request.args.get("p4")
+    t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
+    if t_pets.leave_date != 'Undetermined':
+        flash("This pet has already leave the hospital")
+    if t_pets.finish_date != 'Undetermined' and t_pets.finish_date != 'In treatment':
+        dt = datetime.datetime.now()
+        time = str(dt)
+        time = time[:16]
+        t_pets.leave_date = time
+        db.session.commit()
     else:
-        flash(gettext("This treatment haven't start yet"))
+        flash("This pet haven't finish treatment yet")
     return redirect(url_for('employee_track'))
 
 
@@ -637,7 +661,7 @@ def reset():
     pid = request.args.get("p3")
     print(pid)
     t_pets = HandleDetails.query.filter(HandleDetails.id == pid).first()
-    if t_pets.finish_date != 'Undetermined' and  t_pets.finish_date != 'In treatment':
+    if t_pets.finish_date != 'Undetermined' and t_pets.finish_date != 'In treatment':
         flash(gettext("This treatment has already finished, you cannot reset it"))
     else:
         t_pets.treatment_date = 'Undetermined'
@@ -648,7 +672,7 @@ def reset():
 
 @app.route('/pet_details', methods=['GET', 'POST'])
 def pet_details():
-    #print(1)
+    # print(1)
     session['currentPage'] = 'pet_details'
     pid = request.args.get("pid")
     t_pets = HandleDetails.query.filter(HandleDetails.id == pid).all()
@@ -702,5 +726,3 @@ def pet_detail(pet_id):
     session['petID'] = pet_id
     pet = Pet.query.filter(Pet.id == pet_id)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
-
-

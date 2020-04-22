@@ -1,0 +1,44 @@
+{% extends "employee_base.html" %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/qa_e.css') }}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/EmployeeQ&A.css') }}">
+    <div class="panel panel-info"/>
+    <div class="panel-heading"/>
+    <div class="panel-body"/>
+
+    <h1>{{ _('Customers Asked:') }}</h1>
+{#    <div id="question">#}
+    <div class="q_title">
+        {% if prev_questions %}
+            {% for question in prev_questions %}
+                <a href="{{ url_for('answer', q=question.id) }}">
+                    <h2> {{ question.title }}</h2>
+                    <h2> {{ question.detail }}</h2>
+                    <img style='width: 180px' src='/static/uploaded_image/question_image/{{ question.image }}'>
+                </a>
+                <hr style="border-top: 2px dotted #31708f">
+            {% endfor %}
+        {% endif %}
+    </div>
+{#    </div>#}
+{#    <div class="q_details">#}
+{#        {% if prev_questions %}#}
+{#            {% for question in prev_questions %}#}
+{#                <h2> {{ question.detail }}</h2>#}
+{#            {% endfor %}#}
+{#        {% endif %}#}
+{#    </div>#}
+{#    <div class="q_graphic">#}
+{#        {% if prev_questions %}#}
+{#            {% for question in prev_questions %}#}
+{#                <img src='/static/uploaded_image/{{ question.image }}'>#}
+{#            {% endfor %}#}
+{#        {% endif %}#}
+{#    </div>#}
+
+{% endblock %}
