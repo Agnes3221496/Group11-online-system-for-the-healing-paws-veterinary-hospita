@@ -37,9 +37,10 @@
 {% if ha %}
     {% for h in ha %}
     <h2>{{ h.pet_name }}</h2>
-        <p>Appointment date:&nbsp&nbsp{{ h.date }}</p>
+        <p>Appointment date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ h.date }}</p>
         <p>Treatment start date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ h.treatment_date }}</p>
-        <p>Finish date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ h.finish_date }}</p>
+        <p>Finish date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ h.finish_date }}</p>
+        <p>Release date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ h.leave_date }}</p>
 
         <hr><hr>
     {% endfor %}
