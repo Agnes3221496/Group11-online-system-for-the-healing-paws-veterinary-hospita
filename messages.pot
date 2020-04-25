@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-19 01:25+0800\n"
+"POT-Creation-Date: 2020-04-25 23:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,8 +29,8 @@ msgstr ""
 msgid "Remember Me"
 msgstr ""
 
-#: petapp/forms.py:14 petapp/forms.py:22 petapp/routes.py:84
-#: petapp/routes.py:102 petapp/templates/employee_login.html:47
+#: petapp/forms.py:14 petapp/forms.py:22 petapp/routes.py:89
+#: petapp/routes.py:107 petapp/templates/employee_login.html:47
 #: petapp/templates/login.html:47
 msgid "Sign In"
 msgstr ""
@@ -111,7 +111,7 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: petapp/forms.py:66 petapp/routes.py:366 petapp/routes.py:367
+#: petapp/forms.py:66 petapp/routes.py:385 petapp/routes.py:386
 msgid "Search"
 msgstr ""
 
@@ -139,17 +139,17 @@ msgstr ""
 msgid "Species"
 msgstr ""
 
-#: petapp/forms.py:77 petapp/templates/emergency_cat.html:51
-#: petapp/templates/emergency_dog.html:51
-#: petapp/templates/standard_appointment_cat.html:64
-#: petapp/templates/standard_appointment_dog.html:52
-msgid "Cat"
-msgstr ""
-
 #: petapp/forms.py:77 petapp/templates/emergency_cat.html:52
 #: petapp/templates/emergency_dog.html:52
 #: petapp/templates/standard_appointment_cat.html:65
 #: petapp/templates/standard_appointment_dog.html:53
+msgid "Cat"
+msgstr ""
+
+#: petapp/forms.py:77 petapp/templates/emergency_cat.html:53
+#: petapp/templates/emergency_dog.html:53
+#: petapp/templates/standard_appointment_cat.html:66
+#: petapp/templates/standard_appointment_dog.html:54
 msgid "Dog"
 msgstr ""
 
@@ -173,101 +173,102 @@ msgstr ""
 msgid "You need to confirm"
 msgstr ""
 
-#: petapp/routes.py:75 petapp/routes.py:76
+#: petapp/routes.py:80 petapp/routes.py:81
 #, python-format
 msgid "No user found with username: %(name)s"
 msgstr ""
 
-#: petapp/routes.py:82 petapp/routes.py:100
+#: petapp/routes.py:87 petapp/routes.py:105
 msgid "Incorrect Password"
 msgstr ""
 
-#: petapp/routes.py:94
+#: petapp/routes.py:99
 msgid "No user found with employee number: {}"
 msgstr ""
 
-#: petapp/routes.py:111 petapp/routes.py:156
+#: petapp/routes.py:116 petapp/routes.py:161
 msgid "Passwords do not match!"
 msgstr ""
 
-#: petapp/routes.py:121
+#: petapp/routes.py:126
 msgid "Register a new user"
 msgstr ""
 
-#: petapp/routes.py:129
+#: petapp/routes.py:134
 msgid "Username is available"
 msgstr ""
 
-#: petapp/routes.py:132
+#: petapp/routes.py:137
 msgid "Sorry! Username is already taken"
 msgstr ""
 
-#: petapp/routes.py:143
+#: petapp/routes.py:148
 msgid "Email is available"
 msgstr ""
 
-#: petapp/routes.py:145
+#: petapp/routes.py:150
 msgid "Incorrect format!"
 msgstr ""
 
-#: petapp/routes.py:147
+#: petapp/routes.py:152
 msgid "Email is already existed"
 msgstr ""
 
-#: petapp/routes.py:159
+#: petapp/routes.py:164
 msgid "Register password is not right!"
 msgstr ""
 
-#: petapp/routes.py:169
+#: petapp/routes.py:174
 msgid "Register a new employee"
 msgstr ""
 
-#: petapp/routes.py:204 petapp/routes.py:241 petapp/routes.py:274
-#: petapp/routes.py:306
+#: petapp/routes.py:223 petapp/routes.py:260 petapp/routes.py:293
+#: petapp/routes.py:325
 msgid "Please add the pet first *^_^*"
 msgstr ""
 
-#: petapp/routes.py:211 petapp/routes.py:247 petapp/routes.py:279
-#: petapp/routes.py:311 petapp/routes.py:353 petapp/routes.py:595
-#: petapp/routes.py:675 petapp/routes.py:688
+#: petapp/routes.py:230 petapp/routes.py:266 petapp/routes.py:298
+#: petapp/routes.py:330 petapp/routes.py:372 petapp/routes.py:621
+#: petapp/routes.py:719 petapp/routes.py:732
 msgid "User needs to either login or signup first"
 msgstr ""
 
-#: petapp/routes.py:347 petapp/routes.py:669
+#: petapp/routes.py:366 petapp/routes.py:713
 msgid "Post successfully"
 msgstr ""
 
-#: petapp/routes.py:350 petapp/routes.py:672
+#: petapp/routes.py:369 petapp/routes.py:716
 msgid "The image format is wrong, please upload it again."
 msgstr ""
 
-#: petapp/routes.py:355 petapp/templates/customer_question.html:50
+#: petapp/routes.py:374 petapp/templates/customer_question.html:51
 msgid "Post Question"
 msgstr ""
 
-#: petapp/routes.py:375 petapp/routes.py:697
+#: petapp/routes.py:395 petapp/routes.py:742
 msgid "Detail"
 msgstr ""
 
-#: petapp/routes.py:385
+#: petapp/routes.py:405
 msgid "Order List"
 msgstr ""
 
-#: petapp/routes.py:460
+#: petapp/routes.py:480
 msgid "Appointment handled successfully"
 msgstr ""
 
-#: petapp/routes.py:462
+#: petapp/routes.py:482
 msgid "handle detials"
 msgstr ""
 
-#: petapp/routes.py:471
+#: petapp/routes.py:491
 msgid "handled_appointment"
 msgstr ""
 
-#: petapp/routes.py:507 petapp/routes.py:532 petapp/templates/add_pet.html:25
+#: petapp/routes.py:528 petapp/routes.py:553 petapp/templates/add_pet.html:25
 #: petapp/templates/customer_base.html:37
 #: petapp/templates/customer_question.html:34
+#: petapp/templates/customer_track.html:21
 #: petapp/templates/emergency_cat.html:28
 #: petapp/templates/emergency_dog.html:28
 #: petapp/templates/employee_base.html:36
@@ -281,32 +282,29 @@ msgstr ""
 msgid "Q&A"
 msgstr ""
 
-#: petapp/routes.py:547 petapp/routes.py:593
+#: petapp/routes.py:568 petapp/routes.py:619
 msgid "track"
 msgstr ""
 
-#: petapp/routes.py:625
-msgid "This treatment haven't start yet"
-msgstr ""
-
-#: petapp/routes.py:635
+#: petapp/routes.py:679
 msgid "This treatment has already finished, you cannot reset it"
 msgstr ""
 
-#: petapp/routes.py:649
+#: petapp/routes.py:693
 msgid "pet_details"
 msgstr ""
 
-#: petapp/routes.py:677 petapp/templates/my_pets.html:42
+#: petapp/routes.py:721 petapp/templates/my_pets.html:43
 msgid "Add Pet"
 msgstr ""
 
-#: petapp/routes.py:686 petapp/routes.py:690 petapp/templates/add_pet.html:26
+#: petapp/routes.py:730 petapp/routes.py:734 petapp/templates/add_pet.html:26
 #: petapp/templates/customer_base.html:40
 #: petapp/templates/customer_question.html:35
+#: petapp/templates/customer_track.html:22
 #: petapp/templates/emergency_cat.html:29
 #: petapp/templates/emergency_dog.html:29 petapp/templates/my_pets.html:28
-#: petapp/templates/my_pets.html:41 petapp/templates/pet_detail.html:36
+#: petapp/templates/my_pets.html:42 petapp/templates/pet_detail.html:36
 #: petapp/templates/post_question.html:33
 #: petapp/templates/question_detail.html:34
 #: petapp/templates/standard_appointment_cat.html:42
@@ -314,71 +312,71 @@ msgstr ""
 msgid "My Pets"
 msgstr ""
 
-#: petapp/static/static/about.html:15 petapp/static/static/about.html:59
-#: petapp/static/static/blog.html:35 petapp/static/static/gallery.html:38
-#: petapp/templates/base.html:58 petapp/templates/employee_login.html:31
+#: petapp/templates/about.html:15 petapp/templates/about.html:59
+#: petapp/templates/base.html:58 petapp/templates/blog.html:35
+#: petapp/templates/employee_login.html:31 petapp/templates/gallery.html:38
 #: petapp/templates/index.html:24 petapp/templates/login.html:31
 #: petapp/templates/services.html:25
 msgid "Home"
 msgstr ""
 
-#: petapp/static/static/about.html:16
+#: petapp/templates/about.html:16
 msgid "Profile"
 msgstr ""
 
-#: petapp/static/static/about.html:17
+#: petapp/templates/about.html:17
 msgid "Messages"
 msgstr ""
 
-#: petapp/static/static/about.html:20 petapp/templates/base.html:61
+#: petapp/templates/about.html:20 petapp/templates/base.html:61
 #: petapp/templates/employee_login.html:90 petapp/templates/login.html:90
 msgid "Login"
 msgstr ""
 
-#: petapp/static/static/about.html:22 petapp/templates/base.html:64
+#: petapp/templates/about.html:22 petapp/templates/base.html:64
 #: petapp/templates/employee_signup.html:99 petapp/templates/signup.html:75
 msgid "Sign up"
 msgstr ""
 
-#: petapp/static/static/about.html:27 petapp/static/static/about.html:177
-#: petapp/static/static/blog.html:5 petapp/static/static/blog.html:123
-#: petapp/static/static/gallery.html:157
+#: petapp/templates/about.html:27 petapp/templates/about.html:177
+#: petapp/templates/blog.html:5 petapp/templates/blog.html:123
+#: petapp/templates/gallery.html:157
 msgid "VET FOR PET"
 msgstr ""
 
-#: petapp/static/static/about.html:60 petapp/static/static/about.html:76
-#: petapp/static/static/blog.html:36 petapp/static/static/gallery.html:39
+#: petapp/templates/about.html:60 petapp/templates/about.html:76
+#: petapp/templates/blog.html:36 petapp/templates/gallery.html:39
 msgid "About Us"
 msgstr ""
 
-#: petapp/static/static/about.html:61 petapp/static/static/blog.html:37
-#: petapp/static/static/gallery.html:40 petapp/templates/employee_login.html:33
+#: petapp/templates/about.html:61 petapp/templates/blog.html:37
+#: petapp/templates/employee_login.html:33 petapp/templates/gallery.html:40
 #: petapp/templates/index.html:26 petapp/templates/login.html:33
 #: petapp/templates/services.html:27 petapp/templates/services.html:41
 msgid "Our Services"
 msgstr ""
 
-#: petapp/static/static/about.html:62 petapp/static/static/blog.html:38
-#: petapp/static/static/blog.html:52 petapp/static/static/gallery.html:41
-#: petapp/templates/employee_login.html:34 petapp/templates/login.html:34
+#: petapp/templates/about.html:62 petapp/templates/blog.html:38
+#: petapp/templates/blog.html:52 petapp/templates/employee_login.html:34
+#: petapp/templates/gallery.html:41 petapp/templates/login.html:34
 msgid "Blog"
 msgstr ""
 
-#: petapp/static/static/about.html:63 petapp/static/static/blog.html:39
-#: petapp/static/static/gallery.html:42 petapp/static/static/gallery.html:56
-#: petapp/templates/employee_login.html:35 petapp/templates/index.html:28
+#: petapp/templates/about.html:63 petapp/templates/blog.html:39
+#: petapp/templates/employee_login.html:35 petapp/templates/gallery.html:42
+#: petapp/templates/gallery.html:56 petapp/templates/index.html:28
 #: petapp/templates/login.html:35 petapp/templates/services.html:29
 msgid "Gallery"
 msgstr ""
 
-#: petapp/static/static/about.html:64 petapp/static/static/blog.html:40
-#: petapp/static/static/gallery.html:43 petapp/templates/employee_login.html:36
+#: petapp/templates/about.html:64 petapp/templates/blog.html:40
+#: petapp/templates/employee_login.html:36 petapp/templates/gallery.html:43
 #: petapp/templates/index.html:29 petapp/templates/login.html:36
-#: petapp/templates/question_detail.html:36 petapp/templates/services.html:30
+#: petapp/templates/question_detail.html:37 petapp/templates/services.html:30
 msgid "Contact Us"
 msgstr ""
 
-#: petapp/static/static/about.html:77 petapp/static/static/gallery.html:57
+#: petapp/templates/about.html:77 petapp/templates/gallery.html:57
 #: petapp/templates/services.html:42
 msgid ""
 "VET FOR PET Veterinary Hospital is a full-service veterinary care office."
@@ -387,7 +385,7 @@ msgid ""
 "veterinary care services that are both thoughtful and informed."
 msgstr ""
 
-#: petapp/static/static/about.html:78 petapp/templates/services.html:43
+#: petapp/templates/about.html:78 petapp/templates/services.html:43
 msgid ""
 "Query dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor"
 " incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
@@ -396,7 +394,7 @@ msgid ""
 "arcu, convallis non, cursus seder."
 msgstr ""
 
-#: petapp/static/static/about.html:79
+#: petapp/templates/about.html:79
 msgid ""
 "Venture dolor sit amet conse ctetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
@@ -405,265 +403,196 @@ msgid ""
 "Suspendisse enim arcu yenean semper aliquet libero."
 msgstr ""
 
-#: petapp/static/static/about.html:83
+#: petapp/templates/about.html:83
 msgid "Our Team"
 msgstr ""
 
-#: petapp/static/static/about.html:88
+#: petapp/templates/about.html:88
 msgid "Emma Emily"
 msgstr ""
 
-#: petapp/static/static/about.html:89 petapp/static/static/about.html:97
+#: petapp/templates/about.html:89 petapp/templates/about.html:97
 msgid "VETERINARY"
 msgstr ""
 
-#: petapp/static/static/about.html:96
+#: petapp/templates/about.html:96
 msgid "Lee Brown"
 msgstr ""
 
-#: petapp/static/static/about.html:104
+#: petapp/templates/about.html:104
 msgid "Asia Corey"
 msgstr ""
 
-#: petapp/static/static/about.html:105
+#: petapp/templates/about.html:105
 msgid "NURSE"
 msgstr ""
 
-#: petapp/static/static/about.html:114
+#: petapp/templates/about.html:114
 msgid "Pricing Plan"
 msgstr ""
 
-#: petapp/static/static/about.html:120
+#: petapp/templates/about.html:120
 msgid "BASIC"
 msgstr ""
 
-#: petapp/static/static/about.html:121 petapp/static/static/about.html:138
-#: petapp/static/static/about.html:155
+#: petapp/templates/about.html:121 petapp/templates/about.html:138
+#: petapp/templates/about.html:155
 msgid "/month"
 msgstr ""
 
-#: petapp/static/static/about.html:123
+#: petapp/templates/about.html:123
 msgid "2 Dog Walks"
 msgstr ""
 
-#: petapp/static/static/about.html:124
+#: petapp/templates/about.html:124
 msgid "3 Vet Visit"
 msgstr ""
 
-#: petapp/static/static/about.html:125
+#: petapp/templates/about.html:125
 msgid "5 Pet Spa"
 msgstr ""
 
-#: petapp/static/static/about.html:126 petapp/static/static/about.html:143
-#: petapp/static/static/about.html:160
+#: petapp/templates/about.html:126 petapp/templates/about.html:143
+#: petapp/templates/about.html:160
 msgid "Free Support"
 msgstr ""
 
-#: petapp/static/static/about.html:127
+#: petapp/templates/about.html:127
 msgid "15 Vet Calls"
 msgstr ""
 
-#: petapp/static/static/about.html:128 petapp/static/static/about.html:145
-#: petapp/static/static/about.html:162
+#: petapp/templates/about.html:128 petapp/templates/about.html:145
+#: petapp/templates/about.html:162
 msgid "SIGN UP"
 msgstr ""
 
-#: petapp/static/static/about.html:137
+#: petapp/templates/about.html:137
 msgid "ADVANCED"
 msgstr ""
 
-#: petapp/static/static/about.html:140
+#: petapp/templates/about.html:140
 msgid "5 Dog Walks"
 msgstr ""
 
-#: petapp/static/static/about.html:141
+#: petapp/templates/about.html:141
 msgid "6 Vet Visit"
 msgstr ""
 
-#: petapp/static/static/about.html:142
+#: petapp/templates/about.html:142
 msgid "10 Pet Spa"
 msgstr ""
 
-#: petapp/static/static/about.html:144
+#: petapp/templates/about.html:144
 msgid "25 Vet Calls"
 msgstr ""
 
-#: petapp/static/static/about.html:154
+#: petapp/templates/about.html:154
 msgid "PRESSIONAL"
 msgstr ""
 
-#: petapp/static/static/about.html:157
+#: petapp/templates/about.html:157
 msgid "10 Dog Walks"
 msgstr ""
 
-#: petapp/static/static/about.html:158
+#: petapp/templates/about.html:158
 msgid "Unlimited Vet Visit"
 msgstr ""
 
-#: petapp/static/static/about.html:159
+#: petapp/templates/about.html:159
 msgid "Unlimited Pet Spa"
 msgstr ""
 
-#: petapp/static/static/about.html:161
+#: petapp/templates/about.html:161
 msgid "50 Vet Calls"
 msgstr ""
 
-#: petapp/static/static/about.html:178 petapp/static/static/blog.html:124
-#: petapp/static/static/gallery.html:158 petapp/templates/add_pet.html:111
-#: petapp/templates/answer.html:98 petapp/templates/customer_question.html:86
-#: petapp/templates/emergency_cat.html:139
-#: petapp/templates/emergency_dog.html:136
+#: petapp/templates/about.html:178 petapp/templates/add_pet.html:112
+#: petapp/templates/answer.html:98 petapp/templates/blog.html:124
+#: petapp/templates/customer_question.html:87
+#: petapp/templates/customer_track.html:76
+#: petapp/templates/emergency_cat.html:140
+#: petapp/templates/emergency_dog.html:137
 #: petapp/templates/employee_login.html:103
 #: petapp/templates/employee_signup.html:109
-#: petapp/templates/employee_track.html:60
+#: petapp/templates/employee_track.html:62 petapp/templates/gallery.html:158
 #: petapp/templates/handle_details.html:91
 #: petapp/templates/handled_appointment.html:113
 #: petapp/templates/index.html:186 petapp/templates/login.html:103
-#: petapp/templates/my_pets.html:63 petapp/templates/orders.html:139
-#: petapp/templates/pet_details.html:54 petapp/templates/post_question.html:108
+#: petapp/templates/my_pets.html:64 petapp/templates/orders.html:134
+#: petapp/templates/pet_details.html:54 petapp/templates/post_question.html:109
 #: petapp/templates/qa_e.html:68 petapp/templates/services.html:114
-#: petapp/templates/standard_appointment_cat.html:183
-#: petapp/templates/standard_appointment_dog.html:165
+#: petapp/templates/standard_appointment_cat.html:184
+#: petapp/templates/standard_appointment_dog.html:166
 msgid "Veterinary Hospital"
 msgstr ""
 
-#: petapp/static/static/about.html:186 petapp/static/static/blog.html:132
-#: petapp/static/static/gallery.html:166
+#: petapp/templates/about.html:186 petapp/templates/blog.html:132
+#: petapp/templates/gallery.html:166
 msgid "Copyright © 2019, by DuruThemes"
 msgstr ""
 
-#: petapp/static/static/blog.html:58
-msgid "20.11.2019"
-msgstr ""
-
-#: petapp/static/static/blog.html:58 petapp/static/static/blog.html:69
-#: petapp/static/static/blog.html:80 petapp/static/static/blog.html:89
-#: petapp/static/static/blog.html:100 petapp/static/static/blog.html:109
-msgid "Duru Brown"
-msgstr ""
-
-#: petapp/static/static/blog.html:59
-msgid "Getting Your Dog's Teeth Cleaned"
-msgstr ""
-
-#: petapp/static/static/blog.html:60 petapp/static/static/blog.html:71
-#: petapp/static/static/blog.html:82 petapp/static/static/blog.html:91
-#: petapp/static/static/blog.html:102 petapp/static/static/blog.html:111
-#: petapp/templates/index.html:98 petapp/templates/index.html:110
-#: petapp/templates/index.html:122 petapp/templates/index.html:134
-#: petapp/templates/services.html:51 petapp/templates/services.html:60
-#: petapp/templates/services.html:71 petapp/templates/services.html:80
-#: petapp/templates/services.html:91 petapp/templates/services.html:100
-msgid ""
-"Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a "
-"feugiat."
-msgstr ""
-
-#: petapp/static/static/blog.html:61 petapp/static/static/blog.html:71
-#: petapp/static/static/blog.html:82 petapp/static/static/blog.html:91
-#: petapp/static/static/blog.html:102 petapp/static/static/blog.html:111
-msgid "Read More"
-msgstr ""
-
-#: petapp/static/static/blog.html:69
-msgid "18.11.2019"
-msgstr ""
-
-#: petapp/static/static/blog.html:70
-msgid "Finding Spay &amp; Neuter Services"
-msgstr ""
-
-#: petapp/static/static/blog.html:80
-msgid "17.11.2019"
-msgstr ""
-
-#: petapp/static/static/blog.html:81
-msgid "Vet For Pet Animal Hospital"
-msgstr ""
-
-#: petapp/static/static/blog.html:89
-msgid "12.10.2019"
-msgstr ""
-
-#: petapp/static/static/blog.html:90
-msgid "See our pets in action"
-msgstr ""
-
-#: petapp/static/static/blog.html:100
-msgid "7.10.2019"
-msgstr ""
-
-#: petapp/static/static/blog.html:101
-msgid "We take care of your best friend"
-msgstr ""
-
-#: petapp/static/static/blog.html:109
-msgid "5.10.2019"
-msgstr ""
-
-#: petapp/static/static/blog.html:110
-msgid "Little Kitten exploring the world"
-msgstr ""
-
-#: petapp/static/static/gallery.html:60
-msgid "ALL"
-msgstr ""
-
-#: petapp/static/static/gallery.html:61
-msgid "DOGS"
-msgstr ""
-
-#: petapp/static/static/gallery.html:62
-msgid "CATS"
-msgstr ""
-
 #: petapp/templates/add_pet.html:24 petapp/templates/customer_base.html:34
-#: petapp/templates/customer_question.html:33 petapp/templates/my_pets.html:26
+#: petapp/templates/customer_question.html:33
+#: petapp/templates/customer_track.html:20 petapp/templates/my_pets.html:26
 #: petapp/templates/pet_detail.html:34 petapp/templates/post_question.html:31
 #: petapp/templates/question_detail.html:32
 #: petapp/templates/standard_appointment_cat.html:6
 #: petapp/templates/standard_appointment_cat.html:40
-#: petapp/templates/standard_appointment_cat.html:60
+#: petapp/templates/standard_appointment_cat.html:61
 #: petapp/templates/standard_appointment_dog.html:6
 #: petapp/templates/standard_appointment_dog.html:28
-#: petapp/templates/standard_appointment_dog.html:48
+#: petapp/templates/standard_appointment_dog.html:49
 msgid "Standard Appointment"
 msgstr ""
 
-#: petapp/templates/add_pet.html:27 petapp/templates/customer_base.html:46
+#: petapp/templates/add_pet.html:27 petapp/templates/customer_base.html:43
 #: petapp/templates/customer_question.html:36
+#: petapp/templates/customer_track.html:23
 #: petapp/templates/emergency_cat.html:30
-#: petapp/templates/emergency_dog.html:30
-#: petapp/templates/employee_base.html:45
-#: petapp/templates/employee_signup.html:35
-#: petapp/templates/employee_track.html:29 petapp/templates/my_pets.html:29
-#: petapp/templates/orders.html:44 petapp/templates/pet_detail.html:37
-#: petapp/templates/post_question.html:34 petapp/templates/qa_e.html:35
+#: petapp/templates/emergency_dog.html:30 petapp/templates/my_pets.html:29
+#: petapp/templates/pet_detail.html:37 petapp/templates/post_question.html:34
 #: petapp/templates/question_detail.html:35
 #: petapp/templates/standard_appointment_cat.html:43
 #: petapp/templates/standard_appointment_dog.html:31
+msgid "Track"
+msgstr ""
+
+#: petapp/templates/add_pet.html:28 petapp/templates/customer_base.html:46
+#: petapp/templates/customer_question.html:37
+#: petapp/templates/customer_track.html:24
+#: petapp/templates/emergency_cat.html:31
+#: petapp/templates/emergency_dog.html:31
+#: petapp/templates/employee_base.html:45
+#: petapp/templates/employee_signup.html:35
+#: petapp/templates/employee_track.html:29 petapp/templates/my_pets.html:30
+#: petapp/templates/orders.html:44 petapp/templates/pet_detail.html:38
+#: petapp/templates/post_question.html:35 petapp/templates/qa_e.html:35
+#: petapp/templates/question_detail.html:36
+#: petapp/templates/standard_appointment_cat.html:44
+#: petapp/templates/standard_appointment_dog.html:32
 msgid "Sign Out"
 msgstr ""
 
-#: petapp/templates/add_pet.html:39
+#: petapp/templates/add_pet.html:40
 msgid "Add Pet Information"
 msgstr ""
 
-#: petapp/templates/add_pet.html:110 petapp/templates/answer.html:97
-#: petapp/templates/customer_question.html:85
-#: petapp/templates/emergency_cat.html:138
-#: petapp/templates/emergency_dog.html:135
+#: petapp/templates/add_pet.html:111 petapp/templates/answer.html:97
+#: petapp/templates/customer_question.html:86
+#: petapp/templates/customer_track.html:75
+#: petapp/templates/emergency_cat.html:139
+#: petapp/templates/emergency_dog.html:136
 #: petapp/templates/employee_login.html:102
 #: petapp/templates/employee_signup.html:108
-#: petapp/templates/employee_track.html:59
+#: petapp/templates/employee_track.html:61
 #: petapp/templates/handle_details.html:90
 #: petapp/templates/handled_appointment.html:112
 #: petapp/templates/index.html:185 petapp/templates/login.html:102
-#: petapp/templates/my_pets.html:62 petapp/templates/orders.html:138
-#: petapp/templates/pet_details.html:53 petapp/templates/post_question.html:107
+#: petapp/templates/my_pets.html:63 petapp/templates/orders.html:133
+#: petapp/templates/pet_details.html:53 petapp/templates/post_question.html:108
 #: petapp/templates/qa_e.html:67 petapp/templates/services.html:113
-#: petapp/templates/standard_appointment_cat.html:182
-#: petapp/templates/standard_appointment_dog.html:164
+#: petapp/templates/standard_appointment_cat.html:183
+#: petapp/templates/standard_appointment_dog.html:165
 msgid "HEALING PAWS"
 msgstr ""
 
@@ -691,53 +620,126 @@ msgstr ""
 msgid "Vet for Pet"
 msgstr ""
 
+#: petapp/templates/blog.html:58
+msgid "20.11.2019"
+msgstr ""
+
+#: petapp/templates/blog.html:58 petapp/templates/blog.html:69
+#: petapp/templates/blog.html:80 petapp/templates/blog.html:89
+#: petapp/templates/blog.html:100 petapp/templates/blog.html:109
+msgid "Duru Brown"
+msgstr ""
+
+#: petapp/templates/blog.html:59
+msgid "Getting Your Dog's Teeth Cleaned"
+msgstr ""
+
+#: petapp/templates/blog.html:60 petapp/templates/blog.html:71
+#: petapp/templates/blog.html:82 petapp/templates/blog.html:91
+#: petapp/templates/blog.html:102 petapp/templates/blog.html:111
+#: petapp/templates/index.html:98 petapp/templates/index.html:110
+#: petapp/templates/index.html:122 petapp/templates/index.html:134
+#: petapp/templates/services.html:51 petapp/templates/services.html:60
+#: petapp/templates/services.html:71 petapp/templates/services.html:80
+#: petapp/templates/services.html:91 petapp/templates/services.html:100
+msgid ""
+"Comprehensive senior pet care. Nunc mollis volutpat suscipit avensis a "
+"feugiat."
+msgstr ""
+
+#: petapp/templates/blog.html:61 petapp/templates/blog.html:71
+#: petapp/templates/blog.html:82 petapp/templates/blog.html:91
+#: petapp/templates/blog.html:102 petapp/templates/blog.html:111
+msgid "Read More"
+msgstr ""
+
+#: petapp/templates/blog.html:69
+msgid "18.11.2019"
+msgstr ""
+
+#: petapp/templates/blog.html:70
+msgid "Finding Spay &amp; Neuter Services"
+msgstr ""
+
+#: petapp/templates/blog.html:80
+msgid "17.11.2019"
+msgstr ""
+
+#: petapp/templates/blog.html:81
+msgid "Vet For Pet Animal Hospital"
+msgstr ""
+
+#: petapp/templates/blog.html:89
+msgid "12.10.2019"
+msgstr ""
+
+#: petapp/templates/blog.html:90
+msgid "See our pets in action"
+msgstr ""
+
+#: petapp/templates/blog.html:100
+msgid "7.10.2019"
+msgstr ""
+
+#: petapp/templates/blog.html:101
+msgid "We take care of your best friend"
+msgstr ""
+
+#: petapp/templates/blog.html:109
+msgid "5.10.2019"
+msgstr ""
+
+#: petapp/templates/blog.html:110
+msgid "Little Kitten exploring the world"
+msgstr ""
+
 #: petapp/templates/customer_base.html:4
 msgid "Customer Main Page"
 msgstr ""
 
-#: petapp/templates/customer_question.html:49
-#: petapp/templates/question_detail.html:48
+#: petapp/templates/customer_question.html:50
+#: petapp/templates/question_detail.html:49
 msgid "Question&Answer."
 msgstr ""
 
 #: petapp/templates/emergency_cat.html:6 petapp/templates/emergency_cat.html:27
-#: petapp/templates/emergency_cat.html:47 petapp/templates/emergency_dog.html:6
+#: petapp/templates/emergency_cat.html:48 petapp/templates/emergency_dog.html:6
 #: petapp/templates/emergency_dog.html:27
-#: petapp/templates/emergency_dog.html:47
+#: petapp/templates/emergency_dog.html:48
 msgid "Emergency Appointment"
-msgstr ""
-
-#: petapp/templates/emergency_cat.html:43
-#: petapp/templates/emergency_dog.html:43
-#: petapp/templates/standard_appointment_cat.html:56
-#: petapp/templates/standard_appointment_dog.html:44
-msgid "Standard"
 msgstr ""
 
 #: petapp/templates/emergency_cat.html:44
 #: petapp/templates/emergency_dog.html:44
 #: petapp/templates/standard_appointment_cat.html:57
 #: petapp/templates/standard_appointment_dog.html:45
+msgid "Standard"
+msgstr ""
+
+#: petapp/templates/emergency_cat.html:45
+#: petapp/templates/emergency_dog.html:45
+#: petapp/templates/standard_appointment_cat.html:58
+#: petapp/templates/standard_appointment_dog.html:46
 msgid "Emergency"
 msgstr ""
 
-#: petapp/templates/emergency_cat.html:98
-#: petapp/templates/standard_appointment_cat.html:118
+#: petapp/templates/emergency_cat.html:99
+#: petapp/templates/standard_appointment_cat.html:119
 msgid "Cats"
 msgstr ""
 
-#: petapp/templates/emergency_cat.html:107
-#: petapp/templates/standard_appointment_cat.html:127
+#: petapp/templates/emergency_cat.html:108
+#: petapp/templates/standard_appointment_cat.html:128
 msgid "No exsited cat! Please add one ^_^"
 msgstr ""
 
-#: petapp/templates/emergency_dog.html:97
-#: petapp/templates/standard_appointment_dog.html:98
+#: petapp/templates/emergency_dog.html:98
+#: petapp/templates/standard_appointment_dog.html:99
 msgid "Dogs"
 msgstr ""
 
-#: petapp/templates/emergency_dog.html:105
-#: petapp/templates/standard_appointment_dog.html:106
+#: petapp/templates/emergency_dog.html:106
+#: petapp/templates/standard_appointment_dog.html:107
 msgid "No exsited dog! Please add one ^_^"
 msgstr ""
 
@@ -811,16 +813,28 @@ msgstr ""
 msgid "Finish date:"
 msgstr ""
 
-#: petapp/templates/employee_track.html:47
+#: petapp/templates/employee_track.html:48
 msgid "Start Treatment"
 msgstr ""
 
-#: petapp/templates/employee_track.html:48
+#: petapp/templates/employee_track.html:49
 msgid "Finish Treatment"
 msgstr ""
 
-#: petapp/templates/employee_track.html:49
+#: petapp/templates/employee_track.html:51
 msgid "Reset"
+msgstr ""
+
+#: petapp/templates/gallery.html:60
+msgid "ALL"
+msgstr ""
+
+#: petapp/templates/gallery.html:61
+msgid "DOGS"
+msgstr ""
+
+#: petapp/templates/gallery.html:62
+msgid "CATS"
 msgstr ""
 
 #: petapp/templates/handled_appointment.html:21
@@ -941,7 +955,7 @@ msgstr ""
 msgid "8:00am - 10:00pm"
 msgstr ""
 
-#: petapp/templates/my_pets.html:53 petapp/templates/pet_detail.html:54
+#: petapp/templates/my_pets.html:54 petapp/templates/pet_detail.html:55
 msgid "Name:"
 msgstr ""
 
@@ -990,15 +1004,15 @@ msgstr ""
 msgid "Dog normal appointments:"
 msgstr ""
 
-#: petapp/templates/pet_detail.html:49
+#: petapp/templates/pet_detail.html:50
 msgid "Pet Detail"
 msgstr ""
 
-#: petapp/templates/pet_detail.html:55
+#: petapp/templates/pet_detail.html:56
 msgid "Age:"
 msgstr ""
 
-#: petapp/templates/pet_detail.html:56
+#: petapp/templates/pet_detail.html:57
 msgid "Species:"
 msgstr ""
 
@@ -1014,7 +1028,7 @@ msgstr ""
 msgid "Owner's phone number:"
 msgstr ""
 
-#: petapp/templates/post_question.html:47
+#: petapp/templates/post_question.html:48
 msgid "Post Your Question."
 msgstr ""
 
@@ -1022,23 +1036,23 @@ msgstr ""
 msgid "Customers Asked:"
 msgstr ""
 
-#: petapp/templates/question_detail.html:51
+#: petapp/templates/question_detail.html:52
 msgid "Title:"
 msgstr ""
 
-#: petapp/templates/question_detail.html:52
+#: petapp/templates/question_detail.html:53
 msgid "Post Date:"
 msgstr ""
 
-#: petapp/templates/question_detail.html:53
+#: petapp/templates/question_detail.html:54
 msgid "Publisher:"
 msgstr ""
 
-#: petapp/templates/question_detail.html:54
+#: petapp/templates/question_detail.html:55
 msgid "Detail:"
 msgstr ""
 
-#: petapp/templates/question_detail.html:59
+#: petapp/templates/question_detail.html:60
 msgid "Reply:"
 msgstr ""
 

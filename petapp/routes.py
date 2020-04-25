@@ -179,6 +179,20 @@ def services():
     session['currentPage'] = 'services'
     return render_template('services.html')
 
+@app.route('/about')
+def about():
+    session['currentPage'] = 'about'
+    return render_template('about.html')
+
+@app.route('/blog')
+def blog():
+    session['currentPage'] = 'blog'
+    return render_template('blog.html')
+
+@app.route('/gallery')
+def gallery():
+    session['currentPage'] = 'gallery'
+    return render_template('gallery.html')
 
 @app.route('/standard_appointment_cat', methods=['GET', 'POST'])
 def standard_appointment_cat():
