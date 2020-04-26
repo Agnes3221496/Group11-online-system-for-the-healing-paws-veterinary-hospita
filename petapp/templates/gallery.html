@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="zxx">
+﻿{% extends "base.html" %}
+{% block content %}
 
 <head>
     <title>VET FOR PET</title>
@@ -14,7 +14,7 @@
     <link href="../static/css/touchTouch.css" type="text/css" rel="stylesheet">
 </head>
 
-<body class="subpage">
+<body>
     <div id="main">
             <div class="content">
                 <div class="container">
@@ -36,10 +36,11 @@
                                                 <div class="nav-collapse nav-collapse_ collapse">
                                                     <ul class="nav sf-menu clearfix">
                                                         <li><a href="{{ url_for('index') }}">{{ _('Home') }}<span class="over1"></span></a></li>
-                                                        <li><a href="{{ url_for('about') }}">{{ _('About Us') }}<span class="over1"></span></a></li>
+                                                        <li><a href="{{ url_for('standard_appointment_cat') }}">{{ _('Appointment') }}<span class="over1"></span></a></li>
                                                         <li><a href="{{ url_for('services') }}">{{ _('Our Services') }}<span class="over1"></span></a></li>
                                                         <li><a href="{{ url_for('blog') }}">{{ _('Blog') }}<span class="over1"></span></a></li>
                                                         <li class="active"><a href="{{ url_for('gallery') }}">{{ _('Gallery') }}<span class="over1"></span></a></li>
+                                                        <li><a href="{{ url_for('about') }}">{{ _('About Us') }}<span class="over1"></span></a></li>
 {#                                                        <li><a href="{{ url_for('contact') }}">{{ _('Contact Us') }}<span class="over1"></span></a></li>#}
 
                                                     </ul>
@@ -152,28 +153,17 @@
             </div>
             
             <!-- Footer -->
-            <footer>
-                <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
-                <h1>{{ _('VET FOR PET') }}</h1>
-                <p class="subtitle">{{ _('Veterinary Hospital') }}</p>
-                <div class="vfp-social-wrapper">
-                    <ul class="social clearfix">
-                        <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>
-                        <li><a href="index.html#"><i class="ti-instagram"></i></a></li>
-                        <li><a href="index.html#"><i class="ti-youtube"></i></a></li>
-                    </ul>
-                </div>
-                <div class="copyright">{{ _('Copyright © 2019, by DuruThemes') }}</div>
-
-                {% for language in AVAILABLE_LANGUAGES.items() %}
-                    {% if CURRENT_LANGUAGE == language[0] %}
-                        {{ language[1] }}&nbsp &nbsp
-                    {% else %}
-                        <a href="{{ url_for('choose_language', language=language[0]) }}" >{{ language[1] }}&nbsp &nbsp</a>
-                    {%  endif %}
-                {% endfor %}
-            {#    reference: https://www.thinbug.com/q/42393831#}
-            </footer>
+        <footer> <img src="../static/images/icons/paw.png" alt="" class="img-responsive">
+        <h1>{{ _('HEALING PAWS') }}</h1>
+        <p class="subtitle">{{ _('Veterinary Hospital') }}</p>
+        <div class="vfp-social-wrapper">
+            <ul class="social clearfix">
+                <li><a href="index.html#"><i class="ti-twitter-alt"></i></a></li>
+                <li><a href="index.html#"><i class="ti-instagram"></i></a></li>
+                <li><a href="index.html#"><i class="ti-youtube"></i></a></li>
+            </ul>
+        </div>
+    </footer>
     </div>
 
     <!-- JS -->
@@ -217,3 +207,4 @@
     
 </body>
 </html>
+{% endblock %}
