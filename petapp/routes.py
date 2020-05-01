@@ -402,6 +402,18 @@ def orders():
     dog_orders_e = DogEmergency.query.filter(DogEmergency.status == 0).all()
     cat_orders = CatAppointment.query.filter(CatAppointment.status == 0).all()
     dog_orders = DogAppointment.query.filter(DogAppointment.status == 0).all()
+
+    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+    order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
+    for orders in order_details:
+        if orders.finish_date != 'Undetermined' and orders.finish_date != 'In treatment':
+            dt = datetime.datetime.now() - datetime.timedelta(days=7)
+            time = str(dt)
+            time = time[:16]
+            if orders.finish_date < time:
+                db.session.delete(orders)
+                db.session.commit
+
     return render_template('orders.html', title=gettext('Order List'), cat_orders_e=cat_orders_e,
                            dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
 
@@ -418,6 +430,7 @@ def handle_details():
     pt = 1  # 1 is cat, 2 is dog
     at = 1  # 1 is emergency, 2 is normal
     aid = 0
+    priority = 0
     if form.validate_on_submit():
         if c is not None:
             print("1")
@@ -445,6 +458,7 @@ def handle_details():
             city = cat.city
             pet_name = cat.pet_name
             pet_id = cat.pet_id
+            priority = 1
         if d is not None:
             print("3")
             dog = DogAppointment.query.filter(DogAppointment.id == d).first()
@@ -471,10 +485,11 @@ def handle_details():
             city = dog.city
             pet_name = dog.pet_name
             pet_id = dog.pet_id
+            priority = 1
 
         new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at, employee_name=form.name.data,
                                    date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone, city=city,
-                                   pet_name=pet_name, pet_id=pet_id)
+                                   pet_name=pet_name, pet_id=pet_id, priority=priority)
         db.session.add(new_handle)
         db.session.commit()
         flash(gettext("Appointment handled successfully"))
@@ -486,10 +501,11 @@ def handle_details():
 def handled_appointment():
     session['currentPage'] = 'handled_appointment'
     user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
-    order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id)
-
+    order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
+    print(order_details[0].date)
+    b = sorted(order_details, key=lambda x: (-x.priority,  x.date),)
     return render_template('handled_appointment.html', title=gettext('handled_appointment'),
-                           order_details=order_details)
+                           order_details=b)
 
 
 @app.route('/delete_order', methods=['GET', 'POST'])
@@ -519,6 +535,35 @@ def delete_order():
         db.session.delete(appointment)
         db.session.commit()
     return redirect(url_for('orders'))
+
+
+@app.route('/prioritize', methods=['GET', 'POST'])
+def prioritize():
+    id = request.args.get("id2")
+    appointment = HandleDetails.query.filter(HandleDetails.id == id).first()
+    print(appointment.id)
+    if appointment.priority == 1 or appointment.priority == 0:
+        appointment.priority = 3
+        db.session.commit()
+    else:
+        flash("This appointment is already prioritized")
+    return redirect(url_for('handled_appointment'))
+
+
+@app.route('/cancel_prioritize', methods=['GET', 'POST'])
+def cancel_prioritize():
+    id = request.args.get("id3")
+    appointment = HandleDetails.query.filter(HandleDetails.id == id).first()
+    print(appointment.id)
+    if appointment.priority == 3:
+        if appointment.appointment_type == 2:
+            appointment.priority = 0
+        if appointment.appointment_type == 1:
+            appointment.priority = 1
+        db.session.commit()
+    else:
+        flash('This appointment has not been prioritized')
+    return redirect(url_for('handled_appointment'))
 
 
 @app.route('/qa_e', methods=['GET', 'POST'])

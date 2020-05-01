@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ _('Employee Main Page') }}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='../static/style/employee_base.css') }}" />
+
+	<script src="{{ url_for('static', filename='../static/script/jquery-3.4.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+</head>
+<body>
+
+{#<<<<<<< HEAD#}
+{#	<div class="link">#}
+{#		<a href="{{ url_for('orders')}}">{{ _('Orders') }}</a>#}
+{#		&nbsp &nbsp|&nbsp &nbsp#}
+{#        <a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}</a>#}
+{#        &nbsp &nbsp|&nbsp &nbsp#}
+{#		<a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}</a>#}
+{#        &nbsp &nbsp|&nbsp &nbsp#}
+{#        <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}</a>#}
+{##}
+{#	</div>#}
+{#	<hr>#}
+{#=======#}
+    <ul id="myTab" class="nav nav-tabs" style="padding-left: 2%;background: gainsboro;font-family: 'Comic Sans MS'">
+        <li>
+            <a href="{{ url_for('orders')}}">{{ _('Orders') }}</a>
+        </li>
+        <li>
+            <a href="{{ url_for('qa_e')}}">{{ _('Q&A') }}</a>
+        </li>
+        <li>
+            <a href="{{ url_for('employee_track')}}">Tracking Pets</a>
+        </li>
+        <li>
+            <a href="{{ url_for('employee_signup')}}">{{ _('Add New Employee') }}</a>
+        </li>
+        <li>
+            <a href="{{ url_for('employee_login')}}">{{ _('Sign Out') }}</a>
+        </li>
+    </ul>
+{#>>>>>>> b20e530d19b3949949bfa7807211699ec7e5603f#}
+	 {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+</body>
+
+
+</html>

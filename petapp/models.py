@@ -136,3 +136,4 @@ class HandleDetails(db.Model):
     city = db.Column(db.String(10))
     pet_name = db.Column(db.String(32))
     pet_id = db.Column(db.Integer())
+    priority = db.Column(db.Integer, index=True)

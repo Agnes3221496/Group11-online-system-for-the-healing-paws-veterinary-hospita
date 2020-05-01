@@ -36,6 +36,7 @@
                     <div class="vfp-box2">
                     <div class="vfp-caroufredsel-slider2-txt1">{{ _('Handled Appointments') }}</div><hr>
                         <div class="e_appointment">
+
 {#<<<<<<< HEAD#}
 {#            {% if cat_orders_e %}#}
 {#                {% for cats in cat_orders_e %}#}
@@ -96,9 +97,15 @@
                                 {% if order.pet_type == 2 %}
                                     <h2 style="font-size: 20px;color: #3c763d">{{ _('Pet type: Dog') }}</h2>
                                 {% endif %}
+                                <h2 style="font-size: 20px;color: #3c763d">Owner name:{{ order.name }}</h2>
+                                <h2 style="font-size: 20px;color: #3c763d">Pet name:{{ order.pet_name }}</h2>
                                 <h2 style="font-size: 20px;color: #3c763d">{{ _('Date:') }} {{ order.date }}</h2>
                                 <br/>
                                 <a href={{ url_for('delete_order', id = order.id) }}>{{ _('Delete this appointment') }}</a>
+                                <br/>
+                                <a href={{ url_for('prioritize', id2 = order.id) }}>Prioritize this appointment</a>
+                                  <br/>
+                                <a href={{ url_for('cancel_prioritize', id3 = order.id) }}>Cancel the prioritize on this appointment</a>
                                 <hr style="border-top: 2px dotted green">
                             {% endfor %}
                         </div>
