@@ -411,8 +411,28 @@ def orders():
             time = str(dt)
             time = time[:16]
             if orders.finish_date < time:
+                print(orders.appointment_id)
+                if orders.appointment_type == 1:
+                    if orders.pet_type == 1:
+                        ce = CatEmergency.query.filter(CatEmergency.id == orders.appointment_id).first()
+                        db.session.delete(ce)
+                        db.session.commit()
+                    else:
+                        cn = DogEmergency.query.filter(DogEmergency.id == orders.appointment_id).first()
+                        db.session.delete(cn)
+                        db.session.commit()
+                else:
+                    if orders.pet_type == 1:
+                        de = CatAppointment.query.filter(CatAppointment.id == orders.appointment_id).first()
+                        db.session.delete(de)
+                        db.session.commit()
+                    else:
+                        dn = DogAppointment.query.filter(DogAppointment.id == orders.appointment_id).first()
+                        db.session.delete(dn)
+                        db.session.commit()
                 db.session.delete(orders)
-                db.session.commit
+                db.session.commit()
+                print('6657')
 
     return render_template('orders.html', title=gettext('Order List'), cat_orders_e=cat_orders_e,
                            dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
