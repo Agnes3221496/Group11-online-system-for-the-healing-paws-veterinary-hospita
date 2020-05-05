@@ -655,7 +655,7 @@ def customer_track():
         for da in das:
             if da.status == 1:
                 ha = HandleDetails.query.filter(
-                    and_(HandleDetails.pet_type == 1,
+                    and_(HandleDetails.pet_type == 2,
                          and_(HandleDetails.appointment_type == 2, HandleDetails.appointment_id == da.id))).first()
                 handled.add(ha)
             else:
@@ -666,7 +666,7 @@ def customer_track():
             if ce.status == 1:
                 ha = HandleDetails.query.filter(
                     and_(HandleDetails.pet_type == 1,
-                         and_(HandleDetails.appointment_type == 2, HandleDetails.appointment_id == ce.id))).first()
+                         and_(HandleDetails.appointment_type == 1, HandleDetails.appointment_id == ce.id))).first()
                 handled.add(ha)
             else:
                 nhandled.add(ce)
@@ -675,8 +675,8 @@ def customer_track():
         for de in des:
             if de.status == 1:
                 ha = HandleDetails.query.filter(
-                    and_(HandleDetails.pet_type == 1,
-                         and_(HandleDetails.appointment_type == 2, HandleDetails.appointment_id == de.id))).first()
+                    and_(HandleDetails.pet_type == 2,
+                         and_(HandleDetails.appointment_type == 1, HandleDetails.appointment_id == de.id))).first()
                 handled.add(ha)
             else:
                 nhandled.add(de)

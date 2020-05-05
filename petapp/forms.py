@@ -80,7 +80,7 @@ class PetForm(FlaskForm):
     submit = SubmitField(_l('Submit'))
 
 class HandleForm(FlaskForm):
-    name = StringField(_l('Employee Name: '), validators=[DataRequired()])
+    name = StringField(_l('Employee Number: '), validators=[DataRequired()])
     date = StringField(_l('Appointment date: '), validators=[DataRequired()])
     confirm = BooleanField(_l('Confirm handle this appointment'), validators=[DataRequired(_l('You need to confirm'))])
     submit = SubmitField(_l('Submit'))
