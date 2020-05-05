@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-05-05 15:12+0800\n"
+"POT-Creation-Date: 2020-05-05 15:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -831,7 +831,9 @@ msgstr ""
 msgid "All handled pets:"
 msgstr ""
 
-#: petapp/templates/employee_track.html:43 petapp/templates/pet_details.html:39
+#: petapp/templates/employee_track.html:43
+#: petapp/templates/handled_appointment.html:101
+#: petapp/templates/pet_details.html:39
 msgid "Pet name:"
 msgstr ""
 
@@ -888,12 +890,24 @@ msgstr ""
 msgid "Pet type: Dog"
 msgstr ""
 
+#: petapp/templates/handled_appointment.html:100
+msgid "Owner name:"
+msgstr ""
+
 #: petapp/templates/handled_appointment.html:102
 msgid "Date:"
 msgstr ""
 
 #: petapp/templates/handled_appointment.html:104
 msgid "Delete this appointment"
+msgstr ""
+
+#: petapp/templates/handled_appointment.html:106
+msgid "Prioritize this appointment"
+msgstr ""
+
+#: petapp/templates/handled_appointment.html:108
+msgid "Cancel the prioritize on this appointment"
 msgstr ""
 
 #: petapp/templates/index.html:27 petapp/templates/services.html:28
