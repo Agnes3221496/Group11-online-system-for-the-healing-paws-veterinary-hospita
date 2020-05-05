@@ -1,6 +1,6 @@
 {% extends "customer_base.html" %}
 {% block content %}
-<<html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{{_('Standard Appointment')}}</title>
@@ -18,7 +18,7 @@
 {#    </ul>#}
 
 
-<<div class="content">
+<div class="content">
         <div class="container">
             <div class="row">
                 <div class="span3">
@@ -158,8 +158,7 @@
 
 <script>
 
-
-    function conf(b_count, s_count, c_count) {
+function conf(b_count, s_count, c_count) {
           //value is the city chosen by the customer
         let value = '';
         let radio = document.getElementsByName('city')
@@ -198,5 +197,5 @@
     <script src="js/jquery.caroufredsel.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/bootstrap.js"></script>
-<</html>
+</html>
 {% endblock %}

@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\JIANG WANYING\Desktop\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\petvet.db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="petvet [2]" uuid="39ea328d-1c2e-4277-8896-450d6015c168">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:E:\Github\Group11-online-system-for-the-healing-paws-veterinary-hospita\petapp\petvet.db</jdbc-url>
+    </data-source>
   </component>
 </project>

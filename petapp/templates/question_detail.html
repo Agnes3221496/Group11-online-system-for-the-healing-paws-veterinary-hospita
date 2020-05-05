@@ -1,15 +1,15 @@
 {% extends "customer_base.html" %}
 {% block content %}
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />
-
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
-
-        <div class="panel panel-info"/>
-        <div class="panel-heading"/>
-        <div class="panel-body"/>
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='../static/style/post_question.css') }}" />#}
+{##}
+{#        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">#}
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">#}
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">#}
+{##}
+{#        <div class="panel panel-info"/>#}
+{#        <div class="panel-heading"/>#}
+{#        <div class="panel-body"/>#}
  <div class="content">
         <div class="container">
             <div class="row">
@@ -43,30 +43,30 @@
                         </nav>
                     </div>
                 </div>
-            <div class="span9">
+                <div class="span9">
                     <div class="vfp-box2">
-                    <div class="question">
                     <div class="vfp-caroufredsel-slider2-txt1">{{ _('Question&Answer.') }}</div>
-        {% if question %}
-            {% for q in question %}
-                <h2>{{ _('Title:') }} {{ q.title }}</h2>
-                <p>{{ _('Post Date:') }} {{ q.publish_date }}</p>
-                <p>{{ _('Publisher:') }} {{ q.publisher }}</p>
-                <h3>{{ _('Detail:') }}</h3>
-                <p>{{ q.detail }}</p>
-{#                <img style="width:360px" src='/static/uploaded_image/question_image/{{ q.image }}'>#}
-            {% endfor %}
-        {% endif %}
-        <h3>{{ _('Reply:') }}</h3>
-        {% if answer %}
-            {% for a in answer %}
-                <p>{{ a.answer }}</p>
-                <p>{{ a.time }}</p>
-            {% endfor %}
-        {% endif %}
+                    <div class="question">
+                        {% if question %}
+                            {% for q in question %}
+                                <h2>{{ _('Title:') }} {{ q.title }}</h2>
+                                <p>{{ _('Post Date:') }} {{ q.publish_date }}</p>
+                                <p>{{ _('Publisher:') }} {{ q.publisher }}</p>
+                                <h3>{{ _('Detail:') }}</h3>
+                                <p>{{ q.detail }}</p>
+                                <img style="width:360px" src='/static/uploaded_image/question_image/{{ q.image }}'>
+                            {% endfor %}
+                        {% endif %}
+                        <h3>{{ _('Reply:') }}</h3>
+                        {% if answer %}
+                            {% for a in answer %}
+                                <p>{{ a.answer }}</p>
+                                <p>{{ a.time }}</p>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                     </div>
-            </div>
+                </div>
             </div>
         </div>
  </div>
