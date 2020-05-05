@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-05-05 15:26+0800\n"
+"POT-Creation-Date: 2020-05-06 01:58+0800\n"
 "PO-Revision-Date: 2020-04-06 00:51+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -388,6 +388,7 @@ msgstr "画廊"
 
 #: petapp/static/static/about.html:64 petapp/static/static/blog.html:40
 #: petapp/static/static/gallery.html:43 petapp/templates/employee_login.html:36
+#: petapp/templates/pet_detail.html:39
 msgid "Contact Us"
 msgstr "联系我们"
 
@@ -758,6 +759,53 @@ msgstr "顾客主页"
 msgid "Question&Answer."
 msgstr "提问&回答"
 
+#: petapp/templates/customer_track.html:36
+#: petapp/templates/handled_appointment.html:37
+msgid "Handled Appointments"
+msgstr "处理预约"
+
+#: petapp/templates/customer_track.html:40
+#: petapp/templates/employee_track.html:44
+msgid "Appointment date:"
+msgstr "预约日期:"
+
+#: petapp/templates/customer_track.html:41
+msgid "Treatment start date:"
+msgstr "治疗开始日期："
+
+#: petapp/templates/customer_track.html:42
+#: petapp/templates/employee_track.html:46
+msgid "Finish date:"
+msgstr "结束日期："
+
+#: petapp/templates/customer_track.html:43
+msgid "Release date:"
+msgstr "出院日期："
+
+#: petapp/templates/customer_track.html:53
+msgid "Unhandled Appointments"
+msgstr "未处理的预约"
+
+#: petapp/templates/customer_track.html:57 petapp/templates/orders.html:63
+#: petapp/templates/orders.html:78 petapp/templates/orders.html:95
+#: petapp/templates/orders.html:110
+msgid "Owner:"
+msgstr "主人："
+
+#: petapp/templates/customer_track.html:58
+msgid "Phone:"
+msgstr "电话"
+
+#: petapp/templates/customer_track.html:59 petapp/templates/orders.html:65
+#: petapp/templates/orders.html:80 petapp/templates/orders.html:97
+#: petapp/templates/orders.html:112 petapp/templates/pet_details.html:42
+msgid "City:"
+msgstr "城市："
+
+#: petapp/templates/customer_track.html:60
+msgid "The appointment is still pending."
+msgstr "预约仍未确认"
+
 #: petapp/templates/emergency_cat.html:6 petapp/templates/emergency_cat.html:27
 #: petapp/templates/emergency_cat.html:48 petapp/templates/emergency_dog.html:6
 #: petapp/templates/emergency_dog.html:27
@@ -854,17 +902,13 @@ msgstr "宠物姓名："
 msgid "click to see more information"
 msgstr "点击查看更多信息"
 
-#: petapp/templates/employee_track.html:44
-msgid "Appointment date:"
-msgstr "预约日期:"
-
 #: petapp/templates/employee_track.html:45
 msgid "Treatment date:"
 msgstr "治疗日期："
 
-#: petapp/templates/employee_track.html:46
-msgid "Finish date:"
-msgstr "结束日期："
+#: petapp/templates/employee_track.html:47
+msgid "Leave date:"
+msgstr "离开日期："
 
 #: petapp/templates/employee_track.html:48
 msgid "Start Treatment"
@@ -874,6 +918,10 @@ msgstr "开始治疗"
 msgid "Finish Treatment"
 msgstr "结束治疗"
 
+#: petapp/templates/employee_track.html:50
+msgid "Leave hospital"
+msgstr "出院"
+
 #: petapp/templates/employee_track.html:51
 msgid "Reset"
 msgstr "重置"
@@ -882,10 +930,6 @@ msgstr "重置"
 #: petapp/templates/pet_details.html:21
 msgid "Back"
 msgstr "返回"
-
-#: petapp/templates/handled_appointment.html:37
-msgid "Handled Appointments"
-msgstr "处理预约"
 
 #: petapp/templates/handled_appointment.html:89
 msgid "Appointment type: Emergency"
@@ -1024,21 +1068,10 @@ msgstr "预约处理"
 msgid "Cat emergency appointments:"
 msgstr "猫咪紧急预约："
 
-#: petapp/templates/orders.html:63 petapp/templates/orders.html:78
-#: petapp/templates/orders.html:95 petapp/templates/orders.html:110
-msgid "Owner:"
-msgstr "主人："
-
 #: petapp/templates/orders.html:64 petapp/templates/orders.html:79
 #: petapp/templates/orders.html:96 petapp/templates/orders.html:111
 msgid "Phone number:"
 msgstr "电话号码："
-
-#: petapp/templates/orders.html:65 petapp/templates/orders.html:80
-#: petapp/templates/orders.html:97 petapp/templates/orders.html:112
-#: petapp/templates/pet_details.html:42
-msgid "City:"
-msgstr "城市："
 
 #: petapp/templates/orders.html:65 petapp/templates/orders.html:80
 #: petapp/templates/orders.html:97 petapp/templates/orders.html:112

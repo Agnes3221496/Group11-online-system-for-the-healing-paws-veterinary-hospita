@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-05-05 15:26+0800\n"
+"POT-Creation-Date: 2020-05-06 01:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -387,6 +387,7 @@ msgstr ""
 
 #: petapp/static/static/about.html:64 petapp/static/static/blog.html:40
 #: petapp/static/static/gallery.html:43 petapp/templates/employee_login.html:36
+#: petapp/templates/pet_detail.html:39
 msgid "Contact Us"
 msgstr ""
 
@@ -745,6 +746,53 @@ msgstr ""
 msgid "Question&Answer."
 msgstr ""
 
+#: petapp/templates/customer_track.html:36
+#: petapp/templates/handled_appointment.html:37
+msgid "Handled Appointments"
+msgstr ""
+
+#: petapp/templates/customer_track.html:40
+#: petapp/templates/employee_track.html:44
+msgid "Appointment date:"
+msgstr ""
+
+#: petapp/templates/customer_track.html:41
+msgid "Treatment start date:"
+msgstr ""
+
+#: petapp/templates/customer_track.html:42
+#: petapp/templates/employee_track.html:46
+msgid "Finish date:"
+msgstr ""
+
+#: petapp/templates/customer_track.html:43
+msgid "Release date:"
+msgstr ""
+
+#: petapp/templates/customer_track.html:53
+msgid "Unhandled Appointments"
+msgstr ""
+
+#: petapp/templates/customer_track.html:57 petapp/templates/orders.html:63
+#: petapp/templates/orders.html:78 petapp/templates/orders.html:95
+#: petapp/templates/orders.html:110
+msgid "Owner:"
+msgstr ""
+
+#: petapp/templates/customer_track.html:58
+msgid "Phone:"
+msgstr ""
+
+#: petapp/templates/customer_track.html:59 petapp/templates/orders.html:65
+#: petapp/templates/orders.html:80 petapp/templates/orders.html:97
+#: petapp/templates/orders.html:112 petapp/templates/pet_details.html:42
+msgid "City:"
+msgstr ""
+
+#: petapp/templates/customer_track.html:60
+msgid "The appointment is still pending."
+msgstr ""
+
 #: petapp/templates/emergency_cat.html:6 petapp/templates/emergency_cat.html:27
 #: petapp/templates/emergency_cat.html:48 petapp/templates/emergency_dog.html:6
 #: petapp/templates/emergency_dog.html:27
@@ -841,16 +889,12 @@ msgstr ""
 msgid "click to see more information"
 msgstr ""
 
-#: petapp/templates/employee_track.html:44
-msgid "Appointment date:"
-msgstr ""
-
 #: petapp/templates/employee_track.html:45
 msgid "Treatment date:"
 msgstr ""
 
-#: petapp/templates/employee_track.html:46
-msgid "Finish date:"
+#: petapp/templates/employee_track.html:47
+msgid "Leave date:"
 msgstr ""
 
 #: petapp/templates/employee_track.html:48
@@ -861,6 +905,10 @@ msgstr ""
 msgid "Finish Treatment"
 msgstr ""
 
+#: petapp/templates/employee_track.html:50
+msgid "Leave hospital"
+msgstr ""
+
 #: petapp/templates/employee_track.html:51
 msgid "Reset"
 msgstr ""
@@ -868,10 +916,6 @@ msgstr ""
 #: petapp/templates/handled_appointment.html:21
 #: petapp/templates/pet_details.html:21
 msgid "Back"
-msgstr ""
-
-#: petapp/templates/handled_appointment.html:37
-msgid "Handled Appointments"
 msgstr ""
 
 #: petapp/templates/handled_appointment.html:89
@@ -1011,20 +1055,9 @@ msgstr ""
 msgid "Cat emergency appointments:"
 msgstr ""
 
-#: petapp/templates/orders.html:63 petapp/templates/orders.html:78
-#: petapp/templates/orders.html:95 petapp/templates/orders.html:110
-msgid "Owner:"
-msgstr ""
-
 #: petapp/templates/orders.html:64 petapp/templates/orders.html:79
 #: petapp/templates/orders.html:96 petapp/templates/orders.html:111
 msgid "Phone number:"
-msgstr ""
-
-#: petapp/templates/orders.html:65 petapp/templates/orders.html:80
-#: petapp/templates/orders.html:97 petapp/templates/orders.html:112
-#: petapp/templates/pet_details.html:42
-msgid "City:"
 msgstr ""
 
 #: petapp/templates/orders.html:65 petapp/templates/orders.html:80
