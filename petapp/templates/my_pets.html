@@ -51,7 +51,7 @@
 
     {% if pet %}
         {% for p in pet %}
-            <p>{{ _('Name:') }} <a href="{{ url_for('pet_detail', pet_id=p.id) }}"> {{ p.name }}</a> </p>
+            <p>{{ _('Name:') }} <a href="{{ url_for('pet_detail', pet=p.id) }}"> {{ p.name }}</a> </p>
         {% endfor %}
     {% endif %}
                     </div>

@@ -39,9 +39,9 @@ def get_locale():
 def choose_language(language=None):
     session['language'] = language
     if session.get("currentPage") == 'pet_detail':
-        return redirect(url_for(session.get("currentPage"), pet_id=session.get('petID')))
+        return redirect(url_for(session.get("currentPage"), pet=session.get('petID')))
     elif session.get("currentPage") == 'question_detail':
-        return redirect(url_for(session.get("currentPage"), q_id=session.get('questionID')))
+        return redirect(url_for(session.get("currentPage"), q=session.get('questionID')))
     else:
         return redirect(url_for(session.get("currentPage")))
 
@@ -386,12 +386,15 @@ def customer_question():
     return render_template('customer_question.html', title=gettext('Search'), form=form, question=question)
 
 
-@app.route('/question_detail/<q_id>/')
-def question_detail(q_id):
+@app.route('/question_detail', methods=['GET', 'POST'])
+def question_detail():
     session['currentPage'] = 'question_detail'
-    session['questionID'] = q_id
-    question = Question.query.filter(Question.id == q_id)
-    answer = Answer.query.filter(Answer.question_id == q_id)
+    # session['questionID'] = q_id
+    q = request.args.get("q")
+    question = Question.query.filter(Question.id == q).all()
+    print(question)
+    answer = Answer.query.filter(Answer.question_id == q).all()
+    print(answer)
     return render_template('question_detail.html', title=gettext('Detail'), question=question, answer=answer)
 
 
@@ -799,9 +802,10 @@ def my_pets():
     return render_template('my_pets.html', title=gettext('My Pets'), pet=pet)
 
 
-@app.route('/pet_detail/<pet_id>/')
-def pet_detail(pet_id):
+@app.route('/pet_detail', methods=['GET', 'POST'])
+def pet_detail():
     session['currentPage'] = 'pet_detail'
-    session['petID'] = pet_id
-    pet = Pet.query.filter(Pet.id == pet_id)
+    pet = request.args.get("pet")
+    session['petID'] = pet
+    pet = Pet.query.filter(Pet.id == pet)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
