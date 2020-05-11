@@ -115,7 +115,6 @@ def signup():
         if form.password.data != form.password2.data:
             flash(gettext('Passwords do not match!'))
             return redirect(url_for('signup'))
-
         passw_hash = generate_password_hash(form.password.data)
         customer = Customer(username=form.username.data, email=form.email.data, password_hash=passw_hash)
         db.session.add(customer)
@@ -154,25 +153,28 @@ def check_email():
 
 @app.route('/employee_signup', methods=['GET', 'POST'])
 def employee_signup():
-    session['currentPage'] = 'employee_signup'
-    form = EmployeeSignupForm()
-    if form.validate_on_submit():
-        if form.password.data != form.password2.data:
-            flash(gettext('Passwords do not match!'))
-            return redirect(url_for('employee_signup'))
-        if form.register_password.data != '123456':
-            flash(gettext('Register password is not right!'))
-            return redirect(url_for('employee_signup'))
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'employee_signup'
+        form = EmployeeSignupForm()
+        if form.validate_on_submit():
+            if form.password.data != form.password2.data:
+                flash(gettext('Passwords do not match!'))
+                return redirect(url_for('employee_signup'))
+            if form.register_password.data != '123456':
+                flash(gettext('Register password is not right!'))
+                return redirect(url_for('employee_signup'))
 
-        passw_hash = generate_password_hash(form.password.data)
-        employee = Employee(employee_number=form.employee_number.data, email=form.email.data, password_hash=passw_hash)
-        db.session.add(employee)
-        db.session.commit()
-        # flash('User registered with username:{}'.format(form.username.data))
-        session["NUMBER"] = employee.employee_number
-        return redirect(url_for("employee_login"))
-    return render_template('employee_signup.html', title=gettext('Register a new employee'), form=form)
-
+            passw_hash = generate_password_hash(form.password.data)
+            employee = Employee(employee_number=form.employee_number.data, email=form.email.data, password_hash=passw_hash)
+            db.session.add(employee)
+            db.session.commit()
+            # flash('User registered with username:{}'.format(form.username.data))
+            session["NUMBER"] = employee.employee_number
+            return redirect(url_for("employee_login"))
+        return render_template('employee_signup.html', title=gettext('Register a new employee'), form=form)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 @app.route('/services')
 def services():
@@ -340,6 +342,7 @@ def appointment_success():
 @app.route('/logout')
 def logout():
     session.pop("USERNAME", None)
+    session.pop("NUMBER", None)
     return redirect(url_for('login'))
 
 
@@ -400,135 +403,147 @@ def question_detail():
 
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():
-    session['currentPage'] = 'orders'
-    cat_orders_e = CatEmergency.query.filter(CatEmergency.status == 0).all()
-    dog_orders_e = DogEmergency.query.filter(DogEmergency.status == 0).all()
-    cat_orders = CatAppointment.query.filter(CatAppointment.status == 0).all()
-    dog_orders = DogAppointment.query.filter(DogAppointment.status == 0).all()
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'orders'
+        cat_orders_e = CatEmergency.query.filter(CatEmergency.status == 0).all()
+        dog_orders_e = DogEmergency.query.filter(DogEmergency.status == 0).all()
+        cat_orders = CatAppointment.query.filter(CatAppointment.status == 0).all()
+        dog_orders = DogAppointment.query.filter(DogAppointment.status == 0).all()
 
-    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
-    order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
-    for orders in order_details:
-        if orders.finish_date != 'Undetermined' and orders.finish_date != 'In treatment':
-            dt = datetime.datetime.now() - datetime.timedelta(days=7)
-            time = str(dt)
-            time = time[:16]
-            if orders.finish_date < time:
-                print(orders.appointment_id)
-                if orders.appointment_type == 1:
-                    if orders.pet_type == 1:
-                        ce = CatEmergency.query.filter(CatEmergency.id == orders.appointment_id).first()
-                        db.session.delete(ce)
-                        db.session.commit()
+        user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+        order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
+        for orders in order_details:
+            if orders.finish_date != 'Undetermined' and orders.finish_date != 'In treatment':
+                dt = datetime.datetime.now() - datetime.timedelta(days=7)
+                time = str(dt)
+                time = time[:16]
+                if orders.finish_date < time:
+                    print(orders.appointment_id)
+                    if orders.appointment_type == 1:
+                        if orders.pet_type == 1:
+                            ce = CatEmergency.query.filter(CatEmergency.id == orders.appointment_id).first()
+                            db.session.delete(ce)
+                            db.session.commit()
+                        else:
+                            cn = DogEmergency.query.filter(DogEmergency.id == orders.appointment_id).first()
+                            db.session.delete(cn)
+                            db.session.commit()
                     else:
-                        cn = DogEmergency.query.filter(DogEmergency.id == orders.appointment_id).first()
-                        db.session.delete(cn)
-                        db.session.commit()
-                else:
-                    if orders.pet_type == 1:
-                        de = CatAppointment.query.filter(CatAppointment.id == orders.appointment_id).first()
-                        db.session.delete(de)
-                        db.session.commit()
-                    else:
-                        dn = DogAppointment.query.filter(DogAppointment.id == orders.appointment_id).first()
-                        db.session.delete(dn)
-                        db.session.commit()
-                db.session.delete(orders)
-                db.session.commit()
-                print('6657')
+                        if orders.pet_type == 1:
+                            de = CatAppointment.query.filter(CatAppointment.id == orders.appointment_id).first()
+                            db.session.delete(de)
+                            db.session.commit()
+                        else:
+                            dn = DogAppointment.query.filter(DogAppointment.id == orders.appointment_id).first()
+                            db.session.delete(dn)
+                            db.session.commit()
+                    db.session.delete(orders)
+                    db.session.commit()
+                    print('6657')
 
-    return render_template('orders.html', title=gettext('Order List'), cat_orders_e=cat_orders_e,
-                           dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
+        return render_template('orders.html', title=gettext('Order List'), cat_orders_e=cat_orders_e,
+                               dog_orders_e=dog_orders_e, cat_orders=cat_orders, dog_orders=dog_orders)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 
 @app.route('/handle_details', methods=['GET', 'POST'])
 def handle_details():
-    session['currentPage'] = 'handle_details'
-    form = HandleForm()
-    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
-    c = request.args.get("c")
-    ce = request.args.get("ce")
-    d = request.args.get("d")
-    de = request.args.get("de")
-    pt = 1  # 1 is cat, 2 is dog
-    at = 1  # 1 is emergency, 2 is normal
-    aid = 0
-    priority = 0
-    if form.validate_on_submit():
-        if c is not None:
-            print("1")
-            cat = CatAppointment.query.filter(CatAppointment.id == c).first()
-            cat.status = user_in_db.id
-            db.session.commit()
-            pt = 1
-            at = 2
-            aid = cat.id
-            name = cat.name
-            phone = cat.phone
-            city = cat.city
-            pet_name = cat.pet_name
-            pet_id = cat.pet_id
-        if ce is not None:
-            print("2")
-            cat = CatEmergency.query.filter(CatEmergency.id == ce).first()
-            cat.status = user_in_db.id
-            db.session.commit()
-            pt = 1
-            at = 1
-            aid = cat.id
-            name = cat.name
-            phone = cat.phone
-            city = cat.city
-            pet_name = cat.pet_name
-            pet_id = cat.pet_id
-            priority = 1
-        if d is not None:
-            print("3")
-            dog = DogAppointment.query.filter(DogAppointment.id == d).first()
-            dog.status = user_in_db.id
-            db.session.commit()
-            pt = 2
-            at = 2
-            aid = dog.id
-            name = dog.name
-            phone = dog.phone
-            city = dog.city
-            pet_name = dog.pet_name
-            pet_id = dog.pet_id
-        if de is not None:
-            dog = DogEmergency.query.filter(DogEmergency.id == de).first()
-            dog.status = user_in_db.id
-            db.session.commit()
-            print(dog.status)
-            pt = 1
-            at = 1
-            aid = dog.id
-            name = dog.name
-            phone = dog.phone
-            city = dog.city
-            pet_name = dog.pet_name
-            pet_id = dog.pet_id
-            priority = 1
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'handle_details'
+        form = HandleForm()
+        user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+        c = request.args.get("c")
+        ce = request.args.get("ce")
+        d = request.args.get("d")
+        de = request.args.get("de")
+        pt = 1  # 1 is cat, 2 is dog
+        at = 1  # 1 is emergency, 2 is normal
+        aid = 0
+        priority = 0
+        if form.validate_on_submit():
+            if c is not None:
+                print("1")
+                cat = CatAppointment.query.filter(CatAppointment.id == c).first()
+                cat.status = user_in_db.id
+                db.session.commit()
+                pt = 1
+                at = 2
+                aid = cat.id
+                name = cat.name
+                phone = cat.phone
+                city = cat.city
+                pet_name = cat.pet_name
+                pet_id = cat.pet_id
+            if ce is not None:
+                print("2")
+                cat = CatEmergency.query.filter(CatEmergency.id == ce).first()
+                cat.status = user_in_db.id
+                db.session.commit()
+                pt = 1
+                at = 1
+                aid = cat.id
+                name = cat.name
+                phone = cat.phone
+                city = cat.city
+                pet_name = cat.pet_name
+                pet_id = cat.pet_id
+                priority = 1
+            if d is not None:
+                print("3")
+                dog = DogAppointment.query.filter(DogAppointment.id == d).first()
+                dog.status = user_in_db.id
+                db.session.commit()
+                pt = 2
+                at = 2
+                aid = dog.id
+                name = dog.name
+                phone = dog.phone
+                city = dog.city
+                pet_name = dog.pet_name
+                pet_id = dog.pet_id
+            if de is not None:
+                dog = DogEmergency.query.filter(DogEmergency.id == de).first()
+                dog.status = user_in_db.id
+                db.session.commit()
+                print(dog.status)
+                pt = 1
+                at = 1
+                aid = dog.id
+                name = dog.name
+                phone = dog.phone
+                city = dog.city
+                pet_name = dog.pet_name
+                pet_id = dog.pet_id
+                priority = 1
 
-        new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at, employee_name=form.name.data,
-                                   date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone, city=city,
-                                   pet_name=pet_name, pet_id=pet_id, priority=priority)
-        db.session.add(new_handle)
-        db.session.commit()
-        flash(gettext("Appointment handled successfully"))
-        return redirect(url_for('orders'))
-    return render_template('handle_details.html', title=gettext('handle detials'), form=form)
+            new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at, employee_name=form.name.data,
+                                       date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone, city=city,
+                                       pet_name=pet_name, pet_id=pet_id, priority=priority)
+            db.session.add(new_handle)
+            db.session.commit()
+            flash(gettext("Appointment handled successfully"))
+            return redirect(url_for('orders'))
+        return render_template('handle_details.html', title=gettext('handle detials'), form=form)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 
 @app.route('/handled_appointment', methods=['GET', 'POST'])
 def handled_appointment():
-    session['currentPage'] = 'handled_appointment'
-    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
-    order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
-    print(order_details[0].date)
-    b = sorted(order_details, key=lambda x: (-x.priority,  x.date),)
-    return render_template('handled_appointment.html', title=gettext('handled_appointment'),
-                           order_details=b)
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'handled_appointment'
+        user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+        order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
+        print(order_details[0].date)
+        b = sorted(order_details, key=lambda x: (-x.priority,  x.date),)
+        return render_template('handled_appointment.html', title=gettext('handled_appointment'),
+                               order_details=b)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 
 @app.route('/delete_order', methods=['GET', 'POST'])
@@ -591,35 +606,43 @@ def cancel_prioritize():
 
 @app.route('/qa_e', methods=['GET', 'POST'])
 def qa_e():
-    session['currentPage'] = 'qa_e'
-    prev_questions = Question.query.filter().all()
-    return render_template('qa_e.html', title=gettext('Q&A'), prev_questions=prev_questions)
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'qa_e'
+        prev_questions = Question.query.filter().all()
+        return render_template('qa_e.html', title=gettext('Q&A'), prev_questions=prev_questions)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 
 @app.route('/answer', methods=['GET', 'POST'])
 def answer():
-    session['currentPage'] = 'answer'
-    form = PostAnswerForm()
-    q = request.args.get("q")
-    # print(q)
-    prev_questions = Question.query.filter(Question.id == q).all()
-    prev_answers = Answer.query.filter(Answer.question_id == q).all()
-    if form.validate_on_submit():
-        postbody = form.postbody.data
-        employee_in_db = Employee.query.filter(Employee.employee_number == session.get("USERNAME")).first()
-        dt = datetime.datetime.utcnow()
-        year = dt.year
-        month = dt.month
-        day = dt.day
-        hour = dt.hour
-        minutes = dt.minute
-        time = str(year) + "-" + str(month) + "-" + str(day) + " " + str(hour) + ":" + str(minutes)
-        answer = Answer(answer=postbody, time=time, employee_id=employee_in_db.employee_number, question_id=q)
-        db.session.add(answer)
-        db.session.commit()
-        return redirect(url_for('qa_e'))
-    return render_template('answer.html', title=gettext('Q&A'), prev_questions=prev_questions, form=form,
-                           prev_answers=prev_answers)
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'answer'
+        form = PostAnswerForm()
+        q = request.args.get("q")
+        # print(q)
+        prev_questions = Question.query.filter(Question.id == q).all()
+        prev_answers = Answer.query.filter(Answer.question_id == q).all()
+        if form.validate_on_submit():
+            postbody = form.postbody.data
+            employee_in_db = Employee.query.filter(Employee.employee_number == session.get("USERNAME")).first()
+            dt = datetime.datetime.utcnow()
+            year = dt.year
+            month = dt.month
+            day = dt.day
+            hour = dt.hour
+            minutes = dt.minute
+            time = str(year) + "-" + str(month) + "-" + str(day) + " " + str(hour) + ":" + str(minutes)
+            answer = Answer(answer=postbody, time=time, employee_id=employee_in_db.employee_number, question_id=q)
+            db.session.add(answer)
+            db.session.commit()
+            return redirect(url_for('qa_e'))
+        return render_template('answer.html', title=gettext('Q&A'), prev_questions=prev_questions, form=form,
+                               prev_answers=prev_answers)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 
 def takeDate(elem):
@@ -628,12 +651,16 @@ def takeDate(elem):
 
 @app.route('/employee_track', methods=['GET', 'POST'])
 def employee_track():
-    session['currentPage'] = 'employee_track'
-    user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
-    t_pets = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
-    # print(t_pets[0].date < t_pets[1].date)
-    t_pets.sort(key=takeDate)
-    return render_template('employee_track.html', title=gettext('track'), t_pets=t_pets)
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'employee_track'
+        user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
+        t_pets = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
+        # print(t_pets[0].date < t_pets[1].date)
+        t_pets.sort(key=takeDate)
+        return render_template('employee_track.html', title=gettext('track'), t_pets=t_pets)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 
 @app.route('/customer_track')
@@ -755,10 +782,14 @@ def reset():
 @app.route('/pet_details', methods=['GET', 'POST'])
 def pet_details():
     # print(1)
-    session['currentPage'] = 'pet_details'
-    pid = request.args.get("pid")
-    t_pets = HandleDetails.query.filter(HandleDetails.id == pid).all()
-    return render_template('pet_details.html', title=gettext('pet_details'), t_pets=t_pets)
+    if not session.get("NUMBER") is None:
+        session['currentPage'] = 'pet_details'
+        pid = request.args.get("pid")
+        t_pets = HandleDetails.query.filter(HandleDetails.id == pid).all()
+        return render_template('pet_details.html', title=gettext('pet_details'), t_pets=t_pets)
+    else:
+        flash("User needs to either login or signup first")
+        return redirect(url_for('index'))
 
 
 @app.route('/add_pet', methods=['GET', 'POST'])
