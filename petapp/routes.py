@@ -626,7 +626,7 @@ def answer():
         prev_answers = Answer.query.filter(Answer.question_id == q).all()
         if form.validate_on_submit():
             postbody = form.postbody.data
-            employee_in_db = Employee.query.filter(Employee.employee_number == session.get("USERNAME")).first()
+            employee_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
             dt = datetime.datetime.utcnow()
             year = dt.year
             month = dt.month
