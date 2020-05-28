@@ -85,3 +85,7 @@ class HandleForm(FlaskForm):
     confirm = BooleanField(_l('Confirm handle this appointment'), validators=[DataRequired(_l('You need to confirm'))])
     submit = SubmitField(_l('Submit'))
 
+
+class EmailCaptcha(FlaskForm):
+    verificationCode = StringField("Enter the verification code please", validators=[DataRequired()])
+    submit = SubmitField(_l('Submit'))

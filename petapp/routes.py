@@ -1,12 +1,15 @@
+import random
+import string
 from operator import and_
 
+from flask_mail import Message
 from werkzeug.utils import secure_filename
 
-from petapp import app, db
+from petapp import app, db, mail
 from petapp.forms import LoginForm, EmployeeLoginForm, SignupForm, EmployeeSignupForm, CatAppointmentForm, \
     PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, \
     PetForm, HandleForm, PostQuestionForm, SearchQuestionForm, PostAnswerForm, PetForm, PostQuestionForm, \
-    SearchQuestionForm, PostAnswerForm, PetForm, HandleForm
+    SearchQuestionForm, PostAnswerForm, PetForm, HandleForm, EmailCaptcha
 from petapp.models import Customer, Employee, CatAppointment, DogAppointment, CatEmergency, DogEmergency, Question, \
     Answer, Pet, HandleDetails
 
@@ -116,13 +119,52 @@ def signup():
             flash(gettext('Passwords do not match!'))
             return redirect(url_for('signup'))
         passw_hash = generate_password_hash(form.password.data)
+        global customer
         customer = Customer(username=form.username.data, email=form.email.data, password_hash=passw_hash)
-        db.session.add(customer)
-        db.session.commit()
+        # db.session.add(customer)
+        # db.session.commit()
         # flash('User registered with username:{}'.format(form.username.data))
-        session["USERNAME"] = customer.username
-        return redirect(url_for("login"))
+        # session["USERNAME"] = customer.username
+        return redirect(url_for("email_captcha"))
     return render_template('signup.html', title=gettext('Register a new user'), form=form)
+
+
+@app.route('/email_captcha', methods=['GET', 'POST'])
+def email_captcha():
+    source = list(string.ascii_letters)
+    # 再次获取数字,并且拼接到source中
+    source.extend(map(lambda x: str(x), range(0, 10)))
+
+    # 从source中随机取样返回的是一个列表，通过join方式将其变成字符串作为验证码
+    captcha = "".join(random.sample(source, 6))
+    print(captcha)
+    global Verification_code
+    Verification_code = str(captcha)
+    print(customer)
+    message = Message(subject='Verification Code', sender="shenlingwudi@126.com", recipients=[customer.email], body=captcha)
+    mail.send(message)
+    # except:
+    #     flash("server error")
+    #     return redirect(url_for('login'))
+    return redirect(url_for('email_verification'))
+
+
+@app.route('/email_verification', methods=['GET', 'POST'])
+def email_verification():
+    print(123)
+    form = EmailCaptcha()
+    if form.validate_on_submit():
+        code = form.verificationCode.data
+        print(code)
+        if code != Verification_code:
+            flash("The verification code is wrong, please check your email address and register agian")
+            return redirect(url_for('signup'))
+        if code == Verification_code:
+            db.session.add(customer)
+            db.session.commit()
+            flash("registered successfully")
+            return redirect(url_for('login'))
+    return render_template('email_captcha.html', title=email_captcha, form=form)
 
 
 @app.route('/checkuser', methods=['POST'])
@@ -165,7 +207,8 @@ def employee_signup():
                 return redirect(url_for('employee_signup'))
 
             passw_hash = generate_password_hash(form.password.data)
-            employee = Employee(employee_number=form.employee_number.data, email=form.email.data, password_hash=passw_hash)
+            employee = Employee(employee_number=form.employee_number.data, email=form.email.data,
+                                password_hash=passw_hash)
             db.session.add(employee)
             db.session.commit()
             # flash('User registered with username:{}'.format(form.username.data))
@@ -176,25 +219,30 @@ def employee_signup():
         flash("User needs to either login or signup first")
         return redirect(url_for('index'))
 
+
 @app.route('/services')
 def services():
     session['currentPage'] = 'services'
     return render_template('services.html')
+
 
 @app.route('/about')
 def about():
     session['currentPage'] = 'about'
     return render_template('about.html')
 
+
 @app.route('/blog')
 def blog():
     session['currentPage'] = 'blog'
     return render_template('blog.html')
 
+
 @app.route('/gallery')
 def gallery():
     session['currentPage'] = 'gallery'
     return render_template('gallery.html')
+
 
 @app.route('/standard_appointment_cat', methods=['GET', 'POST'])
 def standard_appointment_cat():
@@ -518,8 +566,10 @@ def handle_details():
                 pet_id = dog.pet_id
                 priority = 1
 
-            new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at, employee_name=form.name.data,
-                                       date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone, city=city,
+            new_handle = HandleDetails(appointment_id=aid, pet_type=pt, appointment_type=at,
+                                       employee_name=form.name.data,
+                                       date=form.date.data, employee_id=user_in_db.id, name=name, phone=phone,
+                                       city=city,
                                        pet_name=pet_name, pet_id=pet_id, priority=priority)
             db.session.add(new_handle)
             db.session.commit()
@@ -538,7 +588,7 @@ def handled_appointment():
         user_in_db = Employee.query.filter(Employee.employee_number == session.get("NUMBER")).first()
         order_details = HandleDetails.query.filter(HandleDetails.employee_id == user_in_db.id).all()
         print(order_details[0].date)
-        b = sorted(order_details, key=lambda x: (-x.priority,  x.date),)
+        b = sorted(order_details, key=lambda x: (-x.priority, x.date), )
         return render_template('handled_appointment.html', title=gettext('handled_appointment'),
                                order_details=b)
     else:
@@ -840,6 +890,7 @@ def pet_detail():
     session['petID'] = pet
     pet = Pet.query.filter(Pet.id == pet)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
+
 
 @app.route('/pet_delete', methods=['GET', 'POST'])
 def pet_delete():
