@@ -840,3 +840,13 @@ def pet_detail():
     session['petID'] = pet
     pet = Pet.query.filter(Pet.id == pet)
     return render_template('pet_detail.html', title=gettext('Detail'), pet=pet)
+
+@app.route('/pet_delete', methods=['GET', 'POST'])
+def pet_delete():
+    session['currentPage'] = 'my_pets'
+    pet = request.args.get("pet")
+    session['petID'] = pet
+    pet_delete = Pet.query.filter(Pet.id == pet).first()
+    db.session.delete(pet_delete)
+    db.session.commit()
+    return redirect(url_for('my_pets'))
