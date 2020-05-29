@@ -132,20 +132,18 @@ def signup():
 @app.route('/email_captcha', methods=['GET', 'POST'])
 def email_captcha():
     source = list(string.ascii_letters)
-    # 再次获取数字,并且拼接到source中
     source.extend(map(lambda x: str(x), range(0, 10)))
-
-    # 从source中随机取样返回的是一个列表，通过join方式将其变成字符串作为验证码
     captcha = "".join(random.sample(source, 6))
     print(captcha)
     global Verification_code
     Verification_code = str(captcha)
     print(customer)
     message = Message(subject='Verification Code', sender="shenlingwudi@126.com", recipients=[customer.email], body=captcha)
-    mail.send(message)
-    # except:
-    #     flash("server error")
-    #     return redirect(url_for('login'))
+    try:
+        mail.send(message)
+    except:
+        flash("server error, unable to send verification message, please try again later")
+        return redirect(url_for('login'))
     return redirect(url_for('email_verification'))
 
 
